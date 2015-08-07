@@ -65,92 +65,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-python-e4-bb-a3-e7-a0-81-e8-ae-a1-e6-97-b6-e6-a8-a1-e5-9d-97timeite-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/01/27/python-e4-bb-a3-e7-a0-81-e8-ae-a1-e6-97-b6-e6-a8-a1-e5-9d-97timeite-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/" class="article-date">
-  <time datetime="2015-01-27T11:46:18.000Z" itemprop="datePublished">2015-01-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/未分类/">未分类</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/01/27/python-e4-bb-a3-e7-a0-81-e8-ae-a1-e6-97-b6-e6-a8-a1-e5-9d-97timeite-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/">Python代码计时模块timeite学习笔记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><del style="position:relative;display:block"><a href="http://maxiang.info/#/?provider=evernote_int&amp;guid=25467de9-8069-4f72-a649-140f2bab8afe" target="_blank" rel="external">Edit</a></del><div style="line-height: 1.5; color: #2c3f51; font-family: Helvetica Neue, Arial, Hiragino Sans GB, STHeiti, Microsoft YaHei, WenQuanYi Micro Hei, SimSun, Song, sans-serif;"><br>                        <div></div><br>                    <div></div></div></p>
-<p><code>归档</code> <code>python</code> <code>原创</code> <code>eat.wordpress.post</code><br><div></div></p>
-<p>timeit模块提供了一种简便的方法来为Python中的小块代码进行计时。它有三种使用方式，从命令行调用，从Python交互解释器调用，或者直接在脚本代码中进行调用。下面仅仅简略记述一下该模块在交互解释器以及脚本中的基础使用方法。<br><div></div></p>
-<h3 id="在Python交互解释器中的使用">在Python交互解释器中的使用</h3><p><strong>timeit函数</strong> </p>
-<p>最基本的使用方法是直接调用timeit函数。<br><div></div></p>
-<pre><code><span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>import<span class="tag">&lt;/<span class="title">span</span>&gt;</span> timeit
-timeit.timeit(stmt=<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #e6db74;"</span>&gt;</span>'pass'<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, setup=<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #e6db74;"</span>&gt;</span>'pass'<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, timer=&amp;lt;default timer&amp;gt;, number=<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #ae81ff;"</span>&gt;</span>1000000<span class="tag">&lt;/<span class="title">span</span>&gt;</span>)`<span class="tag">&lt;/<span class="title">pre</span>&gt;</span>
-
-<span class="comment">&lt;!--more--&gt;</span> 
-
-模块的第一个参数为要执行计时的语句（statement）。按字符串的形式传入要执行的代码。第二个参数setup用于构建代码环境，可以用来导入需要的模块。最后的number指定了运行的次数。
-
-使用示例如下：
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> &gt;</span>
-
-<span class="tag">&lt;<span class="title">pre</span>  <span class="attribute">style</span>=<span class="value">"font-family: Source Code Pro,monospace; font-size: .9em; white-space: pre-wrap; display: block; padding: 2px; margin: 0 0 1.1em; line-height: 1.45; word-break: break-word; word-wrap: break-word; color: #333; background-color: rgba(102,128,153,0.05); border: 0; border-radius: 5px; text-align: start; background: #f6f6f6;"</span>&gt;</span>`&amp;gt;&amp;gt;&amp;gt;<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>import<span class="tag">&lt;/<span class="title">span</span>&gt;</span> timeit
-&amp;gt;&amp;gt;&amp;gt;timeit.timeit(<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #e6db74;"</span>&gt;</span>'"-".join(str(n) for n in range(100))'<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, number=<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #ae81ff;"</span>&gt;</span>10000<span class="tag">&lt;/<span class="title">span</span>&gt;</span>)
-<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #ae81ff;"</span>&gt;</span>0.21051692962646484<span class="tag">&lt;/<span class="title">span</span>&gt;</span>`<span class="tag">&lt;/<span class="title">pre</span>&gt;</span>
-
-**repeat函数** 
-
-另一个可供使用的函数是repeat函数，指定整个试验的重复次数，返回一个包含了每次试验的执行时间的列表。
-
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> &gt;</span>
-
-<span class="tag">&lt;<span class="title">pre</span>  <span class="attribute">style</span>=<span class="value">"font-family: Source Code Pro,monospace; font-size: .9em; white-space: pre-wrap; display: block; padding: 2px; margin: 0 0 1.1em; line-height: 1.45; word-break: break-word; word-wrap: break-word; color: #333; background-color: rgba(102,128,153,0.05); border: 0; border-radius: 5px; text-align: start; background: #f6f6f6;"</span>&gt;</span>`<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #e6db74;"</span>&gt;</span>&amp;gt;&amp;gt;&amp;gt; <span class="tag">&lt;/<span class="title">span</span>&gt;</span>timeit.repeat(<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #e6db74;"</span>&gt;</span>'"-".join(str(n) for n in range(100))'<span class="tag">&lt;/<span class="title">span</span>&gt;</span>,repeat=<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #ae81ff;"</span>&gt;</span>3<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, number=<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #ae81ff;"</span>&gt;</span>10000<span class="tag">&lt;/<span class="title">span</span>&gt;</span>)
-[<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #ae81ff;"</span>&gt;</span>0.21938705444335938<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #ae81ff;"</span>&gt;</span>0.21767210960388184<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #ae81ff;"</span>&gt;</span>0.21688294410705566<span class="tag">&lt;/<span class="title">span</span>&gt;</span>]`<span class="tag">&lt;/<span class="title">pre</span>&gt;</span>
-
-利用这一函数可以很方便得实现多次试验取平均的方法。
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> &gt;</span>
-
-#### 在脚本程序中的使用
-
-timeit模块同样可以在脚本中直接使用。使用方法还是调用上述的函数。但是在脚本中时需要为setup传入一条字符串形式的语句，用于构建执行环境，示例如下：
-
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> &gt;</span>
-
-<span class="tag">&lt;<span class="title">pre</span>  <span class="attribute">style</span>=<span class="value">"font-family: Source Code Pro,monospace; font-size: .9em; white-space: pre-wrap; display: block; padding: 2px; margin: 0 0 1.1em; line-height: 1.45; word-break: break-word; word-wrap: break-word; color: #333; background-color: rgba(102,128,153,0.05); border: 0; border-radius: 5px; text-align: start; background: #f6f6f6;"</span>&gt;</span>`<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #66d9ef;"</span>&gt;</span>def<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #a6e22e;"</span>&gt;</span>test<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f8f8f2;"</span>&gt;</span>()<span class="tag">&lt;/<span class="title">span</span>&gt;</span>:<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
-    L = []
-    <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>for<span class="tag">&lt;/<span class="title">span</span>&gt;</span> i <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>in<span class="tag">&lt;/<span class="title">span</span>&gt;</span> range(<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #ae81ff;"</span>&gt;</span>100<span class="tag">&lt;/<span class="title">span</span>&gt;</span>):
-        L.append(i)
-
-<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>if<span class="tag">&lt;/<span class="title">span</span>&gt;</span> __name__ == <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #e6db74;"</span>&gt;</span>'__main__'<span class="tag">&lt;/<span class="title">span</span>&gt;</span>:
-    <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>import<span class="tag">&lt;/<span class="title">span</span>&gt;</span> timeit
-    <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>print<span class="tag">&lt;/<span class="title">span</span>&gt;</span> timeit.timeit(<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #e6db74;"</span>&gt;</span>"test()"<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, setup=<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #e6db74;"</span>&gt;</span>"from __main__ import test"<span class="tag">&lt;/<span class="title">span</span>&gt;</span>))
-</code></pre><p><div></div><center style="display:none">@%28%u5F52%u6863%29%5Bpython%7C%u539F%u521B%7Ceat.wordpress.post%5D%0A%23Python%u4EE3%u7801%u8BA1%u65F6%u6A21%u5757timeite%u5B66%u4E60%u7B14%u8BB0%0Atimeit%u6A21%u5757%u63D0%u4F9B%u4E86%u4E00%u79CD%u7B80%u4FBF%u7684%u65B9%u6CD5%u6765%u4E3APython%u4E2D%u7684%u5C0F%u5757%u4EE3%u7801%u8FDB%u884C%u8BA1%u65F6%u3002%u5B83%u6709%u4E09%u79CD%u4F7F%u7528%u65B9%u5F0F%uFF0C%u4ECE%u547D%u4EE4%u884C%u8C03%u7528%uFF0C%u4ECEPython%u4EA4%u4E92%u89E3%u91CA%u5668%u8C03%u7528%uFF0C%u6216%u8005%u76F4%u63A5%u5728%u811A%u672C%u4EE3%u7801%u4E2D%u8FDB%u884C%u8C03%u7528%u3002%u4E0B%u9762%u4EC5%u4EC5%u7B80%u7565%u8BB0%u8FF0%u4E00%u4E0B%u8BE5%u6A21%u5757%u5728%u4EA4%u4E92%u89E3%u91CA%u5668%u4EE5%u53CA%u811A%u672C%u4E2D%u7684%u57FA%u7840%u4F7F%u7528%u65B9%u6CD5%u3002%0A%0A%23%23%23%20%u5728Python%u4EA4%u4E92%u89E3%u91CA%u5668%u4E2D%u7684%u4F7F%u7528%0A<strong>timeit%u51FD%u6570</strong>%0A%u6700%u57FA%u672C%u7684%u4F7F%u7528%u65B9%u6CD5%u662F%u76F4%u63A5%u8C03%u7528timeit%u51FD%u6570%u3002%0A%60%60%60python%0Aimport%20timeit%0Atimeit.timeit%28stmt%3D%27pass%27%2C%20setup%3D%27pass%27%2C%20timer%3D%3Cdefault%20timer%3E%2C%20number%3D1000000%29%0A%60%60%60%0A%3C%21–more–%3E%0A%u6A21%u5757%u7684%u7B2C%u4E00%u4E2A%u53C2%u6570%u4E3A%u8981%u6267%u884C%u8BA1%u65F6%u7684%u8BED%u53E5%uFF08statement%uFF09%u3002%u6309%u5B57%u7B26%u4E32%u7684%u5F62%u5F0F%u4F20%u5165%u8981%u6267%u884C%u7684%u4EE3%u7801%u3002%u7B2C%u4E8C%u4E2A%u53C2%u6570setup%u7528%u4E8E%u6784%u5EFA%u4EE3%u7801%u73AF%u5883%uFF0C%u53EF%u4EE5%u7528%u6765%u5BFC%u5165%u9700%u8981%u7684%u6A21%u5757%u3002%u6700%u540E%u7684number%u6307%u5B9A%u4E86%u8FD0%u884C%u7684%u6B21%u6570%u3002%0A%0A%u4F7F%u7528%u793A%u4F8B%u5982%u4E0B%uFF1A%0A%60%60%60python%0A%3E%3E%3Eimport%20timeit%0A%3E%3E%3Etimeit.timeit%28%27%22-%22.join%28str%28n%29%20for%20n%20in%20range%28100%29%29%27%2C%20number%3D10000%29%0A0.21051692962646484%0A%60%60%60%0A<strong>repeat%u51FD%u6570</strong>%0A%u53E6%u4E00%u4E2A%u53EF%u4F9B%u4F7F%u7528%u7684%u51FD%u6570%u662Frepeat%u51FD%u6570%uFF0C%u6307%u5B9A%u6574%u4E2A%u8BD5%u9A8C%u7684%u91CD%u590D%u6B21%u6570%uFF0C%u8FD4%u56DE%u4E00%u4E2A%u5305%u542B%u4E86%u6BCF%u6B21%u8BD5%u9A8C%u7684%u6267%u884C%u65F6%u95F4%u7684%u5217%u8868%u3002%0A%60%60%60python%0A%3E%3E%3E%20timeit.repeat%28%27%22-%22.join%28str%28n%29%20for%20n%20in%20range%28100%29%29%27%2Crepeat%3D3%2C%20number%3D10000%29%0A%5B0.21938705444335938%2C%200.21767210960388184%2C%200.21688294410705566%5D%0A%60%60%60%0A%u5229%u7528%u8FD9%u4E00%u51FD%u6570%u53EF%u4EE5%u5F88%u65B9%u4FBF%u5F97%u5B9E%u73B0%u591A%u6B21%u8BD5%u9A8C%u53D6%u5E73%u5747%u7684%u65B9%u6CD5%u3002%0A%0A%23%23%23%23%20%u5728%u811A%u672C%u7A0B%u5E8F%u4E2D%u7684%u4F7F%u7528%0Atimeit%u6A21%u5757%u540C%u6837%u53EF%u4EE5%u5728%u811A%u672C%u4E2D%u76F4%u63A5%u4F7F%u7528%u3002%u4F7F%u7528%u65B9%u6CD5%u8FD8%u662F%u8C03%u7528%u4E0A%u8FF0%u7684%u51FD%u6570%u3002%u4F46%u662F%u5728%u811A%u672C%u4E2D%u65F6%u9700%u8981%u4E3Asetup%u4F20%u5165%u4E00%u6761%u5B57%u7B26%u4E32%u5F62%u5F0F%u7684%u8BED%u53E5%uFF0C%u7528%u4E8E%u6784%u5EFA%u6267%u884C%u73AF%u5883%uFF0C%u793A%u4F8B%u5982%u4E0B%uFF1A%0A%0A%60%60%60python%0Adef%20test%28%29%3A%0A%09L%20%3D%20%5B%5D%0A%09for%20i%20in%20range%28100%29%3A%0A%09%09L.append%28i%29%0A%0Aif%20<strong>name</strong>%20%3D%3D%20%27<strong>main</strong>%27%3A%0A%09import%20timeit%0A%09print%20timeit.timeit%28%22test%28%29%22%2C%20setup%3D%22from%20<strong>main</strong>%20import%20test%22%29%29%0A%60%60%60%0A</center></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/01/27/python-e4-bb-a3-e7-a0-81-e8-ae-a1-e6-97-b6-e6-a8-a1-e5-9d-97timeite-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/" data-id="cid26lahl001607xn36uyf4ej" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-python-wsgi-e6-95-99-e7-a8-8b-e5-85-ad-e8-a7-a3-e6-9e-90post-e8-af-b7-e6-b1-82" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/01/23/python-wsgi-e6-95-99-e7-a8-8b-e5-85-ad-e8-a7-a3-e6-9e-90post-e8-af-b7-e6-b1-82/" class="article-date">
@@ -190,7 +104,7 @@ timeit模块同样可以在脚本中直接使用。使用方法还是调用上�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/01/23/python-wsgi-e6-95-99-e7-a8-8b-e5-85-ad-e8-a7-a3-e6-9e-90post-e8-af-b7-e6-b1-82/" data-id="cid26lags000b07xny5sumw4v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/01/23/python-wsgi-e6-95-99-e7-a8-8b-e5-85-ad-e8-a7-a3-e6-9e-90post-e8-af-b7-e6-b1-82/" data-id="cid26qx4b000emrxncjz7n9vr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/翻译/">翻译</a></li></ul>
@@ -309,7 +223,7 @@ httpd.serve_forever()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/01/23/python-wsgi-e6-95-99-e7-a8-8b-e4-ba-94-e8-a7-a3-e6-9e-90get-e8-af-b7-e6-b1-82/" data-id="cid26lagu000f07xnji4ouwde" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/01/23/python-wsgi-e6-95-99-e7-a8-8b-e4-ba-94-e8-a7-a3-e6-9e-90get-e8-af-b7-e6-b1-82/" data-id="cid26qx4d000imrxnxp2lo1kp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/翻译/">翻译</a></li></ul>
@@ -405,7 +319,7 @@ httpd.handle_request()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/01/23/python-wsgi-e6-95-99-e7-a8-8b-e5-9b-9b-e5-8f-af-e8-bf-ad-e4-bb-a3-e5-93-8d-e5-ba-94-e5-af-b9-e8-b1-a1/" data-id="cid26lagn000607xnxkk31zpm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/01/23/python-wsgi-e6-95-99-e7-a8-8b-e5-9b-9b-e5-8f-af-e8-bf-ad-e4-bb-a3-e5-93-8d-e5-ba-94-e5-af-b9-e8-b1-a1/" data-id="cid26qx480009mrxn4cei3cro" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/翻译/">翻译</a></li></ul>
@@ -461,7 +375,7 @@ httpd.handle_request()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/01/23/python-wsgi-e6-95-99-e7-a8-8b-e4-b8-89-e7-8e-af-e5-a2-83-e5-ad-97-e5-85-b8/" data-id="cid26lagy000n07xn7w2h2cw6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/01/23/python-wsgi-e6-95-99-e7-a8-8b-e4-b8-89-e7-8e-af-e5-a2-83-e5-ad-97-e5-85-b8/" data-id="cid26qx4h000qmrxn1dkitgbq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/翻译/">翻译</a></li></ul>
@@ -519,7 +433,7 @@ httpd.handle_request()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/01/23/python-wsgi-e6-95-99-e7-a8-8b-e4-ba-8c-e5-ba-94-e7-94-a8-e7-a8-8b-e5-ba-8f-e6-8e-a5-e5-8f-a3/" data-id="cid26lagv000j07xnceczkl3g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/01/23/python-wsgi-e6-95-99-e7-a8-8b-e4-ba-8c-e5-ba-94-e7-94-a8-e7-a8-8b-e5-ba-8f-e6-8e-a5-e5-8f-a3/" data-id="cid26qx4f000mmrxniei7320q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/翻译/">翻译</a></li></ul>
@@ -574,7 +488,7 @@ httpd.handle_request()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/01/23/python-wsgi-e6-95-99-e7-a8-8b-e4-b8-80-e4-bb-8b-e7-bb-8d/" data-id="cid26lah1000r07xnkr4948qt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/01/23/python-wsgi-e6-95-99-e7-a8-8b-e4-b8-80-e4-bb-8b-e7-bb-8d/" data-id="cid26qx4p000umrxnltv89oyl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/翻译/">翻译</a></li></ul>
@@ -631,7 +545,7 @@ httpd.handle_request()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/01/23/e8-ae-b0-e4-b8-80-e4-b8-aa-e4-bd-bf-e7-94-a8yield-e8-af-bb-e5-86-99-e6-96-87-e4-bb-b6-e7-9a-84-e6-96-b9-e6-b3-95/" data-id="cid26lai4001o07xn8nz3gfh8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/01/23/e8-ae-b0-e4-b8-80-e4-b8-aa-e4-bd-bf-e7-94-a8yield-e8-af-bb-e5-86-99-e6-96-87-e4-bb-b6-e7-9a-84-e6-96-b9-e6-b3-95/" data-id="cid26qx5f001pmrxnjskervzd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -695,7 +609,7 @@ httpd.handle_request()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/01/20/15fall-e8-8b-b1-e5-9b-bd-e7-a1-95-e5-a3-ab-e7-94-b3-e8-af-b7-e6-80-bb-e7-bb-93-ef-bc-9a-e5-89-91-e6-a1-a5-ef-bc-8c-e7-89-9b-e6-b4-a5-ef-bc-8c-e5-b8-9d-e5-9b-bd-e7-90-86-e5-b7-a5-e5-8f-8a-e5-85-b6/" data-id="cid26laie001v07xngmv5nycs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/01/20/15fall-e8-8b-b1-e5-9b-bd-e7-a1-95-e5-a3-ab-e7-94-b3-e8-af-b7-e6-80-bb-e7-bb-93-ef-bc-9a-e5-89-91-e6-a1-a5-ef-bc-8c-e7-89-9b-e6-b4-a5-ef-bc-8c-e5-b8-9d-e5-9b-bd-e7-90-86-e5-b7-a5-e5-8f-8a-e5-85-b6/" data-id="cid26qx5i001umrxnsjmatcxs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -753,10 +667,131 @@ httpd.handle_request()
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/01/20/leetcode-ef-bc-9a-e5-88-a4-e6-96-ad-e5-8d-95-e9-93-be-e5-88-97-e8-a1-a8-e6-98-af-e5-90-a6-e5-ad-98-e5-9c-a8-e7-8e-af/" data-id="cid26lahw001g07xna1v33hjy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/01/20/leetcode-ef-bc-9a-e5-88-a4-e6-96-ad-e5-8d-95-e9-93-be-e5-88-97-e8-a1-a8-e6-98-af-e5-90-a6-e5-ad-98-e5-9c-a8-e7-8e-af/" data-id="cid26qx5b001imrxn0t8gcovh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/">LeetCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python-e5-91-bd-e4-bb-a4-e8-a1-8c-e8-a7-a3-e6-9e-90-e6-a8-a1-e5-9d-97argparse-e4-bd-bf-e7-94-a8-e5-ad-a6-e4-b9-a0" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/20/python-e5-91-bd-e4-bb-a4-e8-a1-8c-e8-a7-a3-e6-9e-90-e6-a8-a1-e5-9d-97argparse-e4-bd-bf-e7-94-a8-e5-ad-a6-e4-b9-a0/" class="article-date">
+  <time datetime="2015-01-20T08:08:42.000Z" itemprop="datePublished">2015-01-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/20/python-e5-91-bd-e4-bb-a4-e8-a1-8c-e8-a7-a3-e6-9e-90-e6-a8-a1-e5-9d-97argparse-e4-bd-bf-e7-94-a8-e5-ad-a6-e4-b9-a0/">Python 命令行解析模块argparse使用学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><del style="position:relative;display:block"><a href="http://maxiang.info/#/?provider=evernote_int&amp;guid=7895b5bd-4312-4cff-ab2b-4f97eaae0a04" target="_blank" rel="external">Edit</a></del><div style="line-height: 1.5; color: #2c3f51; font-family: Helvetica Neue, Arial, Hiragino Sans GB, STHeiti, Microsoft YaHei, WenQuanYi Micro Hei, SimSun, Song, sans-serif;"><br>                        <div></div><br>                    <div></div></div></p>
+<p><code>归档</code> <code>原创</code> <code>python</code> <code>eat.wordpress.post</code> </p>
+<p><div></div></p>
+<p>argparse在Python2.7中引入，是用于替代原来的optparse模块的。</p>
+<p><div></div></p>
+<h2 id="基本知识">基本知识</h2><p>导入模块后，获得一个parser对象。通过调用其add_argument()方法来设置程序可接受的命令行参数。 </p>
+<p>调用其parse_args方法来获取一个收集了所有参数的args对象。此时从命令行得到的参数可以由args对象的属性来获取。 </p>
+<p>基本过程如下：</p>
+<p><div></div></p>
+<pre><code><span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>import<span class="tag">&lt;/<span class="title">span</span>&gt;</span> argparse
+parser = argparse.ArgumentParser()
+args = paresr.parse_args()`<span class="tag">&lt;/<span class="title">pre</span>&gt;</span>
+
+<span class="comment">&lt;!--more--&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> &gt;</span>
+
+## 添加参数
+
+通过parser对象的add_argument方法来添加。调用的时候可以指定以下属性（仅列出部分）： 
+
+help：指定一个字符串，在命令行中使用-h，–help参数时可以详细解释你设置的该命令的作用，类似文档。 
+
+type：指定该参数的类型，这样由args的属性获取的该参数直接为正确的类型，免去类型转换。如不指定，默认为字符串。 
+
+default：默认值。 
+
+choice：有效值范围。
+
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> &gt;</span>
+
+### 位置参数
+
+调用parser对象的add_argument方法并传入一个字符串参数，指定从命令行接收的参数名。如果字符串不以”-”开头，则为必须的位置参数。 
+
+如下：
+
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> &gt;</span>
+
+<span class="tag">&lt;<span class="title">pre</span>  <span class="attribute">style</span>=<span class="value">"font-family: Source Code Pro,monospace; font-size: .9em; white-space: pre-wrap; display: block; padding: 2px; margin: 0 0 1.1em; line-height: 1.45; word-break: break-word; word-wrap: break-word; color: #333; background-color: rgba(102,128,153,0.05); border: 0; border-radius: 5px; text-align: start; background: #f6f6f6;"</span>&gt;</span>`<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>import<span class="tag">&lt;/<span class="title">span</span>&gt;</span> argparse
+parser = argparse.ArgumentParser()
+parser.add_argument(<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #e6db74;"</span>&gt;</span>"echo"<span class="tag">&lt;/<span class="title">span</span>&gt;</span>) <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #75715e;"</span>&gt;</span># 添加名为echo的参数<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+args = paresr.parse_args()
+<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>print<span class="tag">&lt;/<span class="title">span</span>&gt;</span> args.echo <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #75715e;"</span>&gt;</span># 参数解析之后可以调用args对象的同名属性来获取参数<span class="tag">&lt;/<span class="title">span</span>&gt;</span>`<span class="tag">&lt;/<span class="title">pre</span>&gt;</span>
+
+添加的时候为help参数指定一个字符串的话，在命令行中使用-h时候，该字符串就会作为文档列在你给的参数后面了。
+
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> &gt;</span>
+
+<span class="tag">&lt;<span class="title">pre</span>  <span class="attribute">style</span>=<span class="value">"font-family: Source Code Pro,monospace; font-size: .9em; white-space: pre-wrap; display: block; padding: 2px; margin: 0 0 1.1em; line-height: 1.45; word-break: break-word; word-wrap: break-word; color: #333; background-color: rgba(102,128,153,0.05); border: 0; border-radius: 5px; text-align: start; background: #f6f6f6;"</span>&gt;</span>`parser.add_argument(<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #e6db74;"</span>&gt;</span>"echo"<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, help=<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #e6db74;"</span>&gt;</span>"echo the string you use here"<span class="tag">&lt;/<span class="title">span</span>&gt;</span>)`<span class="tag">&lt;/<span class="title">pre</span>&gt;</span>
+
+添加的时候为type参数指定指定一个type对象的话，解析出来的参数直接是对应的类型，免去类型转换。否则解析出来默认为字符串。
+
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> &gt;</span>
+
+<span class="tag">&lt;<span class="title">pre</span>  <span class="attribute">style</span>=<span class="value">"font-family: Source Code Pro,monospace; font-size: .9em; white-space: pre-wrap; display: block; padding: 2px; margin: 0 0 1.1em; line-height: 1.45; word-break: break-word; word-wrap: break-word; color: #333; background-color: rgba(102,128,153,0.05); border: 0; border-radius: 5px; text-align: start; background: #f6f6f6;"</span>&gt;</span>`parser.add_argument(<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #e6db74;"</span>&gt;</span>"square"<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, type=int)
+args = parser.parse_args()
+<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>print<span class="tag">&lt;/<span class="title">span</span>&gt;</span> args.square ** <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #ae81ff;"</span>&gt;</span>2<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #75715e;"</span>&gt;</span># 解析出出来的square就是整数类型，直接参与运算<span class="tag">&lt;/<span class="title">span</span>&gt;</span>`<span class="tag">&lt;/<span class="title">pre</span>&gt;</span>
+
+命令行中运行如下：
+
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> &gt;</span>
+
+<span class="tag">&lt;<span class="title">pre</span>  <span class="attribute">style</span>=<span class="value">"font-family: Source Code Pro,monospace; font-size: .9em; white-space: pre-wrap; display: block; padding: 2px; margin: 0 0 1.1em; line-height: 1.45; word-break: break-word; word-wrap: break-word; color: #333; background-color: rgba(102,128,153,0.05); border: 0; border-radius: 5px; text-align: start; background: #f6f6f6;"</span>&gt;</span>`<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f8f8f2;"</span>&gt;</span>$python<span class="tag">&lt;/<span class="title">span</span>&gt;</span> test.py <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #ae81ff;"</span>&gt;</span>4<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #ae81ff;"</span>&gt;</span>16<span class="tag">&lt;/<span class="title">span</span>&gt;</span>`<span class="tag">&lt;/<span class="title">pre</span>&gt;</span>
+
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> &gt;</span>
+
+### 可选参数
+
+调用parser对象的add_argument方法时若传入的字符串是以”-“开头的，则该参数为可选参数。在命令行中运行的时候可以提供也可以不提供。 
+
+如下：
+
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">div</span> &gt;</span>
+
+<span class="tag">&lt;<span class="title">pre</span>  <span class="attribute">style</span>=<span class="value">"font-family: Source Code Pro,monospace; font-size: .9em; white-space: pre-wrap; display: block; padding: 2px; margin: 0 0 1.1em; line-height: 1.45; word-break: break-word; word-wrap: break-word; color: #333; background-color: rgba(102,128,153,0.05); border: 0; border-radius: 5px; text-align: start; background: #f6f6f6;"</span>&gt;</span>`parser.add_argument(<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #e6db74;"</span>&gt;</span>"-v"<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, action=<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #e6db74;"</span>&gt;</span>"store_true"<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, default=<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>False<span class="tag">&lt;/<span class="title">span</span>&gt;</span>)
+args = parser.parse_args()
+<span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>if<span class="tag">&lt;/<span class="title">span</span>&gt;</span> args.v:
+    <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>print<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #e6db74;"</span>&gt;</span>"More information"<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+</code></pre><p>其中在添加时设置default参数，为v添加默认值。设置action为”store_true”表明在命令行中运行时若有-v则将其设置为true。<br><div></div><center style="display:none">@%28%u5F52%u6863%29%5B%u539F%u521B%7Cpython%7Ceat.wordpress.post%5D%0A%23%20Python%20%u547D%u4EE4%u884C%u89E3%u6790%u6A21%u5757argparse%u4F7F%u7528%u5B66%u4E60%0Aargparse%u5728Python2.7%u4E2D%u5F15%u5165%uFF0C%u662F%u7528%u4E8E%u66FF%u4EE3%u539F%u6765%u7684optparse%u6A21%u5757%u7684%u3002%0A%23%23%20%u57FA%u672C%u77E5%u8BC6%0A%u5BFC%u5165%u6A21%u5757%u540E%uFF0C%u83B7%u5F97%u4E00%u4E2Aparser%u5BF9%u8C61%u3002%u901A%u8FC7%u8C03%u7528%u5176add_argument%28%29%u65B9%u6CD5%u6765%u8BBE%u7F6E%u7A0B%u5E8F%u53EF%u63A5%u53D7%u7684%u547D%u4EE4%u884C%u53C2%u6570%u3002%0A%u8C03%u7528%u5176parse_args%u65B9%u6CD5%u6765%u83B7%u53D6%u4E00%u4E2A%u6536%u96C6%u4E86%u6240%u6709%u53C2%u6570%u7684args%u5BF9%u8C61%u3002%u6B64%u65F6%u4ECE%u547D%u4EE4%u884C%u5F97%u5230%u7684%u53C2%u6570%u53EF%u4EE5%u7531args%u5BF9%u8C61%u7684%u5C5E%u6027%u6765%u83B7%u53D6%u3002%0A%u57FA%u672C%u8FC7%u7A0B%u5982%u4E0B%uFF1A%0A%60%60%60python%0Aimport%20argparse%0Aparser%20%3D%20argparse.ArgumentParser%28%29%0Aargs%20%3D%20paresr.parse_args%28%29%0A%60%60%60%0A%3C%21–more–%3E%0A%23%23%20%u6DFB%u52A0%u53C2%u6570%0A%u901A%u8FC7parser%u5BF9%u8C61%u7684add_argument%u65B9%u6CD5%u6765%u6DFB%u52A0%u3002%u8C03%u7528%u7684%u65F6%u5019%u53EF%u4EE5%u6307%u5B9A%u4EE5%u4E0B%u5C5E%u6027%uFF08%u4EC5%u5217%u51FA%u90E8%u5206%uFF09%uFF1A%0Ahelp%uFF1A%u6307%u5B9A%u4E00%u4E2A%u5B57%u7B26%u4E32%uFF0C%u5728%u547D%u4EE4%u884C%u4E2D%u4F7F%u7528-h%uFF0C–help%u53C2%u6570%u65F6%u53EF%u4EE5%u8BE6%u7EC6%u89E3%u91CA%u4F60%u8BBE%u7F6E%u7684%u8BE5%u547D%u4EE4%u7684%u4F5C%u7528%uFF0C%u7C7B%u4F3C%u6587%u6863%u3002%0Atype%uFF1A%u6307%u5B9A%u8BE5%u53C2%u6570%u7684%u7C7B%u578B%uFF0C%u8FD9%u6837%u7531args%u7684%u5C5E%u6027%u83B7%u53D6%u7684%u8BE5%u53C2%u6570%u76F4%u63A5%u4E3A%u6B63%u786E%u7684%u7C7B%u578B%uFF0C%u514D%u53BB%u7C7B%u578B%u8F6C%u6362%u3002%u5982%u4E0D%u6307%u5B9A%uFF0C%u9ED8%u8BA4%u4E3A%u5B57%u7B26%u4E32%u3002%0Adefault%uFF1A%u9ED8%u8BA4%u503C%u3002%0Achoice%uFF1A%u6709%u6548%u503C%u8303%u56F4%u3002%0A%0A%23%23%23%20%u4F4D%u7F6E%u53C2%u6570%0A%u8C03%u7528parser%u5BF9%u8C61%u7684add_argument%u65B9%u6CD5%u5E76%u4F20%u5165%u4E00%u4E2A%u5B57%u7B26%u4E32%u53C2%u6570%uFF0C%u6307%u5B9A%u4ECE%u547D%u4EE4%u884C%u63A5%u6536%u7684%u53C2%u6570%u540D%u3002%u5982%u679C%u5B57%u7B26%u4E32%u4E0D%u4EE5%27%27-%27%27%u5F00%u5934%uFF0C%u5219%u4E3A%u5FC5%u987B%u7684%u4F4D%u7F6E%u53C2%u6570%u3002%0A%u5982%u4E0B%uFF1A%0A%60%60%60python%0Aimport%20argparse%0Aparser%20%3D%20argparse.ArgumentParser%28%29%0Aparser.add_argument%28%22echo%22%29%20%23%20%u6DFB%u52A0%u540D%u4E3Aecho%u7684%u53C2%u6570%0Aargs%20%3D%20paresr.parse_args%28%29%0Aprint%20args.echo%20%23%20%u53C2%u6570%u89E3%u6790%u4E4B%u540E%u53EF%u4EE5%u8C03%u7528args%u5BF9%u8C61%u7684%u540C%u540D%u5C5E%u6027%u6765%u83B7%u53D6%u53C2%u6570%0A%60%60%60%0A%u6DFB%u52A0%u7684%u65F6%u5019%u4E3Ahelp%u53C2%u6570%u6307%u5B9A%u4E00%u4E2A%u5B57%u7B26%u4E32%u7684%u8BDD%uFF0C%u5728%u547D%u4EE4%u884C%u4E2D%u4F7F%u7528-h%u65F6%u5019%uFF0C%u8BE5%u5B57%u7B26%u4E32%u5C31%u4F1A%u4F5C%u4E3A%u6587%u6863%u5217%u5728%u4F60%u7ED9%u7684%u53C2%u6570%u540E%u9762%u4E86%u3002%0A%60%60%60python%0Aparser.add_argument%28%22echo%22%2C%20help%3D%22echo%20the%20string%20you%20use%20here%22%29%0A%60%60%60%0A%u6DFB%u52A0%u7684%u65F6%u5019%u4E3Atype%u53C2%u6570%u6307%u5B9A%u6307%u5B9A%u4E00%u4E2Atype%u5BF9%u8C61%u7684%u8BDD%uFF0C%u89E3%u6790%u51FA%u6765%u7684%u53C2%u6570%u76F4%u63A5%u662F%u5BF9%u5E94%u7684%u7C7B%u578B%uFF0C%u514D%u53BB%u7C7B%u578B%u8F6C%u6362%u3002%u5426%u5219%u89E3%u6790%u51FA%u6765%u9ED8%u8BA4%u4E3A%u5B57%u7B26%u4E32%u3002%0A%60%60%60python%0Aparser.add_argument%28%22square%22%2C%20type%3Dint%29%0Aargs%20%3D%20parser.parse_args%28%29%0Aprint%20args.square%20**%202%20%23%20%u89E3%u6790%u51FA%u51FA%u6765%u7684square%u5C31%u662F%u6574%u6570%u7C7B%u578B%uFF0C%u76F4%u63A5%u53C2%u4E0E%u8FD0%u7B97%0A%60%60%60%0A%u547D%u4EE4%u884C%u4E2D%u8FD0%u884C%u5982%u4E0B%uFF1A%0A%60%60%60bash%0A%24python%20test.py%204%0A16%0A%60%60%60%0A%0A%23%23%23%20%u53EF%u9009%u53C2%u6570%0A%u8C03%u7528parser%u5BF9%u8C61%u7684add_argument%u65B9%u6CD5%u65F6%u82E5%u4F20%u5165%u7684%u5B57%u7B26%u4E32%u662F%u4EE5%22-%22%u5F00%u5934%u7684%uFF0C%u5219%u8BE5%u53C2%u6570%u4E3A%u53EF%u9009%u53C2%u6570%u3002%u5728%u547D%u4EE4%u884C%u4E2D%u8FD0%u884C%u7684%u65F6%u5019%u53EF%u4EE5%u63D0%u4F9B%u4E5F%u53EF%u4EE5%u4E0D%u63D0%u4F9B%u3002%0A%u5982%u4E0B%uFF1A%0A%60%60%60python%0Aparser.add_argument%28%22-v%22%2C%20action%3D%22store_true%22%2C%20default%3DFalse%29%0Aargs%20%3D%20parser.parse_args%28%29%0Aif%20args.v%3A%0A%09print%20%22More%20information%22%0A%60%60%60%0A%u5176%u4E2D%u5728%u6DFB%u52A0%u65F6%u8BBE%u7F6Edefault%u53C2%u6570%uFF0C%u4E3Av%u6DFB%u52A0%u9ED8%u8BA4%u503C%u3002%u8BBE%u7F6Eaction%u4E3A%22store_true%22%u8868%u660E%u5728%u547D%u4EE4%u884C%u4E2D%u8FD0%u884C%u65F6%u82E5%u6709-v%u5219%u5C06%u5176%u8BBE%u7F6E%u4E3Atrue%u3002%0A</center></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/01/20/python-e5-91-bd-e4-bb-a4-e8-a1-8c-e8-a7-a3-e6-9e-90-e6-a8-a1-e5-9d-97argparse-e4-bd-bf-e7-94-a8-e5-ad-a6-e4-b9-a0/" data-id="cid26qx510015mrxnfm8925nu" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
 
     </footer>
   </div>
@@ -805,7 +840,7 @@ httpd.handle_request()
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 
@@ -817,11 +852,7 @@ httpd.handle_request()
       <ul>
         
           <li>
-            <a href="/2015/08/07/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2015/04/28/e7-88-b1-e6-8b-89-e6-89-98-e6-92-92-e5-b0-bc-e7-ad-9b-e6-b3-95-ef-bc-9a-e6-89-be-e5-87-ba-e5-b0-8f-e4-ba-8e-n-e7-9a-84-e6-89-80-e6-9c-89-e8-b4-a8-e6-95-b0-2/">爱拉托撒尼筛法：找出小于 n 的所有质数</a>
+            <a href="/2015/04/28/爱拉托撒尼筛法：找出小于 n 的所有质数/">爱拉托撒尼筛法：找出小于 n 的所有质数</a>
           </li>
         
           <li>
@@ -834,6 +865,10 @@ httpd.handle_request()
         
           <li>
             <a href="/2015/02/14/python-ef-bc-9a-init-py-e8-af-a6-e8-a7-a3/">Python：__init__.py 详解</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/09/e4-bb-80-e4-b9-88-e6-98-af-e9-b8-ad-e5-ad-90-e7-b1-bb-e5-9e-8b-ef-bc-88duck-typing-ef-bc-89/">什么是鸭子类型（duck typing）</a>
           </li>
         
       </ul>
