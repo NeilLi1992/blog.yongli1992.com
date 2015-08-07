@@ -1,0 +1,275 @@
+title: 15FALL英国硕士申请总结：剑桥，牛津，帝国理工及其他
+id: 88
+categories:
+  - 未分类
+date: 2015-01-20 22:41:46
+tags:
+---
+
+<del style="position:relative;display:block">[Edit](http://maxiang.info/#/?provider=evernote_int&amp;guid=09670358-488a-48b8-a58a-fa9cd8ca98ca)</del><div  style="line-height: 1.5; color: #2c3f51; font-family: Helvetica Neue, Arial, Hiragino Sans GB, STHeiti, Microsoft YaHei, WenQuanYi Micro Hei, SimSun, Song, sans-serif;">
+                        <div ></div>
+                    <div >
+
+`归档` `原创` `eat.wordpress.post` `申研` 
+
+</div><div >
+
+<div><div ><div >
+
+*   <a style="background: transparent; color: #1980e6; text-decoration: none;">15FALL英国硕士申请总结：剑桥，牛津，帝国理工及其他</a>
+
+        *   <a style="background: transparent; color: #1980e6; text-decoration: none;">申请背景</a>
+    *   <a style="background: transparent; color: #1980e6; text-decoration: none;">申请结果</a>
+    *   <a style="background: transparent; color: #1980e6; text-decoration: none;">剑桥</a>
+
+                *   *   <a style="background: transparent; color: #1980e6; text-decoration: none;">材料</a>
+            *   <a style="background: transparent; color: #1980e6; text-decoration: none;">关于MPhil</a>
+            *   <a style="background: transparent; color: #1980e6; text-decoration: none;">MPhil in Machine Learning, Speech and Langauge Technology</a>
+            *   <a style="background: transparent; color: #1980e6; text-decoration: none;">MPhil in Advanced Computer Science</a>
+
+        *   <a style="background: transparent; color: #1980e6; text-decoration: none;">牛津</a>
+
+                *   *   <a style="background: transparent; color: #1980e6; text-decoration: none;">MSc in Computer Science</a>
+            *   <a style="background: transparent; color: #1980e6; text-decoration: none;">材料</a>
+            *   <a style="background: transparent; color: #1980e6; text-decoration: none;">笔试</a>
+            *   <a style="background: transparent; color: #1980e6; text-decoration: none;">面试</a>
+
+        *   <a style="background: transparent; color: #1980e6; text-decoration: none;">帝国理工</a>
+
+                *   *   <a style="background: transparent; color: #1980e6; text-decoration: none;">MSc in Computing (Machine Learning)</a>
+            *   <a style="background: transparent; color: #1980e6; text-decoration: none;">材料</a>
+            *   <a style="background: transparent; color: #1980e6; text-decoration: none;">申请与面试</a>
+
+        *   <a style="background: transparent; color: #1980e6; text-decoration: none;">其他</a>
+</div>
+</div>
+</div>
+
+15FALL的申请基本接近尾声，一共申请了英国6所学校7个专业，基本都有结果了。写下这篇申研总结一来是记录一下这段特殊的历程，二来是为还在申请的同学以及为将来要申请的同学提供些许帮助与参考。
+
+我是西交利物浦大学2+2到英国利物浦大学的，申研背景相当于英本，申请的是计算机方向。对也想申请该方向的英硕的同学们还是有些参考价值的，其他方向的同学也可稍作浏览，未必贴切。
+
+以剑桥，牛津和帝国理工的申请作详细介绍，其他的简单介绍。原因是前三者申请的难度要略大一些，并且有面试，多介绍一些面试的过程，应该会比较有用。 
+
+<!--more-->
+</div><div >
+
+## 申请背景
+
+西交利物浦大学2+2到利物浦大学。
+
+国内为计算机科学技术CST专业。英国为计算机科学与电子工程CSEE专业。在英国第一年（Year 2）均分91%，为专业第一（被发了个奖）。在国内和利物浦这里都拿过一些其它的奖学金。大二的时候有全美数学建模一等奖。雅思8.0。无科研无paper，有两个水project。
+
+推荐信两份Dr，分别是到英国后的Personal Tutor和Year 2 Project Supervisor。一份Prof，是西浦的关圣威教授。剑桥和牛津用了关教授的，其余没用。推荐信感觉找熟悉的老师写比较好。
+
+申请全程DIY无中介。
+
+</div><div >
+
+## 申请结果
+
+<table style="border-collapse: collapse; border-spacing: 0; margin-bottom: 20px;">
+<thead>
+<tr>
+  <th align="center" style="padding: .5em; line-height: 1.5; vertical-align: bottom; border-top: 0; font-weight: bold; border: 1px solid #ddd;">学校</th>
+  <th align="left" style="padding: .5em; line-height: 1.5; vertical-align: bottom; border-top: 0; font-weight: bold; border: 1px solid #ddd;">专业</th>
+  <th align="center" style="padding: .5em; line-height: 1.5; vertical-align: bottom; border-top: 0; font-weight: bold; border: 1px solid #ddd;">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td align="center" style="padding: .5em; line-height: 1.5; vertical-align: top; border-top: 1px solid #ddd; border: 1px solid #ddd;">剑桥</td>
+  <td align="left" style="padding: .5em; line-height: 1.5; vertical-align: top; border-top: 1px solid #ddd; border: 1px solid #ddd;">MPhil<span ><span  style="font-size: 100%; display: inline-block; font-style: normal; font-weight: normal; line-height: normal; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0; vertical-align: middle;"><span style="display:inline-block;width:6px;height:11px;background:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIC04NjYuMTIyMTU2MTk1NTYxNCA0NTcuMDg4OTI0NDk5MjA2NTQgODg0LjI3NzA2MDQ5NzE1MTIiIHN0eWxlPSJ3aWR0aDogYXV0bzsgaGVpZ2h0OiBhdXRvOyB2ZXJ0aWNhbC1hbGlnbjogLTAuMTI4ZXg7IG1hcmdpbjogMHB4OyBmb250LXNpemU6IDE4cHg7O3pvb206MC42OTEzNTgwMjQ2OTEzNTg7dHJhbnNmb3JtOnNjYWxlKDAuNjkxMzU4MDI0NjkxMzU4KTstbW96LXRyYW5zZm9ybTpzY2FsZSgwLjY5MTM1ODAyNDY5MTM1OCk7LXdlYmtpdC10cmFuc2Zvcm06c2NhbGUoMC42OTEzNTgwMjQ2OTEzNTgpO3RyYW5zZm9ybS1vcmlnaW46MCAwOy13ZWJraXQtdHJhbnNmb3JtLW9yaWdpbjowIDA7LW1vei10cmFuc2Zvcm0tb3JpZ2luOjAgMCIgd2lkdGg9IjgiIGhlaWdodD0iMTYiPjxzdHlsZSB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCIgdHlwZT0idGV4dC9jc3MiPgoKPC9zdHlsZT48ZGVmcyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+PHBhdGggeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBpZD0iU1RJWFdFQk1BSU4tMzEiIHN0cm9rZS13aWR0aD0iMTAiIGQ9Ik0zOTQgMGgtMjc2djE1Yzc0IDQgOTUgMjUgOTUgODB2NDQ5YzAgMzQgLTkgNDkgLTMwIDQ5Yy0xMCAwIC0yNyAtNSAtNDUgLTEybC0yNyAtMTB2MTRsMTc5IDkxbDkgLTN2LTU5N2MwIC00MyAyMCAtNjEgOTUgLTYxdi0xNVoiLz48L2RlZnM+PGcgc3Ryb2tlPSJibGFjayIgZmlsbD0iYmxhY2siIHN0cm9rZS13aWR0aD0iMCIgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgLTEgMCAwKSI+PHVzZSB0cmFuc2Zvcm09InNjYWxlKDAuNzA3MTA2NzgxMTg2NTQ3NikiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bGluazpocmVmPSIjU1RJWFdFQk1BSU4tMzEiIHg9IjAiIHk9IjUxMyIvPjwvZz48L3N2Zz4=')"></span></span></span> in Advanced Computer Science</td>
+  <td align="center" style="padding: .5em; line-height: 1.5; vertical-align: top; border-top: 1px solid #ddd; border: 1px solid #ddd;">Con Offer</td>
+</tr>
+<tr>
+  <td align="center" style="padding: .5em; line-height: 1.5; vertical-align: top; border-top: 1px solid #ddd; border: 1px solid #ddd;">剑桥</td>
+  <td align="left" style="padding: .5em; line-height: 1.5; vertical-align: top; border-top: 1px solid #ddd; border: 1px solid #ddd;">MPhil in MLSaLT<span ><span  style="font-size: 100%; display: inline-block; font-style: normal; font-weight: normal; line-height: normal; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0; vertical-align: middle;"><span style="display:inline-block;width:6px;height:11px;background:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIC04NjYuMTIyMTU2MTk1NTYxNCA0NTcuMDg4OTI0NDk5MjA2NTQgODg0LjI3NzA2MDQ5NzE1MTIiIHN0eWxlPSJ3aWR0aDogYXV0bzsgaGVpZ2h0OiBhdXRvOyB2ZXJ0aWNhbC1hbGlnbjogLTAuMTI4ZXg7IG1hcmdpbjogMHB4OyBmb250LXNpemU6IDE4cHg7O3pvb206MC42OTEzNTgwMjQ2OTEzNTg7dHJhbnNmb3JtOnNjYWxlKDAuNjkxMzU4MDI0NjkxMzU4KTstbW96LXRyYW5zZm9ybTpzY2FsZSgwLjY5MTM1ODAyNDY5MTM1OCk7LXdlYmtpdC10cmFuc2Zvcm06c2NhbGUoMC42OTEzNTgwMjQ2OTEzNTgpO3RyYW5zZm9ybS1vcmlnaW46MCAwOy13ZWJraXQtdHJhbnNmb3JtLW9yaWdpbjowIDA7LW1vei10cmFuc2Zvcm0tb3JpZ2luOjAgMCIgd2lkdGg9IjgiIGhlaWdodD0iMTYiPjxzdHlsZSB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCIgdHlwZT0idGV4dC9jc3MiPgoKPC9zdHlsZT48ZGVmcyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCI+PHBhdGggeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBpZD0iU1RJWFdFQk1BSU4tMzIiIHN0cm9rZS13aWR0aD0iMTAiIGQ9Ik00NzQgMTM3bC01NCAtMTM3aC0zOTF2MTJsMTc4IDE4OWM5NCA5OSAxMzAgMTc1IDEzMCAyNjBjMCA5MSAtNTQgMTQxIC0xMzkgMTQxYy03MiAwIC0xMDcgLTMyIC0xNDcgLTEzMGwtMjEgNWMyMSAxMTcgODUgMTk5IDIwOCAxOTljMTEzIDAgMTg1IC03NyAxODUgLTE3NmMwIC03OSAtMzkgLTE1NCAtMTI4IC0yNDhsLTE2NSAtMTc2aDIzNGM0MiAwIDYzIDExIDk2IDY3WiIvPjwvZGVmcz48ZyBzdHJva2U9ImJsYWNrIiBmaWxsPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIwIiB0cmFuc2Zvcm09Im1hdHJpeCgxIDAgMCAtMSAwIDApIj48dXNlIHRyYW5zZm9ybT0ic2NhbGUoMC43MDcxMDY3ODExODY1NDc2KSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhsaW5rOmhyZWY9IiNTVElYV0VCTUFJTi0zMiIgeD0iMCIgeT0iNTEzIi8+PC9nPjwvc3ZnPg==')"></span></span></span></td>
+  <td align="center" style="padding: .5em; line-height: 1.5; vertical-align: top; border-top: 1px solid #ddd; border: 1px solid #ddd;">Rejected</td>
+</tr>
+<tr>
+  <td align="center" style="padding: .5em; line-height: 1.5; vertical-align: top; border-top: 1px solid #ddd; border: 1px solid #ddd;">牛津</td>
+  <td align="left" style="padding: .5em; line-height: 1.5; vertical-align: top; border-top: 1px solid #ddd; border: 1px solid #ddd;">MSc in Computer Science</td>
+  <td align="center" style="padding: .5em; line-height: 1.5; vertical-align: top; border-top: 1px solid #ddd; border: 1px solid #ddd;">Con Offer</td>
+</tr>
+<tr>
+  <td align="center" style="padding: .5em; line-height: 1.5; vertical-align: top; border-top: 1px solid #ddd; border: 1px solid #ddd;">帝国理工</td>
+  <td align="left" style="padding: .5em; line-height: 1.5; vertical-align: top; border-top: 1px solid #ddd; border: 1px solid #ddd;">MSc in Computing (Machine Learning)</td>
+  <td align="center" style="padding: .5em; line-height: 1.5; vertical-align: top; border-top: 1px solid #ddd; border: 1px solid #ddd;">Con Offer</td>
+</tr>
+<tr>
+  <td align="center" style="padding: .5em; line-height: 1.5; vertical-align: top; border-top: 1px solid #ddd; border: 1px solid #ddd;">UCL</td>
+  <td align="left" style="padding: .5em; line-height: 1.5; vertical-align: top; border-top: 1px solid #ddd; border: 1px solid #ddd;">MSc in Web Science and Big Data Analytics</td>
+  <td align="center" style="padding: .5em; line-height: 1.5; vertical-align: top; border-top: 1px solid #ddd; border: 1px solid #ddd;">Con Offer</td>
+</tr>
+<tr>
+  <td align="center" style="padding: .5em; line-height: 1.5; vertical-align: top; border-top: 1px solid #ddd; border: 1px solid #ddd;">曼彻斯特</td>
+  <td align="left" style="padding: .5em; line-height: 1.5; vertical-align: top; border-top: 1px solid #ddd; border: 1px solid #ddd;">MSc in Artificial Intelligence</td>
+  <td align="center" style="padding: .5em; line-height: 1.5; vertical-align: top; border-top: 1px solid #ddd; border: 1px solid #ddd;">Con Offer</td>
+</tr>
+<tr>
+  <td align="center" style="padding: .5em; line-height: 1.5; vertical-align: top; border-top: 1px solid #ddd; border: 1px solid #ddd;">香港理工</td>
+  <td align="left" style="padding: .5em; line-height: 1.5; vertical-align: top; border-top: 1px solid #ddd; border: 1px solid #ddd;">MSc in Information Technology</td>
+  <td align="center" style="padding: .5em; line-height: 1.5; vertical-align: top; border-top: 1px solid #ddd; border: 1px solid #ddd;">???</td>
+</tr>
+</tbody></table>
+
+1：剑桥这个MPhil的课程title比较特殊，后面再谈。 
+
+2：全称是MPhil in Machine Learning, Speech and Language Technology。
+
+</div><div >
+
+## 剑桥
+
+</div><div >
+
+#### 材料
+
+成绩单，两份推荐信。 
+
+要求雅思四个7的英语成绩，申请的时候可以暂不提供，到时候拿到con offer之后还是要。 
+
+剑桥特殊的地方是不要CV，也不要PS。 
+
+申请要50磅申请费，申请多个专业的话每个都要交。
+
+</div><div >
+
+#### 关于MPhil
+
+其余学校的硕士课程都是MSc或MRes，但是只有剑桥都是称为MPhil，没有MSc。其实MPhil是一个在英国人看来不太好看的学位，在一般情况下它是读PhD失败没有拿到博士学位后拿的一个学位。从某种角度来看也可以认为是学识达到了Master，但是还未到博士的一个学历。
+
+而之所以剑桥的课程都冠以MPhil，可能是某种传统吧。但是它的MPhil跟别的学校的MSc一样都是一年制的，应该说就是剑桥的授课硕士。姑且把它就看做一个名称比较奇怪的MSc吧。
+
+</div><div >
+
+#### MPhil in Machine Learning, Speech and Langauge Technology
+
+这是剑桥今年新开的专业，属于Engineering Dept。关于机器学习处理语言的，也涉及information engineering。实际感受下来是申请难度最大的一个课程。
+
+通过网申系统提交申请即可，之后材料通过初审的话就会通知面试。面试是考察学习能力和研究能力的，难度很大。大概会提前一周通知面试，通知邮件里会发你一篇paper，然后要求在一周时间内读了这篇paper之后，做一个review presentation。需要你做slides提前发给他，然后面试的时候是skype面试。有两个人一起面，一位Prof，一位Dr。你在这里讲，他们在那里也跟着看你的slides（你提示他们翻页），在讲的过程中会向你问问题。
+
+Paper全文有40页，他会告诉你有几个section不要看，再去掉后面的文献，真正要看的大概在20页。内容是关于用线性高斯模型来统一几种不同的特殊模型。涉及的东西很广，看到最后也只是懵懵懂懂。因为我是身边朋友里第一个面这个专业的，在没有前人探路的情况下还安慰自己不会问的太难的。事实证明大错特错，实际面的时候问的非常之细，细到会问你某个公式到另外一个公式的变形是怎么完成的。
+
+面试大概30分钟，上来简单确认一下基本信息就开始直接让做review。问题非常多，每一张slide讲完都要发问，到最后slides才讲了一半，他看看时间不够了，就让跳到最后直接做个summary，最后问问我有没有问题，随便问了一下就结束了。被问得非常惨，很多直接说不会。1月22号收到拒信啦。
+
+在这里不得不提一下徐锴同学……连续攻读几天之后据他说彻底通透，面试的时候问题基本都答出来了。面试完第二天就拿到offer了，对这个专业有兴趣的可以咨询一下他。
+
+</div><div >
+
+#### MPhil in Advanced Computer Science
+
+剑桥Computer Laboratory的课程。课程提供了很多的选课，侧重于自然语言处理和硬件。
+
+也是通过网申系统先交申请，之后ACS的课程有个特殊的地方是，交完以后Computer Laboratory会发你一份内部的调查问卷先填一下。里面会问你一些基本的信息，包括为什么选这个课，毕业之后想做什么，从哪里了解到这个课等，也会让你先填一个选课意向，让他们了解一下你大概对什么课有兴趣，但是这个选课不算数，正式的要到暑假再选。这份问卷后面有个重头戏，要写一份500字的research proposal。
+
+这份问卷要的proposal大概是要你选一个具体的领域，要你讲一下你对这个领域的认识，有哪些前沿研究问题等等。事实证明，这个research proposal是很重要的，它会决定你之后的面试，剑桥会根据你这里填的内容，给你找合适的面试官。我这里宽泛地写了一下machine learning，结果他给我找的面试官就是语言处理方向的。徐锴同学这里写的是硬件的内容，分到的面试官就是一个搞硬件的教授。
+
+其实我被分了两个面试官，是一个Prof和一个Dr一起面我的，电话面试。也是考察学习能力的，提前一周通知面试，邮件里给我指定了一本语言处理的书，让我看introduction和另外一个关于词性标注（PoS Tagging）的Chapter，说面试的时候讨论这份材料。因为ACS的面试是在MLSaLT之后了，之前研读过的材料让我有了不少的了解，所以这一份东西看起来格外顺利，基本都能理解。
+
+真正面的时候，确认完基本信息后，先简单聊了一下我proposal写的内容，问了几个热身的问题，结果他语速讲太快了听不清，一上来回答的不太好。后来我让他慢点说之后才好点。问完以后就讨论了材料的东西，基本全回答出来了，有一个关于动态规划复杂度的问题一开始答错了，在他提示以后也反应过来了。问完材料之后扯了点其他的就结束了。
+
+后来等的也比较久，本来以为圣诞节之前会有结果的，结果一直等到圣诞节和元旦的假放完，他们正式上班第一天拿到con offer，condition是一等学位。
+
+值得注意的是，ACS的面试形式不是每个人都一样的，会针对你写的proposal给你做具体安排。我这种提前一周拿到材料准备，然后讨论材料的形式还是挺好的，可以做充分准备。徐锴同学面ACS就比较惨，只提前两天通知面试，虽然只有一个人面但是没有材料。面试讨论的时候据说面试官想到哪里就问到哪里，问的东西全都没学过，面完过了圣诞节被拒了。所以填写那个proposal的时候要谨慎。
+
+</div><div >
+
+## 牛津
+
+</div><div >
+
+#### MSc in Computer Science
+
+</div><div >
+
+#### 材料
+
+成绩单，三份推荐信，要CV，也要personal statement。 
+
+语言成绩要求和剑桥一样，四个7，申请的时候可以不用交。拿到offer之后听说可以argue掉，具体不清楚是不是真的可以。 
+
+注意牛津要多交一份推荐信的。 
+
+申请也要50磅申请费。
+
+</div><div >
+
+#### 笔试
+
+牛津比剑桥多一个笔试，交完材料大概过两周有邮件通知，邮件里面附了笔试题，让48小时内做完发给他。一共四个题目，第一题是让写一下自己在CS和数学方面的背景知识，真正的问题只有后三题。第二题是一道概率题，第三题是一道伪代码程序设计题，第四题是给了一个递归的程序，让做一些分析。
+
+牛津的笔试题明显偏数学，据说历年的笔试面试都钟爱概率题。题目整体难度不算特别大，基本上一个晚上能弄出大概思路，只是写答案的时候尽量要写的严谨全面一点。
+
+关于牛津有个不得不提的问题是，实际申请完后，我们都感觉到有严重的控制人数的现象。以我和徐锴为例，背景相差无几，分数几乎一样，而且笔试题的解答思路也是差不多的，在这种情况下，他交完笔试题很快就被毫无征兆地拒了，而我拿到了接下来的面试。在其他计算机相关专业也出现了同样的情况，背景相差不大，笔试题做的也基本OK的人里，只有专业的第一名拿到了面试，后面的人都莫名奇妙被拒了。虽然没有进一步的证据，但不得不说是个奇怪的事情。
+
+</div><div >
+
+#### 面试
+
+提前一周通知电话面试，是一位Prof。比较幸运的一件事情是，我的申请一共经历4次面试6位面试官，似乎都是英国和美国人，因此几乎没有遇到口音听不懂的问题。
+
+电话打过来以后也是直接开始问。结果他一上来就把笔试时的第二道概率题重新拿出来讲了一遍，他说我写的解答思路是正确的，但是有另外一种不同的思路，想和我探讨一下。结果他一上来问了几个引导性的问题，我竟然都愣在那里没回答上来，中间停顿的空白最长的有差不多30秒之久……后来他一步一步从前面很基本的情况重新问我，我才很艰难的答上来了。其实这个时候感觉是不太妙的，因为已经花费了很长时间了，而且几乎都是他在说我在跟。更加奇怪的一点是，我后来才意识到这个解答思路就是徐锴笔试时做的，但徐锴还是被拒了，很无语。
+
+问完那道概率题之后，他就问起了我的成绩单上列的课程，挑着感兴趣的问了些很基础的东西。大概有下面这些： 
+
+看到我学了game theory，就问问我纳什均衡的定义，然后问我一个博弈是否可以有多个纳什均衡，我说当然可以，他说对，让我举个有两个均衡点的博弈。结果我说了囚徒困境！那段时间为了面试，博弈论很久没去上了也没碰过了……其实囚徒困境只有一个，但是他很莫名其妙说了that’s right……为了这个事被徐锴黑了很久，呵呵。 
+
+看到我有学线性代数，就问了我特征值和特征向量的作用。 
+
+然后他看到了两门想问的课，结果都是我下学期的课，没问成好像有点扫兴。然后他看到我课程里没有算法课，就问我是不是没学过算法（不得不吐槽一下CST和CSEE没有算法课是很令人无语的事）。我跟他说我学校课程没有正式讲过算法，但是我有自学过，他就让我列举一下我知道的算法。这个时候我也不敢讲太难的了，跟他列举了一些基本排序算法，他貌似都不是很感兴趣，我又补充说了二叉树和红黑树，他终于稍微有点兴趣的让我说一下红黑树的目的和原理。我说完之后，他接着问了一个始料未及的问题：n个结点的满二叉树的高度是多少！也是无力吐槽了，答完就结束了。
+
+总结一下就是牛津的面试出乎意料的简单。想起之前看到上一届董天伟学长总结的牛津面试问题，难度完全不是一个层次的。隐约给我一种：“算了反正你们专业其他人都拒完了，随便问一下你就给你offer吧”的感觉。
+
+另外如果有西浦CST和利物浦CSEE的同学看到这里，我想说作为计算机的学生不学算法是非常非常遗憾的事情。学校虽然没有让我们上算法课，但是我们完全可以自学一下。牛津的面试虽然是很简单的算法问题，但是一点没学过的话也是不行的。剑桥ACS的面试也着重问了一个动态规划算法。即使不以面试为目的，学一下算法终究是需要的。
+
+</div><div >
+
+## 帝国理工
+
+</div><div >
+
+#### MSc in Computing (Machine Learning)
+
+</div><div >
+
+#### 材料
+
+成绩单，两份推荐信，要CV，也要personal statement，语言成绩似乎可以argue掉，具体我不清楚。 
+
+理工科不用申请费，商学院听说要申请费。 
+
+但是取得Con offer后，要交10%的学费作为押金。
+
+</div><div >
+
+#### 申请与面试
+
+帝国理工的流程相对简单多了，难度也很小，分数够基本就行了。大家申请的时候要注意，MSc in Computing Science是给本科非计算机专业的同学准备的。比较悲催的时候，一位电气专业的同学申了其它的细分课程之后，面试的时候面试官觉得他缺背景，就把他调到这个专业来了，令他有点无语。
+
+申请完之后大概过一两个礼拜通知面试。帝国理工的面试有个不好，就是一定要你去伦敦现场面。我当时还特地发邮件问了能不能skype或者电面，结果被告知不行，一定要过去面。
+
+帝国理工的面试是非学术面，毫无难度可言，基本能叫过去面试的就是确定会给offer的了。整个面试时间在30分钟左右，大概是先过了一遍成绩单上的课程，但是不会像牛津一样出具体的问题让你回答，而只是问你大概学了些什么，除了这个以外CV和PS都没管。整个面试后面半程基本是他在讲我在听，给我介绍课程的结构，注意事项，还有学费等等……面完当场就跟我说过几天给我正式的offer。有了帝国理工的保底之后再去面剑桥和牛津的，压力要少的多。
+
+值得注意的是，今年帝国理工的power专业是有学术面的，是在线skype面试，据说有一定难度。别的专业都没听说学术面。另外大家注意，下了正式offer之后，有28天考虑时间，需要决定accept或者decline。接受了之后会通知交10%的学费作为保证金，大概在2600磅左右的样子，有额外的28天时间来交保证金。如果面完帝国理工之后准备申牛剑的话，控制好时间。
+
+说到申请时间节点的控制问题，最好还是自己考虑一下。我大概是11月第一周交了帝国理工的，第二周交了牛津的cs和剑桥的acs，mlsalt。后来证明这是非常不好的选择！后来的面试全挤到一起了，12月第一周的时候周二去伦敦面帝国，晚上才回来，隔天周三就面剑桥的mlsalt，压力很大。结果刚隔了一周，牛津的cs和剑桥的acs的面试又是一起来的，面完剑桥第二天又面牛津，那一周还正好凑上C++一个ddl和FYP的中期报告，简直是人生最忙一周……
+
+</div><div >
+
+## 其他
+
+剩下的就简略说一下了，因为都不需要面试，申请流程很简单，提交完申请就跟你没关系了。如果缺材料或者有什么问题，他们都会邮件联系你的，按要求做就行了。申请也没什么难度，分数够就行，材料基本都是2份推荐信，PS，CV，成绩单，语言成绩可以不要。
+
+**UCL** 
+
+UCL的MSc in Web Science and Big Data Analytics专业课程设置看着还挺不错的，学的东西好像也很实用，感兴趣的同学可以留意一下，要交50磅申请费的。UCL交了以后很久都没有动静，似乎审核开始的很晚。我大概10月中下旬交了申请，一直一直没动静，到12月23号，圣诞节前英国人工作的最后一天，才发现系统的状态悄悄被更新了，这才看到了offer。
+
+**曼彻斯特** 
+
+曼大不要申请费的，材料齐就直接申吧。电气的有几个专业听说发offer很水很水，有的连PS还没传就拿到offer了，有的推荐信还没上传也拿到offer直接把推荐信加condition里了。不知道是什么原因导致乱象丛生，感觉不是很规范。
+
+**香港理工** 
+
+由于一些原因而申请试试的，应该不会有很多西浦的学生考虑吧。申请要交申请费，具体记不清了，大概是小几百人民币的样子。结果后来发生了比较搞笑的事情，可能西浦去的人不多，他们不知道西浦，于是就问了我西浦是什么，后来给他解释了一下。之后很久都没动静，前几天突然邮件告诉我说申请快截止了，我还缺材料没交，但是我上去反复检查，都没发现缺什么材料，后来想把申请withdraw了，竟然也没找到withdraw的地方，现在只能挂在那儿不了了之了。
+</div><div ></div></div><center style='display:none'>@%28%u5F52%u6863%29%5B%u539F%u521B%7Ceat.wordpress.post%7C%u7533%u7814%5D%0A%23%2015FALL%u82F1%u56FD%u7855%u58EB%u7533%u8BF7%u603B%u7ED3%uFF1A%u5251%u6865%uFF0C%u725B%u6D25%uFF0C%u5E1D%u56FD%u7406%u5DE5%u53CA%u5176%u4ED6%0A%5BTOC%5D%0A%0A15FALL%u7684%u7533%u8BF7%u57FA%u672C%u63A5%u8FD1%u5C3E%u58F0%uFF0C%u4E00%u5171%u7533%u8BF7%u4E86%u82F1%u56FD6%u6240%u5B66%u68217%u4E2A%u4E13%u4E1A%uFF0C%u57FA%u672C%u90FD%u6709%u7ED3%u679C%u4E86%u3002%u5199%u4E0B%u8FD9%u7BC7%u7533%u7814%u603B%u7ED3%u4E00%u6765%u662F%u8BB0%u5F55%u4E00%u4E0B%u8FD9%u6BB5%u7279%u6B8A%u7684%u5386%u7A0B%uFF0C%u4E8C%u6765%u662F%u4E3A%u8FD8%u5728%u7533%u8BF7%u7684%u540C%u5B66%u4EE5%u53CA%u4E3A%u5C06%u6765%u8981%u7533%u8BF7%u7684%u540C%u5B66%u63D0%u4F9B%u4E9B%u8BB8%u5E2E%u52A9%u4E0E%u53C2%u8003%u3002%0A%0A%u6211%u662F%u897F%u4EA4%u5229%u7269%u6D66%u5927%u5B662+2%u5230%u82F1%u56FD%u5229%u7269%u6D66%u5927%u5B66%u7684%uFF0C%u7533%u7814%u80CC%u666F%u76F8%u5F53%u4E8E%u82F1%u672C%uFF0C%u7533%u8BF7%u7684%u662F%u8BA1%u7B97%u673A%u65B9%u5411%u3002%u5BF9%u4E5F%u60F3%u7533%u8BF7%u8BE5%u65B9%u5411%u7684%u82F1%u7855%u7684%u540C%u5B66%u4EEC%u8FD8%u662F%u6709%u4E9B%u53C2%u8003%u4EF7%u503C%u7684%uFF0C%u5176%u4ED6%u65B9%u5411%u7684%u540C%u5B66%u4E5F%u53EF%u7A0D%u4F5C%u6D4F%u89C8%uFF0C%u672A%u5FC5%u8D34%u5207%u3002%0A%0A%u4EE5%u5251%u6865%uFF0C%u725B%u6D25%u548C%u5E1D%u56FD%u7406%u5DE5%u7684%u7533%u8BF7%u4F5C%u8BE6%u7EC6%u4ECB%u7ECD%uFF0C%u5176%u4ED6%u7684%u7B80%u5355%u4ECB%u7ECD%u3002%u539F%u56E0%u662F%u524D%u4E09%u8005%u7533%u8BF7%u7684%u96BE%u5EA6%u8981%u7565%u5927%u4E00%u4E9B%uFF0C%u5E76%u4E14%u6709%u9762%u8BD5%uFF0C%u591A%u4ECB%u7ECD%u4E00%u4E9B%u9762%u8BD5%u7684%u8FC7%u7A0B%uFF0C%u5E94%u8BE5%u4F1A%u6BD4%u8F83%u6709%u7528%u3002%0A%3C%21--more--%3E%0A%23%23%20%u7533%u8BF7%u80CC%u666F%0A%u897F%u4EA4%u5229%u7269%u6D66%u5927%u5B662+2%u5230%u5229%u7269%u6D66%u5927%u5B66%u3002%0A%0A%u56FD%u5185%u4E3A%u8BA1%u7B97%u673A%u79D1%u5B66%u6280%u672FCST%u4E13%u4E1A%u3002%u82F1%u56FD%u4E3A%u8BA1%u7B97%u673A%u79D1%u5B66%u4E0E%u7535%u5B50%u5DE5%u7A0BCSEE%u4E13%u4E1A%u3002%u5728%u82F1%u56FD%u7B2C%u4E00%u5E74%uFF08Year%202%uFF09%u5747%u520691%25%uFF0C%u4E3A%u4E13%u4E1A%u7B2C%u4E00%uFF08%u88AB%u53D1%u4E86%u4E2A%u5956%uFF09%u3002%u5728%u56FD%u5185%u548C%u5229%u7269%u6D66%u8FD9%u91CC%u90FD%u62FF%u8FC7%u4E00%u4E9B%u5176%u5B83%u7684%u5956%u5B66%u91D1%u3002%u5927%u4E8C%u7684%u65F6%u5019%u6709%u5168%u7F8E%u6570%u5B66%u5EFA%u6A21%u4E00%u7B49%u5956%u3002%u96C5%u601D8.0%u3002%u65E0%u79D1%u7814%u65E0paper%uFF0C%u6709%u4E24%u4E2A%u6C34project%u3002%0A%0A%u63A8%u8350%u4FE1%u4E24%u4EFDDr%uFF0C%u5206%u522B%u662F%u5230%u82F1%u56FD%u540E%u7684Personal%20Tutor%u548CYear%202%20Project%20Supervisor%u3002%u4E00%u4EFDProf%uFF0C%u662F%u897F%u6D66%u7684%u5173%u5723%u5A01%u6559%u6388%u3002%u5251%u6865%u548C%u725B%u6D25%u7528%u4E86%u5173%u6559%u6388%u7684%uFF0C%u5176%u4F59%u6CA1%u7528%u3002%u63A8%u8350%u4FE1%u611F%u89C9%u627E%u719F%u6089%u7684%u8001%u5E08%u5199%u6BD4%u8F83%u597D%u3002%0A%0A%u7533%u8BF7%u5168%u7A0BDIY%u65E0%u4E2D%u4ECB%u3002%0A%0A%23%23%u7533%u8BF7%u7ED3%u679C%0A%0A%7C%20%u5B66%u6821%20%20%20%20%20%20%09%7C%20%20%20%20%20%u4E13%u4E1A%20%20%7C%20%20%20%u7ED3%u679C%20%20%20%20%7C%0A%7C%20%3A--------%3A%20%7C%20%3A--------%7C%20%3A------%3A%20%7C%0A%7C%20%u5251%u6865%20%20%20%20%09%7C%20%20%20MPhil%24%5E1%24%20in%20Advanced%20Computer%20Science%20%7C%20%20Con%20Offer%20%20%7C%0A%7C%20%u5251%u6865%20%20%20%20%09%7C%20%20%20MPhil%20in%20MLSaLT%24%5E2%24%20%7C%20%20Rejected%20%20%7C%0A%7C%20%u725B%u6D25%20%20%20%20%09%7C%20%20%20MSc%20in%20Computer%20Science%20%7C%20%20Con%20Offer%20%20%7C%0A%7C%20%u5E1D%u56FD%u7406%u5DE5%20%09%7C%20%20%20MSc%20in%20Computing%20%28Machine%20Learning%29%20%7C%20%20Con%20Offer%20%20%7C%0A%7C%20UCL%20%20%20%20%09%7C%20%20%20MSc%20in%20Web%20Science%20and%20Big%20Data%20Analytics%20%7C%20%20Con%20Offer%20%20%7C%0A%7C%20%u66FC%u5F7B%u65AF%u7279%20%20%20%09%7C%20%20%20MSc%20in%20Artificial%20Intelligence%20%7C%20%20Con%20Offer%20%20%7C%0A%7C%20%u9999%u6E2F%u7406%u5DE5%20%20%20%09%7C%20%20%20MSc%20in%20Information%20Technology%20%7C%20%20%3F%3F%3F%20%20%7C%0A1%uFF1A%u5251%u6865%u8FD9%u4E2AMPhil%u7684%u8BFE%u7A0Btitle%u6BD4%u8F83%u7279%u6B8A%uFF0C%u540E%u9762%u518D%u8C08%u3002%0A2%uFF1A%u5168%u79F0%u662FMPhil%20in%20Machine%20Learning%2C%20Speech%20and%20Language%20Technology%u3002%0A%0A%23%23%u5251%u6865%0A%23%23%23%23%20%u6750%u6599%0A%u6210%u7EE9%u5355%uFF0C%u4E24%u4EFD%u63A8%u8350%u4FE1%u3002%0A%u8981%u6C42%u96C5%u601D%u56DB%u4E2A7%u7684%u82F1%u8BED%u6210%u7EE9%uFF0C%u7533%u8BF7%u7684%u65F6%u5019%u53EF%u4EE5%u6682%u4E0D%u63D0%u4F9B%uFF0C%u5230%u65F6%u5019%u62FF%u5230con%20offer%u4E4B%u540E%u8FD8%u662F%u8981%u3002%0A%u5251%u6865%u7279%u6B8A%u7684%u5730%u65B9%u662F%u4E0D%u8981CV%uFF0C%u4E5F%u4E0D%u8981PS%u3002%0A%u7533%u8BF7%u898150%u78C5%u7533%u8BF7%u8D39%uFF0C%u7533%u8BF7%u591A%u4E2A%u4E13%u4E1A%u7684%u8BDD%u6BCF%u4E2A%u90FD%u8981%u4EA4%u3002%0A%0A%23%23%23%23%20%u5173%u4E8EMPhil%0A%u5176%u4F59%u5B66%u6821%u7684%u7855%u58EB%u8BFE%u7A0B%u90FD%u662FMSc%u6216MRes%uFF0C%u4F46%u662F%u53EA%u6709%u5251%u6865%u90FD%u662F%u79F0%u4E3AMPhil%uFF0C%u6CA1%u6709MSc%u3002%u5176%u5B9EMPhil%u662F%u4E00%u4E2A%u5728%u82F1%u56FD%u4EBA%u770B%u6765%u4E0D%u592A%u597D%u770B%u7684%u5B66%u4F4D%uFF0C%u5728%u4E00%u822C%u60C5%u51B5%u4E0B%u5B83%u662F%u8BFBPhD%u5931%u8D25%u6CA1%u6709%u62FF%u5230%u535A%u58EB%u5B66%u4F4D%u540E%u62FF%u7684%u4E00%u4E2A%u5B66%u4F4D%u3002%u4ECE%u67D0%u79CD%u89D2%u5EA6%u6765%u770B%u4E5F%u53EF%u4EE5%u8BA4%u4E3A%u662F%u5B66%u8BC6%u8FBE%u5230%u4E86Master%uFF0C%u4F46%u662F%u8FD8%u672A%u5230%u535A%u58EB%u7684%u4E00%u4E2A%u5B66%u5386%u3002%0A%0A%u800C%u4E4B%u6240%u4EE5%u5251%u6865%u7684%u8BFE%u7A0B%u90FD%u51A0%u4EE5MPhil%uFF0C%u53EF%u80FD%u662F%u67D0%u79CD%u4F20%u7EDF%u5427%u3002%u4F46%u662F%u5B83%u7684MPhil%u8DDF%u522B%u7684%u5B66%u6821%u7684MSc%u4E00%u6837%u90FD%u662F%u4E00%u5E74%u5236%u7684%uFF0C%u5E94%u8BE5%u8BF4%u5C31%u662F%u5251%u6865%u7684%u6388%u8BFE%u7855%u58EB%u3002%u59D1%u4E14%u628A%u5B83%u5C31%u770B%u505A%u4E00%u4E2A%u540D%u79F0%u6BD4%u8F83%u5947%u602A%u7684MSc%u5427%u3002%0A%0A%23%23%23%23%20MPhil%20in%20Machine%20Learning%2C%20Speech%20and%20Langauge%20Technology%0A%u8FD9%u662F%u5251%u6865%u4ECA%u5E74%u65B0%u5F00%u7684%u4E13%u4E1A%uFF0C%u5C5E%u4E8EEngineering%20Dept%u3002%u5173%u4E8E%u673A%u5668%u5B66%u4E60%u5904%u7406%u8BED%u8A00%u7684%uFF0C%u4E5F%u6D89%u53CAinformation%20engineering%u3002%u5B9E%u9645%u611F%u53D7%u4E0B%u6765%u662F%u7533%u8BF7%u96BE%u5EA6%u6700%u5927%u7684%u4E00%u4E2A%u8BFE%u7A0B%u3002%0A%0A%u901A%u8FC7%u7F51%u7533%u7CFB%u7EDF%u63D0%u4EA4%u7533%u8BF7%u5373%u53EF%uFF0C%u4E4B%u540E%u6750%u6599%u901A%u8FC7%u521D%u5BA1%u7684%u8BDD%u5C31%u4F1A%u901A%u77E5%u9762%u8BD5%u3002%u9762%u8BD5%u662F%u8003%u5BDF%u5B66%u4E60%u80FD%u529B%u548C%u7814%u7A76%u80FD%u529B%u7684%uFF0C%u96BE%u5EA6%u5F88%u5927%u3002%u5927%u6982%u4F1A%u63D0%u524D%u4E00%u5468%u901A%u77E5%u9762%u8BD5%uFF0C%u901A%u77E5%u90AE%u4EF6%u91CC%u4F1A%u53D1%u4F60%u4E00%u7BC7paper%uFF0C%u7136%u540E%u8981%u6C42%u5728%u4E00%u5468%u65F6%u95F4%u5185%u8BFB%u4E86%u8FD9%u7BC7paper%u4E4B%u540E%uFF0C%u505A%u4E00%u4E2Areview%20presentation%u3002%u9700%u8981%u4F60%u505Aslides%u63D0%u524D%u53D1%u7ED9%u4ED6%uFF0C%u7136%u540E%u9762%u8BD5%u7684%u65F6%u5019%u662Fskype%u9762%u8BD5%u3002%u6709%u4E24%u4E2A%u4EBA%u4E00%u8D77%u9762%uFF0C%u4E00%u4F4DProf%uFF0C%u4E00%u4F4DDr%u3002%u4F60%u5728%u8FD9%u91CC%u8BB2%uFF0C%u4ED6%u4EEC%u5728%u90A3%u91CC%u4E5F%u8DDF%u7740%u770B%u4F60%u7684slides%uFF08%u4F60%u63D0%u793A%u4ED6%u4EEC%u7FFB%u9875%uFF09%uFF0C%u5728%u8BB2%u7684%u8FC7%u7A0B%u4E2D%u4F1A%u5411%u4F60%u95EE%u95EE%u9898%u3002%0A%0APaper%u5168%u6587%u670940%u9875%uFF0C%u4ED6%u4F1A%u544A%u8BC9%u4F60%u6709%u51E0%u4E2Asection%u4E0D%u8981%u770B%uFF0C%u518D%u53BB%u6389%u540E%u9762%u7684%u6587%u732E%uFF0C%u771F%u6B63%u8981%u770B%u7684%u5927%u6982%u572820%u9875%u3002%u5185%u5BB9%u662F%u5173%u4E8E%u7528%u7EBF%u6027%u9AD8%u65AF%u6A21%u578B%u6765%u7EDF%u4E00%u51E0%u79CD%u4E0D%u540C%u7684%u7279%u6B8A%u6A21%u578B%u3002%u6D89%u53CA%u7684%u4E1C%u897F%u5F88%u5E7F%uFF0C%u770B%u5230%u6700%u540E%u4E5F%u53EA%u662F%u61F5%u61F5%u61C2%u61C2%u3002%u56E0%u4E3A%u6211%u662F%u8EAB%u8FB9%u670B%u53CB%u91CC%u7B2C%u4E00%u4E2A%u9762%u8FD9%u4E2A%u4E13%u4E1A%u7684%uFF0C%u5728%u6CA1%u6709%u524D%u4EBA%u63A2%u8DEF%u7684%u60C5%u51B5%u4E0B%u8FD8%u5B89%u6170%u81EA%u5DF1%u4E0D%u4F1A%u95EE%u7684%u592A%u96BE%u7684%u3002%u4E8B%u5B9E%u8BC1%u660E%u5927%u9519%u7279%u9519%uFF0C%u5B9E%u9645%u9762%u7684%u65F6%u5019%u95EE%u7684%u975E%u5E38%u4E4B%u7EC6%uFF0C%u7EC6%u5230%u4F1A%u95EE%u4F60%u67D0%u4E2A%u516C%u5F0F%u5230%u53E6%u5916%u4E00%u4E2A%u516C%u5F0F%u7684%u53D8%u5F62%u662F%u600E%u4E48%u5B8C%u6210%u7684%u3002%0A%0A%u9762%u8BD5%u5927%u698230%u5206%u949F%uFF0C%u4E0A%u6765%u7B80%u5355%u786E%u8BA4%u4E00%u4E0B%u57FA%u672C%u4FE1%u606F%u5C31%u5F00%u59CB%u76F4%u63A5%u8BA9%u505Areview%u3002%u95EE%u9898%u975E%u5E38%u591A%uFF0C%u6BCF%u4E00%u5F20slide%u8BB2%u5B8C%u90FD%u8981%u53D1%u95EE%uFF0C%u5230%u6700%u540Eslides%u624D%u8BB2%u4E86%u4E00%u534A%uFF0C%u4ED6%u770B%u770B%u65F6%u95F4%u4E0D%u591F%u4E86%uFF0C%u5C31%u8BA9%u8DF3%u5230%u6700%u540E%u76F4%u63A5%u505A%u4E2Asummary%uFF0C%u6700%u540E%u95EE%u95EE%u6211%u6709%u6CA1%u6709%u95EE%u9898%uFF0C%u968F%u4FBF%u95EE%u4E86%u4E00%u4E0B%u5C31%u7ED3%u675F%u4E86%u3002%u88AB%u95EE%u5F97%u975E%u5E38%u60E8%uFF0C%u5F88%u591A%u76F4%u63A5%u8BF4%u4E0D%u4F1A%u30021%u670822%u53F7%u6536%u5230%u62D2%u4FE1%u5566%u3002%0A%0A%u5728%u8FD9%u91CC%u4E0D%u5F97%u4E0D%u63D0%u4E00%u4E0B%u5F90%u9534%u540C%u5B66%u2026%u2026%u8FDE%u7EED%u653B%u8BFB%u51E0%u5929%u4E4B%u540E%u636E%u4ED6%u8BF4%u5F7B%u5E95%u901A%u900F%uFF0C%u9762%u8BD5%u7684%u65F6%u5019%u95EE%u9898%u57FA%u672C%u90FD%u7B54%u51FA%u6765%u4E86%u3002%u9762%u8BD5%u5B8C%u7B2C%u4E8C%u5929%u5C31%u62FF%u5230offer%u4E86%uFF0C%u5BF9%u8FD9%u4E2A%u4E13%u4E1A%u6709%u5174%u8DA3%u7684%u53EF%u4EE5%u54A8%u8BE2%u4E00%u4E0B%u4ED6%u3002%0A%0A%23%23%23%23%20MPhil%20in%20Advanced%20Computer%20Science%0A%u5251%u6865Computer%20Laboratory%u7684%u8BFE%u7A0B%u3002%u8BFE%u7A0B%u63D0%u4F9B%u4E86%u5F88%u591A%u7684%u9009%u8BFE%uFF0C%u4FA7%u91CD%u4E8E%u81EA%u7136%u8BED%u8A00%u5904%u7406%u548C%u786C%u4EF6%u3002%0A%0A%u4E5F%u662F%u901A%u8FC7%u7F51%u7533%u7CFB%u7EDF%u5148%u4EA4%u7533%u8BF7%uFF0C%u4E4B%u540EACS%u7684%u8BFE%u7A0B%u6709%u4E2A%u7279%u6B8A%u7684%u5730%u65B9%u662F%uFF0C%u4EA4%u5B8C%u4EE5%u540EComputer%20Laboratory%u4F1A%u53D1%u4F60%u4E00%u4EFD%u5185%u90E8%u7684%u8C03%u67E5%u95EE%u5377%u5148%u586B%u4E00%u4E0B%u3002%u91CC%u9762%u4F1A%u95EE%u4F60%u4E00%u4E9B%u57FA%u672C%u7684%u4FE1%u606F%uFF0C%u5305%u62EC%u4E3A%u4EC0%u4E48%u9009%u8FD9%u4E2A%u8BFE%uFF0C%u6BD5%u4E1A%u4E4B%u540E%u60F3%u505A%u4EC0%u4E48%uFF0C%u4ECE%u54EA%u91CC%u4E86%u89E3%u5230%u8FD9%u4E2A%u8BFE%u7B49%uFF0C%u4E5F%u4F1A%u8BA9%u4F60%u5148%u586B%u4E00%u4E2A%u9009%u8BFE%u610F%u5411%uFF0C%u8BA9%u4ED6%u4EEC%u4E86%u89E3%u4E00%u4E0B%u4F60%u5927%u6982%u5BF9%u4EC0%u4E48%u8BFE%u6709%u5174%u8DA3%uFF0C%u4F46%u662F%u8FD9%u4E2A%u9009%u8BFE%u4E0D%u7B97%u6570%uFF0C%u6B63%u5F0F%u7684%u8981%u5230%u6691%u5047%u518D%u9009%u3002%u8FD9%u4EFD%u95EE%u5377%u540E%u9762%u6709%u4E2A%u91CD%u5934%u620F%uFF0C%u8981%u5199%u4E00%u4EFD500%u5B57%u7684research%20proposal%u3002%0A%0A%u8FD9%u4EFD%u95EE%u5377%u8981%u7684proposal%u5927%u6982%u662F%u8981%u4F60%u9009%u4E00%u4E2A%u5177%u4F53%u7684%u9886%u57DF%uFF0C%u8981%u4F60%u8BB2%u4E00%u4E0B%u4F60%u5BF9%u8FD9%u4E2A%u9886%u57DF%u7684%u8BA4%u8BC6%uFF0C%u6709%u54EA%u4E9B%u524D%u6CBF%u7814%u7A76%u95EE%u9898%u7B49%u7B49%u3002%u4E8B%u5B9E%u8BC1%u660E%uFF0C%u8FD9%u4E2Aresearch%20proposal%u662F%u5F88%u91CD%u8981%u7684%uFF0C%u5B83%u4F1A%u51B3%u5B9A%u4F60%u4E4B%u540E%u7684%u9762%u8BD5%uFF0C%u5251%u6865%u4F1A%u6839%u636E%u4F60%u8FD9%u91CC%u586B%u7684%u5185%u5BB9%uFF0C%u7ED9%u4F60%u627E%u5408%u9002%u7684%u9762%u8BD5%u5B98%u3002%u6211%u8FD9%u91CC%u5BBD%u6CDB%u5730%u5199%u4E86%u4E00%u4E0Bmachine%20learning%uFF0C%u7ED3%u679C%u4ED6%u7ED9%u6211%u627E%u7684%u9762%u8BD5%u5B98%u5C31%u662F%u8BED%u8A00%u5904%u7406%u65B9%u5411%u7684%u3002%u5F90%u9534%u540C%u5B66%u8FD9%u91CC%u5199%u7684%u662F%u786C%u4EF6%u7684%u5185%u5BB9%uFF0C%u5206%u5230%u7684%u9762%u8BD5%u5B98%u5C31%u662F%u4E00%u4E2A%u641E%u786C%u4EF6%u7684%u6559%u6388%u3002%0A%0A%u5176%u5B9E%u6211%u88AB%u5206%u4E86%u4E24%u4E2A%u9762%u8BD5%u5B98%uFF0C%u662F%u4E00%u4E2AProf%u548C%u4E00%u4E2ADr%u4E00%u8D77%u9762%u6211%u7684%uFF0C%u7535%u8BDD%u9762%u8BD5%u3002%u4E5F%u662F%u8003%u5BDF%u5B66%u4E60%u80FD%u529B%u7684%uFF0C%u63D0%u524D%u4E00%u5468%u901A%u77E5%u9762%u8BD5%uFF0C%u90AE%u4EF6%u91CC%u7ED9%u6211%u6307%u5B9A%u4E86%u4E00%u672C%u8BED%u8A00%u5904%u7406%u7684%u4E66%uFF0C%u8BA9%u6211%u770Bintroduction%u548C%u53E6%u5916%u4E00%u4E2A%u5173%u4E8E%u8BCD%u6027%u6807%u6CE8%uFF08PoS%20Tagging%uFF09%u7684Chapter%uFF0C%u8BF4%u9762%u8BD5%u7684%u65F6%u5019%u8BA8%u8BBA%u8FD9%u4EFD%u6750%u6599%u3002%u56E0%u4E3AACS%u7684%u9762%u8BD5%u662F%u5728MLSaLT%u4E4B%u540E%u4E86%uFF0C%u4E4B%u524D%u7814%u8BFB%u8FC7%u7684%u6750%u6599%u8BA9%u6211%u6709%u4E86%u4E0D%u5C11%u7684%u4E86%u89E3%uFF0C%u6240%u4EE5%u8FD9%u4E00%u4EFD%u4E1C%u897F%u770B%u8D77%u6765%u683C%u5916%u987A%u5229%uFF0C%u57FA%u672C%u90FD%u80FD%u7406%u89E3%u3002%0A%0A%u771F%u6B63%u9762%u7684%u65F6%u5019%uFF0C%u786E%u8BA4%u5B8C%u57FA%u672C%u4FE1%u606F%u540E%uFF0C%u5148%u7B80%u5355%u804A%u4E86%u4E00%u4E0B%u6211proposal%u5199%u7684%u5185%u5BB9%uFF0C%u95EE%u4E86%u51E0%u4E2A%u70ED%u8EAB%u7684%u95EE%u9898%uFF0C%u7ED3%u679C%u4ED6%u8BED%u901F%u8BB2%u592A%u5FEB%u4E86%u542C%u4E0D%u6E05%uFF0C%u4E00%u4E0A%u6765%u56DE%u7B54%u7684%u4E0D%u592A%u597D%u3002%u540E%u6765%u6211%u8BA9%u4ED6%u6162%u70B9%u8BF4%u4E4B%u540E%u624D%u597D%u70B9%u3002%u95EE%u5B8C%u4EE5%u540E%u5C31%u8BA8%u8BBA%u4E86%u6750%u6599%u7684%u4E1C%u897F%uFF0C%u57FA%u672C%u5168%u56DE%u7B54%u51FA%u6765%u4E86%uFF0C%u6709%u4E00%u4E2A%u5173%u4E8E%u52A8%u6001%u89C4%u5212%u590D%u6742%u5EA6%u7684%u95EE%u9898%u4E00%u5F00%u59CB%u7B54%u9519%u4E86%uFF0C%u5728%u4ED6%u63D0%u793A%u4EE5%u540E%u4E5F%u53CD%u5E94%u8FC7%u6765%u4E86%u3002%u95EE%u5B8C%u6750%u6599%u4E4B%u540E%u626F%u4E86%u70B9%u5176%u4ED6%u7684%u5C31%u7ED3%u675F%u4E86%u3002%0A%0A%u540E%u6765%u7B49%u7684%u4E5F%u6BD4%u8F83%u4E45%uFF0C%u672C%u6765%u4EE5%u4E3A%u5723%u8BDE%u8282%u4E4B%u524D%u4F1A%u6709%u7ED3%u679C%u7684%uFF0C%u7ED3%u679C%u4E00%u76F4%u7B49%u5230%u5723%u8BDE%u8282%u548C%u5143%u65E6%u7684%u5047%u653E%u5B8C%uFF0C%u4ED6%u4EEC%u6B63%u5F0F%u4E0A%u73ED%u7B2C%u4E00%u5929%u62FF%u5230con%20offer%uFF0Ccondition%u662F%u4E00%u7B49%u5B66%u4F4D%u3002%0A%0A%u503C%u5F97%u6CE8%u610F%u7684%u662F%uFF0CACS%u7684%u9762%u8BD5%u5F62%u5F0F%u4E0D%u662F%u6BCF%u4E2A%u4EBA%u90FD%u4E00%u6837%u7684%uFF0C%u4F1A%u9488%u5BF9%u4F60%u5199%u7684proposal%u7ED9%u4F60%u505A%u5177%u4F53%u5B89%u6392%u3002%u6211%u8FD9%u79CD%u63D0%u524D%u4E00%u5468%u62FF%u5230%u6750%u6599%u51C6%u5907%uFF0C%u7136%u540E%u8BA8%u8BBA%u6750%u6599%u7684%u5F62%u5F0F%u8FD8%u662F%u633A%u597D%u7684%uFF0C%u53EF%u4EE5%u505A%u5145%u5206%u51C6%u5907%u3002%u5F90%u9534%u540C%u5B66%u9762ACS%u5C31%u6BD4%u8F83%u60E8%uFF0C%u53EA%u63D0%u524D%u4E24%u5929%u901A%u77E5%u9762%u8BD5%uFF0C%u867D%u7136%u53EA%u6709%u4E00%u4E2A%u4EBA%u9762%u4F46%u662F%u6CA1%u6709%u6750%u6599%u3002%u9762%u8BD5%u8BA8%u8BBA%u7684%u65F6%u5019%u636E%u8BF4%u9762%u8BD5%u5B98%u60F3%u5230%u54EA%u91CC%u5C31%u95EE%u5230%u54EA%u91CC%uFF0C%u95EE%u7684%u4E1C%u897F%u5168%u90FD%u6CA1%u5B66%u8FC7%uFF0C%u9762%u5B8C%u8FC7%u4E86%u5723%u8BDE%u8282%u88AB%u62D2%u4E86%u3002%u6240%u4EE5%u586B%u5199%u90A3%u4E2Aproposal%u7684%u65F6%u5019%u8981%u8C28%u614E%u3002%0A%0A%23%23%u725B%u6D25%0A%23%23%23%23%20MSc%20in%20Computer%20Science%0A%0A%23%23%23%23%20%u6750%u6599%0A%u6210%u7EE9%u5355%uFF0C%u4E09%u4EFD%u63A8%u8350%u4FE1%uFF0C%u8981CV%uFF0C%u4E5F%u8981personal%20statement%u3002%0A%u8BED%u8A00%u6210%u7EE9%u8981%u6C42%u548C%u5251%u6865%u4E00%u6837%uFF0C%u56DB%u4E2A7%uFF0C%u7533%u8BF7%u7684%u65F6%u5019%u53EF%u4EE5%u4E0D%u7528%u4EA4%u3002%u62FF%u5230offer%u4E4B%u540E%u542C%u8BF4%u53EF%u4EE5argue%u6389%uFF0C%u5177%u4F53%u4E0D%u6E05%u695A%u662F%u4E0D%u662F%u771F%u7684%u53EF%u4EE5%u3002%0A%u6CE8%u610F%u725B%u6D25%u8981%u591A%u4EA4%u4E00%u4EFD%u63A8%u8350%u4FE1%u7684%u3002%0A%u7533%u8BF7%u4E5F%u898150%u78C5%u7533%u8BF7%u8D39%u3002%0A%0A%23%23%23%23%20%u7B14%u8BD5%0A%u725B%u6D25%u6BD4%u5251%u6865%u591A%u4E00%u4E2A%u7B14%u8BD5%uFF0C%u4EA4%u5B8C%u6750%u6599%u5927%u6982%u8FC7%u4E24%u5468%u6709%u90AE%u4EF6%u901A%u77E5%uFF0C%u90AE%u4EF6%u91CC%u9762%u9644%u4E86%u7B14%u8BD5%u9898%uFF0C%u8BA948%u5C0F%u65F6%u5185%u505A%u5B8C%u53D1%u7ED9%u4ED6%u3002%u4E00%u5171%u56DB%u4E2A%u9898%u76EE%uFF0C%u7B2C%u4E00%u9898%u662F%u8BA9%u5199%u4E00%u4E0B%u81EA%u5DF1%u5728CS%u548C%u6570%u5B66%u65B9%u9762%u7684%u80CC%u666F%u77E5%u8BC6%uFF0C%u771F%u6B63%u7684%u95EE%u9898%u53EA%u6709%u540E%u4E09%u9898%u3002%u7B2C%u4E8C%u9898%u662F%u4E00%u9053%u6982%u7387%u9898%uFF0C%u7B2C%u4E09%u9898%u662F%u4E00%u9053%u4F2A%u4EE3%u7801%u7A0B%u5E8F%u8BBE%u8BA1%u9898%uFF0C%u7B2C%u56DB%u9898%u662F%u7ED9%u4E86%u4E00%u4E2A%u9012%u5F52%u7684%u7A0B%u5E8F%uFF0C%u8BA9%u505A%u4E00%u4E9B%u5206%u6790%u3002%0A%0A%u725B%u6D25%u7684%u7B14%u8BD5%u9898%u660E%u663E%u504F%u6570%u5B66%uFF0C%u636E%u8BF4%u5386%u5E74%u7684%u7B14%u8BD5%u9762%u8BD5%u90FD%u949F%u7231%u6982%u7387%u9898%u3002%u9898%u76EE%u6574%u4F53%u96BE%u5EA6%u4E0D%u7B97%u7279%u522B%u5927%uFF0C%u57FA%u672C%u4E0A%u4E00%u4E2A%u665A%u4E0A%u80FD%u5F04%u51FA%u5927%u6982%u601D%u8DEF%uFF0C%u53EA%u662F%u5199%u7B54%u6848%u7684%u65F6%u5019%u5C3D%u91CF%u8981%u5199%u7684%u4E25%u8C28%u5168%u9762%u4E00%u70B9%u3002%0A%0A%u5173%u4E8E%u725B%u6D25%u6709%u4E2A%u4E0D%u5F97%u4E0D%u63D0%u7684%u95EE%u9898%u662F%uFF0C%u5B9E%u9645%u7533%u8BF7%u5B8C%u540E%uFF0C%u6211%u4EEC%u90FD%u611F%u89C9%u5230%u6709%u4E25%u91CD%u7684%u63A7%u5236%u4EBA%u6570%u7684%u73B0%u8C61%u3002%u4EE5%u6211%u548C%u5F90%u9534%u4E3A%u4F8B%uFF0C%u80CC%u666F%u76F8%u5DEE%u65E0%u51E0%uFF0C%u5206%u6570%u51E0%u4E4E%u4E00%u6837%uFF0C%u800C%u4E14%u7B14%u8BD5%u9898%u7684%u89E3%u7B54%u601D%u8DEF%u4E5F%u662F%u5DEE%u4E0D%u591A%u7684%uFF0C%u5728%u8FD9%u79CD%u60C5%u51B5%u4E0B%uFF0C%u4ED6%u4EA4%u5B8C%u7B14%u8BD5%u9898%u5F88%u5FEB%u5C31%u88AB%u6BEB%u65E0%u5F81%u5146%u5730%u62D2%u4E86%uFF0C%u800C%u6211%u62FF%u5230%u4E86%u63A5%u4E0B%u6765%u7684%u9762%u8BD5%u3002%u5728%u5176%u4ED6%u8BA1%u7B97%u673A%u76F8%u5173%u4E13%u4E1A%u4E5F%u51FA%u73B0%u4E86%u540C%u6837%u7684%u60C5%u51B5%uFF0C%u80CC%u666F%u76F8%u5DEE%u4E0D%u5927%uFF0C%u7B14%u8BD5%u9898%u505A%u7684%u4E5F%u57FA%u672COK%u7684%u4EBA%u91CC%uFF0C%u53EA%u6709%u4E13%u4E1A%u7684%u7B2C%u4E00%u540D%u62FF%u5230%u4E86%u9762%u8BD5%uFF0C%u540E%u9762%u7684%u4EBA%u90FD%u83AB%u540D%u5947%u5999%u88AB%u62D2%u4E86%u3002%u867D%u7136%u6CA1%u6709%u8FDB%u4E00%u6B65%u7684%u8BC1%u636E%uFF0C%u4F46%u4E0D%u5F97%u4E0D%u8BF4%u662F%u4E2A%u5947%u602A%u7684%u4E8B%u60C5%u3002%0A%0A%23%23%23%23%20%u9762%u8BD5%0A%u63D0%u524D%u4E00%u5468%u901A%u77E5%u7535%u8BDD%u9762%u8BD5%uFF0C%u662F%u4E00%u4F4DProf%u3002%u6BD4%u8F83%u5E78%u8FD0%u7684%u4E00%u4EF6%u4E8B%u60C5%u662F%uFF0C%u6211%u7684%u7533%u8BF7%u4E00%u5171%u7ECF%u53864%u6B21%u9762%u8BD56%u4F4D%u9762%u8BD5%u5B98%uFF0C%u4F3C%u4E4E%u90FD%u662F%u82F1%u56FD%u548C%u7F8E%u56FD%u4EBA%uFF0C%u56E0%u6B64%u51E0%u4E4E%u6CA1%u6709%u9047%u5230%u53E3%u97F3%u542C%u4E0D%u61C2%u7684%u95EE%u9898%u3002%0A%0A%u7535%u8BDD%u6253%u8FC7%u6765%u4EE5%u540E%u4E5F%u662F%u76F4%u63A5%u5F00%u59CB%u95EE%u3002%u7ED3%u679C%u4ED6%u4E00%u4E0A%u6765%u5C31%u628A%u7B14%u8BD5%u65F6%u7684%u7B2C%u4E8C%u9053%u6982%u7387%u9898%u91CD%u65B0%u62FF%u51FA%u6765%u8BB2%u4E86%u4E00%u904D%uFF0C%u4ED6%u8BF4%u6211%u5199%u7684%u89E3%u7B54%u601D%u8DEF%u662F%u6B63%u786E%u7684%uFF0C%u4F46%u662F%u6709%u53E6%u5916%u4E00%u79CD%u4E0D%u540C%u7684%u601D%u8DEF%uFF0C%u60F3%u548C%u6211%u63A2%u8BA8%u4E00%u4E0B%u3002%u7ED3%u679C%u4ED6%u4E00%u4E0A%u6765%u95EE%u4E86%u51E0%u4E2A%u5F15%u5BFC%u6027%u7684%u95EE%u9898%uFF0C%u6211%u7ADF%u7136%u90FD%u6123%u5728%u90A3%u91CC%u6CA1%u56DE%u7B54%u4E0A%u6765%uFF0C%u4E2D%u95F4%u505C%u987F%u7684%u7A7A%u767D%u6700%u957F%u7684%u6709%u5DEE%u4E0D%u591A30%u79D2%u4E4B%u4E45%u2026%u2026%u540E%u6765%u4ED6%u4E00%u6B65%u4E00%u6B65%u4ECE%u524D%u9762%u5F88%u57FA%u672C%u7684%u60C5%u51B5%u91CD%u65B0%u95EE%u6211%uFF0C%u6211%u624D%u5F88%u8270%u96BE%u7684%u7B54%u4E0A%u6765%u4E86%u3002%u5176%u5B9E%u8FD9%u4E2A%u65F6%u5019%u611F%u89C9%u662F%u4E0D%u592A%u5999%u7684%uFF0C%u56E0%u4E3A%u5DF2%u7ECF%u82B1%u8D39%u4E86%u5F88%u957F%u65F6%u95F4%u4E86%uFF0C%u800C%u4E14%u51E0%u4E4E%u90FD%u662F%u4ED6%u5728%u8BF4%u6211%u5728%u8DDF%u3002%u66F4%u52A0%u5947%u602A%u7684%u4E00%u70B9%u662F%uFF0C%u6211%u540E%u6765%u624D%u610F%u8BC6%u5230%u8FD9%u4E2A%u89E3%u7B54%u601D%u8DEF%u5C31%u662F%u5F90%u9534%u7B14%u8BD5%u65F6%u505A%u7684%uFF0C%u4F46%u5F90%u9534%u8FD8%u662F%u88AB%u62D2%u4E86%uFF0C%u5F88%u65E0%u8BED%u3002%0A%0A%u95EE%u5B8C%u90A3%u9053%u6982%u7387%u9898%u4E4B%u540E%uFF0C%u4ED6%u5C31%u95EE%u8D77%u4E86%u6211%u7684%u6210%u7EE9%u5355%u4E0A%u5217%u7684%u8BFE%u7A0B%uFF0C%u6311%u7740%u611F%u5174%u8DA3%u7684%u95EE%u4E86%u4E9B%u5F88%u57FA%u7840%u7684%u4E1C%u897F%u3002%u5927%u6982%u6709%u4E0B%u9762%u8FD9%u4E9B%uFF1A%0A%u770B%u5230%u6211%u5B66%u4E86game%20theory%uFF0C%u5C31%u95EE%u95EE%u6211%u7EB3%u4EC0%u5747%u8861%u7684%u5B9A%u4E49%uFF0C%u7136%u540E%u95EE%u6211%u4E00%u4E2A%u535A%u5F08%u662F%u5426%u53EF%u4EE5%u6709%u591A%u4E2A%u7EB3%u4EC0%u5747%u8861%uFF0C%u6211%u8BF4%u5F53%u7136%u53EF%u4EE5%uFF0C%u4ED6%u8BF4%u5BF9%uFF0C%u8BA9%u6211%u4E3E%u4E2A%u6709%u4E24%u4E2A%u5747%u8861%u70B9%u7684%u535A%u5F08%u3002%u7ED3%u679C%u6211%u8BF4%u4E86%u56DA%u5F92%u56F0%u5883%uFF01%u90A3%u6BB5%u65F6%u95F4%u4E3A%u4E86%u9762%u8BD5%uFF0C%u535A%u5F08%u8BBA%u5F88%u4E45%u6CA1%u53BB%u4E0A%u4E86%u4E5F%u6CA1%u78B0%u8FC7%u4E86%u2026%u2026%u5176%u5B9E%u56DA%u5F92%u56F0%u5883%u53EA%u6709%u4E00%u4E2A%uFF0C%u4F46%u662F%u4ED6%u5F88%u83AB%u540D%u5176%u5999%u8BF4%u4E86that%27s%20right%u2026%u2026%u4E3A%u4E86%u8FD9%u4E2A%u4E8B%u88AB%u5F90%u9534%u9ED1%u4E86%u5F88%u4E45%uFF0C%u5475%u5475%u3002%0A%u770B%u5230%u6211%u6709%u5B66%u7EBF%u6027%u4EE3%u6570%uFF0C%u5C31%u95EE%u4E86%u6211%u7279%u5F81%u503C%u548C%u7279%u5F81%u5411%u91CF%u7684%u4F5C%u7528%u3002%0A%u7136%u540E%u4ED6%u770B%u5230%u4E86%u4E24%u95E8%u60F3%u95EE%u7684%u8BFE%uFF0C%u7ED3%u679C%u90FD%u662F%u6211%u4E0B%u5B66%u671F%u7684%u8BFE%uFF0C%u6CA1%u95EE%u6210%u597D%u50CF%u6709%u70B9%u626B%u5174%u3002%u7136%u540E%u4ED6%u770B%u5230%u6211%u8BFE%u7A0B%u91CC%u6CA1%u6709%u7B97%u6CD5%u8BFE%uFF0C%u5C31%u95EE%u6211%u662F%u4E0D%u662F%u6CA1%u5B66%u8FC7%u7B97%u6CD5%uFF08%u4E0D%u5F97%u4E0D%u5410%u69FD%u4E00%u4E0BCST%u548CCSEE%u6CA1%u6709%u7B97%u6CD5%u8BFE%u662F%u5F88%u4EE4%u4EBA%u65E0%u8BED%u7684%u4E8B%uFF09%u3002%u6211%u8DDF%u4ED6%u8BF4%u6211%u5B66%u6821%u8BFE%u7A0B%u6CA1%u6709%u6B63%u5F0F%u8BB2%u8FC7%u7B97%u6CD5%uFF0C%u4F46%u662F%u6211%u6709%u81EA%u5B66%u8FC7%uFF0C%u4ED6%u5C31%u8BA9%u6211%u5217%u4E3E%u4E00%u4E0B%u6211%u77E5%u9053%u7684%u7B97%u6CD5%u3002%u8FD9%u4E2A%u65F6%u5019%u6211%u4E5F%u4E0D%u6562%u8BB2%u592A%u96BE%u7684%u4E86%uFF0C%u8DDF%u4ED6%u5217%u4E3E%u4E86%u4E00%u4E9B%u57FA%u672C%u6392%u5E8F%u7B97%u6CD5%uFF0C%u4ED6%u8C8C%u4F3C%u90FD%u4E0D%u662F%u5F88%u611F%u5174%u8DA3%uFF0C%u6211%u53C8%u8865%u5145%u8BF4%u4E86%u4E8C%u53C9%u6811%u548C%u7EA2%u9ED1%u6811%uFF0C%u4ED6%u7EC8%u4E8E%u7A0D%u5FAE%u6709%u70B9%u5174%u8DA3%u7684%u8BA9%u6211%u8BF4%u4E00%u4E0B%u7EA2%u9ED1%u6811%u7684%u76EE%u7684%u548C%u539F%u7406%u3002%u6211%u8BF4%u5B8C%u4E4B%u540E%uFF0C%u4ED6%u63A5%u7740%u95EE%u4E86%u4E00%u4E2A%u59CB%u6599%u672A%u53CA%u7684%u95EE%u9898%uFF1An%u4E2A%u7ED3%u70B9%u7684%u6EE1%u4E8C%u53C9%u6811%u7684%u9AD8%u5EA6%u662F%u591A%u5C11%uFF01%u4E5F%u662F%u65E0%u529B%u5410%u69FD%u4E86%uFF0C%u7B54%u5B8C%u5C31%u7ED3%u675F%u4E86%u3002%0A%0A%u603B%u7ED3%u4E00%u4E0B%u5C31%u662F%u725B%u6D25%u7684%u9762%u8BD5%u51FA%u4E4E%u610F%u6599%u7684%u7B80%u5355%u3002%u60F3%u8D77%u4E4B%u524D%u770B%u5230%u4E0A%u4E00%u5C4A%u8463%u5929%u4F1F%u5B66%u957F%u603B%u7ED3%u7684%u725B%u6D25%u9762%u8BD5%u95EE%u9898%uFF0C%u96BE%u5EA6%u5B8C%u5168%u4E0D%u662F%u4E00%u4E2A%u5C42%u6B21%u7684%u3002%u9690%u7EA6%u7ED9%u6211%u4E00%u79CD%uFF1A%u201C%u7B97%u4E86%u53CD%u6B63%u4F60%u4EEC%u4E13%u4E1A%u5176%u4ED6%u4EBA%u90FD%u62D2%u5B8C%u4E86%uFF0C%u968F%u4FBF%u95EE%u4E00%u4E0B%u4F60%u5C31%u7ED9%u4F60offer%u5427%u201D%u7684%u611F%u89C9%u3002%0A%0A%u53E6%u5916%u5982%u679C%u6709%u897F%u6D66CST%u548C%u5229%u7269%u6D66CSEE%u7684%u540C%u5B66%u770B%u5230%u8FD9%u91CC%uFF0C%u6211%u60F3%u8BF4%u4F5C%u4E3A%u8BA1%u7B97%u673A%u7684%u5B66%u751F%u4E0D%u5B66%u7B97%u6CD5%u662F%u975E%u5E38%u975E%u5E38%u9057%u61BE%u7684%u4E8B%u60C5%u3002%u5B66%u6821%u867D%u7136%u6CA1%u6709%u8BA9%u6211%u4EEC%u4E0A%u7B97%u6CD5%u8BFE%uFF0C%u4F46%u662F%u6211%u4EEC%u5B8C%u5168%u53EF%u4EE5%u81EA%u5B66%u4E00%u4E0B%u3002%u725B%u6D25%u7684%u9762%u8BD5%u867D%u7136%u662F%u5F88%u7B80%u5355%u7684%u7B97%u6CD5%u95EE%u9898%uFF0C%u4F46%u662F%u4E00%u70B9%u6CA1%u5B66%u8FC7%u7684%u8BDD%u4E5F%u662F%u4E0D%u884C%u7684%u3002%u5251%u6865ACS%u7684%u9762%u8BD5%u4E5F%u7740%u91CD%u95EE%u4E86%u4E00%u4E2A%u52A8%u6001%u89C4%u5212%u7B97%u6CD5%u3002%u5373%u4F7F%u4E0D%u4EE5%u9762%u8BD5%u4E3A%u76EE%u7684%uFF0C%u5B66%u4E00%u4E0B%u7B97%u6CD5%u7EC8%u7A76%u662F%u9700%u8981%u7684%u3002%0A%0A%23%23%u5E1D%u56FD%u7406%u5DE5%0A%23%23%23%23%20MSc%20in%20Computing%20%28Machine%20Learning%29%0A%23%23%23%23%20%u6750%u6599%0A%u6210%u7EE9%u5355%uFF0C%u4E24%u4EFD%u63A8%u8350%u4FE1%uFF0C%u8981CV%uFF0C%u4E5F%u8981personal%20statement%uFF0C%u8BED%u8A00%u6210%u7EE9%u4F3C%u4E4E%u53EF%u4EE5argue%u6389%uFF0C%u5177%u4F53%u6211%u4E0D%u6E05%u695A%u3002%0A%u7406%u5DE5%u79D1%u4E0D%u7528%u7533%u8BF7%u8D39%uFF0C%u5546%u5B66%u9662%u542C%u8BF4%u8981%u7533%u8BF7%u8D39%u3002%0A%u4F46%u662F%u53D6%u5F97Con%20offer%u540E%uFF0C%u8981%u4EA410%25%u7684%u5B66%u8D39%u4F5C%u4E3A%u62BC%u91D1%u3002%0A%0A%23%23%23%23%20%u7533%u8BF7%u4E0E%u9762%u8BD5%0A%u5E1D%u56FD%u7406%u5DE5%u7684%u6D41%u7A0B%u76F8%u5BF9%u7B80%u5355%u591A%u4E86%uFF0C%u96BE%u5EA6%u4E5F%u5F88%u5C0F%uFF0C%u5206%u6570%u591F%u57FA%u672C%u5C31%u884C%u4E86%u3002%u5927%u5BB6%u7533%u8BF7%u7684%u65F6%u5019%u8981%u6CE8%u610F%uFF0CMSc%20in%20Computing%20Science%u662F%u7ED9%u672C%u79D1%u975E%u8BA1%u7B97%u673A%u4E13%u4E1A%u7684%u540C%u5B66%u51C6%u5907%u7684%u3002%u6BD4%u8F83%u60B2%u50AC%u7684%u65F6%u5019%uFF0C%u4E00%u4F4D%u7535%u6C14%u4E13%u4E1A%u7684%u540C%u5B66%u7533%u4E86%u5176%u5B83%u7684%u7EC6%u5206%u8BFE%u7A0B%u4E4B%u540E%uFF0C%u9762%u8BD5%u7684%u65F6%u5019%u9762%u8BD5%u5B98%u89C9%u5F97%u4ED6%u7F3A%u80CC%u666F%uFF0C%u5C31%u628A%u4ED6%u8C03%u5230%u8FD9%u4E2A%u4E13%u4E1A%u6765%u4E86%uFF0C%u4EE4%u4ED6%u6709%u70B9%u65E0%u8BED%u3002%0A%0A%u7533%u8BF7%u5B8C%u4E4B%u540E%u5927%u6982%u8FC7%u4E00%u4E24%u4E2A%u793C%u62DC%u901A%u77E5%u9762%u8BD5%u3002%u5E1D%u56FD%u7406%u5DE5%u7684%u9762%u8BD5%u6709%u4E2A%u4E0D%u597D%uFF0C%u5C31%u662F%u4E00%u5B9A%u8981%u4F60%u53BB%u4F26%u6566%u73B0%u573A%u9762%u3002%u6211%u5F53%u65F6%u8FD8%u7279%u5730%u53D1%u90AE%u4EF6%u95EE%u4E86%u80FD%u4E0D%u80FDskype%u6216%u8005%u7535%u9762%uFF0C%u7ED3%u679C%u88AB%u544A%u77E5%u4E0D%u884C%uFF0C%u4E00%u5B9A%u8981%u8FC7%u53BB%u9762%u3002%0A%0A%u5E1D%u56FD%u7406%u5DE5%u7684%u9762%u8BD5%u662F%u975E%u5B66%u672F%u9762%uFF0C%u6BEB%u65E0%u96BE%u5EA6%u53EF%u8A00%uFF0C%u57FA%u672C%u80FD%u53EB%u8FC7%u53BB%u9762%u8BD5%u7684%u5C31%u662F%u786E%u5B9A%u4F1A%u7ED9offer%u7684%u4E86%u3002%u6574%u4E2A%u9762%u8BD5%u65F6%u95F4%u572830%u5206%u949F%u5DE6%u53F3%uFF0C%u5927%u6982%u662F%u5148%u8FC7%u4E86%u4E00%u904D%u6210%u7EE9%u5355%u4E0A%u7684%u8BFE%u7A0B%uFF0C%u4F46%u662F%u4E0D%u4F1A%u50CF%u725B%u6D25%u4E00%u6837%u51FA%u5177%u4F53%u7684%u95EE%u9898%u8BA9%u4F60%u56DE%u7B54%uFF0C%u800C%u53EA%u662F%u95EE%u4F60%u5927%u6982%u5B66%u4E86%u4E9B%u4EC0%u4E48%uFF0C%u9664%u4E86%u8FD9%u4E2A%u4EE5%u5916CV%u548CPS%u90FD%u6CA1%u7BA1%u3002%u6574%u4E2A%u9762%u8BD5%u540E%u9762%u534A%u7A0B%u57FA%u672C%u662F%u4ED6%u5728%u8BB2%u6211%u5728%u542C%uFF0C%u7ED9%u6211%u4ECB%u7ECD%u8BFE%u7A0B%u7684%u7ED3%u6784%uFF0C%u6CE8%u610F%u4E8B%u9879%uFF0C%u8FD8%u6709%u5B66%u8D39%u7B49%u7B49%u2026%u2026%u9762%u5B8C%u5F53%u573A%u5C31%u8DDF%u6211%u8BF4%u8FC7%u51E0%u5929%u7ED9%u6211%u6B63%u5F0F%u7684offer%u3002%u6709%u4E86%u5E1D%u56FD%u7406%u5DE5%u7684%u4FDD%u5E95%u4E4B%u540E%u518D%u53BB%u9762%u5251%u6865%u548C%u725B%u6D25%u7684%uFF0C%u538B%u529B%u8981%u5C11%u7684%u591A%u3002%0A%0A%u503C%u5F97%u6CE8%u610F%u7684%u662F%uFF0C%u4ECA%u5E74%u5E1D%u56FD%u7406%u5DE5%u7684power%u4E13%u4E1A%u662F%u6709%u5B66%u672F%u9762%u7684%uFF0C%u662F%u5728%u7EBFskype%u9762%u8BD5%uFF0C%u636E%u8BF4%u6709%u4E00%u5B9A%u96BE%u5EA6%u3002%u522B%u7684%u4E13%u4E1A%u90FD%u6CA1%u542C%u8BF4%u5B66%u672F%u9762%u3002%u53E6%u5916%u5927%u5BB6%u6CE8%u610F%uFF0C%u4E0B%u4E86%u6B63%u5F0Foffer%u4E4B%u540E%uFF0C%u670928%u5929%u8003%u8651%u65F6%u95F4%uFF0C%u9700%u8981%u51B3%u5B9Aaccept%u6216%u8005decline%u3002%u63A5%u53D7%u4E86%u4E4B%u540E%u4F1A%u901A%u77E5%u4EA410%25%u7684%u5B66%u8D39%u4F5C%u4E3A%u4FDD%u8BC1%u91D1%uFF0C%u5927%u6982%u57282600%u78C5%u5DE6%u53F3%u7684%u6837%u5B50%uFF0C%u6709%u989D%u5916%u768428%u5929%u65F6%u95F4%u6765%u4EA4%u4FDD%u8BC1%u91D1%u3002%u5982%u679C%u9762%u5B8C%u5E1D%u56FD%u7406%u5DE5%u4E4B%u540E%u51C6%u5907%u7533%u725B%u5251%u7684%u8BDD%uFF0C%u63A7%u5236%u597D%u65F6%u95F4%u3002%0A%0A%u8BF4%u5230%u7533%u8BF7%u65F6%u95F4%u8282%u70B9%u7684%u63A7%u5236%u95EE%u9898%uFF0C%u6700%u597D%u8FD8%u662F%u81EA%u5DF1%u8003%u8651%u4E00%u4E0B%u3002%u6211%u5927%u6982%u662F11%u6708%u7B2C%u4E00%u5468%u4EA4%u4E86%u5E1D%u56FD%u7406%u5DE5%u7684%uFF0C%u7B2C%u4E8C%u5468%u4EA4%u4E86%u725B%u6D25%u7684cs%u548C%u5251%u6865%u7684acs%uFF0Cmlsalt%u3002%u540E%u6765%u8BC1%u660E%u8FD9%u662F%u975E%u5E38%u4E0D%u597D%u7684%u9009%u62E9%uFF01%u540E%u6765%u7684%u9762%u8BD5%u5168%u6324%u5230%u4E00%u8D77%u4E86%uFF0C12%u6708%u7B2C%u4E00%u5468%u7684%u65F6%u5019%u5468%u4E8C%u53BB%u4F26%u6566%u9762%u5E1D%u56FD%uFF0C%u665A%u4E0A%u624D%u56DE%u6765%uFF0C%u9694%u5929%u5468%u4E09%u5C31%u9762%u5251%u6865%u7684mlsalt%uFF0C%u538B%u529B%u5F88%u5927%u3002%u7ED3%u679C%u521A%u9694%u4E86%u4E00%u5468%uFF0C%u725B%u6D25%u7684cs%u548C%u5251%u6865%u7684acs%u7684%u9762%u8BD5%u53C8%u662F%u4E00%u8D77%u6765%u7684%uFF0C%u9762%u5B8C%u5251%u6865%u7B2C%u4E8C%u5929%u53C8%u9762%u725B%u6D25%uFF0C%u90A3%u4E00%u5468%u8FD8%u6B63%u597D%u51D1%u4E0AC++%u4E00%u4E2Addl%u548CFYP%u7684%u4E2D%u671F%u62A5%u544A%uFF0C%u7B80%u76F4%u662F%u4EBA%u751F%u6700%u5FD9%u4E00%u5468%u2026%u2026%0A%0A%23%23%u5176%u4ED6%0A%u5269%u4E0B%u7684%u5C31%u7B80%u7565%u8BF4%u4E00%u4E0B%u4E86%uFF0C%u56E0%u4E3A%u90FD%u4E0D%u9700%u8981%u9762%u8BD5%uFF0C%u7533%u8BF7%u6D41%u7A0B%u5F88%u7B80%u5355%uFF0C%u63D0%u4EA4%u5B8C%u7533%u8BF7%u5C31%u8DDF%u4F60%u6CA1%u5173%u7CFB%u4E86%u3002%u5982%u679C%u7F3A%u6750%u6599%u6216%u8005%u6709%u4EC0%u4E48%u95EE%u9898%uFF0C%u4ED6%u4EEC%u90FD%u4F1A%u90AE%u4EF6%u8054%u7CFB%u4F60%u7684%uFF0C%u6309%u8981%u6C42%u505A%u5C31%u884C%u4E86%u3002%u7533%u8BF7%u4E5F%u6CA1%u4EC0%u4E48%u96BE%u5EA6%uFF0C%u5206%u6570%u591F%u5C31%u884C%uFF0C%u6750%u6599%u57FA%u672C%u90FD%u662F2%u4EFD%u63A8%u8350%u4FE1%uFF0CPS%uFF0CCV%uFF0C%u6210%u7EE9%u5355%uFF0C%u8BED%u8A00%u6210%u7EE9%u53EF%u4EE5%u4E0D%u8981%u3002%0A%0A**UCL**%0AUCL%u7684MSc%20in%20Web%20Science%20and%20Big%20Data%20Analytics%u4E13%u4E1A%u8BFE%u7A0B%u8BBE%u7F6E%u770B%u7740%u8FD8%u633A%u4E0D%u9519%u7684%uFF0C%u5B66%u7684%u4E1C%u897F%u597D%u50CF%u4E5F%u5F88%u5B9E%u7528%uFF0C%u611F%u5174%u8DA3%u7684%u540C%u5B66%u53EF%u4EE5%u7559%u610F%u4E00%u4E0B%uFF0C%u8981%u4EA450%u78C5%u7533%u8BF7%u8D39%u7684%u3002UCL%u4EA4%u4E86%u4EE5%u540E%u5F88%u4E45%u90FD%u6CA1%u6709%u52A8%u9759%uFF0C%u4F3C%u4E4E%u5BA1%u6838%u5F00%u59CB%u7684%u5F88%u665A%u3002%u6211%u5927%u698210%u6708%u4E2D%u4E0B%u65EC%u4EA4%u4E86%u7533%u8BF7%uFF0C%u4E00%u76F4%u4E00%u76F4%u6CA1%u52A8%u9759%uFF0C%u523012%u670823%u53F7%uFF0C%u5723%u8BDE%u8282%u524D%u82F1%u56FD%u4EBA%u5DE5%u4F5C%u7684%u6700%u540E%u4E00%u5929%uFF0C%u624D%u53D1%u73B0%u7CFB%u7EDF%u7684%u72B6%u6001%u6084%u6084%u88AB%u66F4%u65B0%u4E86%uFF0C%u8FD9%u624D%u770B%u5230%u4E86offer%u3002%0A%0A**%u66FC%u5F7B%u65AF%u7279**%0A%u66FC%u5927%u4E0D%u8981%u7533%u8BF7%u8D39%u7684%uFF0C%u6750%u6599%u9F50%u5C31%u76F4%u63A5%u7533%u5427%u3002%u7535%u6C14%u7684%u6709%u51E0%u4E2A%u4E13%u4E1A%u542C%u8BF4%u53D1offer%u5F88%u6C34%u5F88%u6C34%uFF0C%u6709%u7684%u8FDEPS%u8FD8%u6CA1%u4F20%u5C31%u62FF%u5230offer%u4E86%uFF0C%u6709%u7684%u63A8%u8350%u4FE1%u8FD8%u6CA1%u4E0A%u4F20%u4E5F%u62FF%u5230offer%u76F4%u63A5%u628A%u63A8%u8350%u4FE1%u52A0condition%u91CC%u4E86%u3002%u4E0D%u77E5%u9053%u662F%u4EC0%u4E48%u539F%u56E0%u5BFC%u81F4%u4E71%u8C61%u4E1B%u751F%uFF0C%u611F%u89C9%u4E0D%u662F%u5F88%u89C4%u8303%u3002%0A%0A**%u9999%u6E2F%u7406%u5DE5**%0A%u7531%u4E8E%u4E00%u4E9B%u539F%u56E0%u800C%u7533%u8BF7%u8BD5%u8BD5%u7684%uFF0C%u5E94%u8BE5%u4E0D%u4F1A%u6709%u5F88%u591A%u897F%u6D66%u7684%u5B66%u751F%u8003%u8651%u5427%u3002%u7533%u8BF7%u8981%u4EA4%u7533%u8BF7%u8D39%uFF0C%u5177%u4F53%u8BB0%u4E0D%u6E05%u4E86%uFF0C%u5927%u6982%u662F%u5C0F%u51E0%u767E%u4EBA%u6C11%u5E01%u7684%u6837%u5B50%u3002%u7ED3%u679C%u540E%u6765%u53D1%u751F%u4E86%u6BD4%u8F83%u641E%u7B11%u7684%u4E8B%u60C5%uFF0C%u53EF%u80FD%u897F%u6D66%u53BB%u7684%u4EBA%u4E0D%u591A%uFF0C%u4ED6%u4EEC%u4E0D%u77E5%u9053%u897F%u6D66%uFF0C%u4E8E%u662F%u5C31%u95EE%u4E86%u6211%u897F%u6D66%u662F%u4EC0%u4E48%uFF0C%u540E%u6765%u7ED9%u4ED6%u89E3%u91CA%u4E86%u4E00%u4E0B%u3002%u4E4B%u540E%u5F88%u4E45%u90FD%u6CA1%u52A8%u9759%uFF0C%u524D%u51E0%u5929%u7A81%u7136%u90AE%u4EF6%u544A%u8BC9%u6211%u8BF4%u7533%u8BF7%u5FEB%u622A%u6B62%u4E86%uFF0C%u6211%u8FD8%u7F3A%u6750%u6599%u6CA1%u4EA4%uFF0C%u4F46%u662F%u6211%u4E0A%u53BB%u53CD%u590D%u68C0%u67E5%uFF0C%u90FD%u6CA1%u53D1%u73B0%u7F3A%u4EC0%u4E48%u6750%u6599%uFF0C%u540E%u6765%u60F3%u628A%u7533%u8BF7withdraw%u4E86%uFF0C%u7ADF%u7136%u4E5F%u6CA1%u627E%u5230withdraw%u7684%u5730%u65B9%uFF0C%u73B0%u5728%u53EA%u80FD%u6302%u5728%u90A3%u513F%u4E0D%u4E86%u4E86%u4E4B%u4E86%u3002</center>
