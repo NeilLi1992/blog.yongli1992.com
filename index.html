@@ -28,8 +28,8 @@
     <link rel="icon" href="/img/favicon.ico">
     
     
-    <link rel="apple-touch-icon" href="/img/jacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon" href="/img/logo.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
     
     <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
@@ -53,11 +53,9 @@
 				<ul>
 					<ul>
 					 
-						<li><a href="/">Home</a></li>
+						<li><a href="/">主页</a></li>
 					
-						<li><a href="/archives">Archives</a></li>
-					
-						<li><a href="/about">About</a></li>
+						<li><a href="/archives">存档</a></li>
 					
 					<li>
  					
@@ -75,740 +73,254 @@
     <div id="container">
       <div id="main">
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/04/28/sieve_of_eratostheness/" title="爱拉托撒尼筛法：找出小于 n 的所有质数" itemprop="url">爱拉托撒尼筛法：找出小于 n 的所有质数</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
-		
-  <p class="article-time">
-    <time datetime="2015-04-27T23:10:49.000Z" itemprop="datePublished"> 發表於 2015-04-28</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>Sieve of Eratostheness，爱拉托撒尼筛法，是一种可以快速找出小于 n 的所有质数的算法。其基本思想是：</p>
-<blockquote>
-<p>给出要筛选数值的范围 n，找出<span>$\sqrt{n}$</span><!-- Has MathJax -->以内的质数 p1, p2, p3 … pk。先用 2 去筛选，即把 2 留下，把 2 的倍数全部剔除；再用下一个质数 3 去筛选，再用 5， 7… 不断重复。</p>
-</blockquote>
-<p>实际实现的时候，在用 pk 去筛选的时候，实际上只要从 $pk^2$ 开始筛选即可，因为小于 $ pk^2 $ 的已经被 pk 之前的其他质数给筛掉了。</p>
-<p>在 LeetCode 上有一题类似的，但是问的是小于 n 的所有质数的个数，也可以用这个办法来求。<br>原题链接：<a href="https://leetcode.com/problems/count-primes/" target="_blank" rel="external">Count Primes</a></p>
-<figure class="highlight python"><figcaption><span>Python代码</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="comment"># @param &#123;integer&#125;</span></span><br><span class="line">    <span class="comment"># @return &#123;integer&#125;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">countPrimes</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> n &lt; <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        isPrime = [<span class="keyword">True</span> <span class="keyword">for</span> i <span class="keyword">in</span> xrange(n)]</span><br><span class="line">        isPrime[<span class="number">0</span>] = isPrime[<span class="number">1</span>] = <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># Test all Primes less than sqrt(n)</span></span><br><span class="line">        i = <span class="number">2</span></span><br><span class="line">        <span class="keyword">while</span> i ** <span class="number">2</span> &lt; n:</span><br><span class="line">            <span class="keyword">if</span> isPrime[i]:</span><br><span class="line">                multiplier = <span class="number">0</span></span><br><span class="line">                <span class="keyword">while</span> i ** <span class="number">2</span> + i * multiplier &lt; n:</span><br><span class="line">                    isPrime[i ** <span class="number">2</span> + i * multiplier] = <span class="keyword">False</span></span><br><span class="line">                    multiplier += <span class="number">1</span></span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> sum(isPrime)</span><br></pre></td></tr></table></figure>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</div>
-
-
-  <div class="article-tags">
   
-  <span></span> <a href="/tags/leetCodeOJ/">leetCodeOJ</a><a href="/tags/算法/">算法</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/03/13/leetcode_gas_station/" title="LeetCode：加油站问题" itemprop="url">LeetCode：加油站问题</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
-		
-  <p class="article-time">
-    <time datetime="2015-03-13T11:17:55.000Z" itemprop="datePublished"> 發表於 2015-03-13</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>原题地址：<a href="https://leetcode.com/problems/gas-station/">Gas Station</a></p>
-<p>题目翻译如下：<br><blockquote><p>在环形回路上有 N 个加油站，在加油站 i 处有油 gas[i]。你现在有一辆油箱可以装无限多油的车，从加油站 i 开到加油站 i+1 耗油 cost[i]。你以空的邮箱从某一加油站出发。<br>如果从某一个加油站出发你可以绕环路走一圈，则返回该加油站的位置 i，若不存在这样的加油站，则返回 -1。<br>注：假设有唯一解</p>
-</blockquote></p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/03/13/leetcode_gas_station/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</div>
-
-
-  <div class="article-tags">
+<section class="post" itemscope itemprop="blogitem">
   
-  <span></span> <a href="/tags/algorithm/">algorithm</a><a href="/tags/leetcode/">leetcode</a><a href="/tags/python/">python</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/02/22/leetcode_unique_binary_search_tree/" title="LeetCode：唯一二叉搜索树的数量" itemprop="url">LeetCode：唯一二叉搜索树的数量</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-21T23:26:40.000Z" itemprop="datePublished"> 發表於 2015-02-22</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>翻译一道在 LeetCode 上遇到的题目的解法。<br>原题：</p>
-<pre><code>给定 n，找到存储着 <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>,..., n 的不同结构的二叉搜索树的数量。
-如：给定 n=<span class="number">3</span>，有 <span class="number">5</span> 种不同的 BST：
- <span class="number">1</span>         <span class="number">3</span>     <span class="number">3</span>      <span class="number">2</span>      <span class="number">1</span>
-  \       /     /      / \      \
-   <span class="number">3</span>     <span class="number">2</span>     <span class="number">1</span>      <span class="number">1</span>   <span class="number">3</span>      <span class="number">2</span>
-  /     /       \                 \
- <span class="number">2</span>     <span class="number">1</span>         <span class="number">2</span>                 <span class="number">3</span>
-</code></pre><p>原文地址：<a href="https://oj.leetcode.com/discuss/24282/dp-solution-in-6-lines-with-explanation-f-i-n-g-i-1-g-n-i">LeetCode Discussion</a><br>翻译：YongLi1992</p>
-<hr>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/02/22/leetcode_unique_binary_search_tree/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</div>
-
-
-  <div class="article-tags">
+    <a href="/2015/04/28/sieve_of_eratostheness/" title="爱拉托撒尼筛法：找出小于 n 的所有质数" itemprop="url">
   
-  <span></span> <a href="/tags/algorithm/">algorithm</a><a href="/tags/leetcode/">leetcode</a><a href="/tags/python/">python</a><a href="/tags/翻译/">翻译</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
+    <h1 itemprop="name">爱拉托撒尼筛法：找出小于 n 的所有质数</h1>
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
+     
+           <p itemprop="description" >Sieve of Eratostheness，爱拉托撒尼筛法，是一种可以快速找出小于 n 的所有质数的算法。其基本思想是：
+
+给出要筛选数值的范围 n，找出$\sqrt{n}$&lt;!-- Has MathJax --&gt;以内的质数 p1, p2, p3 … pk。先用 2 去筛选，即</p>
+        
     
-      <a href="/2015/02/14/python_init_py/" title="Python：__init__.py 详解" itemprop="url">Python：__init__.py 详解</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-14T01:28:08.000Z" itemprop="datePublished"> 發表於 2015-02-14</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>翻译一篇介绍 __init__.py 的好文。<br>原文地址：<a href="http://mikegrouchy.com/blog/2012/05/be-pythonic-\__init\__py.html">Be Pythnoic: __init__.py</a><br>翻译：YongLi1992</p>
-<hr>
-<h3 id="__init__-py_是什么？">__init__.py 是什么？</h3><p>__init__.py 文件的主要用处是用来初始化 Python 包（packages）的。我们以下面的一个标准 Python 模块结构来展示这一用处。</p>
-<pre><code>package/
-__init__<span class="class">.py</span>
-file<span class="class">.py</span>
-file2<span class="class">.py</span>
-file3<span class="class">.py</span>
-subpackage/
-    __init__<span class="class">.py</span>
-    submodule1<span class="class">.py</span>
-    submodule2.py
-</code></pre><p>如你所见，在上述目录结构中包含 __init__.py 文件可以告知 Python 解释器，该目录应被作为一个 Python 包来处理。</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/02/14/python_init_py/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/python/">python</a>
-</div>
+    <time datetime="2015-04-27T23:10:49.000Z" itemprop="datePublished">2015-04-28</time>
+  </a>
+</section>
 
 
-  <div class="article-tags">
+
+
+
+
   
-  <span></span> <a href="/tags/python/">python</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/02/09/whats_duck_typing/" title="什么是鸭子类型（duck typing）" itemprop="url">什么是鸭子类型（duck typing）</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-09T14:59:50.000Z" itemprop="datePublished"> 發表於 2015-02-09</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>鸭子类型是动态语言的一种设计风格。提到鸭子类型就不得不提它的名称由来：如果像鸭子一样走路，像鸭子一样呱呱叫，那它就是一只鸭子。</p>
-<p>鸭子类型本质体现的是面向接口的编程。相比之下，传统的静态OO语言如java等的多态思想，体现的是面向继承的编程。</p>
-<p>简单来说，动态语言因为运行前不需要确定变量类型，故对对象的方法调用，只要对象拥有这一名称的方法，就一定能调用成功。</p>
-<p>如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">print</span> <span class="string">"Called as A's instance"</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">print</span> <span class="string">"Called as B's instance"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">process</span><span class="params">(obj)</span>:</span></span><br><span class="line">	obj.say()</span><br><span class="line"></span><br><span class="line">a = A()</span><br><span class="line">b = B()</span><br><span class="line">process(a)</span><br><span class="line">process(b)</span><br></pre></td></tr></table></figure>
-<p>这个例子里我们看到，process处理函数要求接受到的参数对象具有一个say方法，则 a 和 b 都具有这个方法，它们都被视作合法的输入，而不关心它们具体是什么类型。</p>
-<p>而在静态语言里，必须指明参数obj的类型。即使使用多态的思想，合法的输入参数也至少要是指明的obj类型的子类型，其他的类型就算实现了 say 方法，也是无法调用的。使用反射可以做到类似的实现，但是相对欠灵活。</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/programming/">programming</a>
-</div>
-
-
-  <div class="article-tags">
+<section class="post" itemscope itemprop="blogitem">
   
-  <span></span> <a href="/tags/programming/">programming</a><a href="/tags/python/">python</a><a href="/tags/原创/">原创</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/02/08/http_status_code/" title="HTTP常见状态码" itemprop="url">HTTP常见状态码</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-08T15:06:12.000Z" itemprop="datePublished"> 發表於 2015-02-08</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>学习一下HTTP的状态码，这里记录一写常见的状态码。在<a href="http://www.daqianduan.com/4280.html" target="_blank" rel="external">这里</a>有一份详细完备的状态码列表。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">状态码</th>
-<th style="text-align:center">信息</th>
-<th style="text-align:center">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">200</td>
-<td style="text-align:center">OK</td>
-<td style="text-align:center">一切正常，响应体跟在后面</td>
-</tr>
-<tr>
-<td style="text-align:center">202</td>
-<td style="text-align:center">Accepted</td>
-<td style="text-align:center">已接受请求但处理尚未完成</td>
-</tr>
-<tr>
-<td style="text-align:center">204</td>
-<td style="text-align:center">No content</td>
-<td style="text-align:center">无新文档，浏览器可显示原来的文档</td>
-</tr>
-<tr>
-<td style="text-align:center">301</td>
-<td style="text-align:center">Moved Permanently</td>
-<td style="text-align:center">请求的文档在其他地方，新URL在Location头中给出，浏览器跳转</td>
-</tr>
-<tr>
-<td style="text-align:center">304</td>
-<td style="text-align:center">Not Modified</td>
-<td style="text-align:center">客户端对有缓存的文档发出条件请求。服务器告诉客户原来缓冲的文档仍可用</td>
-</tr>
-<tr>
-<td style="text-align:center">400</td>
-<td style="text-align:center">Bad Request</td>
-<td style="text-align:center">请求出现语法错误</td>
-</tr>
-<tr>
-<td style="text-align:center">403</td>
-<td style="text-align:center">Unauthorized</td>
-<td style="text-align:center">资源不可用。服务器理解客户端请求，但拒绝处理，通常由权限设置导致</td>
-</tr>
-<tr>
-<td style="text-align:center">404</td>
-<td style="text-align:center">Not Found</td>
-<td style="text-align:center">无法找到指定位置的资源</td>
-</tr>
-<tr>
-<td style="text-align:center">500</td>
-<td style="text-align:center">Internal Server Error</td>
-<td style="text-align:center">服务器遇到未知错误，不能完成客户的请求</td>
-</tr>
-<tr>
-<td style="text-align:center">502</td>
-<td style="text-align:center">Bad Gateway</td>
-<td style="text-align:center">服务器作为网管或者代理，为了完成请求访问下一个服务器，但该服务器返回了非法的应答</td>
-</tr>
-</tbody>
-</table>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/network/">network</a>
-</div>
-
-
-  <div class="article-tags">
+    <a href="/2015/03/13/leetcode_gas_station/" title="LeetCode：加油站问题" itemprop="url">
   
-  <span></span> <a href="/tags/http/">http</a><a href="/tags/network/">network</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
+    <h1 itemprop="name">LeetCode：加油站问题</h1>
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
+     
+       <p itemprop="description" >原题地址：Gas Station
+题目翻译如下：在环形回路上有 N 个加油站，在加油站 i 处有油 gas[i]。你现在有一辆油箱可以装无限多油的车，从加油站 i 开到加油站 i+1 耗油 cost[i]。你以空的邮箱从某一加油站出发。如果从某一个加油站出发你可以绕环路走一圈，则</p>
+      
     
-      <a href="/2015/02/08/python_scrapy_module/" title="Python爬虫模块Scrapy学习笔记" itemprop="url">Python爬虫模块Scrapy学习笔记</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-08T13:16:34.000Z" itemprop="datePublished"> 發表於 2015-02-08</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>[TOC]</p>
-<h3 id="Scrapy爬虫模块简介">Scrapy爬虫模块简介</h3><p>爬虫的主要目的是为了获取没有开放API的网站上的非结构化数据。即按照给定的规则我们平时看到的网页，并从中抽取出需要的信息。这些信息可以应用在数据挖掘，信息处理等一系列程序中。</p>
-<p>简单的爬虫设计主要是确定以下几个问题：</p>
-<ol>
-<li>指定访问的起始地址（starting_urls）。</li>
-<li>从获得的response中如何解析出我们想要的内容。</li>
-<li>在获得的response中如何发现后续要访问的地址。</li>
-<li>如何处理我们解析出的内容。</li>
-</ol>
-<p>高级爬虫应用还会涉及到许多其它的问题。</p>
-<p>Scrapy是一个主流的Python爬虫框架，设计好了爬虫应用的基本骨架结构，也为了实现不同的应用目的留下了灵活的设计余地。使用一些其它的模块，或者配合一些中间件，也可以将Scrapy扩展成为很复杂的高级爬虫程序。</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/02/08/python_scrapy_module/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/python/">python</a>
-</div>
+    <time datetime="2015-03-13T11:17:55.000Z" itemprop="datePublished">2015-03-13</time>
+  </a>
+</section>
 
 
-  <div class="article-tags">
+
+
+
+
   
-  <span></span> <a href="/tags/python/">python</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/02/03/leetcode_unique_num_in_list/" title="LeetCode：寻找列表中的唯一数字" itemprop="url">LeetCode：寻找列表中的唯一数字</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
-		
-  <p class="article-time">
-    <time datetime="2015-02-03T12:09:08.000Z" itemprop="datePublished"> 發表於 2015-02-03</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>原题地址：<a href="https://oj.leetcode.com/problems/single-number/" target="_blank" rel="external">single-number</a></p>
-<p>题目翻译如下：</p>
-<blockquote>
-<p>给定一个整数数组，其中有一个整数仅出现一次，其余每一个整数都恰好出现了两次。找出这一整数。<br>注：算法要求线性时间复杂度，不使用额外的存储空间。</p>
-</blockquote>
-<p>一个最初的想法是，利用列表的sort方法来将列表进行排序，之后遍历列表，判断已排序的列表中每一个元素的前后是否存在相同元素，若都不存在，则为我们要找的数。</p>
-<p>实际提交时，运行时间超出限制。后来想起来列表的sort方法是O(nlogn)复杂度的，故不行。</p>
-<p>在此找到一篇wiki：<a href="https://wiki.python.org/moin/TimeComplexity" target="_blank" rel="external">Time Complexity</a>，列出了CPython（即常见官方实现）中各种内置数据结构的方法的复杂度。</p>
-<p>后来从讨论区看了别人的实现，才学到可以用按位操作符XOR来实现。这里采用的主要想法是：我们可以用一个初始值为0的变量r来作记录，与列表中的每一个数都做异或运算。对于存在两次的数，做了两次异或后相互作用抵消，仍能将变量r恢复为原来的值。这样当所有数都与r做过异或运算后，r最后的值就记录了那个仅仅出现一次的数。</p>
-<p>用规范化的说法，算法可行的原因是基于异或位运算的两条基本原理：</p>
-<blockquote>
-<p>自反律：(a ⊕ b) ⊕ b = a<br>交换律：a ⊕ b ⊕ c = a ⊕ c ⊕ b</p>
-</blockquote>
-<p>第一条自反律保证了，只要两个相同的数都与r做异或，r不受影响。第二条交换律保证了这两个数不必先后紧跟着与r做运算，中间夹杂别的数先来运算也是可以的，只要在整个运算过程中这两个相同的数都算过，第一条的结果仍不受影响。</p>
-<p>代码实现如下，A是整数列表。代码非常简洁：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">singleNumber</span><span class="params">(A)</span>:</span></span><br><span class="line">        r = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> A:</span><br><span class="line">            r ^= i</span><br><span class="line">        <span class="keyword">return</span> r</span><br></pre></td></tr></table></figure></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</div>
-
-
-  <div class="article-tags">
+<section class="post" itemscope itemprop="blogitem">
   
-  <span></span> <a href="/tags/algorithm/">algorithm</a><a href="/tags/leetcode/">leetcode</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/01/28/leetcode_palindrome_partitioning/" title="LeetCode：字符串的回文划分" itemprop="url">LeetCode：字符串的回文划分</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
-		
-  <p class="article-time">
-    <time datetime="2015-01-28T00:33:41.000Z" itemprop="datePublished"> 發表於 2015-01-28</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>记录一道在LeetCode上做到的个人感觉很精彩的题目：字符串的回文划分问题。<br>原题地址：<a href="https://oj.leetcode.com/problems/palindrome-partitioning/">palindrome partitioning</a></p>
-<p>题目翻译如下：</p>
-<blockquote>
-<p>给定字符串s，对s进行分割，使得到的每一个子字符串都是回文。返回s所有可能的分割。例如：给定字符串s=”aab”，返回结果如下：</p>
-<p>[[“aa”,”b”], [“a”, “a”, “b”]]</p>
-</blockquote>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/01/28/leetcode_palindrome_partitioning/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</div>
-
-
-  <div class="article-tags">
+    <a href="/2015/02/22/leetcode_unique_binary_search_tree/" title="LeetCode：唯一二叉搜索树的数量" itemprop="url">
   
-  <span></span> <a href="/tags/algorithm/">algorithm</a><a href="/tags/leetcode/">leetcode</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
+    <h1 itemprop="name">LeetCode：唯一二叉搜索树的数量</h1>
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
+     
+       <p itemprop="description" >翻译一道在 LeetCode 上遇到的题目的解法。原题：
+给定 n，找到存储着 1, 2, 3,..., n 的不同结构的二叉搜索树的数量。
+如：给定 n=3，有 5 种不同的 BST：
+ 1         3     3      2      1
+  \       /  </p>
+      
     
-      <a href="/2015/01/27/python_timeit_module/" title="Python代码计时模块timeit学习笔记" itemprop="url">Python代码计时模块timeit学习笔记</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
-		
-  <p class="article-time">
-    <time datetime="2015-01-27T11:46:18.000Z" itemprop="datePublished"> 發表於 2015-01-27</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>timeit模块提供了一种简便的方法来为Python中的小块代码进行计时。它有三种使用方式，从命令行调用，从Python交互解释器调用，或者直接在脚本代码中进行调用。下面仅仅简略记述一下该模块在交互解释器以及脚本中的基础使用方法。</p>
-<h3 id="在Python交互解释器中的使用">在Python交互解释器中的使用</h3><p><strong> timeit函数 </strong><br>最基本的使用方法是直接调用timeit函数。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> timeit</span><br><span class="line">timeit.timeit(stmt=<span class="string">'pass'</span>, setup=<span class="string">'pass'</span>, timer=&lt;default timer&gt;, number=<span class="number">1000000</span>)</span><br></pre></td></tr></table></figure></p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/01/27/python_timeit_module/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/python/">python</a>
-</div>
+    <time datetime="2015-02-21T23:26:40.000Z" itemprop="datePublished">2015-02-22</time>
+  </a>
+</section>
 
 
-  <div class="article-tags">
+
+
+
+
   
-  <span></span> <a href="/tags/python/">python</a>
-  </div>
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/02/14/python_init_py/" title="Python：__init__.py 详解" itemprop="url">
+  
+    <h1 itemprop="name">Python：__init__.py 详解</h1>
+    
+     
+       <p itemprop="description" >翻译一篇介绍 __init__.py 的好文。原文地址：Be Pythnoic: __init__.py翻译：YongLi1992
 
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
+__init__.py 是什么？__init__.py 文件的主要用处是用来初始化 Python 包（packages）的。我们以下面的一个标准 </p>
+      
+    
+    <time datetime="2015-02-14T01:28:08.000Z" itemprop="datePublished">2015-02-14</time>
+  </a>
+</section>
 
 
 
 
 
 
-  <nav id="page-nav" class="clearfix">
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/02/09/whats_duck_typing/" title="什么是鸭子类型（duck typing）" itemprop="url">
+  
+    <h1 itemprop="name">什么是鸭子类型（duck typing）</h1>
+    
+     
+           <p itemprop="description" >鸭子类型是动态语言的一种设计风格。提到鸭子类型就不得不提它的名称由来：如果像鸭子一样走路，像鸭子一样呱呱叫，那它就是一只鸭子。
+鸭子类型本质体现的是面向接口的编程。相比之下，传统的静态OO语言如java等的多态思想，体现的是面向继承的编程。
+简单来说，动态语言因为运行前不需要确定</p>
+        
+    
+    <time datetime="2015-02-09T14:59:50.000Z" itemprop="datePublished">2015-02-09</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/02/08/http_status_code/" title="HTTP常见状态码" itemprop="url">
+  
+    <h1 itemprop="name">HTTP常见状态码</h1>
+    
+     
+           <p itemprop="description" >学习一下HTTP的状态码，这里记录一写常见的状态码。在这里有一份详细完备的状态码列表。
+
+
+
+状态码
+信息
+含义
+
+
+
+
+200
+OK
+一切正常，响应体跟在后面
+
+
+202
+Accepted
+已接受请求但处理尚未完成
+
+
+204
+No content
+无新文档，浏览器可显示原来的</p>
+        
+    
+    <time datetime="2015-02-08T15:06:12.000Z" itemprop="datePublished">2015-02-08</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/02/08/python_scrapy_module/" title="Python爬虫模块Scrapy学习笔记" itemprop="url">
+  
+    <h1 itemprop="name">Python爬虫模块Scrapy学习笔记</h1>
+    
+     
+       <p itemprop="description" >Scrapy爬虫模块简介爬虫的主要目的是为了获取没有开放API的网站上的非结构化数据。即按照给定的规则我们平时看到的网页，并从中抽取出需要的信息。这些信息可以应用在数据挖掘，信息处理等一系列程序中。
+简单的爬虫设计主要是确定以下几个问题：
+
+指定访问的起始地址（starting_</p>
+      
+    
+    <time datetime="2015-02-08T13:16:34.000Z" itemprop="datePublished">2015-02-08</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/02/03/leetcode_unique_num_in_list/" title="LeetCode：寻找列表中的唯一数字" itemprop="url">
+  
+    <h1 itemprop="name">LeetCode：寻找列表中的唯一数字</h1>
+    
+     
+           <p itemprop="description" >原题地址：single-number
+题目翻译如下：
+
+给定一个整数数组，其中有一个整数仅出现一次，其余每一个整数都恰好出现了两次。找出这一整数。注：算法要求线性时间复杂度，不使用额外的存储空间。
+
+一个最初的想法是，利用列表的sort方法来将列表进行排序，之后遍历列表，判断已排</p>
+        
+    
+    <time datetime="2015-02-03T12:09:08.000Z" itemprop="datePublished">2015-02-03</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/01/28/leetcode_palindrome_partitioning/" title="LeetCode：字符串的回文划分" itemprop="url">
+  
+    <h1 itemprop="name">LeetCode：字符串的回文划分</h1>
+    
+     
+       <p itemprop="description" >记录一道在LeetCode上做到的个人感觉很精彩的题目：字符串的回文划分问题。原题地址：palindrome partitioning
+题目翻译如下：
+
+给定字符串s，对s进行分割，使得到的每一个子字符串都是回文。返回s所有可能的分割。例如：给定字符串s=”aab”，返回结果如下</p>
+      
+    
+    <time datetime="2015-01-28T00:33:41.000Z" itemprop="datePublished">2015-01-28</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/01/27/python_timeit_module/" title="Python代码计时模块timeit学习笔记" itemprop="url">
+  
+    <h1 itemprop="name">Python代码计时模块timeit学习笔记</h1>
+    
+     
+       <p itemprop="description" >timeit模块提供了一种简便的方法来为Python中的小块代码进行计时。它有三种使用方式，从命令行调用，从Python交互解释器调用，或者直接在脚本代码中进行调用。下面仅仅简略记述一下该模块在交互解释器以及脚本中的基础使用方法。
+在Python交互解释器中的使用 timeit函</p>
+      
+    
+    <time datetime="2015-01-27T11:46:18.000Z" itemprop="datePublished">2015-01-27</time>
+  </a>
+</section>
+
+
+
+
+
+
+
+  <nav id="page-nav" class="clearfix unexpand">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
   </nav>
 
@@ -913,13 +425,13 @@ subpackage/
         
           <li>
             
-            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">// 码农圈</a>
+            	<a href="http://blog.imink.net 墨同学的博客" target="_blank" title="ink&#39;s blog">ink&#39;s blog</a>
             
           </li>
         
           <li>
             
-            	<a href="http://wuchong.me" target="_blank" title="// Jark&#39;s Blog">// Jark&#39;s Blog</a>
+            	<a href="http://eventfulkay.com 小虾米的博客" target="_blank" title="kai&#39;s blog">kai&#39;s blog</a>
             
           </li>
         
@@ -927,6 +439,19 @@ subpackage/
 </div>
 
   
+
+<div class="doubanshow">
+<p class="asidetitle">豆瓣秀</p>
+<div>
+<script type="text/javascript" src="http://www.douban.com/service/badge/44886038/?show=collection&amp;n=12&amp;columns=3&amp;hidelogo=yes&amp;hideself=yes&amp;cat=book|movie" ></script>
+</div>
+</div>
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
+</div>
 
 
   <div class="rsspart">
@@ -945,20 +470,34 @@ subpackage/
 	
 	
 	<section class="info">
-		<p> Hello ,I&#39;m Larry Page in Google. <br/>
-			This is my blog,believe it or not.</p>
+		<p> Hello, I&#39;m Yong Li, a MSc student in Oxford Uni. <br/>
+			Welcome to my blog, hope it does help to you!.</p>
 	</section>
 	 
 	<div class="social-font" class="clearfix">
 		
+		<a href="http://weibo.com/2327892814" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/NeilLi1992" target="_blank" class="icon-github" title="github"></a>
 		
 		
 		
 		
+		<a href="https://www.facebook.com/100006707769873" target="_blank" class="icon-facebook" title="facebook"></a>
+		
+		
+		<a href="https://www.linkedin.com/in/yongli1992" target="_blank" class="icon-linkedin" title="linkedin"></a>
+		
+		
+		<a href="https://www.douban.com/people/44886038" target="_blank" class="icon-douban" title="豆瓣"></a>
+		
+		
+		<a href="http://www.zhihu.com/people/li-yong-88-55" target="_blank" class="icon-zhihu" title="知乎"></a>
 		
 		
 		
-		
+		<a href="mailto:yong.li1992@foxmail.com" target="_blank" class="icon-email" title="Email Me"></a>
 		
 	</div>
 			
@@ -1026,6 +565,38 @@ $(document).ready(function(){
 
 
 
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"yongli1992"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'yongli1992';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
 
 
 
@@ -1075,15 +646,6 @@ $(document).ready(function(){
 <!-- MathJax Begin -->
 <!-- mathjax config similar to math.stackexchange -->
 
-
-<!-- MathJax End -->
-
-<!-- Tiny_search Begin -->
-
-<!-- Tiny_search End -->
-
-  <!-- mathjax config similar to math.stackexchange -->
-
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     tex2jax: {
@@ -1110,7 +672,15 @@ $(document).ready(function(){
     });
 </script>
 
-<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
-</body>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
  </html>

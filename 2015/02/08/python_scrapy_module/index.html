@@ -11,38 +11,35 @@
     
 
     
-    <meta name="description" content="[TOC]
-Scrapy爬虫模块简介爬虫的主要目的是为了获取没有开放API的网站上的非结构化数据。即按照给定的规则我们平时看到的网页，并从中抽取出需要的信息。这些信息可以应用在数据挖掘，信息处理等一系列程序中。
+    <meta name="description" content="Scrapy爬虫模块简介爬虫的主要目的是为了获取没有开放API的网站上的非结构化数据。即按照给定的规则我们平时看到的网页，并从中抽取出需要的信息。这些信息可以应用在数据挖掘，信息处理等一系列程序中。
 简单的爬虫设计主要是确定以下几个问题：
 
 指定访问的起始地址（starting_urls）。
 从获得的response中如何解析出我们想要的内容。
-在获得的response中如何发现后续要">
+在获得的response中如何发现后续要访问的地址。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python爬虫模块Scrapy学习笔记">
 <meta property="og:url" content="http://yoursite.com/2015/02/08/python_scrapy_module/index.html">
 <meta property="og:site_name" content="TechUp">
-<meta property="og:description" content="[TOC]
-Scrapy爬虫模块简介爬虫的主要目的是为了获取没有开放API的网站上的非结构化数据。即按照给定的规则我们平时看到的网页，并从中抽取出需要的信息。这些信息可以应用在数据挖掘，信息处理等一系列程序中。
+<meta property="og:description" content="Scrapy爬虫模块简介爬虫的主要目的是为了获取没有开放API的网站上的非结构化数据。即按照给定的规则我们平时看到的网页，并从中抽取出需要的信息。这些信息可以应用在数据挖掘，信息处理等一系列程序中。
 简单的爬虫设计主要是确定以下几个问题：
 
 指定访问的起始地址（starting_urls）。
 从获得的response中如何解析出我们想要的内容。
-在获得的response中如何发现后续要">
+在获得的response中如何发现后续要访问的地址。">
 <meta property="og:image" content="http://scrapy-chs.readthedocs.org/zh_CN/latest/_images/scrapy_architecture.png">
 <meta property="og:image" content="http://yoursite.com/./1422907372405.png">
 <meta property="og:image" content="http://yoursite.com/./1422907469954.png">
 <meta property="og:image" content="http://yoursite.com/./1422996462810.png">
-<meta property="og:updated_time" content="2015-08-08T00:35:48.000Z">
+<meta property="og:updated_time" content="2015-08-08T01:09:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python爬虫模块Scrapy学习笔记">
-<meta name="twitter:description" content="[TOC]
-Scrapy爬虫模块简介爬虫的主要目的是为了获取没有开放API的网站上的非结构化数据。即按照给定的规则我们平时看到的网页，并从中抽取出需要的信息。这些信息可以应用在数据挖掘，信息处理等一系列程序中。
+<meta name="twitter:description" content="Scrapy爬虫模块简介爬虫的主要目的是为了获取没有开放API的网站上的非结构化数据。即按照给定的规则我们平时看到的网页，并从中抽取出需要的信息。这些信息可以应用在数据挖掘，信息处理等一系列程序中。
 简单的爬虫设计主要是确定以下几个问题：
 
 指定访问的起始地址（starting_urls）。
 从获得的response中如何解析出我们想要的内容。
-在获得的response中如何发现后续要">
+在获得的response中如何发现后续要访问的地址。">
 
     
     <link rel="alternative" href="/atom.xml" title="TechUp" type="application/atom+xml">
@@ -51,8 +48,8 @@ Scrapy爬虫模块简介爬虫的主要目的是为了获取没有开放API的�
     <link rel="icon" href="/img/favicon.ico">
     
     
-    <link rel="apple-touch-icon" href="/img/jacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon" href="/img/logo.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
     
     <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
@@ -76,11 +73,9 @@ Scrapy爬虫模块简介爬虫的主要目的是为了获取没有开放API的�
 				<ul>
 					<ul>
 					 
-						<li><a href="/">Home</a></li>
+						<li><a href="/">主页</a></li>
 					
-						<li><a href="/archives">Archives</a></li>
-					
-						<li><a href="/about">About</a></li>
+						<li><a href="/archives">存档</a></li>
 					
 					<li>
  					
@@ -122,8 +117,7 @@ Scrapy爬虫模块简介爬虫的主要目的是为了获取没有开放API的�
 		
 		</div>
 		
-		<p>[TOC]</p>
-<h3 id="Scrapy爬虫模块简介">Scrapy爬虫模块简介</h3><p>爬虫的主要目的是为了获取没有开放API的网站上的非结构化数据。即按照给定的规则我们平时看到的网页，并从中抽取出需要的信息。这些信息可以应用在数据挖掘，信息处理等一系列程序中。</p>
+		<h3 id="Scrapy爬虫模块简介">Scrapy爬虫模块简介</h3><p>爬虫的主要目的是为了获取没有开放API的网站上的非结构化数据。即按照给定的规则我们平时看到的网页，并从中抽取出需要的信息。这些信息可以应用在数据挖掘，信息处理等一系列程序中。</p>
 <p>简单的爬虫设计主要是确定以下几个问题：</p>
 <ol>
 <li>指定访问的起始地址（starting_urls）。</li>
@@ -210,7 +204,7 @@ Scrapy爬虫模块简介爬虫的主要目的是为了获取没有开放API的�
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/02/08/python_scrapy_module/" data-title="Python爬虫模块Scrapy学习笔记 | TechUp" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2015/02/08/python_scrapy_module/" data-title="Python爬虫模块Scrapy学习笔记 | TechUp" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -243,6 +237,16 @@ Scrapy爬虫模块简介爬虫的主要目的是为了获取没有开放API的�
 </nav>
 
 	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2015/02/08/python_scrapy_module/" data-title="Python爬虫模块Scrapy学习笔记" data-url="http://yoursite.com/2015/02/08/python_scrapy_module/"></div>
+</section>
+
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 
 </div>  
       <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
@@ -352,13 +356,13 @@ Scrapy爬虫模块简介爬虫的主要目的是为了获取没有开放API的�
         
           <li>
             
-            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">// 码农圈</a>
+            	<a href="http://blog.imink.net 墨同学的博客" target="_blank" title="ink&#39;s blog">ink&#39;s blog</a>
             
           </li>
         
           <li>
             
-            	<a href="http://wuchong.me" target="_blank" title="// Jark&#39;s Blog">// Jark&#39;s Blog</a>
+            	<a href="http://eventfulkay.com 小虾米的博客" target="_blank" title="kai&#39;s blog">kai&#39;s blog</a>
             
           </li>
         
@@ -366,6 +370,19 @@ Scrapy爬虫模块简介爬虫的主要目的是为了获取没有开放API的�
 </div>
 
   
+
+<div class="doubanshow">
+<p class="asidetitle">豆瓣秀</p>
+<div>
+<script type="text/javascript" src="http://www.douban.com/service/badge/44886038/?show=collection&amp;n=12&amp;columns=3&amp;hidelogo=yes&amp;hideself=yes&amp;cat=book|movie" ></script>
+</div>
+</div>
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
+</div>
 
 
   <div class="rsspart">
@@ -384,20 +401,34 @@ Scrapy爬虫模块简介爬虫的主要目的是为了获取没有开放API的�
 	
 	
 	<section class="info">
-		<p> Hello ,I&#39;m Larry Page in Google. <br/>
-			This is my blog,believe it or not.</p>
+		<p> Hello, I&#39;m Yong Li, a MSc student in Oxford Uni. <br/>
+			Welcome to my blog, hope it does help to you!.</p>
 	</section>
 	 
 	<div class="social-font" class="clearfix">
 		
+		<a href="http://weibo.com/2327892814" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/NeilLi1992" target="_blank" class="icon-github" title="github"></a>
 		
 		
 		
 		
+		<a href="https://www.facebook.com/100006707769873" target="_blank" class="icon-facebook" title="facebook"></a>
+		
+		
+		<a href="https://www.linkedin.com/in/yongli1992" target="_blank" class="icon-linkedin" title="linkedin"></a>
+		
+		
+		<a href="https://www.douban.com/people/44886038" target="_blank" class="icon-douban" title="豆瓣"></a>
+		
+		
+		<a href="http://www.zhihu.com/people/li-yong-88-55" target="_blank" class="icon-zhihu" title="知乎"></a>
 		
 		
 		
-		
+		<a href="mailto:yong.li1992@foxmail.com" target="_blank" class="icon-email" title="Email Me"></a>
 		
 	</div>
 			
@@ -542,6 +573,38 @@ $(document).ready(function(){
 
 
 
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"yongli1992"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'yongli1992';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
 
 
 
@@ -590,6 +653,35 @@ $(document).ready(function(){
 
 <!-- MathJax Begin -->
 <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
 <!-- MathJax End -->

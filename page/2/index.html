@@ -28,8 +28,8 @@
     <link rel="icon" href="/img/favicon.ico">
     
     
-    <link rel="apple-touch-icon" href="/img/jacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon" href="/img/logo.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
     
     <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
@@ -53,11 +53,9 @@
 				<ul>
 					<ul>
 					 
-						<li><a href="/">Home</a></li>
+						<li><a href="/">主页</a></li>
 					
-						<li><a href="/archives">Archives</a></li>
-					
-						<li><a href="/about">About</a></li>
+						<li><a href="/archives">存档</a></li>
 					
 					<li>
  					
@@ -75,640 +73,224 @@
     <div id="container">
       <div id="main">
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/01/23/python_wsgi_6/" title="Python WSGI教程(六)——解析Post请求" itemprop="url">Python WSGI教程(六)——解析Post请求</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
-		
-  <p class="article-time">
-    <time datetime="2015-01-23T15:47:21.000Z" itemprop="datePublished"> 發表於 2015-01-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p><strong>解析Post请求：Parsing the Request - Post</strong><br>当请求类型是POST时，查询字符串不再通过URL传递，而是包含在HTTP请求体之中来传递。请求体在环境字典中保存为键为“wsgi.input”对应的一个类文件变量。</p>
-<p>为了从wsgi.input中读出请求体，有必要先知道请求体的长度，即CONTENT_LENGTH变量。WSGI规范中指出，存放有请求体大小的这一CONTENT_LENGTH变量是不可靠的，有可能是空值，或者直接缺失，所以获取时应采用try/except语法块来进行异常防错。<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/01/23/python_wsgi_6/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/python/">python</a>
-</div>
-
-
-  <div class="article-tags">
   
-  <span></span> <a href="/tags/python/">python</a><a href="/tags/翻译/">翻译</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/01/23/python_wsgi_5/" title="Python WSGI教程(五)——解析Get请求" itemprop="url">Python WSGI教程(五)——解析Get请求</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
-		
-  <p class="article-time">
-    <time datetime="2015-01-23T15:32:58.000Z" itemprop="datePublished"> 發表於 2015-01-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p><strong>解析Get请求：Parsing the Request - Get</strong><br>再次运行environment.py，这一次在浏览器中输入下面的地址：</p>
-<pre><code><span class="string">http:</span><span class="comment">//localhost:8051/?age=10&amp;hobbies=software&amp;hobbies=tunning</span>
-</code></pre><p>请注意这一次在环境字典中输出的变量：<em>QUERY_STRING</em> 和 <em>REQUEST_METHOD </em>。当请求方法是GET时，表单的变量都会附加在URL中被称为查询字符串的部分来发送。所谓查询字符串即URL中问号（？）之后的全部内容。在此例中查询字符串的值即为age=10&amp;hobbies=software&amp;hobbies=tunning。请注意hobbies变量出现了两次，这是有可能的，比如表单中存在复选框或者用户直接在URL中故意输入重复的查询键。<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/01/23/python_wsgi_5/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/python/">python</a>
-</div>
-
-
-  <div class="article-tags">
+<section class="post" itemscope itemprop="blogitem">
   
-  <span></span> <a href="/tags/python/">python</a><a href="/tags/翻译/">翻译</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/01/23/python_wsgi_4/" title="Python WSGI教程(四)——可迭代响应对象" itemprop="url">Python WSGI教程(四)——可迭代响应对象</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
-		
-  <p class="article-time">
-    <time datetime="2015-01-23T11:14:11.000Z" itemprop="datePublished"> 發表於 2015-01-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p><strong>可迭代响应对象：Response Iterable</strong><br>在之前正常工作的脚本中如果把最后一句的返回语句从原来的形式：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> [response_body]</span><br></pre></td></tr></table></figure></p>
-<p>改为不放在列表中的形式：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> response_body</span><br></pre></td></tr></table></figure></p>
-<p>如果我们再次运行，就会发现运行的速度变慢了。原因是服务器仍会将返回的结果作为可迭代对象来迭代访问，但现在实际放回的是一个字符串，于是服务器就会迭代这个字符串，然后每次只把一个字节发送给客户端。所以为了更好的性能，请不要忘记将返回的响应放在一个可迭代容器中（如列表）。<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/01/23/python_wsgi_4/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/python/">python</a>
-</div>
-
-
-  <div class="article-tags">
+    <a href="/2015/01/23/python_wsgi_6/" title="Python WSGI教程(六)——解析Post请求" itemprop="url">
   
-  <span></span> <a href="/tags/python/">python</a><a href="/tags/翻译/">翻译</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
+    <h1 itemprop="name">Python WSGI教程(六)——解析Post请求</h1>
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
+     
+       <p itemprop="description" >解析Post请求：Parsing the Request - Post当请求类型是POST时，查询字符串不再通过URL传递，而是包含在HTTP请求体之中来传递。请求体在环境字典中保存为键为“wsgi.input”对应的一个类文件变量。
+为了从wsgi.input中读出请求体，有必</p>
+      
     
-      <a href="/2015/01/23/python_wsgi_3/" title="Python WSGI教程(三)——环境字典" itemprop="url">Python WSGI教程(三)——环境字典</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
-		
-  <p class="article-time">
-    <time datetime="2015-01-23T08:58:52.000Z" itemprop="datePublished"> 發表於 2015-01-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p><strong>环境字典：Environment dictionary</strong><br>环境字典会包含一些CGI环境变量，由服务器在接收到每一次来自客户端的请求时产生。下面的脚本代码会输出整个字典的内容。<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/01/23/python_wsgi_3/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/python/">python</a>
-</div>
+    <time datetime="2015-01-23T15:47:21.000Z" itemprop="datePublished">2015-01-23</time>
+  </a>
+</section>
 
 
-  <div class="article-tags">
+
+
+
+
   
-  <span></span> <a href="/tags/python/">python</a><a href="/tags/翻译/">翻译</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/01/23/python_wsgi_2/" title="Python WSGI教程(二)——应用程序接口" itemprop="url">Python WSGI教程(二)——应用程序接口</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
-		
-  <p class="article-time">
-    <time datetime="2015-01-23T08:57:42.000Z" itemprop="datePublished"> 發表於 2015-01-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p><strong>应用程序接口：Application Interface</strong><br>WSGI应用接口实现为一个可调用对象：函数，方法，类或者任何一个实现了__call__方法的对象。该可调用对象应满足下述条件：</p>
-<ul>
-<li>必须接收两个位置参数：<ol>
-<li>一个包含了CGI环境变量的字典</li>
-<li>一个可调用函数对象，让应用程序调用来向服务器提交HTTP状态码和HTTP响应头。</li>
-</ol>
-</li>
-<li>必须向服务器Return包装在可迭代对象中的字符串（一个或多个）。
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/01/23/python_wsgi_2/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/python/">python</a>
-</div>
-
-
-  <div class="article-tags">
+<section class="post" itemscope itemprop="blogitem">
   
-  <span></span> <a href="/tags/python/">python</a><a href="/tags/翻译/">翻译</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/01/23/python_wsgi_1/" title="Python WSGI教程(一)——介绍" itemprop="url">Python WSGI教程(一)——介绍</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
-		
-  <p class="article-time">
-    <time datetime="2015-01-23T08:54:37.000Z" itemprop="datePublished"> 發表於 2015-01-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p><strong>前言</strong><br>在学习python wsgi规范的时候读到了一篇介绍的很好的入门教程。内容不长，尝试将其翻译，希望对需要的人有一些帮助。<br>原文地址：<a href="http://webpython.codepoint.net/wsgi_tutorial">Web Python</a><br>翻译：YongLi1992</p>
-<hr>
-<h3 id="WSGI教程">WSGI教程</h3><p>WSGI[^1]不是服务器，不是python模块，不是框架或API或任何一种软件。WSGI是一套服务器和应用程序共同遵守以供通讯的接口规范。服务器端和应用程序端的接口都在WSGI被规范定义了。WSGI的唯一官方描述仅以<a href="http://www.python.org/dev/peps/pep-3333/">PEP 3333提案</a>为准。如果一个应用程序（或框架，工具包）是遵从WSGI规范编写的，则它可以运行于同样遵从WSGI规范的任何服务器之上。<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/01/23/python_wsgi_1/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/python/">python</a>
-</div>
-
-
-  <div class="article-tags">
+    <a href="/2015/01/23/python_wsgi_5/" title="Python WSGI教程(五)——解析Get请求" itemprop="url">
   
-  <span></span> <a href="/tags/python/">python</a><a href="/tags/翻译/">翻译</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
+    <h1 itemprop="name">Python WSGI教程(五)——解析Get请求</h1>
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
+     
+       <p itemprop="description" >解析Get请求：Parsing the Request - Get再次运行environment.py，这一次在浏览器中输入下面的地址：
+http://localhost:8051/?age=10&amp;amp;hobbies=software&amp;amp;hobbies=tunning
+</p>
+      
     
-      <a href="/2015/01/23/yield_file_io/" title="记一个使用yield读写文件的方法" itemprop="url">记一个使用yield读写文件的方法</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
-		
-  <p class="article-time">
-    <time datetime="2015-01-22T19:30:08.000Z" itemprop="datePublished"> 發表於 2015-01-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>在学习yield的使用方法的时候遇到了一个非常实用的应用，记录如下。</p>
-<p>在我们直接使用read()方法来读取一个文件的全部内容的时候，会导致不可预测的内存占用，即当文件很大时有可能直接内存不够用了。好的方法是利用一个指定长度的缓冲区配合yield来逐次返回文件内容，代码示例如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_file</span><span class="params">(file_name)</span>:</span></span><br><span class="line">	BUFFER_SIZE = <span class="number">1024</span></span><br><span class="line">	<span class="keyword">with</span> open(file_name, <span class="string">'r+'</span>) <span class="keyword">as</span> f:</span><br><span class="line">		<span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">			block = f.read(BUFFER_SIZE) <span class="comment"># 读取文件内容至缓存区</span></span><br><span class="line">			<span class="keyword">if</span> block:</span><br><span class="line">				<span class="keyword">yield</span> block</span><br><span class="line">			<span class="keyword">else</span>:</span><br><span class="line">				<span class="keyword">return</span> <span class="comment"># 退出生成器</span></span><br></pre></td></tr></table></figure></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/python/">python</a>
-</div>
+    <time datetime="2015-01-23T15:32:58.000Z" itemprop="datePublished">2015-01-23</time>
+  </a>
+</section>
 
 
-  <div class="article-tags">
+
+
+
+
   
-  <span></span> <a href="/tags/python/">python</a><a href="/tags/原创/">原创</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/01/20/15_fall_application/" title="15FALL英国硕士申请总结：剑桥，牛津，帝国理工及其他" itemprop="url">15FALL英国硕士申请总结：剑桥，牛津，帝国理工及其他</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
-		
-  <p class="article-time">
-    <time datetime="2015-01-20T14:41:46.000Z" itemprop="datePublished"> 發表於 2015-01-20</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>15FALL的申请基本接近尾声，一共申请了英国6所学校7个专业，基本都有结果了。写下这篇申研总结一来是记录一下这段特殊的历程，二来是为还在申请的同学以及为将来要申请的同学提供些许帮助与参考。</p>
-<p>我是西交利物浦大学2+2到英国利物浦大学的，申研背景相当于英本，申请的是计算机方向。对也想申请该方向的英硕的同学们还是有些参考价值的，其他方向的同学也可稍作浏览，未必贴切。</p>
-<p>以剑桥，牛津和帝国理工的申请作详细介绍，其他的简单介绍。原因是前三者申请的难度要略大一些，并且有面试，多介绍一些面试的过程，应该会比较有用。<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/01/20/15_fall_application/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/life/">life</a>
-</div>
-
-
-  <div class="article-tags">
+<section class="post" itemscope itemprop="blogitem">
   
-  <span></span> <a href="/tags/oxford/">oxford</a><a href="/tags/study/">study</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/01/20/leetcode_loop_in_linked_list/" title="LeetCode：判断单链列表是否存在环" itemprop="url">LeetCode：判断单链列表是否存在环</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
-		
-  <p class="article-time">
-    <time datetime="2015-01-20T08:12:03.000Z" itemprop="datePublished"> 發表於 2015-01-20</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。</p>
-<p>####判断是否存在环<br>用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.<br>若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇</p>
-<h4 id="找到环的入口">找到环的入口</h4><p>当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。<br>接下来fast和slow都每次移动1。两指针在此相遇的位置即为环的入口。</p>
-<h4 id="证明">证明</h4><p>设初次相遇时循环运行n次。设初次相遇为M点，head到环入口距离为a，环入口到M点距离为b。环路周长为L。第一次相遇时fast已经走了k圈（不能保证相遇时fast只多走1圈）。<br>slow走的距离为d1 = a + b = n<br>fast走的距离为d2 = a + b+ k<em>L = 2n<br>d2 - d1 = n = k</em>L，可知长度n恰好为环周长的整数倍。<br>此时slow从相遇点M再走n步，可以回到相遇点M。<br>此时fast从head出发走n步，也可到达M。<br>实际上两者在走完a步后就相遇了，此处即为环的入口。</p>
-<h4 id="Python实现">Python实现</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">slow = fast = head</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">     <span class="keyword">if</span> <span class="keyword">not</span> fast.next <span class="keyword">or</span> <span class="keyword">not</span> fast.next.next:</span><br><span class="line">          <span class="comment"># No loop</span></span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">     <span class="keyword">else</span>:</span><br><span class="line">          slow = slow.next</span><br><span class="line">          fast = fast.next.next</span><br><span class="line">          <span class="keyword">if</span> slow == fast:</span><br><span class="line">               <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Encountered for 1st time. Now set out again</span></span><br><span class="line"><span class="keyword">while</span> fast != slow:</span><br><span class="line">     fast = fast.next</span><br><span class="line">     slow = slow.next</span><br><span class="line"></span><br><span class="line"><span class="comment"># Now both fast and slow point to the loop entrance</span></span><br><span class="line"><span class="keyword">return</span> fast</span><br></pre></td></tr></table></figure>
-<h4 id="应用">应用</h4><p>可以用来解决两个单链表是否存在交点的问题，如下：</p>
-<p>$A: <del>~</del><del>~~a1 → a2$<br>$</del><del>~</del><del>~</del><del>~</del><del>~</del><del>~</del>~↘$<br>$<del>~</del><del>~</del><del>~</del><del>~</del><del>~</del><del>~</del><del>c1 → c2 → c3$<br>$</del><del>~</del><del>~</del><del>~</del><del>~</del><del>~</del>~↗$<br>$B:     b1 → b2 → b3$<br>给定两个单链表A，B，问A，B是否存在某个相交节点，若存在则返回该节点。应用我们的方法，可以在O(n)时间，O(1)空间内求解。<br>方法是先遍历A找到尾节点tailA，设置tailA.next = headB。若A与B有交点，则从headA再出发使用我们的算法找到环，环路入口即为链表交点。</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</div>
-
-
-  <div class="article-tags">
+    <a href="/2015/01/23/python_wsgi_4/" title="Python WSGI教程(四)——可迭代响应对象" itemprop="url">
   
-  <span></span> <a href="/tags/leetcode/">leetcode</a><a href="/tags/python/">python</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
+    <h1 itemprop="name">Python WSGI教程(四)——可迭代响应对象</h1>
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
+     
+       <p itemprop="description" >可迭代响应对象：Response Iterable在之前正常工作的脚本中如果把最后一句的返回语句从原来的形式：1return [response_body]
+改为不放在列表中的形式：1return response_body
+如果我们再次运行，就会发现运行的速度变慢了。原因是服务</p>
+      
     
-      <a href="/2015/01/20/python_argparse_module/" title="Python 命令行解析模块argparse使用学习" itemprop="url">Python 命令行解析模块argparse使用学习</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
-		
-  <p class="article-time">
-    <time datetime="2015-01-20T08:08:42.000Z" itemprop="datePublished"> 發表於 2015-01-20</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>argparse在Python2.7中引入，是用于替代原来的optparse模块的。</p>
-<h2 id="基本知识">基本知识</h2><p>导入模块后，获得一个parser对象。通过调用其add_argument()方法来设置程序可接受的命令行参数。<br>调用其parse_args方法来获取一个收集了所有参数的args对象。此时从命令行得到的参数可以由args对象的属性来获取。<br>基本过程如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">args = paresr.parse_args()</span><br></pre></td></tr></table></figure></p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/01/20/python_argparse_module/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/python/">python</a>
-</div>
+    <time datetime="2015-01-23T11:14:11.000Z" itemprop="datePublished">2015-01-23</time>
+  </a>
+</section>
 
 
-  <div class="article-tags">
+
+
+
+
   
-  <span></span> <a href="/tags/python/">python</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/01/23/python_wsgi_3/" title="Python WSGI教程(三)——环境字典" itemprop="url">
+  
+    <h1 itemprop="name">Python WSGI教程(三)——环境字典</h1>
+    
+     
+       <p itemprop="description" >环境字典：Environment dictionary环境字典会包含一些CGI环境变量，由服务器在接收到每一次来自客户端的请求时产生。下面的脚本代码会输出整个字典的内容。</p>
+      
+    
+    <time datetime="2015-01-23T08:58:52.000Z" itemprop="datePublished">2015-01-23</time>
+  </a>
+</section>
 
 
 
 
 
 
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/01/23/python_wsgi_2/" title="Python WSGI教程(二)——应用程序接口" itemprop="url">
+  
+    <h1 itemprop="name">Python WSGI教程(二)——应用程序接口</h1>
+    
+     
+       <p itemprop="description" >应用程序接口：Application InterfaceWSGI应用接口实现为一个可调用对象：函数，方法，类或者任何一个实现了__call__方法的对象。该可调用对象应满足下述条件：
 
-  <nav id="page-nav" class="clearfix">
+必须接收两个位置参数：
+一个包含了CGI环境变量的字典
+一个可调用函数对象，让应用程序调用来向</p>
+      
+    
+    <time datetime="2015-01-23T08:57:42.000Z" itemprop="datePublished">2015-01-23</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/01/23/python_wsgi_1/" title="Python WSGI教程(一)——介绍" itemprop="url">
+  
+    <h1 itemprop="name">Python WSGI教程(一)——介绍</h1>
+    
+     
+       <p itemprop="description" >前言在学习python wsgi规范的时候读到了一篇介绍的很好的入门教程。内容不长，尝试将其翻译，希望对需要的人有一些帮助。原文地址：Web Python翻译：YongLi1992
+
+WSGI教程WSGI[^1]不是服务器，不是python模块，不是框架或API或任何一种软件。W</p>
+      
+    
+    <time datetime="2015-01-23T08:54:37.000Z" itemprop="datePublished">2015-01-23</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/01/23/yield_file_io/" title="记一个使用yield读写文件的方法" itemprop="url">
+  
+    <h1 itemprop="name">记一个使用yield读写文件的方法</h1>
+    
+     
+           <p itemprop="description" >在学习yield的使用方法的时候遇到了一个非常实用的应用，记录如下。
+在我们直接使用read()方法来读取一个文件的全部内容的时候，会导致不可预测的内存占用，即当文件很大时有可能直接内存不够用了。好的方法是利用一个指定长度的缓冲区配合yield来逐次返回文件内容，代码示例如下：1</p>
+        
+    
+    <time datetime="2015-01-22T19:30:08.000Z" itemprop="datePublished">2015-01-23</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/01/20/15_fall_application/" title="15FALL英国硕士申请总结：剑桥，牛津，帝国理工及其他" itemprop="url">
+  
+    <h1 itemprop="name">15FALL英国硕士申请总结：剑桥，牛津，帝国理工及其他</h1>
+    
+     
+       <p itemprop="description" >15FALL的申请基本接近尾声，一共申请了英国6所学校7个专业，基本都有结果了。写下这篇申研总结一来是记录一下这段特殊的历程，二来是为还在申请的同学以及为将来要申请的同学提供些许帮助与参考。
+我是西交利物浦大学2+2到英国利物浦大学的，申研背景相当于英本，申请的是计算机方向。对也</p>
+      
+    
+    <time datetime="2015-01-20T14:41:46.000Z" itemprop="datePublished">2015-01-20</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/01/20/leetcode_loop_in_linked_list/" title="LeetCode：判断单链列表是否存在环" itemprop="url">
+  
+    <h1 itemprop="name">LeetCode：判断单链列表是否存在环</h1>
+    
+     
+           <p itemprop="description" >判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。
+####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇
+找到</p>
+        
+    
+    <time datetime="2015-01-20T08:12:03.000Z" itemprop="datePublished">2015-01-20</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/01/20/python_argparse_module/" title="Python 命令行解析模块argparse使用学习" itemprop="url">
+  
+    <h1 itemprop="name">Python 命令行解析模块argparse使用学习</h1>
+    
+     
+       <p itemprop="description" >argparse在Python2.7中引入，是用于替代原来的optparse模块的。
+基本知识导入模块后，获得一个parser对象。通过调用其add_argument()方法来设置程序可接受的命令行参数。调用其parse_args方法来获取一个收集了所有参数的args对象。此时从</p>
+      
+    
+    <time datetime="2015-01-20T08:08:42.000Z" itemprop="datePublished">2015-01-20</time>
+  </a>
+</section>
+
+
+
+
+
+
+
+  <nav id="page-nav" class="clearfix unexpand">
     <a class="extend prev" rel="prev" href="/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next<span></span></a>
   </nav>
 
@@ -813,13 +395,13 @@
         
           <li>
             
-            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">// 码农圈</a>
+            	<a href="http://blog.imink.net 墨同学的博客" target="_blank" title="ink&#39;s blog">ink&#39;s blog</a>
             
           </li>
         
           <li>
             
-            	<a href="http://wuchong.me" target="_blank" title="// Jark&#39;s Blog">// Jark&#39;s Blog</a>
+            	<a href="http://eventfulkay.com 小虾米的博客" target="_blank" title="kai&#39;s blog">kai&#39;s blog</a>
             
           </li>
         
@@ -827,6 +409,19 @@
 </div>
 
   
+
+<div class="doubanshow">
+<p class="asidetitle">豆瓣秀</p>
+<div>
+<script type="text/javascript" src="http://www.douban.com/service/badge/44886038/?show=collection&amp;n=12&amp;columns=3&amp;hidelogo=yes&amp;hideself=yes&amp;cat=book|movie" ></script>
+</div>
+</div>
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
+</div>
 
 
   <div class="rsspart">
@@ -845,20 +440,34 @@
 	
 	
 	<section class="info">
-		<p> Hello ,I&#39;m Larry Page in Google. <br/>
-			This is my blog,believe it or not.</p>
+		<p> Hello, I&#39;m Yong Li, a MSc student in Oxford Uni. <br/>
+			Welcome to my blog, hope it does help to you!.</p>
 	</section>
 	 
 	<div class="social-font" class="clearfix">
 		
+		<a href="http://weibo.com/2327892814" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/NeilLi1992" target="_blank" class="icon-github" title="github"></a>
 		
 		
 		
 		
+		<a href="https://www.facebook.com/100006707769873" target="_blank" class="icon-facebook" title="facebook"></a>
+		
+		
+		<a href="https://www.linkedin.com/in/yongli1992" target="_blank" class="icon-linkedin" title="linkedin"></a>
+		
+		
+		<a href="https://www.douban.com/people/44886038" target="_blank" class="icon-douban" title="豆瓣"></a>
+		
+		
+		<a href="http://www.zhihu.com/people/li-yong-88-55" target="_blank" class="icon-zhihu" title="知乎"></a>
 		
 		
 		
-		
+		<a href="mailto:yong.li1992@foxmail.com" target="_blank" class="icon-email" title="Email Me"></a>
 		
 	</div>
 			
@@ -926,6 +535,38 @@ $(document).ready(function(){
 
 
 
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"yongli1992"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'yongli1992';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
 
 
 
@@ -974,6 +615,35 @@ $(document).ready(function(){
 
 <!-- MathJax Begin -->
 <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
 <!-- MathJax End -->
