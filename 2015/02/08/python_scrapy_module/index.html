@@ -1,0 +1,602 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Python爬虫模块Scrapy学习笔记 | TechUp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="yongli1992">
+    
+
+    
+    <meta name="description" content="[TOC]
+Scrapy爬虫模块简介爬虫的主要目的是为了获取没有开放API的网站上的非结构化数据。即按照给定的规则我们平时看到的网页，并从中抽取出需要的信息。这些信息可以应用在数据挖掘，信息处理等一系列程序中。
+简单的爬虫设计主要是确定以下几个问题：
+
+指定访问的起始地址（starting_urls）。
+从获得的response中如何解析出我们想要的内容。
+在获得的response中如何发现后续要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python爬虫模块Scrapy学习笔记">
+<meta property="og:url" content="http://yoursite.com/2015/02/08/python_scrapy_module/index.html">
+<meta property="og:site_name" content="TechUp">
+<meta property="og:description" content="[TOC]
+Scrapy爬虫模块简介爬虫的主要目的是为了获取没有开放API的网站上的非结构化数据。即按照给定的规则我们平时看到的网页，并从中抽取出需要的信息。这些信息可以应用在数据挖掘，信息处理等一系列程序中。
+简单的爬虫设计主要是确定以下几个问题：
+
+指定访问的起始地址（starting_urls）。
+从获得的response中如何解析出我们想要的内容。
+在获得的response中如何发现后续要">
+<meta property="og:image" content="http://scrapy-chs.readthedocs.org/zh_CN/latest/_images/scrapy_architecture.png">
+<meta property="og:image" content="http://yoursite.com/./1422907372405.png">
+<meta property="og:image" content="http://yoursite.com/./1422907469954.png">
+<meta property="og:image" content="http://yoursite.com/./1422996462810.png">
+<meta property="og:updated_time" content="2015-08-08T00:35:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python爬虫模块Scrapy学习笔记">
+<meta name="twitter:description" content="[TOC]
+Scrapy爬虫模块简介爬虫的主要目的是为了获取没有开放API的网站上的非结构化数据。即按照给定的规则我们平时看到的网页，并从中抽取出需要的信息。这些信息可以应用在数据挖掘，信息处理等一系列程序中。
+简单的爬虫设计主要是确定以下几个问题：
+
+指定访问的起始地址（starting_urls）。
+从获得的response中如何解析出我们想要的内容。
+在获得的response中如何发现后续要">
+
+    
+    <link rel="alternative" href="/atom.xml" title="TechUp" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="TechUp" title="TechUp"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="TechUp">TechUp</a></h1>
+				<h2 class="blog-motto">Yong Li&#39;s small tech world.</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/08/python_scrapy_module/" title="Python爬虫模块Scrapy学习笔记" itemprop="url">Python爬虫模块Scrapy学习笔记</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
+		
+  <p class="article-time">
+    <time datetime="2015-02-08T13:16:34.000Z" itemprop="datePublished"> 發表於 2015-02-08</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目錄</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Scrapy爬虫模块简介"><span class="toc-number">1.</span> <span class="toc-text">Scrapy爬虫模块简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scrapy架构图示"><span class="toc-number">2.</span> <span class="toc-text">Scrapy架构图示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目示例"><span class="toc-number">3.</span> <span class="toc-text">项目示例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#新建项目"><span class="toc-number">3.1.</span> <span class="toc-text">新建项目</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<p>[TOC]</p>
+<h3 id="Scrapy爬虫模块简介">Scrapy爬虫模块简介</h3><p>爬虫的主要目的是为了获取没有开放API的网站上的非结构化数据。即按照给定的规则我们平时看到的网页，并从中抽取出需要的信息。这些信息可以应用在数据挖掘，信息处理等一系列程序中。</p>
+<p>简单的爬虫设计主要是确定以下几个问题：</p>
+<ol>
+<li>指定访问的起始地址（starting_urls）。</li>
+<li>从获得的response中如何解析出我们想要的内容。</li>
+<li>在获得的response中如何发现后续要访问的地址。</li>
+<li>如何处理我们解析出的内容。</li>
+</ol>
+<p>高级爬虫应用还会涉及到许多其它的问题。</p>
+<p>Scrapy是一个主流的Python爬虫框架，设计好了爬虫应用的基本骨架结构，也为了实现不同的应用目的留下了灵活的设计余地。使用一些其它的模块，或者配合一些中间件，也可以将Scrapy扩展成为很复杂的高级爬虫程序。</p>
+<a id="more"></a>
+<h3 id="Scrapy架构图示">Scrapy架构图示</h3><p><img src="http://scrapy-chs.readthedocs.org/zh_CN/latest/_images/scrapy_architecture.png" alt="Scrapy架构说明"></p>
+<p>这里是一张Scrapy架构图的展示。Scrapy Engine负责整个程序的运行。Scheduler负责调度要访问的网址。Downloader负责从网络获取响应。Spider负责分析响应，从响应中解析出我们要的数据，同时也负责找出接下来要访问的后续网址。Item是将我们需要抓取的数据做一个结构化的定义并实现为一个类。Pipeline负责对抓取到的item做后续处理，包括过滤，持久化存储等任务。</p>
+<p>绿色箭头表示网络请求与响应的流动。Spider将需要访问的（初始+后续）请求提交给调度器，调度器再将请求分发给Downloader，downloader完成下载后，通过回调函数的形式交由Spider进一步处理，Spider抽取出需要的数据，实例化一个item对象，将数据赋值为item的具体属性。item接下来将经过pipeline，由pipeline实现后续处理。</p>
+<p>在一个较为简单的应用中，真正需要我们实现的部分只有定义item，实现spider，实现pipeline。</p>
+<h3 id="项目示例">项目示例</h3><p>接下来用一个例子来展示一个简单Scrapy爬虫的设计过程。</p>
+<p>在这个例子中我们要抓取的目标网站是<a href="http://scrapy-chs.readthedocs.org/zh_CN/0.24/index.html" target="_blank" rel="external">Scrapy的中文文档</a>。<br><img src="./1422907372405.png" alt="Alt text"></p>
+<p>如图所示，我们的目标是访问左侧列出的每一篇文章的网页，然后将右边正文部分的<strong>HTML格式</strong>保存下来。保存之后的html文档打开来是下面这样的。虽然样式比较丑陋，但是保存html而不是抽取出纯文本的目的在于保留网页的语义结构，这样为以后潜在的处理留下了可能。</p>
+<p><img src="./1422907469954.png" alt="Alt text"></p>
+<h4 id="新建项目">新建项目</h4><p>推荐使用pip来安装Scrapy：</p>
+<pre><code>pip <span class="keyword">install</span> Scrapy
+</code></pre><p>安装完成后，Scrapy提供了一个命令行工具，使用scrapy命令可以提供非常强大的功能，比如：</p>
+<ul>
+<li>创建项目</li>
+<li>提供交互shell，在真实的爬虫环境中测试数据提取</li>
+<li>控制管理爬虫程序，包括启动，停止，查看可用爬虫等</li>
+<li>展现爬虫真实获取到的response，有时候程序拿到的响应和用户通过浏览器看到的并不相同</li>
+</ul>
+<p>我们把这个示例项目叫做crawl_scrapy_docs，用下面的命令来新建项目</p>
+<pre><code><span class="title">scrapy</span> startproject crawl_scrapy_docs
+</code></pre><p>运行以后的目录结构是：</p>
+<pre><code>crawl_scrapy_docs/
+        scrapy<span class="class">.cfg</span>
+        crawl_scrapy_docs/
+            __init__<span class="class">.py</span>
+            items<span class="class">.py</span>
+            pipelines<span class="class">.py</span>
+            settings<span class="class">.py</span>
+            spiders/
+                __init__<span class="class">.py</span>
+                ...
+</code></pre><p>其中items.py中定义我们的item类，pipelines实现抓取后的处理管道，spiders/文件夹存放spider的实现。</p>
+<p>####定义抓取实例：item<br>在这个项目里，我们感兴趣的数据有两项：</p>
+<ol>
+<li>正文部分的html文本，我们叫做html_content</li>
+<li>用于保存文件的文件名，我们叫做filename</li>
+</ol>
+<p>这个filename我们就取正文的第一行h1标签中的标题文字。</p>
+<p>items.py中的代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CrawlScrapyDocsItem</span><span class="params">(scrapy.Item)</span>:</span></span><br><span class="line">    html_content = scrapy.Field()</span><br><span class="line">    filename = scrapy.Field()</span><br></pre></td></tr></table></figure></p>
+<p>只要给我们的变量赋值成一个scrapy.Field()对象即可。这样在后续spider中处理时，就可以将item作为字典的形式来进行访问，如：</p>
+<pre><code><span class="property">item</span>[<span class="string">"html_content"</span>] = <span class="string">"some value..."</span>
+</code></pre><p>####定义抓取过程：spider<br>实现spider需要在项目文件夹中的spiders目录下来创建。将这里要用到的spider叫做doc_crawler。Scrapy提供的命令行工具直接提供了创建spider的命令genspider：</p>
+<pre><code>scrapy genspider doc_crawler scrapy-chs<span class="class">.readthedocs</span><span class="class">.org</span>
+</code></pre><p>使用该命令时必须提供两个位置参数。第一个是spider的名字，在之后启动爬虫时，需要提供该名称。第二个是限制爬虫访问的域名，这里我们把它设置成scrapy中文文档的二级域名。</p>
+<p>运行完命令后，在spiders目录下会创建好doc_crawler.py文件。打开我们可以看到，一个类的基本结构已经写好了。我们实现一个spider就是实现一个scrapy.Spider的子类。必须要提供的三个属性就是name，allowed_domains，start_urls。下面的parse方法是默认用来处理response的回调函数。由downloader获取到的每一个response都会交由这个方法来处理。</p>
+<p>下面是该类的代码实现：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"><span class="keyword">from</span> crawl_scrapy_docs.items <span class="keyword">import</span> CrawlScrapyDocsItem</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DocCrawlerSpider</span><span class="params">(scrapy.Spider)</span>:</span></span><br><span class="line">    name = <span class="string">"doc_crawler"</span></span><br><span class="line">    allowed_domains = [<span class="string">"scrapy-chs.readthedocs.org"</span>]</span><br><span class="line">    start_urls = (<span class="string">'http://scrapy-chs.readthedocs.org/zh_CN/0.24/index.html'</span>,)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        item = CrawlScrapyDocsItem()</span><br><span class="line">        item[<span class="string">'html_content'</span>] = response.xpath(<span class="string">"//div[@class='document']/*[1]"</span>).extract()[<span class="number">0</span>]</span><br><span class="line">        item[<span class="string">'filename'</span>] = response.xpath(<span class="string">'//div[@class="document"]/descendant::h1/text()'</span>).extract()[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">yield</span> item</span><br><span class="line"></span><br><span class="line">        next_path = response.xpath(<span class="string">"//div[@role='navigation'][@class='rst-footer-buttons']/a[contains(concat(' ', @class, ' '), ' float-right ')]/@href"</span>).extract()[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> next_path:</span><br><span class="line">            next_url = response.url[:response.url.rfind(<span class="string">"/"</span>)] + <span class="string">"/"</span> + next_path</span><br><span class="line">            <span class="keyword">yield</span> scrapy.Request(next_url, callback=self.parse)</span><br></pre></td></tr></table></figure></p>
+<p>导入了我们的CrawlScrapyDocsItem类之后，在parse方法中就可以实例化一个item对象。为我们要的html_contnet和filename赋值。Scrapy框架默认提供了xpath和css两种选择器。xpath方法调用之后返回的仍然是一个选择器，因此支持链式操作。当我们最终要从xpath中提取出真正的字符串时，需要调用extract()方法。返回的是一个列表值，取出这个唯一的字符串即可。</p>
+<p>文档中提到可以用yield关键字来返回item以及request，即可以把parse实现为生成器的形式。这里我猜测在downloader下载完毕后调用parse的时候，可能是采用迭代的for语句进行的。并且在parse中返回item，request时我们不需要做区分，这个区分应该是在调用的时候来区分的。</p>
+<p>如果不采用生成器的形式的话，也可以把item和request混合放入一个可迭代对象中，比如全部放入一个列表，最后统一返回。</p>
+<p>下面的next_path是用来找到下一篇文章的页面的，在文章的底部我们看到有这样一个链接：<br><img src="./1422996462810.png" alt="Alt text"></p>
+<p>这个地址就是我们要抓的了。因为抓到的是一个相对地址，所以后面的语句是用来拼接出一个绝对url，然后通过scrapy.Request(url, callback)来构造一个请求对象，仍然指定这个parse方法为回调方法，最后一样通过yield来返回请求，这样我们就指定了下一个要访问的请求。</p>
+<p>####定义实例处理：item_pipeline<br>从spider中抓取到item之后我们需要一个一个pipeline来进行后续处理。在这个示例中我们把抓到的文件以item[‘filename’]为文件名进行保存即可。下面是pipeline的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CrawlScrapyDocsPipeline</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_item</span><span class="params">(self, item, spider)</span>:</span></span><br><span class="line">        f = file(<span class="string">'files/%s.html'</span> % item[<span class="string">'filename'</span>].encode(<span class="string">'utf-8'</span>), <span class="string">'wb'</span>)</span><br><span class="line">        f.write(item[<span class="string">'html_content'</span>])</span><br><span class="line">        f.close()</span><br><span class="line">        <span class="keyword">return</span> item</span><br></pre></td></tr></table></figure>
+<p>这个类是自动生成好的，在类中有一个process_item方法，我们只要把它实现出来即可。该方法接收一个item对象和一个spider对象，我们处理完之后再把item对象返回出去，这样如果定义了多个管道的话，就可以依次处理item。</p>
+<p>写完pipeline之后不会立即生效，需要我们进行配置。具体配置方法是在settings.py中写入一个ITEM_PIPELINES字典变量。如果有多个pipeline的话，依次写在这里面，后面的数值表示pipeline处理的优先级顺序。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ITEM_PIPELINES = &#123;</span><br><span class="line">    <span class="string">'crawl_scrapy_docs.pipelines.CrawlScrapyDocsPipeline'</span>:<span class="number">300</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/python/">python</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/python/">python</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2015/02/08/python_scrapy_module/" data-title="Python爬虫模块Scrapy学习笔记 | TechUp" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/02/08/http_status_code/" title="HTTP常见状态码">
+  <strong>上一篇：</strong><br/>
+  <span>
+  HTTP常见状态码</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/02/03/leetcode_unique_num_in_list/"  title="LeetCode：寻找列表中的唯一数字">
+ <strong>下一篇：</strong><br/> 
+ <span>LeetCode：寻找列表中的唯一数字
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目錄</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Scrapy爬虫模块简介"><span class="toc-number">1.</span> <span class="toc-text">Scrapy爬虫模块简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scrapy架构图示"><span class="toc-number">2.</span> <span class="toc-text">Scrapy架构图示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目示例"><span class="toc-number">3.</span> <span class="toc-text">项目示例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#新建项目"><span class="toc-number">3.1.</span> <span class="toc-text">新建项目</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分類</p>
+		<ul>
+		
+		  
+		
+		  
+			<li><a href="/categories/algorithm/" title="algorithm">algorithm<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/life/" title="life">life<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/network/" title="network">network<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/programming/" title="programming">programming<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/python/" title="python">python<sup>12</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">標簽</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/python/" title="python">python<sup>16</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/翻译/" title="翻译">翻译<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/leetcode/" title="leetcode">leetcode<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/leetCodeOJ/" title="leetCodeOJ">leetCodeOJ<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/算法/" title="算法">算法<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/programming/" title="programming">programming<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/network/" title="network">network<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/http/" title="http">http<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/study/" title="study">study<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/oxford/" title="oxford">oxford<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情鏈接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">// 码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="// Jark&#39;s Blog">// Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		
+		<a href="/about" target="_blank" title="yongli1992">yongli1992</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
