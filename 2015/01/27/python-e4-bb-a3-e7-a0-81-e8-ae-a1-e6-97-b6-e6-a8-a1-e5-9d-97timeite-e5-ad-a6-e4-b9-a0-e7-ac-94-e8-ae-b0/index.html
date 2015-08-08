@@ -4,29 +4,32 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>LeetCode：判断单链列表是否存在环 | TechUp</title>
+    <title>Python代码计时模块timeit学习笔记 | TechUp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="yongli1992">
     
 
     
-    <meta name="description" content="判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。
-####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇
-找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下来fast和slow">
+    <meta name="description" content="timeit模块提供了一种简便的方法来为Python中的小块代码进行计时。它有三种使用方式，从命令行调用，从Python交互解释器调用，或者直接在脚本代码中进行调用。下面仅仅简略记述一下该模块在交互解释器以及脚本中的基础使用方法。
+在Python交互解释器中的使用 timeit函数 
+最基本的使用方法是直接调用timeit函数。
+12import timeittimeit.timeit(stmt=">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode：判断单链列表是否存在环">
-<meta property="og:url" content="http://yoursite.com/2015/01/20/leetcode_loop_in_linked_list/index.html">
+<meta property="og:title" content="Python代码计时模块timeit学习笔记">
+<meta property="og:url" content="http://yoursite.com/2015/01/27/python-e4-bb-a3-e7-a0-81-e8-ae-a1-e6-97-b6-e6-a8-a1-e5-9d-97timeite-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/index.html">
 <meta property="og:site_name" content="TechUp">
-<meta property="og:description" content="判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。
-####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇
-找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下来fast和slow">
-<meta property="og:updated_time" content="2015-08-08T02:19:56.000Z">
+<meta property="og:description" content="timeit模块提供了一种简便的方法来为Python中的小块代码进行计时。它有三种使用方式，从命令行调用，从Python交互解释器调用，或者直接在脚本代码中进行调用。下面仅仅简略记述一下该模块在交互解释器以及脚本中的基础使用方法。
+在Python交互解释器中的使用 timeit函数 
+最基本的使用方法是直接调用timeit函数。
+12import timeittimeit.timeit(stmt=">
+<meta property="og:updated_time" content="2015-08-07T23:56:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode：判断单链列表是否存在环">
-<meta name="twitter:description" content="判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。
-####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇
-找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下来fast和slow">
+<meta name="twitter:title" content="Python代码计时模块timeit学习笔记">
+<meta name="twitter:description" content="timeit模块提供了一种简便的方法来为Python中的小块代码进行计时。它有三种使用方式，从命令行调用，从Python交互解释器调用，或者直接在脚本代码中进行调用。下面仅仅简略记述一下该模块在交互解释器以及脚本中的基础使用方法。
+在Python交互解释器中的使用 timeit函数 
+最基本的使用方法是直接调用timeit函数。
+12import timeittimeit.timeit(stmt=">
 
     
     <link rel="alternative" href="/atom.xml" title="TechUp" type="application/atom+xml">
@@ -84,14 +87,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/01/20/leetcode_loop_in_linked_list/" title="LeetCode：判断单链列表是否存在环" itemprop="url">LeetCode：判断单链列表是否存在环</a>
+      <a href="/2015/01/27/python-e4-bb-a3-e7-a0-81-e8-ae-a1-e6-97-b6-e6-a8-a1-e5-9d-97timeite-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/" title="Python代码计时模块timeit学习笔记" itemprop="url">Python代码计时模块timeit学习笔记</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-01-20T08:12:03.000Z" itemprop="datePublished"> 發表於 2015-01-20</time>
+    <time datetime="2015-01-27T11:46:18.000Z" itemprop="datePublished"> 發表於 2015-01-27</time>
     
   </p>
 </header>
@@ -100,32 +103,26 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#找到环的入口"><span class="toc-number">1.</span> <span class="toc-text">找到环的入口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#证明"><span class="toc-number">2.</span> <span class="toc-text">证明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python实现"><span class="toc-number">3.</span> <span class="toc-text">Python实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用"><span class="toc-number">4.</span> <span class="toc-text">应用</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#在Python交互解释器中的使用"><span class="toc-number">1.</span> <span class="toc-text">在Python交互解释器中的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#在脚本程序中的使用"><span class="toc-number">1.1.</span> <span class="toc-text">在脚本程序中的使用</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<p>判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。</p>
-<p>####判断是否存在环<br>用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.<br>若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇</p>
-<h4 id="找到环的入口">找到环的入口</h4><p>当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。<br>接下来fast和slow都每次移动1。两指针在此相遇的位置即为环的入口。</p>
-<h4 id="证明">证明</h4><p>设初次相遇时循环运行n次。设初次相遇为M点，head到环入口距离为a，环入口到M点距离为b。环路周长为L。第一次相遇时fast已经走了k圈（不能保证相遇时fast只多走1圈）。<br>slow走的距离为d1 = a + b = n<br>fast走的距离为d2 = a + b+ k<em>L = 2n<br>d2 - d1 = n = k</em>L，可知长度n恰好为环周长的整数倍。<br>此时slow从相遇点M再走n步，可以回到相遇点M。<br>此时fast从head出发走n步，也可到达M。<br>实际上两者在走完a步后就相遇了，此处即为环的入口。</p>
-<h4 id="Python实现">Python实现</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">slow = fast = head</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">     <span class="keyword">if</span> <span class="keyword">not</span> fast.next <span class="keyword">or</span> <span class="keyword">not</span> fast.next.next:</span><br><span class="line">          <span class="comment"># No loop</span></span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">     <span class="keyword">else</span>:</span><br><span class="line">          slow = slow.next</span><br><span class="line">          fast = fast.next.next</span><br><span class="line">          <span class="keyword">if</span> slow == fast:</span><br><span class="line">               <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Encountered for 1st time. Now set out again</span></span><br><span class="line"><span class="keyword">while</span> fast != slow:</span><br><span class="line">     fast = fast.next</span><br><span class="line">     slow = slow.next</span><br><span class="line"></span><br><span class="line"><span class="comment"># Now both fast and slow point to the loop entrance</span></span><br><span class="line"><span class="keyword">return</span> fast</span><br></pre></td></tr></table></figure>
-<h4 id="应用">应用</h4><p>可以用来解决两个单链表是否存在交点的问题，如下：</p>
-<p>$A:       a1 → a2$<br>$                ↘$<br>$                 c1 → c2 → c3$<br>$                ↗$<br>$B:   b1 → b2 → b3$<br>给定两个单链表A，B，问A，B是否存在某个相交节点，若存在则返回该节点。应用我们的方法，可以在O(n)时间，O(1)空间内求解。<br>方法是先遍历A找到尾节点tailA，设置tailA.next = headB。若A与B有交点，则从headA再出发使用我们的算法找到环，环路入口即为链表交点。</p>
+		<p>timeit模块提供了一种简便的方法来为Python中的小块代码进行计时。它有三种使用方式，从命令行调用，从Python交互解释器调用，或者直接在脚本代码中进行调用。下面仅仅简略记述一下该模块在交互解释器以及脚本中的基础使用方法。</p>
+<h3 id="在Python交互解释器中的使用">在Python交互解释器中的使用</h3><p><strong> timeit函数 </strong></p>
+<p>最基本的使用方法是直接调用timeit函数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> timeit</span><br><span class="line">timeit.timeit(stmt=<span class="string">'pass'</span>, setup=<span class="string">'pass'</span>, timer=&lt;default timer&gt;, number=<span class="number">1000000</span>)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>模块的第一个参数为要执行计时的语句（statement）。按字符串的形式传入要执行的代码。第二个参数setup用于构建代码环境，可以用来导入需要的模块。最后的number指定了运行的次数。</p>
+<p>使用示例如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="keyword">import</span> timeit</span><br><span class="line">&gt;&gt;&gt;timeit.timeit(<span class="string">'"-".join(str(n) for n in range(100))'</span>, number=<span class="number">10000</span>)</span><br><span class="line"><span class="number">0.21051692962646484</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>repeat函数</strong><br>另一个可供使用的函数是repeat函数，指定整个试验的重复次数，返回一个包含了每次试验的执行时间的列表。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>timeit.repeat(<span class="string">'"-".join(str(n) for n in range(100))'</span>,repeat=<span class="number">3</span>, number=<span class="number">10000</span>)</span><br><span class="line">[<span class="number">0.21938705444335938</span>, <span class="number">0.21767210960388184</span>, <span class="number">0.21688294410705566</span>]</span><br></pre></td></tr></table></figure></p>
+<p>利用这一函数可以很方便得实现多次试验取平均的方法。</p>
+<h4 id="在脚本程序中的使用">在脚本程序中的使用</h4><p>timeit模块同样可以在脚本中直接使用。使用方法还是调用上述的函数。但是在脚本中时需要为setup传入一条字符串形式的语句，用于构建执行环境，示例如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">	L = []</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">		L.append(i)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">	<span class="keyword">import</span> timeit</span><br><span class="line">	<span class="keyword">print</span> timeit.timeit(<span class="string">"test()"</span>, setup=<span class="string">"from __main__ import test"</span>))</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/leetcode/">leetcode</a><a href="/tags/python/">python</a>
-  </div>
 
 </div>
 
@@ -133,7 +130,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/01/20/leetcode_loop_in_linked_list/" data-title="LeetCode：判断单链列表是否存在环 | TechUp" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://yoursite.com/2015/01/27/python-e4-bb-a3-e7-a0-81-e8-ae-a1-e6-97-b6-e6-a8-a1-e5-9d-97timeite-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/" data-title="Python代码计时模块timeit学习笔记 | TechUp" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -147,18 +144,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/01/20/15_fall_application/" title="15FALL英国硕士申请总结：剑桥，牛津，帝国理工及其他">
+ <a href="/2015/01/28/leetcode_palindrome_partitioning/" title="LeetCode：字符串的回文划分">
   <strong>上一篇：</strong><br/>
   <span>
-  15FALL英国硕士申请总结：剑桥，牛津，帝国理工及其他</span>
+  LeetCode：字符串的回文划分</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/01/20/leetcode-ef-bc-9a-e5-88-a4-e6-96-ad-e5-8d-95-e9-93-be-e5-88-97-e8-a1-a8-e6-98-af-e5-90-a6-e5-ad-98-e5-9c-a8-e7-8e-af/"  title="LeetCode：判断单链列表是否存在环">
+<a href="/2015/01/27/python_timeit_module/"  title="Python代码计时模块timeit学习笔记">
  <strong>下一篇：</strong><br/> 
- <span>LeetCode：判断单链列表是否存在环
+ <span>Python代码计时模块timeit学习笔记
 </span>
 </a>
 </div>
@@ -167,7 +164,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/01/20/leetcode_loop_in_linked_list/" data-title="LeetCode：判断单链列表是否存在环" data-url="http://yoursite.com/2015/01/20/leetcode_loop_in_linked_list/"></div>
+	<div class="ds-thread" data-thread-key="2015/01/27/python-e4-bb-a3-e7-a0-81-e8-ae-a1-e6-97-b6-e6-a8-a1-e5-9d-97timeite-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/" data-title="Python代码计时模块timeit学习笔记" data-url="http://yoursite.com/2015/01/27/python-e4-bb-a3-e7-a0-81-e8-ae-a1-e6-97-b6-e6-a8-a1-e5-9d-97timeite-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0/"></div>
 </section>
 
 
@@ -177,7 +174,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
  
- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#找到环的入口"><span class="toc-number">1.</span> <span class="toc-text">找到环的入口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#证明"><span class="toc-number">2.</span> <span class="toc-text">证明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python实现"><span class="toc-number">3.</span> <span class="toc-text">Python实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用"><span class="toc-number">4.</span> <span class="toc-text">应用</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#在Python交互解释器中的使用"><span class="toc-number">1.</span> <span class="toc-text">在Python交互解释器中的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#在脚本程序中的使用"><span class="toc-number">1.1.</span> <span class="toc-text">在脚本程序中的使用</span></a></li></ol></li></ol>
  
   </div>
 

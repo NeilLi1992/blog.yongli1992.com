@@ -11,22 +11,52 @@
     
 
     
-    <meta name="description" content="判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。
-####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇
-找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下来fast和slow">
+    <meta name="description" content="Edit
+
+
+
+判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。
+
+
+
+判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇
+
+
+
+找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode：判断单链列表是否存在环">
-<meta property="og:url" content="http://yoursite.com/2015/01/20/leetcode_loop_in_linked_list/index.html">
+<meta property="og:url" content="http://yoursite.com/2015/01/20/leetcode-ef-bc-9a-e5-88-a4-e6-96-ad-e5-8d-95-e9-93-be-e5-88-97-e8-a1-a8-e6-98-af-e5-90-a6-e5-ad-98-e5-9c-a8-e7-8e-af/index.html">
 <meta property="og:site_name" content="TechUp">
-<meta property="og:description" content="判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。
-####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇
-找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下来fast和slow">
-<meta property="og:updated_time" content="2015-08-08T02:19:56.000Z">
+<meta property="og:description" content="Edit
+
+
+
+判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。
+
+
+
+判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇
+
+
+
+找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下">
+<meta property="og:updated_time" content="2015-08-07T21:41:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode：判断单链列表是否存在环">
-<meta name="twitter:description" content="判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。
-####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇
-找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下来fast和slow">
+<meta name="twitter:description" content="Edit
+
+
+
+判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。
+
+
+
+判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇
+
+
+
+找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下">
 
     
     <link rel="alternative" href="/atom.xml" title="TechUp" type="application/atom+xml">
@@ -84,7 +114,7 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/01/20/leetcode_loop_in_linked_list/" title="LeetCode：判断单链列表是否存在环" itemprop="url">LeetCode：判断单链列表是否存在环</a>
+      <a href="/2015/01/20/leetcode-ef-bc-9a-e5-88-a4-e6-96-ad-e5-8d-95-e9-93-be-e5-88-97-e8-a1-a8-e6-98-af-e5-90-a6-e5-ad-98-e5-9c-a8-e7-8e-af/" title="LeetCode：判断单链列表是否存在环" itemprop="url">LeetCode：判断单链列表是否存在环</a>
   </h1>
   <p class="article-author">By
        
@@ -100,32 +130,63 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#找到环的入口"><span class="toc-number">1.</span> <span class="toc-text">找到环的入口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#证明"><span class="toc-number">2.</span> <span class="toc-text">证明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python实现"><span class="toc-number">3.</span> <span class="toc-text">Python实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用"><span class="toc-number">4.</span> <span class="toc-text">应用</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#判断是否存在环"><span class="toc-number">1.</span> <span class="toc-text">判断是否存在环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#找到环的入口"><span class="toc-number">2.</span> <span class="toc-text">找到环的入口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#证明"><span class="toc-number">3.</span> <span class="toc-text">证明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python实现"><span class="toc-number">4.</span> <span class="toc-text">Python实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用"><span class="toc-number">5.</span> <span class="toc-text">应用</span></a></li></ol>
 		
 		</div>
 		
-		<p>判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。</p>
-<p>####判断是否存在环<br>用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.<br>若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇</p>
+		<p><del style="position: relative; display: block;"><a href="http://maxiang.info/#/?provider=evernote_int&amp;guid=5bcf8a4e-24c2-4085-90b6-8032de225b06" target="_blank" rel="external">Edit</a></del></p>
+<p><div style="line-height: 1.5; color: #2c3f51;"></div></p>
+<div>
+
+<p>判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。</p>
+<p></p></div><p></p>
+<div>
+
+<h4 id="判断是否存在环">判断是否存在环</h4><p>用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.<br>若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇</p>
+<p></p></div><p></p>
+<div>
+
 <h4 id="找到环的入口">找到环的入口</h4><p>当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。<br>接下来fast和slow都每次移动1。两指针在此相遇的位置即为环的入口。</p>
+<p></p></div><br><a id="more"></a><p></p>
+<div>
+
 <h4 id="证明">证明</h4><p>设初次相遇时循环运行n次。设初次相遇为M点，head到环入口距离为a，环入口到M点距离为b。环路周长为L。第一次相遇时fast已经走了k圈（不能保证相遇时fast只多走1圈）。<br>slow走的距离为d1 = a + b = n<br>fast走的距离为d2 = a + b+ k<em>L = 2n<br>d2 - d1 = n = k</em>L，可知长度n恰好为环周长的整数倍。<br>此时slow从相遇点M再走n步，可以回到相遇点M。<br>此时fast从head出发走n步，也可到达M。<br>实际上两者在走完a步后就相遇了，此处即为环的入口。</p>
-<h4 id="Python实现">Python实现</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">slow = fast = head</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">     <span class="keyword">if</span> <span class="keyword">not</span> fast.next <span class="keyword">or</span> <span class="keyword">not</span> fast.next.next:</span><br><span class="line">          <span class="comment"># No loop</span></span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">     <span class="keyword">else</span>:</span><br><span class="line">          slow = slow.next</span><br><span class="line">          fast = fast.next.next</span><br><span class="line">          <span class="keyword">if</span> slow == fast:</span><br><span class="line">               <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Encountered for 1st time. Now set out again</span></span><br><span class="line"><span class="keyword">while</span> fast != slow:</span><br><span class="line">     fast = fast.next</span><br><span class="line">     slow = slow.next</span><br><span class="line"></span><br><span class="line"><span class="comment"># Now both fast and slow point to the loop entrance</span></span><br><span class="line"><span class="keyword">return</span> fast</span><br></pre></td></tr></table></figure>
+<p></p></div><p></p>
+<div>
+
+<h4 id="Python实现">Python实现</h4><p></p></div><p></p>
+<div>
+
+<pre><code>slow = fast = head
+<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>while<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>True<span class="tag">&lt;/<span class="title">span</span>&gt;</span>:
+     <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>if<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>not<span class="tag">&lt;/<span class="title">span</span>&gt;</span> fast.next <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>or<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>not<span class="tag">&lt;/<span class="title">span</span>&gt;</span> fast.next.next:
+          <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #75715e;"</span>&gt;</span># No loop<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>return<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>None<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+     <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>else<span class="tag">&lt;/<span class="title">span</span>&gt;</span>:
+          slow = slow.next
+          fast = fast.next.next
+          <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>if<span class="tag">&lt;/<span class="title">span</span>&gt;</span> slow == fast:
+               <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>break<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #75715e;"</span>&gt;</span># Encountered for 1st time. Now set out again<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>while<span class="tag">&lt;/<span class="title">span</span>&gt;</span> fast != slow:
+     fast = fast.next
+     slow = slow.next
+
+<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #75715e;"</span>&gt;</span># Now both fast and slow point to the loop entrance<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>return<span class="tag">&lt;/<span class="title">span</span>&gt;</span> fast
+</code></pre><p></p></div><p></p>
+<div>
+
 <h4 id="应用">应用</h4><p>可以用来解决两个单链表是否存在交点的问题，如下：</p>
-<p>$A:       a1 → a2$<br>$                ↘$<br>$                 c1 → c2 → c3$<br>$                ↗$<br>$B:   b1 → b2 → b3$<br>给定两个单链表A，B，问A，B是否存在某个相交节点，若存在则返回该节点。应用我们的方法，可以在O(n)时间，O(1)空间内求解。<br>方法是先遍历A找到尾节点tailA，设置tailA.next = headB。若A与B有交点，则从headA再出发使用我们的算法找到环，环路入口即为链表交点。</p>
-  
+<p>给定两个单链表A，B，问A，B是否存在某个相交节点，若存在则返回该节点。应用我们的方法，可以在O(n)时间，O(1)空间内求解。<br>方法是先遍历A找到尾节点tailA，设置tailA.next = headB。若A与B有交点，则从headA再出发使用我们的算法找到环，环路入口即为链表交点。</p>
+<p></p></div><p></p>
+<p><div></div><br></p>
+<center style="display: none;">@%28%u6280%u672F%u5B66%u4E60%29%5Bpython%7C%u539F%u521B%7CleetCodeOJ%7Ceat.wordpress.post%5D%0A%23LeetCode%uFF1A%u5224%u65AD%u5355%u94FE%u5217%u8868%u662F%u5426%u5B58%u5728%u73AF%0A%u5224%u65AD%u5355%u94FE%u5217%u8868%u662F%u5426%u5B58%u5728%u73AF%uFF0C%u5373%u67D0%u4E2A%u8282%u70B9%u7684next%u6307%u5411%u94FE%u8868%u4E2D%u5728%u5B83%u524D%u9762%u7684%u8282%u70B9%uFF0C%u8FD9%u6837%u5728%u94FE%u8868%u5C3E%u90E8%u5F62%u6210%u4E00%u73AF%u3002%0A%0A%23%23%23%23%u5224%u65AD%u662F%u5426%u5B58%u5728%u73AF%0A%u7528%u4E00%u4E2Afast%u6307%u9488%uFF0C%u4E00%u4E2Aslow%u6307%u9488%uFF0Cslow%u6BCF%u6B21%u79FB%u52A81%uFF0Cfast%u6BCF%u6B21%u79FB%u52A82.%0A%u82E5%u94FE%u8868%u5B58%u5728%u73AF%uFF0C%u79FB%u52A8%u5FEB%u7684fast%u6307%u9488%u4E00%u5B9A%u5728%u73AF%u5185%u8FFD%u8D76%u4E0A%u79FB%u52A8%u6162%u7684slow%u6307%u9488%uFF0C%u5219%u76F8%u9047%0A%0A%23%23%23%23%20%u627E%u5230%u73AF%u7684%u5165%u53E3%0A%u5F53%u4E24%u6307%u9488%u7B2C%u4E00%u6B21%u76F8%u9047%u540E%uFF0C%u8BC1%u660E%u5B58%u5728%u73AF%u3002%u73B0%u5728%u5C06fast%u6307%u9488%u91CD%u65B0%u8BBE%u4E3Ahead%uFF0Cslow%u6307%u9488%u4E0D%u53D8%u3002%0A%u63A5%u4E0B%u6765fast%u548Cslow%u90FD%u6BCF%u6B21%u79FB%u52A81%u3002%u4E24%u6307%u9488%u5728%u6B64%u76F8%u9047%u7684%u4F4D%u7F6E%u5373%u4E3A%u73AF%u7684%u5165%u53E3%u3002%0A%0A%23%23%23%23%20%u8BC1%u660E%0A%u8BBE%u521D%u6B21%u76F8%u9047%u65F6%u5FAA%u73AF%u8FD0%u884Cn%u6B21%u3002%u8BBE%u521D%u6B21%u76F8%u9047%u4E3AM%u70B9%uFF0Chead%u5230%u73AF%u5165%u53E3%u8DDD%u79BB%u4E3Aa%uFF0C%u73AF%u5165%u53E3%u5230M%u70B9%u8DDD%u79BB%u4E3Ab%u3002%u73AF%u8DEF%u5468%u957F%u4E3AL%u3002%u7B2C%u4E00%u6B21%u76F8%u9047%u65F6fast%u5DF2%u7ECF%u8D70%u4E86k%u5708%uFF08%u4E0D%u80FD%u4FDD%u8BC1%u76F8%u9047%u65F6fast%u53EA%u591A%u8D701%u5708%uFF09%u3002%0Aslow%u8D70%u7684%u8DDD%u79BB%u4E3Ad1%20%3D%20a%20+%20b%20%3D%20n%0Afast%u8D70%u7684%u8DDD%u79BB%u4E3Ad2%20%3D%20a%20+%20b+%20k<em>L%20%3D%202n%0Ad2%20-%20d1%20%3D%20n%20%3D%20k</em>L%uFF0C%u53EF%u77E5%u957F%u5EA6n%u6070%u597D%u4E3A%u73AF%u5468%u957F%u7684%u6574%u6570%u500D%u3002%0A%u6B64%u65F6slow%u4ECE%u76F8%u9047%u70B9M%u518D%u8D70n%u6B65%uFF0C%u53EF%u4EE5%u56DE%u5230%u76F8%u9047%u70B9M%u3002%0A%u6B64%u65F6fast%u4ECEhead%u51FA%u53D1%u8D70n%u6B65%uFF0C%u4E5F%u53EF%u5230%u8FBEM%u3002%0A%u5B9E%u9645%u4E0A%u4E24%u8005%u5728%u8D70%u5B8Ca%u6B65%u540E%u5C31%u76F8%u9047%u4E86%uFF0C%u6B64%u5904%u5373%u4E3A%u73AF%u7684%u5165%u53E3%u3002%0A%0A%23%23%23%23%20Python%u5B9E%u73B0%0A%60%60%60python%0Aslow%20%3D%20fast%20%3D%20head%0Awhile%20True%3A%0A%20%20%20%20%20if%20not%20fast.next%20or%20not%20fast.next.next%3A%0A%20%20%20%20%20%20%20%20%20%20%23%20No%20loop%0A%20%20%20%20%20%20%20%20%20%20return%20None%0A%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20slow%20%3D%20slow.next%0A%20%20%20%20%20%20%20%20%20%20fast%20%3D%20fast.next.next%0A%20%20%20%20%20%20%20%20%20%20if%20slow%20%3D%3D%20fast%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20break%0A%0A%23%20Encountered%20for%201st%20time.%20Now%20set%20out%20again%0Awhile%20fast%20%21%3D%20slow%3A%0A%20%20%20%20%20fast%20%3D%20fast.next%0A%20%20%20%20%20slow%20%3D%20slow.next%0A%0A%23%20Now%20both%20fast%20and%20slow%20point%20to%20the%20loop%20entrance%0Areturn%20fast%0A%60%60%60%0A%0A%23%23%23%23%20%u5E94%u7528%0A%u53EF%u4EE5%u7528%u6765%u89E3%u51B3%u4E24%u4E2A%u5355%u94FE%u8868%u662F%u5426%u5B58%u5728%u4EA4%u70B9%u7684%u95EE%u9898%uFF0C%u5982%u4E0B%uFF1A%0A%0A%24A%3A%20%7E%7E%7E%7E%7E%7E%7E%7E%7Ea1%20%u2192%20a2%24%0A%24%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%u2198%24%0A%24%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7Ec1%20%u2192%20c2%20%u2192%20c3%24%0A%24%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%7E%u2197%24%0A%24B%3A%20%20%20%20%20b1%20%u2192%20b2%20%u2192%20b3%24%0A%u7ED9%u5B9A%u4E24%u4E2A%u5355%u94FE%u8868A%uFF0CB%uFF0C%u95EEA%uFF0CB%u662F%u5426%u5B58%u5728%u67D0%u4E2A%u76F8%u4EA4%u8282%u70B9%uFF0C%u82E5%u5B58%u5728%u5219%u8FD4%u56DE%u8BE5%u8282%u70B9%u3002%u5E94%u7528%u6211%u4EEC%u7684%u65B9%u6CD5%uFF0C%u53EF%u4EE5%u5728O%28n%29%u65F6%u95F4%uFF0CO%281%29%u7A7A%u95F4%u5185%u6C42%u89E3%u3002%0A%u65B9%u6CD5%u662F%u5148%u904D%u5386A%u627E%u5230%u5C3E%u8282%u70B9tailA%uFF0C%u8BBE%u7F6EtailA.next%20%3D%20headB%u3002%u82E5A%u4E0EB%u6709%u4EA4%u70B9%uFF0C%u5219%u4ECEheadA%u518D%u51FA%u53D1%u4F7F%u7528%u6211%u4EEC%u7684%u7B97%u6CD5%u627E%u5230%u73AF%uFF0C%u73AF%u8DEF%u5165%u53E3%u5373%u4E3A%u94FE%u8868%u4EA4%u70B9%u3002</center>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/leetcode/">leetcode</a><a href="/tags/python/">python</a>
-  </div>
 
 </div>
 
@@ -133,7 +194,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/01/20/leetcode_loop_in_linked_list/" data-title="LeetCode：判断单链列表是否存在环 | TechUp" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://yoursite.com/2015/01/20/leetcode-ef-bc-9a-e5-88-a4-e6-96-ad-e5-8d-95-e9-93-be-e5-88-97-e8-a1-a8-e6-98-af-e5-90-a6-e5-ad-98-e5-9c-a8-e7-8e-af/" data-title="LeetCode：判断单链列表是否存在环 | TechUp" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -147,18 +208,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/01/20/15_fall_application/" title="15FALL英国硕士申请总结：剑桥，牛津，帝国理工及其他">
+ <a href="/2015/01/20/leetcode_loop_in_linked_list/" title="LeetCode：判断单链列表是否存在环">
   <strong>上一篇：</strong><br/>
   <span>
-  15FALL英国硕士申请总结：剑桥，牛津，帝国理工及其他</span>
+  LeetCode：判断单链列表是否存在环</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/01/20/leetcode-ef-bc-9a-e5-88-a4-e6-96-ad-e5-8d-95-e9-93-be-e5-88-97-e8-a1-a8-e6-98-af-e5-90-a6-e5-ad-98-e5-9c-a8-e7-8e-af/"  title="LeetCode：判断单链列表是否存在环">
+<a href="/2015/01/20/python_argparse_module/"  title="Python 命令行解析模块argparse使用学习">
  <strong>下一篇：</strong><br/> 
- <span>LeetCode：判断单链列表是否存在环
+ <span>Python 命令行解析模块argparse使用学习
 </span>
 </a>
 </div>
@@ -167,7 +228,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/01/20/leetcode_loop_in_linked_list/" data-title="LeetCode：判断单链列表是否存在环" data-url="http://yoursite.com/2015/01/20/leetcode_loop_in_linked_list/"></div>
+	<div class="ds-thread" data-thread-key="2015/01/20/leetcode-ef-bc-9a-e5-88-a4-e6-96-ad-e5-8d-95-e9-93-be-e5-88-97-e8-a1-a8-e6-98-af-e5-90-a6-e5-ad-98-e5-9c-a8-e7-8e-af/" data-title="LeetCode：判断单链列表是否存在环" data-url="http://yoursite.com/2015/01/20/leetcode-ef-bc-9a-e5-88-a4-e6-96-ad-e5-8d-95-e9-93-be-e5-88-97-e8-a1-a8-e6-98-af-e5-90-a6-e5-ad-98-e5-9c-a8-e7-8e-af/"></div>
 </section>
 
 
@@ -177,7 +238,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
  
- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#找到环的入口"><span class="toc-number">1.</span> <span class="toc-text">找到环的入口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#证明"><span class="toc-number">2.</span> <span class="toc-text">证明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python实现"><span class="toc-number">3.</span> <span class="toc-text">Python实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用"><span class="toc-number">4.</span> <span class="toc-text">应用</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#判断是否存在环"><span class="toc-number">1.</span> <span class="toc-text">判断是否存在环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#找到环的入口"><span class="toc-number">2.</span> <span class="toc-text">找到环的入口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#证明"><span class="toc-number">3.</span> <span class="toc-text">证明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python实现"><span class="toc-number">4.</span> <span class="toc-text">Python实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用"><span class="toc-number">5.</span> <span class="toc-text">应用</span></a></li></ol>
  
   </div>
 

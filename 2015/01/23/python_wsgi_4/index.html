@@ -21,7 +21,7 @@
 <meta property="og:description" content="可迭代响应对象：Response Iterable在之前正常工作的脚本中如果把最后一句的返回语句从原来的形式：1return [response_body]
 改为不放在列表中的形式：1return response_body
 如果我们再次运行，就会发现运行的速度变慢了。原因是服务器仍会将返回的结果作为可迭代对象来迭代访问，但现在实际放回的是一个字符串，于是服务器就会迭代这个字符串，然后每次只把一个">
-<meta property="og:updated_time" content="2015-08-08T00:49:59.000Z">
+<meta property="og:updated_time" content="2015-08-08T00:49:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python WSGI教程(四)——可迭代响应对象">
 <meta name="twitter:description" content="可迭代响应对象：Response Iterable在之前正常工作的脚本中如果把最后一句的返回语句从原来的形式：1return [response_body]
@@ -153,7 +153,7 @@
 
 
 <div class="next">
-<a href="/2015/01/23/python_wsgi_3/"  title="Python WSGI教程(三)——环境字典">
+<a href="/2015/01/23/python-wsgi-e6-95-99-e7-a8-8b-e4-b8-89-e7-8e-af-e5-a2-83-e5-ad-97-e5-85-b8/"  title="Python WSGI教程(三)——环境字典">
  <strong>下一篇：</strong><br/> 
  <span>Python WSGI教程(三)——环境字典
 </span>
@@ -167,12 +167,6 @@
 	<div class="ds-thread" data-thread-key="2015/01/23/python_wsgi_4/" data-title="Python WSGI教程(四)——可迭代响应对象" data-url="http://yoursite.com/2015/01/23/python_wsgi_4/"></div>
 </section>
 
-
-<section id="comments" class="comment">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
 
 </div>  
       <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
@@ -215,6 +209,8 @@
 			<li><a href="/categories/python/" title="python">python<sup>12</sup></a></li>
 		  
 		
+		  
+		
 		</ul>
 </div>
 
@@ -245,15 +241,11 @@
 			
 		
 			
-				<li><a href="/tags/leetCodeOJ/" title="leetCodeOJ">leetCodeOJ<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/算法/" title="算法">算法<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/programming/" title="programming">programming<sup>1</sup></a></li>
+				<li><a href="/tags/leetCodeOJ/" title="leetCodeOJ">leetCodeOJ<sup>1</sup></a></li>
 			
 		
 			
@@ -265,11 +257,17 @@
 			
 		
 			
+				<li><a href="/tags/oxford/" title="oxford">oxford<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/study/" title="study">study<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/oxford/" title="oxford">oxford<sup>1</sup></a></li>
+				<li><a href="/tags/programming/" title="programming">programming<sup>1</sup></a></li>
+			
+		
 			
 		
 		</ul>
@@ -511,26 +509,6 @@ $(document).ready(function(){
   })();
 </script> 
 
-
-<script type="text/javascript">
-
-var disqus_shortname = 'yongli1992';
-
-(function(){
-  var dsq = document.createElement('script');
-  dsq.type = 'text/javascript';
-  dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-}());
-(function(){
-  var dsq = document.createElement('script');
-  dsq.type = 'text/javascript';
-  dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-}());
-</script>
 
 
 

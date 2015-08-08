@@ -4,29 +4,32 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>LeetCode：判断单链列表是否存在环 | TechUp</title>
+    <title>什么是鸭子类型（duck typing） | TechUp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="yongli1992">
     
 
     
-    <meta name="description" content="判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。
-####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇
-找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下来fast和slow">
+    <meta name="description" content="Edit                                            
+归档 python 原创 编程语言 eat.wordpress.post
+鸭子类型是动态语言的一种设计风格。提到鸭子类型就不得不提它的名称由来：如果像鸭子一样走路，像鸭子一样呱呱叫，那它就是一只鸭子。
+鸭子类型本质体现的是面向接口的编程。相比之下，传统的静态OO语言如java等的多态思想，体现的是面向">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode：判断单链列表是否存在环">
-<meta property="og:url" content="http://yoursite.com/2015/01/20/leetcode_loop_in_linked_list/index.html">
+<meta property="og:title" content="什么是鸭子类型（duck typing）">
+<meta property="og:url" content="http://yoursite.com/2015/02/09/e4-bb-80-e4-b9-88-e6-98-af-e9-b8-ad-e5-ad-90-e7-b1-bb-e5-9e-8b-ef-bc-88duck-typing-ef-bc-89/index.html">
 <meta property="og:site_name" content="TechUp">
-<meta property="og:description" content="判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。
-####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇
-找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下来fast和slow">
-<meta property="og:updated_time" content="2015-08-08T02:19:56.000Z">
+<meta property="og:description" content="Edit                                            
+归档 python 原创 编程语言 eat.wordpress.post
+鸭子类型是动态语言的一种设计风格。提到鸭子类型就不得不提它的名称由来：如果像鸭子一样走路，像鸭子一样呱呱叫，那它就是一只鸭子。
+鸭子类型本质体现的是面向接口的编程。相比之下，传统的静态OO语言如java等的多态思想，体现的是面向">
+<meta property="og:updated_time" content="2015-08-07T21:41:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode：判断单链列表是否存在环">
-<meta name="twitter:description" content="判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。
-####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇
-找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下来fast和slow">
+<meta name="twitter:title" content="什么是鸭子类型（duck typing）">
+<meta name="twitter:description" content="Edit                                            
+归档 python 原创 编程语言 eat.wordpress.post
+鸭子类型是动态语言的一种设计风格。提到鸭子类型就不得不提它的名称由来：如果像鸭子一样走路，像鸭子一样呱呱叫，那它就是一只鸭子。
+鸭子类型本质体现的是面向接口的编程。相比之下，传统的静态OO语言如java等的多态思想，体现的是面向">
 
     
     <link rel="alternative" href="/atom.xml" title="TechUp" type="application/atom+xml">
@@ -84,14 +87,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/01/20/leetcode_loop_in_linked_list/" title="LeetCode：判断单链列表是否存在环" itemprop="url">LeetCode：判断单链列表是否存在环</a>
+      <a href="/2015/02/09/e4-bb-80-e4-b9-88-e6-98-af-e9-b8-ad-e5-ad-90-e7-b1-bb-e5-9e-8b-ef-bc-88duck-typing-ef-bc-89/" title="什么是鸭子类型（duck typing）" itemprop="url">什么是鸭子类型（duck typing）</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-01-20T08:12:03.000Z" itemprop="datePublished"> 發表於 2015-01-20</time>
+    <time datetime="2015-02-09T14:59:50.000Z" itemprop="datePublished"> 發表於 2015-02-09</time>
     
   </p>
 </header>
@@ -100,32 +103,39 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#找到环的入口"><span class="toc-number">1.</span> <span class="toc-text">找到环的入口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#证明"><span class="toc-number">2.</span> <span class="toc-text">证明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python实现"><span class="toc-number">3.</span> <span class="toc-text">Python实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用"><span class="toc-number">4.</span> <span class="toc-text">应用</span></a></li></ol>
+			
 		
 		</div>
 		
-		<p>判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。</p>
-<p>####判断是否存在环<br>用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.<br>若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇</p>
-<h4 id="找到环的入口">找到环的入口</h4><p>当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。<br>接下来fast和slow都每次移动1。两指针在此相遇的位置即为环的入口。</p>
-<h4 id="证明">证明</h4><p>设初次相遇时循环运行n次。设初次相遇为M点，head到环入口距离为a，环入口到M点距离为b。环路周长为L。第一次相遇时fast已经走了k圈（不能保证相遇时fast只多走1圈）。<br>slow走的距离为d1 = a + b = n<br>fast走的距离为d2 = a + b+ k<em>L = 2n<br>d2 - d1 = n = k</em>L，可知长度n恰好为环周长的整数倍。<br>此时slow从相遇点M再走n步，可以回到相遇点M。<br>此时fast从head出发走n步，也可到达M。<br>实际上两者在走完a步后就相遇了，此处即为环的入口。</p>
-<h4 id="Python实现">Python实现</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">slow = fast = head</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">     <span class="keyword">if</span> <span class="keyword">not</span> fast.next <span class="keyword">or</span> <span class="keyword">not</span> fast.next.next:</span><br><span class="line">          <span class="comment"># No loop</span></span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">     <span class="keyword">else</span>:</span><br><span class="line">          slow = slow.next</span><br><span class="line">          fast = fast.next.next</span><br><span class="line">          <span class="keyword">if</span> slow == fast:</span><br><span class="line">               <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Encountered for 1st time. Now set out again</span></span><br><span class="line"><span class="keyword">while</span> fast != slow:</span><br><span class="line">     fast = fast.next</span><br><span class="line">     slow = slow.next</span><br><span class="line"></span><br><span class="line"><span class="comment"># Now both fast and slow point to the loop entrance</span></span><br><span class="line"><span class="keyword">return</span> fast</span><br></pre></td></tr></table></figure>
-<h4 id="应用">应用</h4><p>可以用来解决两个单链表是否存在交点的问题，如下：</p>
-<p>$A:       a1 → a2$<br>$                ↘$<br>$                 c1 → c2 → c3$<br>$                ↗$<br>$B:   b1 → b2 → b3$<br>给定两个单链表A，B，问A，B是否存在某个相交节点，若存在则返回该节点。应用我们的方法，可以在O(n)时间，O(1)空间内求解。<br>方法是先遍历A找到尾节点tailA，设置tailA.next = headB。若A与B有交点，则从headA再出发使用我们的算法找到环，环路入口即为链表交点。</p>
+		<p><del style="position:relative;display:block"><a href="http://maxiang.info/#/?provider=evernote_int&amp;guid=3df39a6e-21d9-42fa-88b9-8ef10f73771c" target="_blank" rel="external">Edit</a></del><div style="line-height: 1.5; color: #2c3f51; font-family: Helvetica Neue, Arial, Hiragino Sans GB, STHeiti, Microsoft YaHei, WenQuanYi Micro Hei, SimSun, Song, sans-serif;"><br>                        <div></div><br>                    <div></div></div></p>
+<p><code>归档</code> <code>python</code> <code>原创</code> <code>编程语言</code> <code>eat.wordpress.post</code><br><div></div></p>
+<p>鸭子类型是动态语言的一种设计风格。提到鸭子类型就不得不提它的名称由来：如果像鸭子一样走路，像鸭子一样呱呱叫，那它就是一只鸭子。</p>
+<p>鸭子类型本质体现的是面向接口的编程。相比之下，传统的静态OO语言如java等的多态思想，体现的是面向继承的编程。</p>
+<p>简单来说，动态语言因为运行前不需要确定变量类型，故对对象的方法调用，只要对象拥有这一名称的方法，就一定能调用成功。</p>
+<p>如：</p>
+<p><div></div></p>
+<pre><code>&lt;<span class="tag">span</span> &gt;&lt;<span class="tag">span</span>  style=<span class="string">"color: #66d9ef;"</span>&gt;class&lt;/span&gt; &lt;<span class="tag">span</span>  style=<span class="string">"color: #a6e22e; font-style: italic;"</span>&gt;A&lt;/span&gt;:&lt;/span&gt;
+    &lt;<span class="tag">span</span>  style=<span class="string">"color: #f92672;"</span>&gt;&lt;<span class="tag">span</span>  style=<span class="string">"color: #66d9ef;"</span>&gt;def&lt;/span&gt; &lt;<span class="tag">span</span>  style=<span class="string">"color: #a6e22e;"</span>&gt;say&lt;/span&gt;&lt;<span class="tag">span</span>  style=<span class="string">"color: #f8f8f2;"</span>&gt;(self)&lt;/span&gt;:&lt;/span&gt;
+        &lt;<span class="tag">span</span>  style=<span class="string">"color: #f92672;"</span>&gt;print&lt;/span&gt; &lt;<span class="tag">span</span>  style=<span class="string">"color: #e6db74;"</span>&gt;<span class="string">"Called as A's instance"</span>&lt;/span&gt;
+
+&lt;<span class="tag">span</span> &gt;&lt;<span class="tag">span</span>  style=<span class="string">"color: #66d9ef;"</span>&gt;class&lt;/span&gt; &lt;<span class="tag">span</span>  style=<span class="string">"color: #a6e22e; font-style: italic;"</span>&gt;B&lt;/span&gt;:&lt;/span&gt;
+    &lt;<span class="tag">span</span>  style=<span class="string">"color: #f92672;"</span>&gt;&lt;<span class="tag">span</span>  style=<span class="string">"color: #66d9ef;"</span>&gt;def&lt;/span&gt; &lt;<span class="tag">span</span>  style=<span class="string">"color: #a6e22e;"</span>&gt;say&lt;/span&gt;&lt;<span class="tag">span</span>  style=<span class="string">"color: #f8f8f2;"</span>&gt;(self)&lt;/span&gt;:&lt;/span&gt;
+        &lt;<span class="tag">span</span>  style=<span class="string">"color: #f92672;"</span>&gt;print&lt;/span&gt; &lt;<span class="tag">span</span>  style=<span class="string">"color: #e6db74;"</span>&gt;<span class="string">"Called as B's instance"</span>&lt;/span&gt;
+
+&lt;<span class="tag">span</span>  style=<span class="string">"color: #f92672;"</span>&gt;&lt;<span class="tag">span</span>  style=<span class="string">"color: #66d9ef;"</span>&gt;def&lt;/span&gt; &lt;<span class="tag">span</span>  style=<span class="string">"color: #a6e22e;"</span>&gt;process&lt;/span&gt;&lt;<span class="tag">span</span>  style=<span class="string">"color: #f8f8f2;"</span>&gt;(obj)&lt;/span&gt;:&lt;/span&gt;
+    obj.<span class="function"><span class="title">say</span><span class="params">()</span></span>
+
+<span class="tag">a</span> = <span class="function"><span class="title">A</span><span class="params">()</span></span>
+<span class="tag">b</span> = <span class="function"><span class="title">B</span><span class="params">()</span></span>
+<span class="function"><span class="title">process</span><span class="params">(a)</span></span>
+<span class="function"><span class="title">process</span><span class="params">(b)</span></span>
+</code></pre><p>这个例子里我们看到，process处理函数要求接受到的参数对象具有一个say方法，则 a 和 b 都具有这个方法，它们都被视作合法的输入，而不关心它们具体是什么类型。</p>
+<p>而在静态语言里，必须指明参数obj的类型。即使使用多态的思想，合法的输入参数也至少要是指明的obj类型的子类型，其他的类型就算实现了 say 方法，也是无法调用的。使用反射可以做到类似的实现，但是相对欠灵活。<br><div></div><center style="display:none">@%28%u5F52%u6863%29%5Bpython%7C%u539F%u521B%7C%u7F16%u7A0B%u8BED%u8A00%7Ceat.wordpress.post%5D%0A%23%23%20%u4EC0%u4E48%u662F%u9E2D%u5B50%u7C7B%u578B%uFF08duck%20typing%uFF09%0A%u9E2D%u5B50%u7C7B%u578B%u662F%u52A8%u6001%u8BED%u8A00%u7684%u4E00%u79CD%u8BBE%u8BA1%u98CE%u683C%u3002%u63D0%u5230%u9E2D%u5B50%u7C7B%u578B%u5C31%u4E0D%u5F97%u4E0D%u63D0%u5B83%u7684%u540D%u79F0%u7531%u6765%uFF1A%u5982%u679C%u50CF%u9E2D%u5B50%u4E00%u6837%u8D70%u8DEF%uFF0C%u50CF%u9E2D%u5B50%u4E00%u6837%u5471%u5471%u53EB%uFF0C%u90A3%u5B83%u5C31%u662F%u4E00%u53EA%u9E2D%u5B50%u3002%0A%0A%u9E2D%u5B50%u7C7B%u578B%u672C%u8D28%u4F53%u73B0%u7684%u662F%u9762%u5411%u63A5%u53E3%u7684%u7F16%u7A0B%u3002%u76F8%u6BD4%u4E4B%u4E0B%uFF0C%u4F20%u7EDF%u7684%u9759%u6001OO%u8BED%u8A00%u5982java%u7B49%u7684%u591A%u6001%u601D%u60F3%uFF0C%u4F53%u73B0%u7684%u662F%u9762%u5411%u7EE7%u627F%u7684%u7F16%u7A0B%u3002%0A%0A%u7B80%u5355%u6765%u8BF4%uFF0C%u52A8%u6001%u8BED%u8A00%u56E0%u4E3A%u8FD0%u884C%u524D%u4E0D%u9700%u8981%u786E%u5B9A%u53D8%u91CF%u7C7B%u578B%uFF0C%u6545%u5BF9%u5BF9%u8C61%u7684%u65B9%u6CD5%u8C03%u7528%uFF0C%u53EA%u8981%u5BF9%u8C61%u62E5%u6709%u8FD9%u4E00%u540D%u79F0%u7684%u65B9%u6CD5%uFF0C%u5C31%u4E00%u5B9A%u80FD%u8C03%u7528%u6210%u529F%u3002%0A%0A%u5982%uFF1A%0A%60%60%60python%0Aclass%20A%3A%0A%09def%20say%28self%29%3A%0A%09%09print%20%22Called%20as%20A%27s%20instance%22%0A%0Aclass%20B%3A%0A%09def%20say%28self%29%3A%0A%09%09print%20%22Called%20as%20B%27s%20instance%22%0A%0Adef%20process%28obj%29%3A%0A%09obj.say%28%29%0A%0Aa%20%3D%20A%28%29%0Ab%20%3D%20B%28%29%0Aprocess%28a%29%0Aprocess%28b%29%0A%0A%60%60%60%0A%u8FD9%u4E2A%u4F8B%u5B50%u91CC%u6211%u4EEC%u770B%u5230%uFF0Cprocess%u5904%u7406%u51FD%u6570%u8981%u6C42%u63A5%u53D7%u5230%u7684%u53C2%u6570%u5BF9%u8C61%u5177%u6709%u4E00%u4E2Asay%u65B9%u6CD5%uFF0C%u5219%20a%20%u548C%20b%20%u90FD%u5177%u6709%u8FD9%u4E2A%u65B9%u6CD5%uFF0C%u5B83%u4EEC%u90FD%u88AB%u89C6%u4F5C%u5408%u6CD5%u7684%u8F93%u5165%uFF0C%u800C%u4E0D%u5173%u5FC3%u5B83%u4EEC%u5177%u4F53%u662F%u4EC0%u4E48%u7C7B%u578B%u3002%0A%0A%u800C%u5728%u9759%u6001%u8BED%u8A00%u91CC%uFF0C%u5FC5%u987B%u6307%u660E%u53C2%u6570obj%u7684%u7C7B%u578B%u3002%u5373%u4F7F%u4F7F%u7528%u591A%u6001%u7684%u601D%u60F3%uFF0C%u5408%u6CD5%u7684%u8F93%u5165%u53C2%u6570%u4E5F%u81F3%u5C11%u8981%u662F%u6307%u660E%u7684obj%u7C7B%u578B%u7684%u5B50%u7C7B%u578B%uFF0C%u5176%u4ED6%u7684%u7C7B%u578B%u5C31%u7B97%u5B9E%u73B0%u4E86%20say%20%u65B9%u6CD5%uFF0C%u4E5F%u662F%u65E0%u6CD5%u8C03%u7528%u7684%u3002%u4F7F%u7528%u53CD%u5C04%u53EF%u4EE5%u505A%u5230%u7C7B%u4F3C%u7684%u5B9E%u73B0%uFF0C%u4F46%u662F%u76F8%u5BF9%u6B20%u7075%u6D3B%u3002</center></p>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/leetcode/">leetcode</a><a href="/tags/python/">python</a>
-  </div>
 
 </div>
 
@@ -133,7 +143,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/01/20/leetcode_loop_in_linked_list/" data-title="LeetCode：判断单链列表是否存在环 | TechUp" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://yoursite.com/2015/02/09/e4-bb-80-e4-b9-88-e6-98-af-e9-b8-ad-e5-ad-90-e7-b1-bb-e5-9e-8b-ef-bc-88duck-typing-ef-bc-89/" data-title="什么是鸭子类型（duck typing） | TechUp" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -147,18 +157,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/01/20/15_fall_application/" title="15FALL英国硕士申请总结：剑桥，牛津，帝国理工及其他">
+ <a href="/2015/02/14/python_init_py/" title="Python：__init__.py 详解">
   <strong>上一篇：</strong><br/>
   <span>
-  15FALL英国硕士申请总结：剑桥，牛津，帝国理工及其他</span>
+  Python：__init__.py 详解</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/01/20/leetcode-ef-bc-9a-e5-88-a4-e6-96-ad-e5-8d-95-e9-93-be-e5-88-97-e8-a1-a8-e6-98-af-e5-90-a6-e5-ad-98-e5-9c-a8-e7-8e-af/"  title="LeetCode：判断单链列表是否存在环">
+<a href="/2015/02/09/whats_duck_typing/"  title="什么是鸭子类型（duck typing）">
  <strong>下一篇：</strong><br/> 
- <span>LeetCode：判断单链列表是否存在环
+ <span>什么是鸭子类型（duck typing）
 </span>
 </a>
 </div>
@@ -167,7 +177,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/01/20/leetcode_loop_in_linked_list/" data-title="LeetCode：判断单链列表是否存在环" data-url="http://yoursite.com/2015/01/20/leetcode_loop_in_linked_list/"></div>
+	<div class="ds-thread" data-thread-key="2015/02/09/e4-bb-80-e4-b9-88-e6-98-af-e9-b8-ad-e5-ad-90-e7-b1-bb-e5-9e-8b-ef-bc-88duck-typing-ef-bc-89/" data-title="什么是鸭子类型（duck typing）" data-url="http://yoursite.com/2015/02/09/e4-bb-80-e4-b9-88-e6-98-af-e9-b8-ad-e5-ad-90-e7-b1-bb-e5-9e-8b-ef-bc-88duck-typing-ef-bc-89/"></div>
 </section>
 
 
@@ -177,7 +187,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
  
- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#找到环的入口"><span class="toc-number">1.</span> <span class="toc-text">找到环的入口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#证明"><span class="toc-number">2.</span> <span class="toc-text">证明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python实现"><span class="toc-number">3.</span> <span class="toc-text">Python实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用"><span class="toc-number">4.</span> <span class="toc-text">应用</span></a></li></ol>
+ 
  
   </div>
 

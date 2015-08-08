@@ -4,29 +4,32 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>LeetCode：判断单链列表是否存在环 | TechUp</title>
+    <title>记一个使用yield读写文件的方法 | TechUp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="yongli1992">
     
 
     
-    <meta name="description" content="判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。
-####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇
-找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下来fast和slow">
+    <meta name="description" content="Edit                                            
+归档 python 原创 eat.wordpress.post
+在学习yield的使用方法的时候遇到了一个非常实用的应用，记录如下。
+在我们直接使用read()方法来读取一个文件的全部内容的时候，会导致不可预测的内存占用，即当文件很大时有可能直接内存不够用了。好的方法是利用一个指定长度的缓冲区配合yi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode：判断单链列表是否存在环">
-<meta property="og:url" content="http://yoursite.com/2015/01/20/leetcode_loop_in_linked_list/index.html">
+<meta property="og:title" content="记一个使用yield读写文件的方法">
+<meta property="og:url" content="http://yoursite.com/2015/01/23/e8-ae-b0-e4-b8-80-e4-b8-aa-e4-bd-bf-e7-94-a8yield-e8-af-bb-e5-86-99-e6-96-87-e4-bb-b6-e7-9a-84-e6-96-b9-e6-b3-95/index.html">
 <meta property="og:site_name" content="TechUp">
-<meta property="og:description" content="判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。
-####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇
-找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下来fast和slow">
-<meta property="og:updated_time" content="2015-08-08T02:19:56.000Z">
+<meta property="og:description" content="Edit                                            
+归档 python 原创 eat.wordpress.post
+在学习yield的使用方法的时候遇到了一个非常实用的应用，记录如下。
+在我们直接使用read()方法来读取一个文件的全部内容的时候，会导致不可预测的内存占用，即当文件很大时有可能直接内存不够用了。好的方法是利用一个指定长度的缓冲区配合yi">
+<meta property="og:updated_time" content="2015-08-07T21:41:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode：判断单链列表是否存在环">
-<meta name="twitter:description" content="判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。
-####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇
-找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下来fast和slow">
+<meta name="twitter:title" content="记一个使用yield读写文件的方法">
+<meta name="twitter:description" content="Edit                                            
+归档 python 原创 eat.wordpress.post
+在学习yield的使用方法的时候遇到了一个非常实用的应用，记录如下。
+在我们直接使用read()方法来读取一个文件的全部内容的时候，会导致不可预测的内存占用，即当文件很大时有可能直接内存不够用了。好的方法是利用一个指定长度的缓冲区配合yi">
 
     
     <link rel="alternative" href="/atom.xml" title="TechUp" type="application/atom+xml">
@@ -84,14 +87,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/01/20/leetcode_loop_in_linked_list/" title="LeetCode：判断单链列表是否存在环" itemprop="url">LeetCode：判断单链列表是否存在环</a>
+      <a href="/2015/01/23/e8-ae-b0-e4-b8-80-e4-b8-aa-e4-bd-bf-e7-94-a8yield-e8-af-bb-e5-86-99-e6-96-87-e4-bb-b6-e7-9a-84-e6-96-b9-e6-b3-95/" title="记一个使用yield读写文件的方法" itemprop="url">记一个使用yield读写文件的方法</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-01-20T08:12:03.000Z" itemprop="datePublished"> 發表於 2015-01-20</time>
+    <time datetime="2015-01-22T19:30:08.000Z" itemprop="datePublished"> 發表於 2015-01-23</time>
     
   </p>
 </header>
@@ -100,32 +103,30 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#找到环的入口"><span class="toc-number">1.</span> <span class="toc-text">找到环的入口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#证明"><span class="toc-number">2.</span> <span class="toc-text">证明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python实现"><span class="toc-number">3.</span> <span class="toc-text">Python实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用"><span class="toc-number">4.</span> <span class="toc-text">应用</span></a></li></ol>
+			
 		
 		</div>
 		
-		<p>判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。</p>
-<p>####判断是否存在环<br>用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.<br>若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇</p>
-<h4 id="找到环的入口">找到环的入口</h4><p>当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。<br>接下来fast和slow都每次移动1。两指针在此相遇的位置即为环的入口。</p>
-<h4 id="证明">证明</h4><p>设初次相遇时循环运行n次。设初次相遇为M点，head到环入口距离为a，环入口到M点距离为b。环路周长为L。第一次相遇时fast已经走了k圈（不能保证相遇时fast只多走1圈）。<br>slow走的距离为d1 = a + b = n<br>fast走的距离为d2 = a + b+ k<em>L = 2n<br>d2 - d1 = n = k</em>L，可知长度n恰好为环周长的整数倍。<br>此时slow从相遇点M再走n步，可以回到相遇点M。<br>此时fast从head出发走n步，也可到达M。<br>实际上两者在走完a步后就相遇了，此处即为环的入口。</p>
-<h4 id="Python实现">Python实现</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">slow = fast = head</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">     <span class="keyword">if</span> <span class="keyword">not</span> fast.next <span class="keyword">or</span> <span class="keyword">not</span> fast.next.next:</span><br><span class="line">          <span class="comment"># No loop</span></span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">     <span class="keyword">else</span>:</span><br><span class="line">          slow = slow.next</span><br><span class="line">          fast = fast.next.next</span><br><span class="line">          <span class="keyword">if</span> slow == fast:</span><br><span class="line">               <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Encountered for 1st time. Now set out again</span></span><br><span class="line"><span class="keyword">while</span> fast != slow:</span><br><span class="line">     fast = fast.next</span><br><span class="line">     slow = slow.next</span><br><span class="line"></span><br><span class="line"><span class="comment"># Now both fast and slow point to the loop entrance</span></span><br><span class="line"><span class="keyword">return</span> fast</span><br></pre></td></tr></table></figure>
-<h4 id="应用">应用</h4><p>可以用来解决两个单链表是否存在交点的问题，如下：</p>
-<p>$A:       a1 → a2$<br>$                ↘$<br>$                 c1 → c2 → c3$<br>$                ↗$<br>$B:   b1 → b2 → b3$<br>给定两个单链表A，B，问A，B是否存在某个相交节点，若存在则返回该节点。应用我们的方法，可以在O(n)时间，O(1)空间内求解。<br>方法是先遍历A找到尾节点tailA，设置tailA.next = headB。若A与B有交点，则从headA再出发使用我们的算法找到环，环路入口即为链表交点。</p>
+		<p><del style="position:relative;display:block"><a href="http://maxiang.info/#/?provider=evernote_int&amp;guid=5c03c572-2b22-4aa1-8114-8fa67e16337a" target="_blank" rel="external">Edit</a></del><div style="line-height: 1.5; color: #2c3f51; font-family: Helvetica Neue, Arial, Hiragino Sans GB, STHeiti, Microsoft YaHei, WenQuanYi Micro Hei, SimSun, Song, sans-serif;"><br>                        <div></div><br>                    <div></div></div></p>
+<p><code>归档</code> <code>python</code> <code>原创</code> <code>eat.wordpress.post</code><br><div></div></p>
+<p>在学习yield的使用方法的时候遇到了一个非常实用的应用，记录如下。</p>
+<p>在我们直接使用read()方法来读取一个文件的全部内容的时候，会导致不可预测的内存占用，即当文件很大时有可能直接内存不够用了。好的方法是利用一个指定长度的缓冲区配合yield来逐次返回文件内容，代码示例如下：</p>
+<p><div></div></p>
+<pre><code><span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #66d9ef;"</span>&gt;</span>def<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #a6e22e;"</span>&gt;</span>read_file<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f8f8f2;"</span>&gt;</span>(file_name)<span class="tag">&lt;/<span class="title">span</span>&gt;</span>:<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+    BUFFER_SIZE = <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #ae81ff;"</span>&gt;</span>1024<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>with<span class="tag">&lt;/<span class="title">span</span>&gt;</span> open(file_name, <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #e6db74;"</span>&gt;</span>'r+'<span class="tag">&lt;/<span class="title">span</span>&gt;</span>) <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>as<span class="tag">&lt;/<span class="title">span</span>&gt;</span> f:
+        <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>while<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>True<span class="tag">&lt;/<span class="title">span</span>&gt;</span>:
+            block = f.read(BUFFER_SIZE) <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #75715e;"</span>&gt;</span># 读取文件内容至缓存区<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>if<span class="tag">&lt;/<span class="title">span</span>&gt;</span> block:
+                <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>yield<span class="tag">&lt;/<span class="title">span</span>&gt;</span> block
+            <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>else<span class="tag">&lt;/<span class="title">span</span>&gt;</span>:
+                <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>return<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span>  <span class="attribute">style</span>=<span class="value">"color: #75715e;"</span>&gt;</span># 退出生成器<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+</code></pre><p><div></div><center style="display:none">@%28%u5F52%u6863%29%5Bpython%7C%u539F%u521B%7Ceat.wordpress.post%5D%0A%23%u8BB0%u4E00%u4E2A%u4F7F%u7528yield%u8BFB%u5199%u6587%u4EF6%u7684%u65B9%u6CD5%0A%u5728%u5B66%u4E60yield%u7684%u4F7F%u7528%u65B9%u6CD5%u7684%u65F6%u5019%u9047%u5230%u4E86%u4E00%u4E2A%u975E%u5E38%u5B9E%u7528%u7684%u5E94%u7528%uFF0C%u8BB0%u5F55%u5982%u4E0B%u3002%0A%0A%u5728%u6211%u4EEC%u76F4%u63A5%u4F7F%u7528read%28%29%u65B9%u6CD5%u6765%u8BFB%u53D6%u4E00%u4E2A%u6587%u4EF6%u7684%u5168%u90E8%u5185%u5BB9%u7684%u65F6%u5019%uFF0C%u4F1A%u5BFC%u81F4%u4E0D%u53EF%u9884%u6D4B%u7684%u5185%u5B58%u5360%u7528%uFF0C%u5373%u5F53%u6587%u4EF6%u5F88%u5927%u65F6%u6709%u53EF%u80FD%u76F4%u63A5%u5185%u5B58%u4E0D%u591F%u7528%u4E86%u3002%u597D%u7684%u65B9%u6CD5%u662F%u5229%u7528%u4E00%u4E2A%u6307%u5B9A%u957F%u5EA6%u7684%u7F13%u51B2%u533A%u914D%u5408yield%u6765%u9010%u6B21%u8FD4%u56DE%u6587%u4EF6%u5185%u5BB9%uFF0C%u4EE3%u7801%u793A%u4F8B%u5982%u4E0B%uFF1A%0A%60%60%60python%0Adef%20read_file%28file_name%29%3A%0A%09BUFFER_SIZE%20%3D%201024%0A%09with%20open%28file_name%2C%20%27r+%27%29%20as%20f%3A%0A%09%09while%20True%3A%0A%09%09%09block%20%3D%20f.read%28BUFFER_SIZE%29%20%23%20%u8BFB%u53D6%u6587%u4EF6%u5185%u5BB9%u81F3%u7F13%u5B58%u533A%0A%09%09%09if%20block%3A%0A%09%09%09%09yield%20block%0A%09%09%09else%3A%0A%09%09%09%09return%20%23%20%u9000%u51FA%u751F%u6210%u5668%0A%60%60%60</center></p>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/leetcode/">leetcode</a><a href="/tags/python/">python</a>
-  </div>
 
 </div>
 
@@ -133,7 +134,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/01/20/leetcode_loop_in_linked_list/" data-title="LeetCode：判断单链列表是否存在环 | TechUp" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://yoursite.com/2015/01/23/e8-ae-b0-e4-b8-80-e4-b8-aa-e4-bd-bf-e7-94-a8yield-e8-af-bb-e5-86-99-e6-96-87-e4-bb-b6-e7-9a-84-e6-96-b9-e6-b3-95/" data-title="记一个使用yield读写文件的方法 | TechUp" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -147,18 +148,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/01/20/15_fall_application/" title="15FALL英国硕士申请总结：剑桥，牛津，帝国理工及其他">
+ <a href="/2015/01/23/python_wsgi_1/" title="Python WSGI教程(一)——介绍">
   <strong>上一篇：</strong><br/>
   <span>
-  15FALL英国硕士申请总结：剑桥，牛津，帝国理工及其他</span>
+  Python WSGI教程(一)——介绍</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/01/20/leetcode-ef-bc-9a-e5-88-a4-e6-96-ad-e5-8d-95-e9-93-be-e5-88-97-e8-a1-a8-e6-98-af-e5-90-a6-e5-ad-98-e5-9c-a8-e7-8e-af/"  title="LeetCode：判断单链列表是否存在环">
+<a href="/2015/01/23/yield_file_io/"  title="记一个使用yield读写文件的方法">
  <strong>下一篇：</strong><br/> 
- <span>LeetCode：判断单链列表是否存在环
+ <span>记一个使用yield读写文件的方法
 </span>
 </a>
 </div>
@@ -167,7 +168,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/01/20/leetcode_loop_in_linked_list/" data-title="LeetCode：判断单链列表是否存在环" data-url="http://yoursite.com/2015/01/20/leetcode_loop_in_linked_list/"></div>
+	<div class="ds-thread" data-thread-key="2015/01/23/e8-ae-b0-e4-b8-80-e4-b8-aa-e4-bd-bf-e7-94-a8yield-e8-af-bb-e5-86-99-e6-96-87-e4-bb-b6-e7-9a-84-e6-96-b9-e6-b3-95/" data-title="记一个使用yield读写文件的方法" data-url="http://yoursite.com/2015/01/23/e8-ae-b0-e4-b8-80-e4-b8-aa-e4-bd-bf-e7-94-a8yield-e8-af-bb-e5-86-99-e6-96-87-e4-bb-b6-e7-9a-84-e6-96-b9-e6-b3-95/"></div>
 </section>
 
 
@@ -177,7 +178,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
  
- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#找到环的入口"><span class="toc-number">1.</span> <span class="toc-text">找到环的入口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#证明"><span class="toc-number">2.</span> <span class="toc-text">证明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python实现"><span class="toc-number">3.</span> <span class="toc-text">Python实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用"><span class="toc-number">4.</span> <span class="toc-text">应用</span></a></li></ol>
+ 
  
   </div>
 

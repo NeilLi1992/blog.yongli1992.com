@@ -1,0 +1,659 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Python WSGI教程(三)——环境字典 | TechUp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="yongli1992">
+    
+
+    
+    <meta name="description" content="Edit
+
+
+
+
+收集 翻译 python eat.wordpress.post
+
+
+
+环境字典：Environment dictionary环境字典会包含一些CGI环境变量，由服务器在接收到每一次来自客户端的请求时产生。下面的脚本代码会输出整个字典的内容。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python WSGI教程(三)——环境字典">
+<meta property="og:url" content="http://yoursite.com/2015/01/23/python-wsgi-e6-95-99-e7-a8-8b-e4-b8-89-e7-8e-af-e5-a2-83-e5-ad-97-e5-85-b8/index.html">
+<meta property="og:site_name" content="TechUp">
+<meta property="og:description" content="Edit
+
+
+
+
+收集 翻译 python eat.wordpress.post
+
+
+
+环境字典：Environment dictionary环境字典会包含一些CGI环境变量，由服务器在接收到每一次来自客户端的请求时产生。下面的脚本代码会输出整个字典的内容。">
+<meta property="og:updated_time" content="2015-08-07T21:41:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python WSGI教程(三)——环境字典">
+<meta name="twitter:description" content="Edit
+
+
+
+
+收集 翻译 python eat.wordpress.post
+
+
+
+环境字典：Environment dictionary环境字典会包含一些CGI环境变量，由服务器在接收到每一次来自客户端的请求时产生。下面的脚本代码会输出整个字典的内容。">
+
+    
+    <link rel="alternative" href="/atom.xml" title="TechUp" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/logo.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="TechUp" title="TechUp"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="TechUp">TechUp</a></h1>
+				<h2 class="blog-motto">Yong Li&#39;s small tech world.</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">存档</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/01/23/python-wsgi-e6-95-99-e7-a8-8b-e4-b8-89-e7-8e-af-e5-a2-83-e5-ad-97-e5-85-b8/" title="Python WSGI教程(三)——环境字典" itemprop="url">Python WSGI教程(三)——环境字典</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
+		
+  <p class="article-time">
+    <time datetime="2015-01-23T08:58:52.000Z" itemprop="datePublished"> 發表於 2015-01-23</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目錄</strong>
+		
+			
+		
+		</div>
+		
+		<p><del style="position: relative; display: block;"><a href="http://maxiang.info/#/?provider=evernote_int&amp;guid=301514d3-5123-4eec-a799-9f7640b33c9b" target="_blank" rel="external">Edit</a></del></p>
+<p><div style="line-height: 1.5; color: #2c3f51; font-family: Helvetica Neue, Arial, Hiragino Sans GB, STHeiti, Microsoft YaHei, WenQuanYi Micro Hei, SimSun, Song, sans-serif;"></div></p>
+<p><div></div></p>
+<div>
+
+<p><code>收集</code> <code>翻译</code> <code>python</code> <code>eat.wordpress.post</code></p>
+<p></p></div><p></p>
+<div>
+
+<p><strong>环境字典：Environment dictionary</strong><br>环境字典会包含一些CGI环境变量，由服务器在接收到每一次来自客户端的请求时产生。下面的脚本代码会输出整个字典的内容。<br><a id="more"></a></p>
+<p></p></div><p></p>
+<div>
+
+<pre><code><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #75715e;"</span>&gt;</span>#! /usr/bin/env python<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #75715e;"</span>&gt;</span># 使用python内置的WSGI服务器<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>from<span class="tag">&lt;/<span class="title">span</span>&gt;</span> wsgiref.simple_server <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>import<span class="tag">&lt;/<span class="title">span</span>&gt;</span> make_server
+
+<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #66d9ef;"</span>&gt;</span>def<span class="tag">&lt;/<span class="title">span</span>&gt;</span> <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #a6e22e;"</span>&gt;</span>application<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #f8f8f2;"</span>&gt;</span>(environ, start_response)<span class="tag">&lt;/<span class="title">span</span>&gt;</span>:<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+   <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #75715e;"</span>&gt;</span># 排序并将环境字典的键值对转换为字符串<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+   response_body = [<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #e6db74;"</span>&gt;</span>'%s: %s'<span class="tag">&lt;/<span class="title">span</span>&gt;</span> % (key, value)
+                    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>for<span class="tag">&lt;/<span class="title">span</span>&gt;</span> key, value <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>in<span class="tag">&lt;/<span class="title">span</span>&gt;</span> sorted(environ.items())]
+   response_body = <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #e6db74;"</span>&gt;</span>'\n'<span class="tag">&lt;/<span class="title">span</span>&gt;</span>.join(response_body)
+
+   status = <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #e6db74;"</span>&gt;</span>'200 OK'<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+   response_headers = [(<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #e6db74;"</span>&gt;</span>'Content-Type'<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #e6db74;"</span>&gt;</span>'text/plain'<span class="tag">&lt;/<span class="title">span</span>&gt;</span>),
+                  (<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #e6db74;"</span>&gt;</span>'Content-Length'<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, str(len(response_body)))]
+   start_response(status, response_headers)
+
+   <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #f92672;"</span>&gt;</span>return<span class="tag">&lt;/<span class="title">span</span>&gt;</span> [response_body]
+
+<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #75715e;"</span>&gt;</span># 实例化一个WSGI服务器对象。<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #75715e;"</span>&gt;</span># 该服务器对象可以接收来自客户端（我们的浏览器）的请求，将它传给应用程序，<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #75715e;"</span>&gt;</span># 并且将应用程序返回过来的响应再发送给客户端。<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+httpd = make_server(
+   <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #e6db74;"</span>&gt;</span>'localhost'<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #75715e;"</span>&gt;</span># 主机名。<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+   <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #ae81ff;"</span>&gt;</span>8051<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #75715e;"</span>&gt;</span># 监听请求的端口号。<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+   application <span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #75715e;"</span>&gt;</span># 我们的可调用应用对象，在这里是一个函数。<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+   )
+
+<span class="tag">&lt;<span class="title">span</span> <span class="attribute">style</span>=<span class="value">"color: #75715e;"</span>&gt;</span># 在这里简单地一次性监听，得到响应后处理完则直接退出。<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+httpd.handle_request()`<span class="tag">&lt;/<span class="title">pre</span>&gt;</span>
+
+要运行这段脚本代码的话，将其保存为environment.py，然后打开终端，进入脚本所在的目录下，输入：
+
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">pre</span> <span class="attribute">style</span>=<span class="value">"font-family: Source Code Pro,monospace; font-size: .9em; white-space: pre-wrap; display: block; padding: 2px; margin: 0 0 1.1em; line-height: 1.45; word-break: break-word; word-wrap: break-word; color: #333; background-color: rgba(102,128,153,0.05); border: 0; border-radius: 5px; text-align: start; background: #f6f6f6;"</span>&gt;</span>`&amp;gt;&amp;gt;&amp;gt;python environment.py`<span class="tag">&lt;/<span class="title">pre</span>&gt;</span>
+
+如果是在Windows系统的话，需要将python.exe的路径添加到系统环境变量路径中。最后我们打开浏览器，在地址栏输入我们的服务器运行的地址和端口号即可看到结果：
+
+<span class="tag">&lt;<span class="title">pre</span> <span class="attribute">style</span>=<span class="value">"font-family: Source Code Pro,monospace; font-size: .9em; white-space: pre-wrap; display: block; padding: 10px; margin: 0 0 1.1em; line-height: 1.45; word-break: break-word; word-wrap: break-word; color: #333; background-color: rgba(102,128,153,0.05); border: 0; border-radius: 5px; text-align: start;"</span>&gt;</span>`http://localhost:8051/
+</code></pre><p></p></div><p></p>
+<p><div></div><br></p>
+<center style="display: none;">@%28%u6536%u96C6%29%5B%u7FFB%u8BD1%7Cpython%7Ceat.wordpress.post%5D%0A%23Python%20WSGI%u6559%u7A0B%28%u4E09%29%u2014%u2014%u73AF%u5883%u5B57%u5178%0A<strong>%u73AF%u5883%u5B57%u5178%uFF1AEnvironment%20dictionary</strong>%0A%u73AF%u5883%u5B57%u5178%u4F1A%u5305%u542B%u4E00%u4E9BCGI%u73AF%u5883%u53D8%u91CF%uFF0C%u7531%u670D%u52A1%u5668%u5728%u63A5%u6536%u5230%u6BCF%u4E00%u6B21%u6765%u81EA%u5BA2%u6237%u7AEF%u7684%u8BF7%u6C42%u65F6%u4EA7%u751F%u3002%u4E0B%u9762%u7684%u811A%u672C%u4EE3%u7801%u4F1A%u8F93%u51FA%u6574%u4E2A%u5B57%u5178%u7684%u5185%u5BB9%u3002%0A%3C%21–more–%3E%0A%60%60%60python%0A%23%21%20/usr/bin/env%20python%0A%0A%23%20%u4F7F%u7528python%u5185%u7F6E%u7684WSGI%u670D%u52A1%u5668%0Afrom%20wsgiref.simple_server%20import%20make_server%0A%0Adef%20application%28environ%2C%20start_response%29%3A%0A%20%20%20%23%20%u6392%u5E8F%u5E76%u5C06%u73AF%u5883%u5B57%u5178%u7684%u952E%u503C%u5BF9%u8F6C%u6362%u4E3A%u5B57%u7B26%u4E32%0A%20%20%20response_body%20%3D%20%5B%27%25s%3A%20%25s%27%20%25%20%28key%2C%20value%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20for%20key%2C%20value%20in%20sorted%28environ.items%28%29%29%5D%0A%20%20%20response_body%20%3D%20%27%5Cn%27.join%28response_body%29%0A%0A%20%20%20status%20%3D%20%27200%20OK%27%0A%20%20%20response_headers%20%3D%20%5B%28%27Content-Type%27%2C%20%27text/plain%27%29%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%28%27Content-Length%27%2C%20str%28len%28response_body%29%29%29%5D%0A%20%20%20start_response%28status%2C%20response_headers%29%0A%0A%20%20%20return%20%5Bresponse_body%5D%0A%0A%23%20%u5B9E%u4F8B%u5316%u4E00%u4E2AWSGI%u670D%u52A1%u5668%u5BF9%u8C61%u3002%0A%23%20%u8BE5%u670D%u52A1%u5668%u5BF9%u8C61%u53EF%u4EE5%u63A5%u6536%u6765%u81EA%u5BA2%u6237%u7AEF%uFF08%u6211%u4EEC%u7684%u6D4F%u89C8%u5668%uFF09%u7684%u8BF7%u6C42%uFF0C%u5C06%u5B83%u4F20%u7ED9%u5E94%u7528%u7A0B%u5E8F%uFF0C%0A%23%20%u5E76%u4E14%u5C06%u5E94%u7528%u7A0B%u5E8F%u8FD4%u56DE%u8FC7%u6765%u7684%u54CD%u5E94%u518D%u53D1%u9001%u7ED9%u5BA2%u6237%u7AEF%u3002%0Ahttpd%20%3D%20make_server%28%0A%20%20%20%27localhost%27%2C%20%23%20%u4E3B%u673A%u540D%u3002%0A%20%20%208051%2C%20%23%20%u76D1%u542C%u8BF7%u6C42%u7684%u7AEF%u53E3%u53F7%u3002%0A%20%20%20application%20%23%20%u6211%u4EEC%u7684%u53EF%u8C03%u7528%u5E94%u7528%u5BF9%u8C61%uFF0C%u5728%u8FD9%u91CC%u662F%u4E00%u4E2A%u51FD%u6570%u3002%0A%20%20%20%29%0A%0A%23%20%u5728%u8FD9%u91CC%u7B80%u5355%u5730%u4E00%u6B21%u6027%u76D1%u542C%uFF0C%u5F97%u5230%u54CD%u5E94%u540E%u5904%u7406%u5B8C%u5219%u76F4%u63A5%u9000%u51FA%u3002%0Ahttpd.handle_request%28%29%0A%60%60%60%0A%u8981%u8FD0%u884C%u8FD9%u6BB5%u811A%u672C%u4EE3%u7801%u7684%u8BDD%uFF0C%u5C06%u5176%u4FDD%u5B58%u4E3Aenvironment.py%uFF0C%u7136%u540E%u6253%u5F00%u7EC8%u7AEF%uFF0C%u8FDB%u5165%u811A%u672C%u6240%u5728%u7684%u76EE%u5F55%u4E0B%uFF0C%u8F93%u5165%uFF1A%0A%60%60%60bash%0A%3E%3E%3Epython%20environment.py%0A%60%60%60%0A%u5982%u679C%u662F%u5728Windows%u7CFB%u7EDF%u7684%u8BDD%uFF0C%u9700%u8981%u5C06python.exe%u7684%u8DEF%u5F84%u6DFB%u52A0%u5230%u7CFB%u7EDF%u73AF%u5883%u53D8%u91CF%u8DEF%u5F84%u4E2D%u3002%u6700%u540E%u6211%u4EEC%u6253%u5F00%u6D4F%u89C8%u5668%uFF0C%u5728%u5730%u5740%u680F%u8F93%u5165%u6211%u4EEC%u7684%u670D%u52A1%u5668%u8FD0%u884C%u7684%u5730%u5740%u548C%u7AEF%u53E3%u53F7%u5373%u53EF%u770B%u5230%u7ED3%u679C%uFF1A%0A%0A%20%20%20%20http%3A//localhost%3A8051/</center>  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2015/01/23/python-wsgi-e6-95-99-e7-a8-8b-e4-b8-89-e7-8e-af-e5-a2-83-e5-ad-97-e5-85-b8/" data-title="Python WSGI教程(三)——环境字典 | TechUp" data-tsina="2327892814" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/01/23/python_wsgi_4/" title="Python WSGI教程(四)——可迭代响应对象">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Python WSGI教程(四)——可迭代响应对象</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/01/23/python_wsgi_3/"  title="Python WSGI教程(三)——环境字典">
+ <strong>下一篇：</strong><br/> 
+ <span>Python WSGI教程(三)——环境字典
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2015/01/23/python-wsgi-e6-95-99-e7-a8-8b-e4-b8-89-e7-8e-af-e5-a2-83-e5-ad-97-e5-85-b8/" data-title="Python WSGI教程(三)——环境字典" data-url="http://yoursite.com/2015/01/23/python-wsgi-e6-95-99-e7-a8-8b-e4-b8-89-e7-8e-af-e5-a2-83-e5-ad-97-e5-85-b8/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目錄</strong>
+ 
+ 
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分類</p>
+		<ul>
+		
+		  
+		
+		  
+			<li><a href="/categories/algorithm/" title="algorithm">algorithm<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/life/" title="life">life<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/network/" title="network">network<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/programming/" title="programming">programming<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/python/" title="python">python<sup>12</sup></a></li>
+		  
+		
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">標簽</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/python/" title="python">python<sup>16</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/翻译/" title="翻译">翻译<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/leetcode/" title="leetcode">leetcode<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/算法/" title="算法">算法<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/leetCodeOJ/" title="leetCodeOJ">leetCodeOJ<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/network/" title="network">network<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/http/" title="http">http<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/oxford/" title="oxford">oxford<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/study/" title="study">study<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/programming/" title="programming">programming<sup>1</sup></a></li>
+			
+		
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情鏈接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://blog.imink.net 墨同学的博客" target="_blank" title="ink&#39;s blog">ink&#39;s blog</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://eventfulkay.com 小虾米的博客" target="_blank" title="kai&#39;s blog">kai&#39;s blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+<div class="doubanshow">
+<p class="asidetitle">豆瓣秀</p>
+<div>
+<script type="text/javascript" src="http://www.douban.com/service/badge/44886038/?show=collection&amp;n=12&amp;columns=3&amp;hidelogo=yes&amp;hideself=yes&amp;cat=book|movie" ></script>
+</div>
+</div>
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
+</div>
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello, I&#39;m Yong Li, a MSc student in Oxford Uni. <br/>
+			Welcome to my blog, hope it does help to you!.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2327892814" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/NeilLi1992" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		<a href="https://www.facebook.com/100006707769873" target="_blank" class="icon-facebook" title="facebook"></a>
+		
+		
+		<a href="https://www.linkedin.com/in/yongli1992" target="_blank" class="icon-linkedin" title="linkedin"></a>
+		
+		
+		<a href="https://www.douban.com/people/44886038" target="_blank" class="icon-douban" title="豆瓣"></a>
+		
+		
+		<a href="http://www.zhihu.com/people/li-yong-88-55" target="_blank" class="icon-zhihu" title="知乎"></a>
+		
+		
+		
+		<a href="mailto:yong.li1992@foxmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		
+		<a href="/about" target="_blank" title="yongli1992">yongli1992</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"yongli1992"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
