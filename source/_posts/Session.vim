@@ -8,11 +8,11 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 python-wsgi-e6-95-99-e7-a8-8b-e5-9b-9b-e5-8f-af-e8-bf-ad-e4-bb-a3-e5-93-8d-e5-ba-94-e5-af-b9-e8-b1-a1.md
+badd +0 leetcode_loop_in_linked_list.md
 argglobal
 silent! argdel *
-argadd python-wsgi-e6-95-99-e7-a8-8b-e5-9b-9b-e5-8f-af-e8-bf-ad-e4-bb-a3-e5-93-8d-e5-ba-94-e5-af-b9-e8-b1-a1.md
-edit python-wsgi-e6-95-99-e7-a8-8b-e5-9b-9b-e5-8f-af-e8-bf-ad-e4-bb-a3-e5-93-8d-e5-ba-94-e5-af-b9-e8-b1-a1.md
+argadd leetcode_loop_in_linked_list.md
+edit leetcode_loop_in_linked_list.md
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -28,12 +28,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 63 - ((8 * winheight(0) + 23) / 46)
+let s:l = 59 - ((38 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-63
-normal! 08|
+59
+normal! 05|
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

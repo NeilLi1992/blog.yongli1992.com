@@ -8,11 +8,11 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 _config.yml
+badd +0 source/_posts/sieve_of_eratostheness.md
 argglobal
 silent! argdel *
-argadd _config.yml
-edit _config.yml
+argadd source/_posts/sieve_of_eratostheness.md
+edit source/_posts/sieve_of_eratostheness.md
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -28,12 +28,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 72 - ((44 * winheight(0) + 22) / 45)
+let s:l = 37 - ((36 * winheight(0) + 22) / 45)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-72
-normal! 062|
+37
+normal! 044|
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
