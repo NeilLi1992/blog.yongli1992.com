@@ -49,7 +49,7 @@
 				<h1 class="site-name"><a href="/" title="TechUp">TechUp</a></h1>
 				<h2 class="blog-motto">Yong Li&#39;s small tech world.</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -86,7 +86,7 @@
 		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-01-21T04:03:32.000Z" itemprop="datePublished"> 發表於 2015-01-21</time>
+    <time datetime="2015-01-21T04:03:32.000Z" itemprop="datePublished"> 发表于 2015-01-21</time>
     
   </p>
 </header>
@@ -119,27 +119,22 @@
 	
 
 
-    <section id="comments">
-        <!--高速版，加载速度快，使用前需测试页面的兼容性-->
+    <section id="comments" class="comment">
         <div id="SOHUCS" sid="关于我"></div>
             <script>
-            (function(){
-                 var appid = 'cyrUQqnx1',
-                 conf = 'da090ca9a3c83702b28b53885726450a';
-                 var doc = document,
-                 s = doc.createElement('script'),
-                 h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
-                 s.type = 'text/javascript';
-                 s.charset = 'utf-8';
-                 s.src =  'http://changyan.sohu.com/upload/changyan.js';
-                 h.insertBefore(s,h.firstChild);
-                 window.SCS_NO_IFRAME = true;
-             })();
-             window.changyan.api.config({
-                 appid: 'cyrUQqxn1',
-                 conf: 'da090ca9a3c83702b28b53885726450a'
-             });
-        </script>
+                (function(){
+                     var appid = 'cyrUQqxn1',
+                     conf = 'prod_3dc89e4df697a1435fe2a977586c8a99';
+                     var doc = document,
+                     s = doc.createElement('script'),
+                     h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+                     s.type = 'text/javascript';
+                     s.charset = 'utf-8';
+                     s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+                     h.insertBefore(s,h.firstChild);
+                     window.SCS_NO_IFRAME = true;
+                 })();
+            </script>
     </section>
 
 
@@ -338,7 +333,7 @@ $(document).ready(function(){
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
