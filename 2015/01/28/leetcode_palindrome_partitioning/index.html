@@ -188,22 +188,26 @@
 	
 
 
-    <section id="comments" class="comment">
+    <section id="comments">
         <!--高速版，加载速度快，使用前需测试页面的兼容性-->
         <div id="SOHUCS" sid="LeetCode：字符串的回文划分"></div>
-        <script>
+            <script>
             (function(){
                  var appid = 'cyrUQqnx1',
-                 conf = 'da090ca9a3c83702b28b53885726450a';
+                 conf = 'prod_3dc89e4df697a1435fe2a977586c8a99';
                  var doc = document,
                  s = doc.createElement('script'),
                  h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
                  s.type = 'text/javascript';
                  s.charset = 'utf-8';
-                 s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+                 s.src =  'http://changyan.sohu.com/upload/changyan.js';
                  h.insertBefore(s,h.firstChild);
                  window.SCS_NO_IFRAME = true;
-             })()
+             })();
+             window.changyan.api.config({
+                 appid: 'cyrUQqxn1',
+                 conf: 'prod_3dc89e4df697a1435fe2a977586c8a99'
+             });
         </script>
     </section>
 
