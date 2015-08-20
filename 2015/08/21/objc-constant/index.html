@@ -4,26 +4,41 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Python代码计时模块timeit学习笔记 | TechUp</title>
+    <title>Objective-C 创建常量的最佳实践 | TechUp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="yongli1992">
     
 
     
-    <meta name="description" content="timeit模块提供了一种简便的方法来为Python中的小块代码进行计时。它有三种使用方式，从命令行调用，从Python交互解释器调用，或者直接在脚本代码中进行调用。下面仅仅简略记述一下该模块在交互解释器以及脚本中的基础使用方法。
-在Python交互解释器中的使用 timeit函数 最基本的使用方法是直接调用timeit函数。12import timeittimeit.timeit(stmt=&apos;p">
+    <meta name="description" content="原文地址：What’s the best way to create constants in Objective-C
+常量定义首先需要明确的是我们希望常量的作用范围，这就要考虑两个问题：
+
+常量是作用于一个特定的类，还是作用于整个应用？
+如果是作用于一个特定的类，我们是希望这些类的其它使用者（clients）也能使用这些常量，还是仅仅在该类的内部来使用？
+
+如果常量仅针对特定的类，并且只在该类内">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python代码计时模块timeit学习笔记">
-<meta property="og:url" content="http://yoursite.com/2015/01/27/python-timeit-module/index.html">
+<meta property="og:title" content="Objective-C 创建常量的最佳实践">
+<meta property="og:url" content="http://yoursite.com/2015/08/21/objc-constant/index.html">
 <meta property="og:site_name" content="TechUp">
-<meta property="og:description" content="timeit模块提供了一种简便的方法来为Python中的小块代码进行计时。它有三种使用方式，从命令行调用，从Python交互解释器调用，或者直接在脚本代码中进行调用。下面仅仅简略记述一下该模块在交互解释器以及脚本中的基础使用方法。
-在Python交互解释器中的使用 timeit函数 最基本的使用方法是直接调用timeit函数。12import timeittimeit.timeit(stmt=&apos;p">
-<meta property="og:updated_time" content="2015-08-07T23:58:09.000Z">
+<meta property="og:description" content="原文地址：What’s the best way to create constants in Objective-C
+常量定义首先需要明确的是我们希望常量的作用范围，这就要考虑两个问题：
+
+常量是作用于一个特定的类，还是作用于整个应用？
+如果是作用于一个特定的类，我们是希望这些类的其它使用者（clients）也能使用这些常量，还是仅仅在该类的内部来使用？
+
+如果常量仅针对特定的类，并且只在该类内">
+<meta property="og:updated_time" content="2015-08-20T22:37:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python代码计时模块timeit学习笔记">
-<meta name="twitter:description" content="timeit模块提供了一种简便的方法来为Python中的小块代码进行计时。它有三种使用方式，从命令行调用，从Python交互解释器调用，或者直接在脚本代码中进行调用。下面仅仅简略记述一下该模块在交互解释器以及脚本中的基础使用方法。
-在Python交互解释器中的使用 timeit函数 最基本的使用方法是直接调用timeit函数。12import timeittimeit.timeit(stmt=&apos;p">
+<meta name="twitter:title" content="Objective-C 创建常量的最佳实践">
+<meta name="twitter:description" content="原文地址：What’s the best way to create constants in Objective-C
+常量定义首先需要明确的是我们希望常量的作用范围，这就要考虑两个问题：
+
+常量是作用于一个特定的类，还是作用于整个应用？
+如果是作用于一个特定的类，我们是希望这些类的其它使用者（clients）也能使用这些常量，还是仅仅在该类的内部来使用？
+
+如果常量仅针对特定的类，并且只在该类内">
 
     
     <link rel="alternative" href="/atom.xml" title="TechUp" type="application/atom+xml">
@@ -81,14 +96,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/01/27/python-timeit-module/" title="Python代码计时模块timeit学习笔记" itemprop="url">Python代码计时模块timeit学习笔记</a>
+      <a href="/2015/08/21/objc-constant/" title="Objective-C 创建常量的最佳实践" itemprop="url">Objective-C 创建常量的最佳实践</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-01-27T11:46:18.000Z" itemprop="datePublished"> 發表於 2015-01-27</time>
+    <time datetime="2015-08-20T22:32:54.000Z" itemprop="datePublished"> 發表於 2015-08-21</time>
     
   </p>
 </header>
@@ -97,33 +112,32 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#在Python交互解释器中的使用"><span class="toc-number">1.</span> <span class="toc-text">在Python交互解释器中的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#在脚本程序中的使用"><span class="toc-number">1.1.</span> <span class="toc-text">在脚本程序中的使用</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#常量定义"><span class="toc-number">1.</span> <span class="toc-text">常量定义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为何不使用_#define"><span class="toc-number">2.</span> <span class="toc-text">为何不使用 #define</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于_enum_的使用"><span class="toc-number">3.</span> <span class="toc-text">关于 enum 的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于常量（博主加）"><span class="toc-number">4.</span> <span class="toc-text">关于常量（博主加）</span></a></li></ol>
 		
 		</div>
 		
-		<p>timeit模块提供了一种简便的方法来为Python中的小块代码进行计时。它有三种使用方式，从命令行调用，从Python交互解释器调用，或者直接在脚本代码中进行调用。下面仅仅简略记述一下该模块在交互解释器以及脚本中的基础使用方法。</p>
-<h3 id="在Python交互解释器中的使用">在Python交互解释器中的使用</h3><p><strong> timeit函数 </strong><br>最基本的使用方法是直接调用timeit函数。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> timeit</span><br><span class="line">timeit.timeit(stmt=<span class="string">'pass'</span>, setup=<span class="string">'pass'</span>, timer=&lt;default timer&gt;, number=<span class="number">1000000</span>)</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>模块的第一个参数为要执行计时的语句（statement）。按字符串的形式传入要执行的代码。第二个参数setup用于构建代码环境，可以用来导入需要的模块。最后的number指定了运行的次数。</p>
-<p>使用示例如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="keyword">import</span> timeit</span><br><span class="line">&gt;&gt;&gt;timeit.timeit(<span class="string">'"-".join(str(n) for n in range(100))'</span>, number=<span class="number">10000</span>)</span><br><span class="line"><span class="number">0.21051692962646484</span></span><br></pre></td></tr></table></figure></p>
-<p><strong> repeat函数 </strong><br>另一个可供使用的函数是repeat函数，指定整个试验的重复次数，返回一个包含了每次试验的执行时间的列表。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>timeit.repeat(<span class="string">'"-".join(str(n) for n in range(100))'</span>,repeat=<span class="number">3</span>, number=<span class="number">10000</span>)</span><br><span class="line">[<span class="number">0.21938705444335938</span>, <span class="number">0.21767210960388184</span>, <span class="number">0.21688294410705566</span>]</span><br></pre></td></tr></table></figure></p>
-<p>利用这一函数可以很方便得实现多次试验取平均的方法。</p>
-<h4 id="在脚本程序中的使用">在脚本程序中的使用</h4><p>timeit模块同样可以在脚本中直接使用。使用方法还是调用上述的函数。但是在脚本中时需要为setup传入一条字符串形式的语句，用于构建执行环境，示例如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">	L = []</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">		L.append(i)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">	<span class="keyword">import</span> timeit</span><br><span class="line">	<span class="keyword">print</span> timeit.timeit(<span class="string">"test()"</span>, setup=<span class="string">"from __main__ import test"</span>))</span><br></pre></td></tr></table></figure>
+		<p>原文地址：<a href="http://stackoverflow.com/questions/17228334/what-is-the-best-way-to-create-constants-in-objective-c?lq=1" target="_blank" rel="external">What’s the best way to create constants in Objective-C</a></p>
+<h1 id="常量定义">常量定义</h1><p>首先需要明确的是我们希望常量的作用范围，这就要考虑两个问题：</p>
+<ol>
+<li>常量是作用于一个特定的类，还是作用于整个应用？</li>
+<li>如果是作用于一个特定的类，我们是希望这些类的其它使用者（clients）也能使用这些常量，还是仅仅在该类的内部来使用？</li>
+</ol>
+<p>如果常量仅针对特定的类，并且只在该类内部使用，则应在该类的 .m 文件的开头使用 static const 来声明，如：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="built_in">NSString</span> * <span class="keyword">const</span> MyThingNotificationKey = <span class="string">@"MyThingNotificationKey"</span>;</span><br></pre></td></tr></table></figure></p>
+<p>如果常量针对一个特定的类，但是是公开的，会被该类的其他使用者使用，则应在 header 文件中用 extern 来声明，而在 .m 文件中来定义，如：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .h</span></span><br><span class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> * <span class="keyword">const</span> MyThingNotificationKey;</span><br><span class="line"></span><br><span class="line"><span class="comment">// .m</span></span><br><span class="line"><span class="built_in">NSString</span> *<span class="keyword">const</span> MyThingNotificationKey = <span class="string">@"MyThingNotificationKey"</span>;</span><br></pre></td></tr></table></figure></p>
+<p>如果常量是整个应用都可见的，则应创建一个专门存储这些常量的类，然后在 header 中声明，在 .m 中定义。 你也可以根据常量的不同功能与种类，分开定义在不同的类中。</p>
+<h1 id="为何不使用_#define">为何不使用 #define</h1><p>过去的回答是：“宏不包含类型信息“，但是如今的编译器已经足够智能，可以像针对变量一样来对字面量（即宏的展开）来进行类型检查。<br>现在的回答应该是：因为 debugger 不会知道你使用了宏。如果 MyThingNotificationKey 是一条宏的话，你就不能在 debugger 命令中使用 [myThing addObserver:self forKey:MyThingNotificationKey]。</p>
+<h1 id="关于_enum_的使用">关于 enum 的使用</h1><p>enum 只能用来定义整数常量（integer constants）。如果就是为了定义整数常量，enum 是很棒的选择，你应当使用它。（更好的选择是使用 <a href="http://nshipster.com/ns_enum-ns_options" target="_blank" rel="external">NS_ENUM 和 NS_OPTIONS 宏</a> )。而对于整数常量之外的其他情况，你就无法使用 enum 了。</p>
+<h1 id="关于常量（博主加）">关于常量（博主加）</h1><p>我在使用的时候发现，在上述方法在定义 NSString* 类型的时候是可以的，但是如果尝试定义一些 NSArray 等其它引用类型的变量，编译器就会保存，提示 “initializer element is not a compile-time constant”。参考该 <a href="http://stackoverflow.com/questions/2436463/how-do-i-declare-an-array-as-a-constant-in-objective-c" target="_blank" rel="external">SO提问</a> 后得知，除了 NSString* 是唯一的特例之外，在 Objective-C 中，所有的对象都必须在运行时创建，而不能在编译时创建。</p>
+<p>对于该问题，我认为可以参考上面对于全应用可见的常量的做法，如创建一个辅助类（我的习惯是叫做 Util 类），将其实现为单例类，在 .m 的开头用 static 关键字来声明这些常量，然后在单例类的类初始化方法中进行定义，最后添加实例方法，来分别返回这些常量。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/python/">python</a>
-</div>
-
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/python/">python</a>
+  <span></span> <a href="/tags/objective-c/">objective-c</a><a href="/tags/translated/">translated</a>
   </div>
 
 </div>
@@ -132,7 +146,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/01/27/python-timeit-module/" data-title="Python代码计时模块timeit学习笔记 | TechUp" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://yoursite.com/2015/08/21/objc-constant/" data-title="Objective-C 创建常量的最佳实践 | TechUp" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -145,19 +159,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/01/28/leetcode-palindrome-partitioning/" title="LeetCode：字符串的回文划分">
-  <strong>上一篇：</strong><br/>
-  <span>
-  LeetCode：字符串的回文划分</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/01/23/python-wsgi-6/"  title="Python WSGI教程(六)——解析Post请求">
+<a href="/2015/08/14/git-log-diff-esc-garbled/"  title="使用 git log、git diff 命令时出现 ESC[33 和 ESC[m 乱码的解决办法">
  <strong>下一篇：</strong><br/> 
- <span>Python WSGI教程(六)——解析Post请求
+ <span>使用 git log、git diff 命令时出现 ESC[33 和 ESC[m 乱码的解决办法
 </span>
 </a>
 </div>
@@ -168,7 +174,7 @@
 
 
     <section id="comments" class="comment">
-        <div id="SOHUCS" sid="Python代码计时模块timeit学习笔记"></div>
+        <div id="SOHUCS" sid="Objective-C 创建常量的最佳实践"></div>
             <script>
                 (function(){
                      var appid = 'cyrUQqxn1',
@@ -192,7 +198,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#在Python交互解释器中的使用"><span class="toc-number">1.</span> <span class="toc-text">在Python交互解释器中的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#在脚本程序中的使用"><span class="toc-number">1.1.</span> <span class="toc-text">在脚本程序中的使用</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#常量定义"><span class="toc-number">1.</span> <span class="toc-text">常量定义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为何不使用_#define"><span class="toc-number">2.</span> <span class="toc-text">为何不使用 #define</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于_enum_的使用"><span class="toc-number">3.</span> <span class="toc-text">关于 enum 的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于常量（博主加）"><span class="toc-number">4.</span> <span class="toc-text">关于常量（博主加）</span></a></li></ol>
  
   </div>
 
