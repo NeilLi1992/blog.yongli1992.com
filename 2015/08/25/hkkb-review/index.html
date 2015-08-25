@@ -4,41 +4,36 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Objective-C 创建常量的最佳实践 | TechUp</title>
+    <title>HHKB 键盘评测 | TechUp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="yongli1992">
     
 
     
-    <meta name="description" content="原文地址：What’s the best way to create constants in Objective-C
-常量定义首先需要明确的是我们希望常量的作用范围，这就要考虑两个问题：
-
-常量是作用于一个特定的类，还是作用于整个应用？
-如果是作用于一个特定的类，我们是希望这些类的其它使用者（clients）也能使用这些常量，还是仅仅在该类的内部来使用？
-
-如果常量仅针对特定的类，并且只在该类内">
+    <meta name="description" content="这两天入手了传闻中的程序员最佳键盘 HHKB，写一篇简单的评测，帮助感兴趣的朋友更好的了解这款键盘。同时也是我第一次买如此价值不菲的键盘，也当做个记录。
+HHKB 分为两个型号，professional 2 和 Type-S。后者要比前者贵出将近 500 多元，差别主要在于 Type-S 是静音版的，打字时的声音要比 professional 2 小很多。官方宣称 Type-S 的声音要小 30%">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Objective-C 创建常量的最佳实践">
-<meta property="og:url" content="http://yoursite.com/2015/08/21/objc-constant/index.html">
+<meta property="og:title" content="HHKB 键盘评测">
+<meta property="og:url" content="http://yoursite.com/2015/08/25/hkkb-review/index.html">
 <meta property="og:site_name" content="TechUp">
-<meta property="og:description" content="原文地址：What’s the best way to create constants in Objective-C
-常量定义首先需要明确的是我们希望常量的作用范围，这就要考虑两个问题：
-
-常量是作用于一个特定的类，还是作用于整个应用？
-如果是作用于一个特定的类，我们是希望这些类的其它使用者（clients）也能使用这些常量，还是仅仅在该类的内部来使用？
-
-如果常量仅针对特定的类，并且只在该类内">
-<meta property="og:updated_time" content="2015-08-20T22:39:33.000Z">
+<meta property="og:description" content="这两天入手了传闻中的程序员最佳键盘 HHKB，写一篇简单的评测，帮助感兴趣的朋友更好的了解这款键盘。同时也是我第一次买如此价值不菲的键盘，也当做个记录。
+HHKB 分为两个型号，professional 2 和 Type-S。后者要比前者贵出将近 500 多元，差别主要在于 Type-S 是静音版的，打字时的声音要比 professional 2 小很多。官方宣称 Type-S 的声音要小 30%">
+<meta property="og:image" content="http://yoursite.com/2015/08/25/hkkb-review/wrapping.jpg">
+<meta property="og:image" content="http://yoursite.com/2015/08/25/hkkb-review/box.jpg">
+<meta property="og:image" content="http://yoursite.com/2015/08/25/hkkb-review/corner.jpg">
+<meta property="og:image" content="http://yoursite.com/2015/08/25/hkkb-review/all.jpg">
+<meta property="og:image" content="http://yoursite.com/2015/08/25/hkkb-review/keyboard.jpg">
+<meta property="og:image" content="http://yoursite.com/2015/08/25/hkkb-review/dip.jpg">
+<meta property="og:image" content="http://yoursite.com/2015/08/25/hkkb-review/side.jpg">
+<meta property="og:image" content="http://yoursite.com/2015/08/25/hkkb-review/arrow.jpg">
+<meta property="og:image" content="http://yoursite.com/2015/08/25/hkkb-review/switch.png">
+<meta property="og:image" content="http://yoursite.com/2015/08/25/hkkb-review/close.jpg">
+<meta property="og:updated_time" content="2015-08-25T12:58:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Objective-C 创建常量的最佳实践">
-<meta name="twitter:description" content="原文地址：What’s the best way to create constants in Objective-C
-常量定义首先需要明确的是我们希望常量的作用范围，这就要考虑两个问题：
-
-常量是作用于一个特定的类，还是作用于整个应用？
-如果是作用于一个特定的类，我们是希望这些类的其它使用者（clients）也能使用这些常量，还是仅仅在该类的内部来使用？
-
-如果常量仅针对特定的类，并且只在该类内">
+<meta name="twitter:title" content="HHKB 键盘评测">
+<meta name="twitter:description" content="这两天入手了传闻中的程序员最佳键盘 HHKB，写一篇简单的评测，帮助感兴趣的朋友更好的了解这款键盘。同时也是我第一次买如此价值不菲的键盘，也当做个记录。
+HHKB 分为两个型号，professional 2 和 Type-S。后者要比前者贵出将近 500 多元，差别主要在于 Type-S 是静音版的，打字时的声音要比 professional 2 小很多。官方宣称 Type-S 的声音要小 30%">
 
     
     <link rel="alternative" href="/atom.xml" title="TechUp" type="application/atom+xml">
@@ -96,14 +91,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/08/21/objc-constant/" title="Objective-C 创建常量的最佳实践" itemprop="url">Objective-C 创建常量的最佳实践</a>
+      <a href="/2015/08/25/hkkb-review/" title="HHKB 键盘评测" itemprop="url">HHKB 键盘评测</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-08-20T22:32:54.000Z" itemprop="datePublished"> 發表於 2015-08-21</time>
+    <time datetime="2015-08-25T12:57:08.000Z" itemprop="datePublished"> 發表於 2015-08-25</time>
     
   </p>
 </header>
@@ -112,23 +107,34 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#常量定义"><span class="toc-number">1.</span> <span class="toc-text">常量定义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为何不使用_#define"><span class="toc-number">2.</span> <span class="toc-text">为何不使用 #define</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于_enum_的使用"><span class="toc-number">3.</span> <span class="toc-text">关于 enum 的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于常量（博主加）"><span class="toc-number">4.</span> <span class="toc-text">关于常量（博主加）</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#购买"><span class="toc-number">1.</span> <span class="toc-text">购买</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#开箱"><span class="toc-number">2.</span> <span class="toc-text">开箱</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#连接与设置"><span class="toc-number">3.</span> <span class="toc-text">连接与设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#功能键"><span class="toc-number">4.</span> <span class="toc-text">功能键</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DIP_设置"><span class="toc-number">5.</span> <span class="toc-text">DIP 设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其它"><span class="toc-number">6.</span> <span class="toc-text">其它</span></a></li></ol>
 		
 		</div>
 		
-		<p>原文地址：<a href="http://stackoverflow.com/questions/17228334/what-is-the-best-way-to-create-constants-in-objective-c?lq=1" target="_blank" rel="external">What’s the best way to create constants in Objective-C</a></p>
-<h1 id="常量定义">常量定义</h1><p>首先需要明确的是我们希望常量的作用范围，这就要考虑两个问题：</p>
+		<p>这两天入手了传闻中的程序员最佳键盘 HHKB，写一篇简单的评测，帮助感兴趣的朋友更好的了解这款键盘。同时也是我第一次买如此价值不菲的键盘，也当做个记录。</p>
+<p>HHKB 分为两个型号，professional 2 和 Type-S。后者要比前者贵出将近 500 多元，差别主要在于 Type-S 是静音版的，打字时的声音要比 professional 2 小很多。官方宣称 Type-S 的声音要小 30%，这里有一个<a href="http://v.youku.com/v_show/id_XMzI3NzIxNTIw.html?from=s1.8-1-1.2" target="_blank" rel="external">视频</a>测试了两个键盘的声音对比，我感觉差别还是挺大的，遂决定买了</p>
+<p>Type-S。同时每个型号还分成白色、黑色和有刻、无刻版本。我个人喜欢有刻版本，看着比较方便。同时因为刻的字是黑色的，如果买黑色版的话看起来会不太清楚，于是最终买了白色有刻版本。</p>
+<h1 id="购买">购买</h1><p>我是在这家淘宝网店购买的：<a href="https://item.taobao.com/item.htm?spm=a230r.1.14.12.MvftLg&amp;id=36392153390&amp;ns=1&amp;_u=p1ui4ph90fd&amp;abbucket=12#detail" target="_blank" rel="external">欣礼坊</a>，据说老板曾经在徐家汇有实体店的。我所买的白色有刻版的价钱是 1899 元。Professional 2 在这家店的售价是 1499 元。购买的时候只有键盘，没有附送别的东西。</p>
+<p>买的以后的样子是这样的，可以看到包装还算比较结实。<br><img src="/2015/08/25/hkkb-review/wrapping.jpg" alt="wrapping.jpg" title=""></p>
+<p>然后打开以后，里面自身的包装盒是这样的。<br><img src="/2015/08/25/hkkb-review/box.jpg" alt="box.jpg" title=""></p>
+<p>刚看到盒子上面大大的 professional 2 字样的时候吓了一条，以为店主发错了，后来才在右上角看到贴了一个小的标志，注明了是 Type-S。<br><img src="/2015/08/25/hkkb-review/corner.jpg" alt="corner.jpg" title=""></p>
+<h1 id="开箱">开箱</h1><p>打开以后，所有的内容物摆在一起就是下面这样的，含有键盘，连接线，1 份使用说明书和 2 份注意事项之类的说明。注意在说明书的最后是包含了保修卡的。<br><img src="/2015/08/25/hkkb-review/all.jpg" alt="all.jpg" title=""></p>
+<p>键盘全貌，可以看出是很复古、朴素的设计。<br><img src="/2015/08/25/hkkb-review/keyboard.jpg" alt="keyboard.jpg" title=""></p>
+<p>在键盘的后面有两个 USB 扩展插口，右边小的是连接线，最右边的是一个可以打开来的仓盖，往下推出来之后，是进行 DIP 设置的，这个后面再说。打开仓盖后如下图：<br><img src="/2015/08/25/hkkb-review/dip.jpg" alt="dip.jpg" title=""></p>
+<p>最后再来个侧面视图，可以看出有一点弧度的设计：<br><img src="/2015/08/25/hkkb-review/side.jpg" alt="side.jpg" title=""></p>
+<h1 id="连接与设置">连接与设置</h1><p>将键盘用连接线和电脑连上之后，一开始会提示无法识别键盘，然后要系统会自动提示要进行识别设置（我用的是 Mac OSX）。这里忘记截图了，大概就是让按一下左侧 shfit 键右边的键，再按以下右侧 shift 左边的键，最后再选择 101 键标准键盘，就可以了，非常简单。</p>
+<h1 id="功能键">功能键</h1><p>HHKB 的键盘上，有许多键的前面还印了额外的键码，如 F1 ~ F12，PgUp，Caps 和箭头键等。这些就是功能键，需要配合同时按住 Fn + 功能键才能触发相应的功能。我个人非常喜欢的是那个方向键的设置。这样就能很方便的在主键区域使用到方向键，不用像最初 MBP 上的方向键一样，要移动右下角才可以使用（小提示，OSX 系统可以使用 Karabiner 改键软件，将 Fn + H，J，K，L 映射为方向键，这样就可以以 vim 的习惯在整个系统下使用方向键了）。下图是 HHKB 下的方向键功能键：<br><img src="/2015/08/25/hkkb-review/arrow.jpg" alt="arrow.jpg" title=""></p>
+<p>我刚开始测试其它的一些功能键的时候，发现不起作用，比如 Vol_Dn、Vol_Up 音量调节键，后来才发现是 DIP 设置的问题。接下来就讲讲 DIP 设置。</p>
+<h1 id="DIP_设置">DIP 设置</h1><p>如前面的图所示，在后面的仓盖推开之后，就可以看到 DIP 设置的开关。一共有 6 个开关，分别以 SW1 - SW6 来表示，需要用一个细长的东西（如牙签、螺丝刀）来进行拨动，直接用手是很难碰到的，应该也是为了放置误碰而做的设计。在说明书上有各个开关的相信设置说明，同时在键盘的背面也印了一张图来说明。下图是说明书上的图示：<br><img src="/2015/08/25/hkkb-review/switch.png" alt="switch.png" title=""></p>
+<p>在这里我发现一个不一致的地方：在说明书上说 SW1=OFF，SW1=ON 是禁止设定的，但是在键盘的背面明明印着这是 Macintosh 的设置。事实证明键盘背面的是对的，当我按此进行设置了以后，原先不起作用的音量调节键，还有大小写切换 Caps 键，立刻就能正常工作了。当然一些原本 MBP 上就没有的键，比如 PageUp 之类的，依旧没有用。我个人认为比较有用的 DIP 设置是：</p>
 <ol>
-<li>常量是作用于一个特定的类，还是作用于整个应用？</li>
-<li>如果是作用于一个特定的类，我们是希望这些类的其它使用者（clients）也能使用这些常量，还是仅仅在该类的内部来使用？</li>
+<li>SW3=ON，可以使用 backspace 回车键。</li>
+<li>SW6=ON，说明书说打开以后，就可以用 HHKB 键盘从休眠状态唤醒计算机。</li>
 </ol>
-<p>如果常量仅针对特定的类，并且只在该类内部使用，则应在该类的 .m 文件的开头使用 static const 来声明，如：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="built_in">NSString</span> * <span class="keyword">const</span> MyThingNotificationKey = <span class="string">@"MyThingNotificationKey"</span>;</span><br></pre></td></tr></table></figure></p>
-<p>如果常量针对一个特定的类，但是是公开的，会被该类的其他使用者使用，则应在 header 文件中用 extern 来声明，而在 .m 文件中来定义，如：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .h</span></span><br><span class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> * <span class="keyword">const</span> MyThingNotificationKey;</span><br><span class="line"></span><br><span class="line"><span class="comment">// .m</span></span><br><span class="line"><span class="built_in">NSString</span> *<span class="keyword">const</span> MyThingNotificationKey = <span class="string">@"MyThingNotificationKey"</span>;</span><br></pre></td></tr></table></figure></p>
-<p>如果常量是整个应用都可见的，则应创建一个专门存储这些常量的类，然后在 header 中声明，在 .m 中定义。 你也可以根据常量的不同功能与种类，分开定义在不同的类中。</p>
-<h1 id="为何不使用_#define">为何不使用 #define</h1><p>过去的回答是：“宏不包含类型信息“，但是如今的编译器已经足够智能，可以像针对变量一样来对字面量（即宏的展开）来进行类型检查。<br>现在的回答应该是：因为 debugger 不会知道你使用了宏。如果 MyThingNotificationKey 是一条宏的话，你就不能在 debugger 命令中使用 [myThing addObserver:self forKey:MyThingNotificationKey]。</p>
-<h1 id="关于_enum_的使用">关于 enum 的使用</h1><p>enum 只能用来定义整数常量（integer constants）。如果就是为了定义整数常量，enum 是很棒的选择，你应当使用它。（更好的选择是使用 <a href="http://nshipster.com/ns_enum-ns_options" target="_blank" rel="external">NS_ENUM 和 NS_OPTIONS 宏</a> )。而对于整数常量之外的其他情况，你就无法使用 enum 了。</p>
-<h1 id="关于常量（博主加）">关于常量（博主加）</h1><p>我在使用的时候发现，在上述方法在定义 NSString* 类型的时候是可以的，但是如果尝试定义一些 NSArray 等其它引用类型的变量，编译器就会保存，提示 “initializer element is not a compile-time constant”。参考该 <a href="http://stackoverflow.com/questions/2436463/how-do-i-declare-an-array-as-a-constant-in-objective-c" target="_blank" rel="external">SO提问</a> 后得知，除了 NSString* 是唯一的特例之外，在 Objective-C 中，所有的对象都必须在运行时创建，而不能在编译时创建。</p>
-<p>对于该问题，我认为可以参考上面对于全应用可见的常量的做法，如创建一个辅助类（我的习惯是叫做 Util 类），将其实现为单例类，在 .m 的开头用 static 关键字来声明这些常量，然后在单例类的类初始化方法中进行定义，最后添加实例方法，来分别返回这些常量。</p>
+<h1 id="其它">其它</h1><p>在键盘的后侧有支撑架，可以按低、中、高进行三档调节。</p>
+<p>从那个淘宝店里买的时候，木有发票。虽然保修单上说需要发票来无偿保修，但是联系卖家后被告知有问题的话联系他们就可以了。</p>
+<p>最后，这篇评测主要侧重于功能的介绍，因为我也不是键盘发烧友，以前也没有用过什么好的键盘，所以手感方面也说不出什么门道，总之用到现在觉得很爽，按键很灵敏。</p>
+<p>最后再上张近照，结束这篇测评啦。<br><img src="/2015/08/25/hkkb-review/close.jpg" alt="close.jpg" title=""></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -136,13 +142,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/programming/">programming</a>
+  <a class="article-category-link" href="/categories/life/">life</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/ios/">ios</a><a href="/tags/objective-c/">objective-c</a><a href="/tags/translated/">translated</a>
+  <span></span> <a href="/tags/life/">life</a><a href="/tags/tool/">tool</a>
   </div>
 
 </div>
@@ -151,7 +157,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/08/21/objc-constant/" data-title="Objective-C 创建常量的最佳实践 | TechUp" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://yoursite.com/2015/08/25/hkkb-review/" data-title="HHKB 键盘评测 | TechUp" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -164,19 +170,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/08/25/hkkb-review/" title="HHKB 键盘评测">
-  <strong>上一篇：</strong><br/>
-  <span>
-  HHKB 键盘评测</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/08/14/git-log-diff-esc-garbled/"  title="使用 git log、git diff 命令时出现 ESC[33 和 ESC[m 乱码的解决办法">
+<a href="/2015/08/21/objc-constant/"  title="Objective-C 创建常量的最佳实践">
  <strong>下一篇：</strong><br/> 
- <span>使用 git log、git diff 命令时出现 ESC[33 和 ESC[m 乱码的解决办法
+ <span>Objective-C 创建常量的最佳实践
 </span>
 </a>
 </div>
@@ -187,7 +185,7 @@
 
 
     <section id="comments" class="comment">
-        <div id="SOHUCS" sid="Objective-C 创建常量的最佳实践"></div>
+        <div id="SOHUCS" sid="HHKB 键盘评测"></div>
             <script>
                 (function(){
                      var appid = 'cyrUQqxn1',
@@ -211,7 +209,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#常量定义"><span class="toc-number">1.</span> <span class="toc-text">常量定义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为何不使用_#define"><span class="toc-number">2.</span> <span class="toc-text">为何不使用 #define</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于_enum_的使用"><span class="toc-number">3.</span> <span class="toc-text">关于 enum 的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于常量（博主加）"><span class="toc-number">4.</span> <span class="toc-text">关于常量（博主加）</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#购买"><span class="toc-number">1.</span> <span class="toc-text">购买</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#开箱"><span class="toc-number">2.</span> <span class="toc-text">开箱</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#连接与设置"><span class="toc-number">3.</span> <span class="toc-text">连接与设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#功能键"><span class="toc-number">4.</span> <span class="toc-text">功能键</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DIP_设置"><span class="toc-number">5.</span> <span class="toc-text">DIP 设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其它"><span class="toc-number">6.</span> <span class="toc-text">其它</span></a></li></ol>
  
   </div>
 
