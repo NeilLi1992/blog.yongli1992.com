@@ -8,11 +8,11 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 draft.md
+badd +0 post.md
 argglobal
 silent! argdel *
-argadd draft.md
-edit draft.md
+argadd post.md
+edit post.md
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -28,12 +28,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 3 - ((2 * winheight(0) + 22) / 45)
+let s:l = 1 - ((0 * winheight(0) + 47) / 95)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-3
-normal! 03|
+1
+normal! 02|
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

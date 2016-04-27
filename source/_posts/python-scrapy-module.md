@@ -35,11 +35,11 @@ Scrapy是一个主流的Python爬虫框架，设计好了爬虫应用的基本�
 接下来用一个例子来展示一个简单Scrapy爬虫的设计过程。
 
 在这个例子中我们要抓取的目标网站是[Scrapy的中文文档](http://scrapy-chs.readthedocs.org/zh_CN/0.24/index.html)。
-![Alt text](./1422907372405.png)
+{% asset_img 1.png %}
 
 如图所示，我们的目标是访问左侧列出的每一篇文章的网页，然后将右边正文部分的**HTML格式**保存下来。保存之后的html文档打开来是下面这样的。虽然样式比较丑陋，但是保存html而不是抽取出纯文本的目的在于保留网页的语义结构，这样为以后潜在的处理留下了可能。
 
-![Alt text](./1422907469954.png)
+{% asset_img 2.png %}
 
 #### 新建项目
 推荐使用pip来安装Scrapy：
@@ -125,7 +125,7 @@ class DocCrawlerSpider(scrapy.Spider):
 如果不采用生成器的形式的话，也可以把item和request混合放入一个可迭代对象中，比如全部放入一个列表，最后统一返回。
 
 下面的next_path是用来找到下一篇文章的页面的，在文章的底部我们看到有这样一个链接：
-![Alt text](./1422996462810.png)
+{% asset_img 3.png %}
 
 这个地址就是我们要抓的了。因为抓到的是一个相对地址，所以后面的语句是用来拼接出一个绝对url，然后通过scrapy.Request(url, callback)来构造一个请求对象，仍然指定这个parse方法为回调方法，最后一样通过yield来返回请求，这样我们就指定了下一个要访问的请求。
 

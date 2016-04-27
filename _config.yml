@@ -7,7 +7,7 @@ title: TechUp
 subtitle: Yong Li's small tech world.
 description: This is yongli1992's blog, for writing tech-things.
 author: yongli1992
-language:
+language: zh_CN
 timezone:
 
 # URL
@@ -28,13 +28,13 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
-new_post_name: :title.md # File name of new posts
+new_post_name: :year-:month-:day-:title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true # If true, a folder with the same name as the new post will be created
 relative_link: false
 future: true
 highlight:
