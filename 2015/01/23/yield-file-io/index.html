@@ -24,6 +24,7 @@
 <meta name="twitter:title" content="记一个使用yield读写文件的方法">
 <meta name="twitter:description" content="在学习yield的使用方法的时候遇到了一个非常实用的应用，记录如下。
 在我们直接使用read()方法来读取一个文件的全部内容的时候，会导致不可预测的内存占用，即当文件很大时有可能直接内存不够用了。好的方法是利用一个指定长度的缓冲区配合yield来逐次返回文件内容，代码示例如下：123456789def read_file(file_name):	BUFFER_SIZE = 1024	with op">
+<link rel="publisher" href="111758198691283601884">
 
     
     <link rel="alternative" href="/atom.xml" title="YongLi" type="application/atom+xml">
@@ -85,7 +86,7 @@
   </h1>
   <p class="article-author">By
        
-		<a href="/about" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
+		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
     <time datetime="2015-01-23T03:30:08.000Z" itemprop="datePublished"> 發表於 2015-01-23</time>
@@ -159,24 +160,12 @@
 
 	
 
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 
-    <section id="comments" class="comment">
-        <div id="SOHUCS" sid="记一个使用yield读写文件的方法"></div>
-            <script>
-                (function(){
-                     var appid = 'cyrUQqxn1',
-                     conf = 'prod_3dc89e4df697a1435fe2a977586c8a99';
-                     var doc = document,
-                     s = doc.createElement('script'),
-                     h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
-                     s.type = 'text/javascript';
-                     s.charset = 'utf-8';
-                     s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
-                     h.insertBefore(s,h.firstChild);
-                     window.SCS_NO_IFRAME = true;
-                 })();
-            </script>
-    </section>
 
 
 </div>  
@@ -396,6 +385,8 @@
 		<a href="http://www.zhihu.com/people/li-yong-88-55" target="_blank" class="icon-zhihu" title="知乎"></a>
 		
 		
+		<a href="https://plus.google.com/111758198691283601884?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+		
 		
 		<a href="mailto:yong.li1992@foxmail.com" target="_blank" class="icon-email" title="Email Me"></a>
 		
@@ -542,6 +533,26 @@ $(document).ready(function(){
 
 
 
+
+<script type="text/javascript">
+
+var disqus_shortname = 'yongli1992';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
 
 
 
