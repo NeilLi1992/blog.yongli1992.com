@@ -1,0 +1,686 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh_CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Rime 输入法介绍，以及基于 Rime 输入法在纯文本环境下快速输入希腊字符，和以 latex 命令输入 Unicode 数学符号的方法 | YongLi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="yongli1992">
+    
+
+    
+    <meta name="description" content="很长一段时间没有来写博文，最近准备重新继续。介绍一下最近入坑的 Rime 输入法，顺便也介绍一下自己基于 Rime 输入法而实现的快速输入 Unicode 字符集中的希腊字母，以及在纯文本环境下，以 latex 命令输入 Unicode 字符集中相近的数学符号的功能。
+实现效果最终实现的一些有用的效果大概如下。如果这里面有你想要的效果的话，那欢迎往下阅读，Rime 很可能就是你需要的输入法。
+古诗">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rime 输入法介绍，以及基于 Rime 输入法在纯文本环境下快速输入希腊字符，和以 latex 命令输入 Unicode 数学符号的方法">
+<meta property="og:url" content="http://yoursite.com/2016/05/07/rime-introduction/index.html">
+<meta property="og:site_name" content="YongLi">
+<meta property="og:description" content="很长一段时间没有来写博文，最近准备重新继续。介绍一下最近入坑的 Rime 输入法，顺便也介绍一下自己基于 Rime 输入法而实现的快速输入 Unicode 字符集中的希腊字母，以及在纯文本环境下，以 latex 命令输入 Unicode 字符集中相近的数学符号的功能。
+实现效果最终实现的一些有用的效果大概如下。如果这里面有你想要的效果的话，那欢迎往下阅读，Rime 很可能就是你需要的输入法。
+古诗">
+<meta property="og:image" content="http://yoursite.com/2016/05/07/rime-introduction/gsc.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/05/07/rime-introduction/emoji.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/05/07/rime-introduction/abbr.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/05/07/rime-introduction/switch.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/05/07/rime-introduction/symbol.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/05/07/rime-introduction/rime.jpg">
+<meta property="og:updated_time" content="2016-05-08T21:36:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Rime 输入法介绍，以及基于 Rime 输入法在纯文本环境下快速输入希腊字符，和以 latex 命令输入 Unicode 数学符号的方法">
+<meta name="twitter:description" content="很长一段时间没有来写博文，最近准备重新继续。介绍一下最近入坑的 Rime 输入法，顺便也介绍一下自己基于 Rime 输入法而实现的快速输入 Unicode 字符集中的希腊字母，以及在纯文本环境下，以 latex 命令输入 Unicode 字符集中相近的数学符号的功能。
+实现效果最终实现的一些有用的效果大概如下。如果这里面有你想要的效果的话，那欢迎往下阅读，Rime 很可能就是你需要的输入法。
+古诗">
+<link rel="publisher" href="111758198691283601884">
+
+    
+    <link rel="alternative" href="/atom.xml" title="YongLi" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/logo.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="YongLi" title="YongLi"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="YongLi">YongLi</a></h1>
+				<h2 class="blog-motto">上士闻道，勤而行之；中士闻道，若存若亡；下士闻道，大笑之。不笑不足以为道。</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">存档</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/05/07/rime-introduction/" title="Rime 输入法介绍，以及基于 Rime 输入法在纯文本环境下快速输入希腊字符，和以 latex 命令输入 Unicode 数学符号的方法" itemprop="url">Rime 输入法介绍，以及基于 Rime 输入法在纯文本环境下快速输入希腊字符，和以 latex 命令输入 Unicode 数学符号的方法</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
+		
+  <p class="article-time">
+    <time datetime="2016-05-06T23:06:34.000Z" itemprop="datePublished"> 發表於 2016-05-07</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目錄</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#实现效果"><span class="toc-number">1.</span> <span class="toc-text">实现效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#问题与适用情景"><span class="toc-number">2.</span> <span class="toc-text">问题与适用情景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rime_输入法介绍"><span class="toc-number">3.</span> <span class="toc-text">Rime 输入法介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rime_设置与定制"><span class="toc-number">4.</span> <span class="toc-text">Rime 设置与定制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#希腊字母与_latex_字符的输入"><span class="toc-number">5.</span> <span class="toc-text">希腊字母与 latex 字符的输入</span></a></li></ol>
+		
+		</div>
+		
+		<p>很长一段时间没有来写博文，最近准备重新继续。介绍一下最近入坑的 Rime 输入法，顺便也介绍一下自己基于 Rime 输入法而实现的快速输入 Unicode 字符集中的希腊字母，以及在纯文本环境下，以 latex 命令输入 Unicode 字符集中相近的数学符号的功能。</p>
+<h1 id="实现效果">实现效果</h1><p>最终实现的一些有用的效果大概如下。如果这里面有你想要的效果的话，那欢迎往下阅读，Rime 很可能就是你需要的输入法。</p>
+<p>古诗词输入：<br><img src="/2016/05/07/rime-introduction/gsc.jpg" alt="gsc.jpg" title=""></p>
+<p>emoji 直接输入，可以联想相关的表情：<br><img src="/2016/05/07/rime-introduction/emoji.jpg" alt="emoji.jpg" title=""></p>
+<p>自定义缩写词典之后，实现缩写输入：<br><img src="/2016/05/07/rime-introduction/abbr.jpg" alt="abbr.jpg" title=""></p>
+<p>多种输入方案切换，其中有粤拼的输入方案是个惊喜：<br><img src="/2016/05/07/rime-introduction/switch.jpg" alt="switch.jpg" title=""></p>
+<p>自定义词典后实现快速希腊字母与 latex 符号输入：<br><img src="/2016/05/07/rime-introduction/symbol.jpg" alt="symbol.jpg" title=""></p>
+<h1 id="问题与适用情景">问题与适用情景</h1><p>我使用的是 Macbook，之前一直用的是搜狗输入法。后来想要换成 Rime 是基于两个原因。</p>
+<ul>
+<li>最近在学粤语，想找一款粤拼输入法。只找到 Google 的广东话输入法，可惜只能作为 Chrome 的一个扩展插件在 Chrome 内部使用，没有找到系统输入法。后来发现 Rime 中实现了粤拼输入方案。而且更惊喜的是具有输入普通话拼音，实现粤拼反查的功能。</li>
+<li>平时上课的 notes 上需要做注释的时候，只有纯文本的输入框可用，这个时候想要输入希腊字母就很不方便。同时在纯文本输入框中同样很怀念 latex 方便的输入命令。其实 latex 的许多数学符号，例如 ≤，¬，∧，∫ 等等其实在 Unicode 字符集中都有对应相似的符号存在，这些 Unicode 字符是可以直接在纯文本的地方输入的，如 Word，pdf 注释等等，只不过一直以来缺少可以快速输入它们的办法，所以通常想要输入它们的话，在 Mac<br>里要打开“表情与符号”对话框进行选择，非常不方便。后来发现通过 Rime 的用户词典，可以自己实现这一功能，非常方便。</li>
+</ul>
+<h1 id="Rime_输入法介绍">Rime 输入法介绍</h1><p><a href="http://rime.im/" target="_blank" rel="external">Rime 输入法官网</a><br><img src="/2016/05/07/rime-introduction/rime.jpg" alt="rime.jpg" title=""></p>
+<p>Rime 输入法是一款出现多年的开源的全平台输入框架。在不同平台上有着不同的名称，分别是 Windows 下的“小狼毫”，Mac OSX 下的“鼠须管”，Linux 下的“中州韵”。之所以说它是一个输入框架，是因为它提供的是构建输入法的一套基础设施，以及一个统一的用户界面。而里面具体的输入方案，以及用户词典，则是可以自定义，甚至自己实现的。这更得益于它在 Github 上的开源（<a href="https://github.com/rime" target="_blank" rel="external">Repository</a>）。</p>
+<p>Rime 输入法的优点在于以下几点。</p>
+<ul>
+<li><p><strong>安全性：</strong>输入法作为很私人的工具，安全性与私密性是至关重要的，谁都不希望自己无意间在输入法中敲出的密码或者是对话信息被上传到大公司的服务器上。作为一款开源输入法，Rime 保证了绝对的安全性。</p>
+</li>
+<li><p><strong>简洁轻便：</strong> Rime 没有任何的广告，新闻之类的弹出窗口，干干净净、本本分分做一个输入法应该做的事。而且 Rime 输入法的速度非常快，据称快过系统原生输入法。虽然未见实测数据，但是实际体验确实响应很快速，没有任何迟钝现象。</p>
+</li>
+<li><p><strong>优秀的中文输入方案：</strong> 从官网，以及文档的行文中，就能感觉到作者是一位对于汉语输入有着长期的研究和执着的人。Rime 输入法的输入方案包含全拼，双拼，五笔，仓颉，注音，粤拼，吴语等等，对中文输入有着强大的支持，即使不需要自己定制，也已经能找到称心如意的输入方案了。</p>
+</li>
+<li><p><strong>强大的自定义：</strong> 从输入法外观，按键设置，再到方案选择和自定义，以及用户词典设置等等，Rime 有着很多可以自定义的地方。</p>
+</li>
+</ul>
+<p>然而同时，Rime 输入法也具有许多开源软件都不可避免的缺点。</p>
+<ul>
+<li><p><strong>安装与调试的门槛高：</strong> 因为默认直接安装好的 Rime 输入法似乎是不带用户设置界面的，所以许多配置都需要在命令行下借助文本编辑器来完成，这对于没有 CS 背景的许多小白用户来说是一道门槛。</p>
+</li>
+<li><p><strong>文档不清：</strong> 文档写的似乎不算非常的结构清晰。至少我自己在刚开始阅读文档的时候常找不到北，花了很久才弄明白一些。</p>
+</li>
+<li><p><strong>个人词库问题：</strong> 相信每一个之前使用了别的输入法的人都积累了不小的个人词库，如果直接切换到 Rime 的话会面类个人词库丢失的问题。这一问题通过“深蓝词库转换工具”可以一定程度得到解决。然而 Rime 目前还不具备像搜狗那样的云词库以及网络热词更新功能，多少算一个缺憾。Rime 的个人词库可能更多的需要靠每个用户在输入过程中积累沉淀出自己的词库。</p>
+</li>
+</ul>
+<h1 id="Rime_设置与定制">Rime 设置与定制</h1><p>有很多文章已经提供了 Rime 的设置与定制的参考，在之类不做过多赘述，引用一些资料以供方便检阅。</p>
+<p>关于基本的操作请参考<a href="https://github.com/rime/home/wiki/UserGuide" target="_blank" rel="external">说明书</a>。</p>
+<p>关于定制 Rime 的一些基本知识，包括用户设置的文件组织结构，以及对于每个输入方案的自定义，参考<a href="https://github.com/rime/home/wiki/CustomizationGuide" target="_blank" rel="external">定制指南</a>。</p>
+<p>关于外观自定义，可以参考<a href="http://www.dreamxu.com/install-config-squirrel/" target="_blank" rel="external">这里</a>。</p>
+<p>关于添加明月拼音的扩展词库，可以参考<a href="https://medium.com/@scomper/%E9%BC%A0%E9%A0%88%E7%AE%A1-%E7%9A%84%E8%B0%83%E6%95%99%E7%AC%94%E8%AE%B0-3fdeb0e78814#.lc5kdev98" target="_blank" rel="external">「鼠須管」的调教笔记</a>。</p>
+<h1 id="希腊字母与_latex_字符的输入">希腊字母与 latex 字符的输入</h1><p>最后介绍一下我自己基于用户词典实现的希腊字母和 latex 字符的输入。<br>方法也非常简单，就是在 ~/Library/Rime 下新建了两个用户词典文件，我称之为 greeks.yongli1992.dict.yaml 和 maths.yongli1992.dict.yaml，里面的内容部分截图如下：</p>
+<p>greeks.yongli1992.dict.yaml:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Rime dictionary</span></span><br><span class="line"><span class="comment"># encoding: utf-8</span></span><br><span class="line">---</span><br><span class="line">name: greeks.yongli1992</span><br><span class="line">version: <span class="string">"2016.4.30"</span></span><br><span class="line">sort: by_weight</span><br><span class="line">use_preset_vocabulary: <span class="literal">true</span></span><br><span class="line">...</span><br><span class="line">α	alpha</span><br><span class="line">Α	alpha</span><br><span class="line">β	beta</span><br><span class="line">Β	beta</span><br><span class="line">γ	gamma</span><br><span class="line">Γ	gamma</span><br></pre></td></tr></table></figure></p>
+<p>maths.yongli1992.dict.yaml:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Rime dictionary</span></span><br><span class="line"><span class="comment"># encoding: utf-8</span></span><br><span class="line"><span class="comment"># 参考使用 latex 的命令</span></span><br><span class="line"><span class="comment"># reference: http://web.ift.uib.no/Teori/KURS/WRK/TeX/symALL.html</span></span><br><span class="line"><span class="comment"># greek letters are included in a separate dictionary file</span></span><br><span class="line">---</span><br><span class="line">name: maths.yongli1992</span><br><span class="line">version: <span class="string">"2016.4.30"</span></span><br><span class="line">sort: by_weight</span><br><span class="line">use_preset_vocabulary: <span class="literal">true</span></span><br><span class="line">...</span><br><span class="line"><span class="comment"># binary operation symbols</span></span><br><span class="line">±	pm</span><br><span class="line">∓	mp</span><br><span class="line">×	<span class="built_in">times</span></span><br><span class="line">÷	div</span><br><span class="line">∗	ast</span><br><span class="line">⋆	star</span><br><span class="line">∘	circ</span><br><span class="line">∙	bullet</span><br><span class="line">⋅	cdot</span><br><span class="line">∩	<span class="built_in">cap</span></span><br><span class="line">∪	cup</span><br><span class="line">⊎	uplus</span><br><span class="line">⊓	sqcap</span><br><span class="line">⊔	sqcup</span><br><span class="line">∨	vee</span><br></pre></td></tr></table></figure></p>
+<p>在第一个希腊字母的词典中，为同一个希腊字母的大小写对应到相同的编码上。然后在 math 词典中，每一个编码都使用的是 latex 命令，然后输出的字符就是 Unicode 字符集中尽量寻找到相似的字符即可。</p>
+<p>完整的这两个文件可以在这里找到：<br><a href="https://github.com/NeilLi1992/RimeSettings/blob/master/greeks.yongli1992.dict.yaml" target="_blank" rel="external">https://github.com/NeilLi1992/RimeSettings/blob/master/greeks.yongli1992.dict.yaml</a><br><a href="https://github.com/NeilLi1992/RimeSettings/blob/master/maths.yongli1992.dict.yaml" target="_blank" rel="external">https://github.com/NeilLi1992/RimeSettings/blob/master/maths.yongli1992.dict.yaml</a></p>
+<p>下载之后只要复制到你自己的用户资料文件夹下（Mac 系统下的 ~/Library/Rime），然后记得在你要使用这个词典的输入方案设置文件中添加。具体操作请参照上面给的<a href="https://medium.com/@scomper/%E9%BC%A0%E9%A0%88%E7%AE%A1-%E7%9A%84%E8%B0%83%E6%95%99%E7%AC%94%E8%AE%B0-3fdeb0e78814#.lc5kdev98" target="_blank" rel="external">「鼠須管」的调教笔记</a>。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/tool/">tool</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/ime/">ime</a><a href="/tags/rime/">rime</a><a href="/tags/tool/">tool</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2016/05/07/rime-introduction/" data-title="Rime 输入法介绍，以及基于 Rime 输入法在纯文本环境下快速输入希腊字符，和以 latex 命令输入 Unicode 数学符号的方法 | YongLi" data-tsina="2327892814" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2015/08/25/hkkb-review/"  title="HHKB 键盘评测">
+ <strong>下一篇：</strong><br/> 
+ <span>HHKB 键盘评测
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目錄</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#实现效果"><span class="toc-number">1.</span> <span class="toc-text">实现效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#问题与适用情景"><span class="toc-number">2.</span> <span class="toc-text">问题与适用情景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rime_输入法介绍"><span class="toc-number">3.</span> <span class="toc-text">Rime 输入法介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rime_设置与定制"><span class="toc-number">4.</span> <span class="toc-text">Rime 设置与定制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#希腊字母与_latex_字符的输入"><span class="toc-number">5.</span> <span class="toc-text">希腊字母与 latex 字符的输入</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分類</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/algorithm/" title="algorithm">algorithm<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/life/" title="life">life<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/network/" title="network">network<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/problem/" title="problem">problem<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/programming/" title="programming">programming<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/python/" title="python">python<sup>12</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/tool/" title="tool">tool<sup>2</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">標簽</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/python/" title="python">python<sup>16</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/翻译/" title="翻译">翻译<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/leetcode/" title="leetcode">leetcode<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/tool/" title="tool">tool<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ios/" title="ios">ios<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/objective-c/" title="objective-c">objective-c<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/算法/" title="算法">算法<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/development/" title="development">development<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/network/" title="network">network<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/http/" title="http">http<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/programming/" title="programming">programming<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ime/" title="ime">ime<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/life/" title="life">life<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/leetCodeOJ/" title="leetCodeOJ">leetCodeOJ<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/translated/" title="translated">translated<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/vim/" title="vim">vim<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/markdown/" title="markdown">markdown<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情鏈接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://blog.imink.net 墨同学的博客" target="_blank" title="ink&#39;s blog">ink&#39;s blog</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://eventfulkay.com 小虾米的博客" target="_blank" title="kai&#39;s blog">kai&#39;s blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+<div class="doubanshow">
+<p class="asidetitle">豆瓣秀</p>
+<div>
+<script type="text/javascript" src="http://www.douban.com/service/badge/44886038/?show=collection&amp;n=12&amp;columns=3&amp;hidelogo=yes&amp;hideself=yes&amp;cat=book|movie" ></script>
+</div>
+</div>
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
+</div>
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello, I&#39;m Yong Li, a MSc student in Oxford Uni. <br/>
+			Welcome to my blog, hope it does help to you!.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2327892814" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/NeilLi1992" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		<a href="https://www.facebook.com/100006707769873" target="_blank" class="icon-facebook" title="facebook"></a>
+		
+		
+		<a href="https://www.linkedin.com/in/yongli1992" target="_blank" class="icon-linkedin" title="linkedin"></a>
+		
+		
+		<a href="https://www.douban.com/people/44886038" target="_blank" class="icon-douban" title="豆瓣"></a>
+		
+		
+		<a href="http://www.zhihu.com/people/li-yong-88-55" target="_blank" class="icon-zhihu" title="知乎"></a>
+		
+		
+		<a href="https://plus.google.com/111758198691283601884?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+		
+		
+		<a href="mailto:yong.li1992@foxmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="yongli1992">yongli1992</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'yongli1992';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
