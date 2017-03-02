@@ -11,7 +11,7 @@
     
 
     
-    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding">
+    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
     
     <meta name="description" content="翻译一道在 LeetCode 上遇到的题目的解法。原题：
 给定 n，找到存储着 1, 2, 3,..., n 的不同结构的二叉搜索树的数量。
@@ -22,7 +22,7 @@
   /">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode：唯一二叉搜索树的数量">
-<meta property="og:url" content="http://yoursite.com/2015/02/22/leetcode-unique-binary-search-tree/index.html">
+<meta property="og:url" content="http://blog.yongli1992.com/2015/02/22/leetcode-unique-binary-search-tree/index.html">
 <meta property="og:site_name" content="YongLi's Blog">
 <meta property="og:description" content="翻译一道在 LeetCode 上遇到的题目的解法。原题：
 给定 n，找到存储着 1, 2, 3,..., n 的不同结构的二叉搜索树的数量。
@@ -53,7 +53,7 @@
     <link rel="apple-touch-icon" href="/img/logo.png">
     <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
   <body>
@@ -69,7 +69,7 @@
 				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
 				<h2 class="blog-motto">制心一處，守一不移。</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -83,8 +83,8 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
-						<input type="hidden" name="q" value="site:yoursite.com">
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:blog.yongli1992.com">
 					</form>
 					
 					</li>
@@ -106,27 +106,27 @@
 		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-02-22T07:26:40.000Z" itemprop="datePublished"> 發表於 2015-02-22</time>
+    <time datetime="2015-02-22T07:26:40.000Z" itemprop="datePublished"> Published 2015-02-22</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
+			<strong class="toc-title">Contents</strong>
 		
 			
 		
 		</div>
 		
 		<p>翻译一道在 LeetCode 上遇到的题目的解法。<br>原题：</p>
-<pre><code>给定 n，找到存储着 <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>,..., n 的不同结构的二叉搜索树的数量。
-如：给定 n=<span class="number">3</span>，有 <span class="number">5</span> 种不同的 BST：
- <span class="number">1</span>         <span class="number">3</span>     <span class="number">3</span>      <span class="number">2</span>      <span class="number">1</span>
+<pre><code>给定 n，找到存储着 1, 2, 3,..., n 的不同结构的二叉搜索树的数量。
+如：给定 n=3，有 5 种不同的 BST：
+ 1         3     3      2      1
   \       /     /      / \      \
-   <span class="number">3</span>     <span class="number">2</span>     <span class="number">1</span>      <span class="number">1</span>   <span class="number">3</span>      <span class="number">2</span>
+   3     2     1      1   3      2
   /     /       \                 \
- <span class="number">2</span>     <span class="number">1</span>         <span class="number">2</span>                 <span class="number">3</span>
+ 2     1         2                 3
 </code></pre><p>原文地址：<a href="https://oj.leetcode.com/discuss/24282/dp-solution-in-6-lines-with-explanation-f-i-n-g-i-1-g-n-i" target="_blank" rel="external">LeetCode Discussion</a><br>翻译：YongLi1992</p>
 <hr>
 <a id="more"></a>
@@ -139,14 +139,14 @@
 </ul>
 <p>可见，G(n) 是真正要计算的函数。G(n) 可以从 F(i, n) 导出，而最终 F(i, n) 又可以递归地用 G(n) 来表示。</p>
 <p>我们可以看到，根据上面两个函数的定义，G(n) 就是使用每一个 i 作为根节点后 F(i) 的总和，即：</p>
-<pre><code><span class="function"><span class="title">G</span><span class="params">(n)</span></span> = <span class="function"><span class="title">F</span><span class="params">(<span class="number">1</span>, n)</span></span> + <span class="function"><span class="title">F</span><span class="params">(<span class="number">2</span>, n)</span></span> + ... + <span class="function"><span class="title">F</span><span class="params">(n, n)</span></span>
+<pre><code>G(n) = F(1, n) + F(2, n) + ... + F(n, n)
 </code></pre><p>而对于 G(n) 的基本解，是对于长度为 1 的数列只有一个 BST，对于长度为 0 的数列也只有一个 BST （空树）。</p>
-<pre><code><span class="function"><span class="title">G</span><span class="params">(<span class="number">0</span>)</span></span> = <span class="number">1</span>, <span class="function"><span class="title">G</span><span class="params">(<span class="number">1</span>)</span></span> = <span class="number">1</span>
+<pre><code>G(0) = 1, G(1) = 1
 </code></pre><p>给定数列 1…n，当选 i 为根节点时，唯一 BST 的数量 F(i, n) 即为左子树和右子树分别的唯一 BST 个数的乘积：</p>
-<pre><code>F<span class="comment">(i, n)</span> = G<span class="comment">(i-1)</span> * G<span class="comment">(n-i)</span>  <span class="number">1</span> &lt;= i &lt;= <span class="label">n</span>
+<pre><code>F(i, n) = G(i-1) * G(n-i)  1 &lt;= i &lt;= n
 </code></pre><p>综上所述，我们可以得到 G(n) 的递归表达式：</p>
-<pre><code><span class="keyword">G</span>(<span class="keyword">n</span>) = <span class="keyword">G</span>(0) * <span class="keyword">G</span>(<span class="keyword">n</span>-1) + <span class="keyword">G</span>(1) * <span class="keyword">G</span>(<span class="keyword">n</span>-2) + ... + <span class="keyword">G</span>(<span class="keyword">n</span>-1) * <span class="keyword">G</span>(0)
-</code></pre><p>下面是最终的 Python 代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">numTrees</span><span class="params">(n)</span>:</span></span><br><span class="line">	G = [<span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">2</span>, n+<span class="number">1</span>):</span><br><span class="line">		G.append(<span class="number">0</span>)</span><br><span class="line">		<span class="keyword">for</span> j <span class="keyword">in</span> xrange(<span class="number">1</span>, i+<span class="number">1</span>):</span><br><span class="line">			G[i] += G[j-<span class="number">1</span>] * G[i-j]</span><br><span class="line">	<span class="keyword">return</span> G[n]</span><br></pre></td></tr></table></figure></p>
+<pre><code>G(n) = G(0) * G(n-1) + G(1) * G(n-2) + ... + G(n-1) * G(0)
+</code></pre><p>下面是最终的 Python 代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">numTrees</span><span class="params">(n)</span>:</span></div><div class="line">	G = [<span class="number">1</span>, <span class="number">1</span>]</div><div class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">2</span>, n+<span class="number">1</span>):</div><div class="line">		G.append(<span class="number">0</span>)</div><div class="line">		<span class="keyword">for</span> j <span class="keyword">in</span> xrange(<span class="number">1</span>, i+<span class="number">1</span>):</div><div class="line">			G[i] += G[j<span class="number">-1</span>] * G[i-j]</div><div class="line">	<span class="keyword">return</span> G[n]</div></pre></td></tr></table></figure></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -160,7 +160,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/algorithm/">algorithm</a><a href="/tags/leetcode/">leetcode</a><a href="/tags/python/">python</a><a href="/tags/翻译/">翻译</a>
+  <span></span> <a href="/tags/algorithm/">algorithm</a><a href="/tags/python/">python</a><a href="/tags/leetcode/">leetcode</a><a href="/tags/翻译/">翻译</a>
   </div>
 
 </div>
@@ -169,7 +169,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/02/22/leetcode-unique-binary-search-tree/" data-title="LeetCode：唯一二叉搜索树的数量 | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://blog.yongli1992.com/2015/02/22/leetcode-unique-binary-search-tree/" data-title="LeetCode：唯一二叉搜索树的数量 | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -212,22 +212,22 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
+  <strong class="toc-title">Contents</strong>
  
  
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分類</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -259,7 +259,7 @@
 		  
 		
 		  
-			<li><a href="/categories/tool/" title="tool">tool<sup>3</sup></a></li>
+			<li><a href="/categories/tool/" title="tool">tool<sup>4</sup></a></li>
 		  
 		
 		</ul>
@@ -268,7 +268,7 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">標簽</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
@@ -284,11 +284,11 @@
 			
 		
 			
-				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
+				<li><a href="/tags/life/" title="life">life<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/life/" title="life">life<sup>3</sup></a></li>
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
 			
 		
 			
@@ -304,43 +304,19 @@
 			
 		
 			
-				<li><a href="/tags/算法/" title="算法">算法<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/development/" title="development">development<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/network/" title="network">network<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/http/" title="http">http<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/oxford/" title="oxford">oxford<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/programming/" title="programming">programming<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/UK/" title="UK">UK<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/leetCodeOJ/" title="leetCodeOJ">leetCodeOJ<sup>1</sup></a></li>
+				<li><a href="/tags/translated/" title="translated">translated<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/problem/" title="problem">problem<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/study/" title="study">study<sup>1</sup></a></li>
 			
 		
 			
@@ -351,12 +327,36 @@
 				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
 			
 		
+			
+				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/jira/" title="jira">jira<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/management/" title="management">management<sup>1</sup></a></li>
+			
+		
 		</ul>
 </div>
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -385,13 +385,13 @@
 
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
 </div>
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
@@ -442,7 +442,7 @@
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
 		
 		<a href="/about" target="_blank" title="yongli1992">yongli1992</a>
 		
@@ -649,7 +649,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
@@ -694,5 +694,35 @@ ga('send', 'pageview');
 
 <!-- Tiny_search End -->
 
-  </body>
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
 </html>

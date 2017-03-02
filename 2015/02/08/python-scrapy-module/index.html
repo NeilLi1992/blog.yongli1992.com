@@ -11,7 +11,7 @@
     
 
     
-    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding">
+    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
     
     <meta name="description" content="Scrapy爬虫模块简介爬虫的主要目的是为了获取没有开放API的网站上的非结构化数据。即按照给定的规则我们平时看到的网页，并从中抽取出需要的信息。这些信息可以应用在数据挖掘，信息处理等一系列程序中。
 简单的爬虫设计主要是确定以下几个问题：
@@ -21,7 +21,7 @@
 在获得的response中如何发现后续要访问的地址。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python爬虫模块Scrapy学习笔记">
-<meta property="og:url" content="http://yoursite.com/2015/02/08/python-scrapy-module/index.html">
+<meta property="og:url" content="http://blog.yongli1992.com/2015/02/08/python-scrapy-module/index.html">
 <meta property="og:site_name" content="YongLi's Blog">
 <meta property="og:description" content="Scrapy爬虫模块简介爬虫的主要目的是为了获取没有开放API的网站上的非结构化数据。即按照给定的规则我们平时看到的网页，并从中抽取出需要的信息。这些信息可以应用在数据挖掘，信息处理等一系列程序中。
 简单的爬虫设计主要是确定以下几个问题：
@@ -30,9 +30,9 @@
 从获得的response中如何解析出我们想要的内容。
 在获得的response中如何发现后续要访问的地址。">
 <meta property="og:image" content="http://scrapy-chs.readthedocs.org/zh_CN/latest/_images/scrapy_architecture.png">
-<meta property="og:image" content="http://yoursite.com/2015/02/08/python-scrapy-module/1.png">
-<meta property="og:image" content="http://yoursite.com/2015/02/08/python-scrapy-module/2.png">
-<meta property="og:image" content="http://yoursite.com/2015/02/08/python-scrapy-module/3.png">
+<meta property="og:image" content="http://blog.yongli1992.com/2015/02/08/python-scrapy-module/1.png">
+<meta property="og:image" content="http://blog.yongli1992.com/2015/02/08/python-scrapy-module/2.png">
+<meta property="og:image" content="http://blog.yongli1992.com/2015/02/08/python-scrapy-module/3.png">
 <meta property="og:updated_time" content="2015-08-08T13:31:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python爬虫模块Scrapy学习笔记">
@@ -42,6 +42,7 @@
 指定访问的起始地址（starting_urls）。
 从获得的response中如何解析出我们想要的内容。
 在获得的response中如何发现后续要访问的地址。">
+<meta name="twitter:image" content="http://scrapy-chs.readthedocs.org/zh_CN/latest/_images/scrapy_architecture.png">
 <link rel="publisher" href="111758198691283601884">
 
     
@@ -54,7 +55,7 @@
     <link rel="apple-touch-icon" href="/img/logo.png">
     <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
   <body>
@@ -70,7 +71,7 @@
 				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
 				<h2 class="blog-motto">制心一處，守一不移。</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -84,8 +85,8 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
-						<input type="hidden" name="q" value="site:yoursite.com">
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:blog.yongli1992.com">
 					</form>
 					
 					</li>
@@ -107,20 +108,20 @@
 		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-02-08T21:16:34.000Z" itemprop="datePublished"> 發表於 2015-02-08</time>
+    <time datetime="2015-02-08T21:16:34.000Z" itemprop="datePublished"> Published 2015-02-08</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
+			<strong class="toc-title">Contents</strong>
 		
 			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Scrapy爬虫模块简介"><span class="toc-number">1.</span> <span class="toc-text">Scrapy爬虫模块简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scrapy架构图示"><span class="toc-number">2.</span> <span class="toc-text">Scrapy架构图示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目示例"><span class="toc-number">3.</span> <span class="toc-text">项目示例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#新建项目"><span class="toc-number">3.1.</span> <span class="toc-text">新建项目</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<h3 id="Scrapy爬虫模块简介">Scrapy爬虫模块简介</h3><p>爬虫的主要目的是为了获取没有开放API的网站上的非结构化数据。即按照给定的规则我们平时看到的网页，并从中抽取出需要的信息。这些信息可以应用在数据挖掘，信息处理等一系列程序中。</p>
+		<h3 id="Scrapy爬虫模块简介"><a href="#Scrapy爬虫模块简介" class="headerlink" title="Scrapy爬虫模块简介"></a>Scrapy爬虫模块简介</h3><p>爬虫的主要目的是为了获取没有开放API的网站上的非结构化数据。即按照给定的规则我们平时看到的网页，并从中抽取出需要的信息。这些信息可以应用在数据挖掘，信息处理等一系列程序中。</p>
 <p>简单的爬虫设计主要是确定以下几个问题：</p>
 <ol>
 <li>指定访问的起始地址（starting_urls）。</li>
@@ -131,16 +132,16 @@
 <p>高级爬虫应用还会涉及到许多其它的问题。</p>
 <p>Scrapy是一个主流的Python爬虫框架，设计好了爬虫应用的基本骨架结构，也为了实现不同的应用目的留下了灵活的设计余地。使用一些其它的模块，或者配合一些中间件，也可以将Scrapy扩展成为很复杂的高级爬虫程序。</p>
 <a id="more"></a>
-<h3 id="Scrapy架构图示">Scrapy架构图示</h3><p><img src="http://scrapy-chs.readthedocs.org/zh_CN/latest/_images/scrapy_architecture.png" alt="Scrapy架构说明"></p>
+<h3 id="Scrapy架构图示"><a href="#Scrapy架构图示" class="headerlink" title="Scrapy架构图示"></a>Scrapy架构图示</h3><p><img src="http://scrapy-chs.readthedocs.org/zh_CN/latest/_images/scrapy_architecture.png" alt="Scrapy架构说明"></p>
 <p>这里是一张Scrapy架构图的展示。Scrapy Engine负责整个程序的运行。Scheduler负责调度要访问的网址。Downloader负责从网络获取响应。Spider负责分析响应，从响应中解析出我们要的数据，同时也负责找出接下来要访问的后续网址。Item是将我们需要抓取的数据做一个结构化的定义并实现为一个类。Pipeline负责对抓取到的item做后续处理，包括过滤，持久化存储等任务。</p>
 <p>绿色箭头表示网络请求与响应的流动。Spider将需要访问的（初始+后续）请求提交给调度器，调度器再将请求分发给Downloader，downloader完成下载后，通过回调函数的形式交由Spider进一步处理，Spider抽取出需要的数据，实例化一个item对象，将数据赋值为item的具体属性。item接下来将经过pipeline，由pipeline实现后续处理。</p>
 <p>在一个较为简单的应用中，真正需要我们实现的部分只有定义item，实现spider，实现pipeline。</p>
-<h3 id="项目示例">项目示例</h3><p>接下来用一个例子来展示一个简单Scrapy爬虫的设计过程。</p>
+<h3 id="项目示例"><a href="#项目示例" class="headerlink" title="项目示例"></a>项目示例</h3><p>接下来用一个例子来展示一个简单Scrapy爬虫的设计过程。</p>
 <p>在这个例子中我们要抓取的目标网站是<a href="http://scrapy-chs.readthedocs.org/zh_CN/0.24/index.html" target="_blank" rel="external">Scrapy的中文文档</a>。<br><img src="/2015/02/08/python-scrapy-module/1.png" alt="1.png" title=""></p>
 <p>如图所示，我们的目标是访问左侧列出的每一篇文章的网页，然后将右边正文部分的<strong>HTML格式</strong>保存下来。保存之后的html文档打开来是下面这样的。虽然样式比较丑陋，但是保存html而不是抽取出纯文本的目的在于保留网页的语义结构，这样为以后潜在的处理留下了可能。</p>
 <img src="/2015/02/08/python-scrapy-module/2.png" alt="2.png" title="">
-<h4 id="新建项目">新建项目</h4><p>推荐使用pip来安装Scrapy：</p>
-<pre><code>pip <span class="keyword">install</span> Scrapy
+<h4 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h4><p>推荐使用pip来安装Scrapy：</p>
+<pre><code>pip install Scrapy
 </code></pre><p>安装完成后，Scrapy提供了一个命令行工具，使用scrapy命令可以提供非常强大的功能，比如：</p>
 <ul>
 <li>创建项目</li>
@@ -149,17 +150,17 @@
 <li>展现爬虫真实获取到的response，有时候程序拿到的响应和用户通过浏览器看到的并不相同</li>
 </ul>
 <p>我们把这个示例项目叫做crawl_scrapy_docs，用下面的命令来新建项目</p>
-<pre><code><span class="title">scrapy</span> startproject crawl_scrapy_docs
+<pre><code>scrapy startproject crawl_scrapy_docs
 </code></pre><p>运行以后的目录结构是：</p>
 <pre><code>crawl_scrapy_docs/
-        scrapy<span class="class">.cfg</span>
+        scrapy.cfg
         crawl_scrapy_docs/
-            __init__<span class="class">.py</span>
-            items<span class="class">.py</span>
-            pipelines<span class="class">.py</span>
-            settings<span class="class">.py</span>
+            __init__.py
+            items.py
+            pipelines.py
+            settings.py
             spiders/
-                __init__<span class="class">.py</span>
+                __init__.py
                 ...
 </code></pre><p>其中items.py中定义我们的item类，pipelines实现抓取后的处理管道，spiders/文件夹存放spider的实现。</p>
 <p>####定义抓取实例：item<br>在这个项目里，我们感兴趣的数据有两项：</p>
@@ -168,23 +169,23 @@
 <li>用于保存文件的文件名，我们叫做filename</li>
 </ol>
 <p>这个filename我们就取正文的第一行h1标签中的标题文字。</p>
-<p>items.py中的代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CrawlScrapyDocsItem</span><span class="params">(scrapy.Item)</span>:</span></span><br><span class="line">    html_content = scrapy.Field()</span><br><span class="line">    filename = scrapy.Field()</span><br></pre></td></tr></table></figure></p>
+<p>items.py中的代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> scrapy</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CrawlScrapyDocsItem</span><span class="params">(scrapy.Item)</span>:</span></div><div class="line">    html_content = scrapy.Field()</div><div class="line">    filename = scrapy.Field()</div></pre></td></tr></table></figure></p>
 <p>只要给我们的变量赋值成一个scrapy.Field()对象即可。这样在后续spider中处理时，就可以将item作为字典的形式来进行访问，如：</p>
-<pre><code><span class="property">item</span>[<span class="string">"html_content"</span>] = <span class="string">"some value..."</span>
+<pre><code>item[&quot;html_content&quot;] = &quot;some value...&quot;
 </code></pre><p>####定义抓取过程：spider<br>实现spider需要在项目文件夹中的spiders目录下来创建。将这里要用到的spider叫做doc_crawler。Scrapy提供的命令行工具直接提供了创建spider的命令genspider：</p>
-<pre><code>scrapy genspider doc_crawler scrapy-chs<span class="class">.readthedocs</span><span class="class">.org</span>
+<pre><code>scrapy genspider doc_crawler scrapy-chs.readthedocs.org
 </code></pre><p>使用该命令时必须提供两个位置参数。第一个是spider的名字，在之后启动爬虫时，需要提供该名称。第二个是限制爬虫访问的域名，这里我们把它设置成scrapy中文文档的二级域名。</p>
 <p>运行完命令后，在spiders目录下会创建好doc_crawler.py文件。打开我们可以看到，一个类的基本结构已经写好了。我们实现一个spider就是实现一个scrapy.Spider的子类。必须要提供的三个属性就是name，allowed_domains，start_urls。下面的parse方法是默认用来处理response的回调函数。由downloader获取到的每一个response都会交由这个方法来处理。</p>
-<p>下面是该类的代码实现：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"><span class="keyword">from</span> crawl_scrapy_docs.items <span class="keyword">import</span> CrawlScrapyDocsItem</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DocCrawlerSpider</span><span class="params">(scrapy.Spider)</span>:</span></span><br><span class="line">    name = <span class="string">"doc_crawler"</span></span><br><span class="line">    allowed_domains = [<span class="string">"scrapy-chs.readthedocs.org"</span>]</span><br><span class="line">    start_urls = (<span class="string">'http://scrapy-chs.readthedocs.org/zh_CN/0.24/index.html'</span>,)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        item = CrawlScrapyDocsItem()</span><br><span class="line">        item[<span class="string">'html_content'</span>] = response.xpath(<span class="string">"//div[@class='document']/*[1]"</span>).extract()[<span class="number">0</span>]</span><br><span class="line">        item[<span class="string">'filename'</span>] = response.xpath(<span class="string">'//div[@class="document"]/descendant::h1/text()'</span>).extract()[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">yield</span> item</span><br><span class="line"></span><br><span class="line">        next_path = response.xpath(<span class="string">"//div[@role='navigation'][@class='rst-footer-buttons']/a[contains(concat(' ', @class, ' '), ' float-right ')]/@href"</span>).extract()[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> next_path:</span><br><span class="line">            next_url = response.url[:response.url.rfind(<span class="string">"/"</span>)] + <span class="string">"/"</span> + next_path</span><br><span class="line">            <span class="keyword">yield</span> scrapy.Request(next_url, callback=self.parse)</span><br></pre></td></tr></table></figure></p>
+<p>下面是该类的代码实现：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> scrapy</div><div class="line"><span class="keyword">from</span> crawl_scrapy_docs.items <span class="keyword">import</span> CrawlScrapyDocsItem</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DocCrawlerSpider</span><span class="params">(scrapy.Spider)</span>:</span></div><div class="line">    name = <span class="string">"doc_crawler"</span></div><div class="line">    allowed_domains = [<span class="string">"scrapy-chs.readthedocs.org"</span>]</div><div class="line">    start_urls = (<span class="string">'http://scrapy-chs.readthedocs.org/zh_CN/0.24/index.html'</span>,)</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span></div><div class="line">        item = CrawlScrapyDocsItem()</div><div class="line">        item[<span class="string">'html_content'</span>] = response.xpath(<span class="string">"//div[@class='document']/*[1]"</span>).extract()[<span class="number">0</span>]</div><div class="line">        item[<span class="string">'filename'</span>] = response.xpath(<span class="string">'//div[@class="document"]/descendant::h1/text()'</span>).extract()[<span class="number">0</span>]</div><div class="line">        <span class="keyword">yield</span> item</div><div class="line"></div><div class="line">        next_path = response.xpath(<span class="string">"//div[@role='navigation'][@class='rst-footer-buttons']/a[contains(concat(' ', @class, ' '), ' float-right ')]/@href"</span>).extract()[<span class="number">0</span>]</div><div class="line"></div><div class="line">        <span class="keyword">if</span> next_path:</div><div class="line">            next_url = response.url[:response.url.rfind(<span class="string">"/"</span>)] + <span class="string">"/"</span> + next_path</div><div class="line">            <span class="keyword">yield</span> scrapy.Request(next_url, callback=self.parse)</div></pre></td></tr></table></figure></p>
 <p>导入了我们的CrawlScrapyDocsItem类之后，在parse方法中就可以实例化一个item对象。为我们要的html_contnet和filename赋值。Scrapy框架默认提供了xpath和css两种选择器。xpath方法调用之后返回的仍然是一个选择器，因此支持链式操作。当我们最终要从xpath中提取出真正的字符串时，需要调用extract()方法。返回的是一个列表值，取出这个唯一的字符串即可。</p>
 <p>文档中提到可以用yield关键字来返回item以及request，即可以把parse实现为生成器的形式。这里我猜测在downloader下载完毕后调用parse的时候，可能是采用迭代的for语句进行的。并且在parse中返回item，request时我们不需要做区分，这个区分应该是在调用的时候来区分的。</p>
 <p>如果不采用生成器的形式的话，也可以把item和request混合放入一个可迭代对象中，比如全部放入一个列表，最后统一返回。</p>
 <p>下面的next_path是用来找到下一篇文章的页面的，在文章的底部我们看到有这样一个链接：<br><img src="/2015/02/08/python-scrapy-module/3.png" alt="3.png" title=""></p>
 <p>这个地址就是我们要抓的了。因为抓到的是一个相对地址，所以后面的语句是用来拼接出一个绝对url，然后通过scrapy.Request(url, callback)来构造一个请求对象，仍然指定这个parse方法为回调方法，最后一样通过yield来返回请求，这样我们就指定了下一个要访问的请求。</p>
 <p>####定义实例处理：item_pipeline<br>从spider中抓取到item之后我们需要一个一个pipeline来进行后续处理。在这个示例中我们把抓到的文件以item[‘filename’]为文件名进行保存即可。下面是pipeline的代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CrawlScrapyDocsPipeline</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_item</span><span class="params">(self, item, spider)</span>:</span></span><br><span class="line">        f = file(<span class="string">'files/%s.html'</span> % item[<span class="string">'filename'</span>].encode(<span class="string">'utf-8'</span>), <span class="string">'wb'</span>)</span><br><span class="line">        f.write(item[<span class="string">'html_content'</span>])</span><br><span class="line">        f.close()</span><br><span class="line">        <span class="keyword">return</span> item</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CrawlScrapyDocsPipeline</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_item</span><span class="params">(self, item, spider)</span>:</span></div><div class="line">        f = file(<span class="string">'files/%s.html'</span> % item[<span class="string">'filename'</span>].encode(<span class="string">'utf-8'</span>), <span class="string">'wb'</span>)</div><div class="line">        f.write(item[<span class="string">'html_content'</span>])</div><div class="line">        f.close()</div><div class="line">        <span class="keyword">return</span> item</div></pre></td></tr></table></figure>
 <p>这个类是自动生成好的，在类中有一个process_item方法，我们只要把它实现出来即可。该方法接收一个item对象和一个spider对象，我们处理完之后再把item对象返回出去，这样如果定义了多个管道的话，就可以依次处理item。</p>
-<p>写完pipeline之后不会立即生效，需要我们进行配置。具体配置方法是在settings.py中写入一个ITEM_PIPELINES字典变量。如果有多个pipeline的话，依次写在这里面，后面的数值表示pipeline处理的优先级顺序。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ITEM_PIPELINES = &#123;</span><br><span class="line">    <span class="string">'crawl_scrapy_docs.pipelines.CrawlScrapyDocsPipeline'</span>:<span class="number">300</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>写完pipeline之后不会立即生效，需要我们进行配置。具体配置方法是在settings.py中写入一个ITEM_PIPELINES字典变量。如果有多个pipeline的话，依次写在这里面，后面的数值表示pipeline处理的优先级顺序。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ITEM_PIPELINES = &#123;</div><div class="line">    <span class="string">'crawl_scrapy_docs.pipelines.CrawlScrapyDocsPipeline'</span>:<span class="number">300</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -207,7 +208,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/02/08/python-scrapy-module/" data-title="Python爬虫模块Scrapy学习笔记 | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://blog.yongli1992.com/2015/02/08/python-scrapy-module/" data-title="Python爬虫模块Scrapy学习笔记 | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -250,22 +251,22 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
+  <strong class="toc-title">Contents</strong>
  
  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Scrapy爬虫模块简介"><span class="toc-number">1.</span> <span class="toc-text">Scrapy爬虫模块简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scrapy架构图示"><span class="toc-number">2.</span> <span class="toc-text">Scrapy架构图示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目示例"><span class="toc-number">3.</span> <span class="toc-text">项目示例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#新建项目"><span class="toc-number">3.1.</span> <span class="toc-text">新建项目</span></a></li></ol></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分類</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -297,7 +298,7 @@
 		  
 		
 		  
-			<li><a href="/categories/tool/" title="tool">tool<sup>3</sup></a></li>
+			<li><a href="/categories/tool/" title="tool">tool<sup>4</sup></a></li>
 		  
 		
 		</ul>
@@ -306,7 +307,7 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">標簽</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
@@ -322,11 +323,11 @@
 			
 		
 			
-				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
+				<li><a href="/tags/life/" title="life">life<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/life/" title="life">life<sup>3</sup></a></li>
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
 			
 		
 			
@@ -342,43 +343,19 @@
 			
 		
 			
-				<li><a href="/tags/算法/" title="算法">算法<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/development/" title="development">development<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/network/" title="network">network<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/http/" title="http">http<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/oxford/" title="oxford">oxford<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/programming/" title="programming">programming<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/UK/" title="UK">UK<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/leetCodeOJ/" title="leetCodeOJ">leetCodeOJ<sup>1</sup></a></li>
+				<li><a href="/tags/translated/" title="translated">translated<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/problem/" title="problem">problem<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/study/" title="study">study<sup>1</sup></a></li>
 			
 		
 			
@@ -389,12 +366,36 @@
 				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
 			
 		
+			
+				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/jira/" title="jira">jira<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/management/" title="management">management<sup>1</sup></a></li>
+			
+		
 		</ul>
 </div>
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -423,13 +424,13 @@
 
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
 </div>
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
@@ -480,7 +481,7 @@
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
 		
 		<a href="/about" target="_blank" title="yongli1992">yongli1992</a>
 		
@@ -687,7 +688,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
@@ -732,5 +733,35 @@ ga('send', 'pageview');
 
 <!-- Tiny_search End -->
 
-  </body>
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
 </html>

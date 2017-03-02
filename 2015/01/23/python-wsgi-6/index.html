@@ -11,13 +11,13 @@
     
 
     
-    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding">
+    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
     
     <meta name="description" content="解析Post请求：Parsing the Request - Post当请求类型是POST时，查询字符串不再通过URL传递，而是包含在HTTP请求体之中来传递。请求体在环境字典中保存为键为“wsgi.input”对应的一个类文件变量。
 为了从wsgi.input中读出请求体，有必要先知道请求体的长度，即CONTENT_LENGTH变量。WSGI规范中指出，存放有请求体大小的这一CONTENT_LE">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python WSGI教程(六)——解析Post请求">
-<meta property="og:url" content="http://yoursite.com/2015/01/23/python-wsgi-6/index.html">
+<meta property="og:url" content="http://blog.yongli1992.com/2015/01/23/python-wsgi-6/index.html">
 <meta property="og:site_name" content="YongLi's Blog">
 <meta property="og:description" content="解析Post请求：Parsing the Request - Post当请求类型是POST时，查询字符串不再通过URL传递，而是包含在HTTP请求体之中来传递。请求体在环境字典中保存为键为“wsgi.input”对应的一个类文件变量。
 为了从wsgi.input中读出请求体，有必要先知道请求体的长度，即CONTENT_LENGTH变量。WSGI规范中指出，存放有请求体大小的这一CONTENT_LE">
@@ -38,7 +38,7 @@
     <link rel="apple-touch-icon" href="/img/logo.png">
     <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
   <body>
@@ -54,7 +54,7 @@
 				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
 				<h2 class="blog-motto">制心一處，守一不移。</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -68,8 +68,8 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
-						<input type="hidden" name="q" value="site:yoursite.com">
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:blog.yongli1992.com">
 					</form>
 					
 					</li>
@@ -91,14 +91,14 @@
 		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-01-23T23:47:21.000Z" itemprop="datePublished"> 發表於 2015-01-23</time>
+    <time datetime="2015-01-23T23:47:21.000Z" itemprop="datePublished"> Published 2015-01-23</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
+			<strong class="toc-title">Contents</strong>
 		
 			
 		
@@ -106,7 +106,7 @@
 		
 		<p><strong>解析Post请求：Parsing the Request - Post</strong><br>当请求类型是POST时，查询字符串不再通过URL传递，而是包含在HTTP请求体之中来传递。请求体在环境字典中保存为键为“wsgi.input”对应的一个类文件变量。</p>
 <p>为了从wsgi.input中读出请求体，有必要先知道请求体的长度，即CONTENT_LENGTH变量。WSGI规范中指出，存放有请求体大小的这一CONTENT_LENGTH变量是不可靠的，有可能是空值，或者直接缺失，所以获取时应采用try/except语法块来进行异常防错。<br><a id="more"></a><br>如下所示的脚本应保存为parsing_post.wsgi，因为这是表单action属性的值。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> wsgiref.simple_server <span class="keyword">import</span> make_server</span><br><span class="line"><span class="keyword">from</span> cgi <span class="keyword">import</span> parse_qs, escape</span><br><span class="line"></span><br><span class="line">html = <span class="string">"""</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">   &lt;form method="post" action="parsing_post.wsgi"&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">         Age: &lt;input type="text" name="age"&gt;</span><br><span class="line">         &lt;/p&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">         Hobbies:</span><br><span class="line">         &lt;input name="hobbies" type="checkbox" value="software"&gt; Software</span><br><span class="line">         &lt;input name="hobbies" type="checkbox" value="tunning"&gt; Auto Tunning</span><br><span class="line">         &lt;/p&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">         &lt;input type="submit" value="Submit"&gt;</span><br><span class="line">         &lt;/p&gt;</span><br><span class="line">      &lt;/form&gt;</span><br><span class="line">   &lt;p&gt;</span><br><span class="line">      Age: %s&lt;br&gt;</span><br><span class="line">      Hobbies: %s</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">   &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">"""</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">application</span><span class="params">(environ, start_response)</span>:</span></span><br><span class="line"></span><br><span class="line">   <span class="comment"># 环境变量CONTENT_LENGTH可能为空值或缺失，采用try/except来防错</span></span><br><span class="line">   <span class="keyword">try</span>:</span><br><span class="line">      request_body_size = int(environ.get(<span class="string">'CONTENT_LENGTH'</span>, <span class="number">0</span>))</span><br><span class="line">   <span class="keyword">except</span> (ValueError):</span><br><span class="line">      request_body_size = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">   <span class="comment"># 当请求方法为POST时查询字符串被放在HTTP请求体中进行传递。它被WSGI服务器具体存放在名为wsgi.input的一个类文件环境变量中。</span></span><br><span class="line">   request_body = environ[<span class="string">'wsgi.input'</span>].read(request_body_size)</span><br><span class="line">   d = parse_qs(request_body)</span><br><span class="line"></span><br><span class="line">   age = d.get(<span class="string">'age'</span>, [<span class="string">''</span>])[<span class="number">0</span>] <span class="comment"># 返回第一个age值。</span></span><br><span class="line">   hobbies = d.get(<span class="string">'hobbies'</span>, []) <span class="comment"># 返回一个hobbies列表。</span></span><br><span class="line"></span><br><span class="line">   <span class="comment"># 总是对用户输入进行转义来避免脚本注入。</span></span><br><span class="line">   age = escape(age)</span><br><span class="line">   hobbies = [escape(hobby) <span class="keyword">for</span> hobby <span class="keyword">in</span> hobbies]</span><br><span class="line"></span><br><span class="line">   response_body = html % (age <span class="keyword">or</span> <span class="string">'Empty'</span>,</span><br><span class="line">               <span class="string">', '</span>.join(hobbies <span class="keyword">or</span> [<span class="string">'No Hobbies'</span>]))</span><br><span class="line"></span><br><span class="line">   status = <span class="string">'200 OK'</span></span><br><span class="line"></span><br><span class="line">   response_headers = [(<span class="string">'Content-Type'</span>, <span class="string">'text/html'</span>),</span><br><span class="line">                  (<span class="string">'Content-Length'</span>, str(len(response_body)))]</span><br><span class="line">   start_response(status, response_headers)</span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> [response_body]</span><br><span class="line"></span><br><span class="line">httpd = make_server(<span class="string">'localhost'</span>, <span class="number">8051</span>, application)</span><br><span class="line">httpd.serve_forever()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#!/usr/bin/env python</span></div><div class="line"></div><div class="line"><span class="keyword">from</span> wsgiref.simple_server <span class="keyword">import</span> make_server</div><div class="line"><span class="keyword">from</span> cgi <span class="keyword">import</span> parse_qs, escape</div><div class="line"></div><div class="line">html = <span class="string">"""</span></div><div class="line">&lt;html&gt;</div><div class="line">&lt;body&gt;</div><div class="line">   &lt;form method="post" action="parsing_post.wsgi"&gt;</div><div class="line">      &lt;p&gt;</div><div class="line">         Age: &lt;input type="text" name="age"&gt;</div><div class="line">         &lt;/p&gt;</div><div class="line">      &lt;p&gt;</div><div class="line">         Hobbies:</div><div class="line">         &lt;input name="hobbies" type="checkbox" value="software"&gt; Software</div><div class="line">         &lt;input name="hobbies" type="checkbox" value="tunning"&gt; Auto Tunning</div><div class="line">         &lt;/p&gt;</div><div class="line">      &lt;p&gt;</div><div class="line">         &lt;input type="submit" value="Submit"&gt;</div><div class="line">         &lt;/p&gt;</div><div class="line">      &lt;/form&gt;</div><div class="line">   &lt;p&gt;</div><div class="line">      Age: %s&lt;br&gt;</div><div class="line">      Hobbies: %s</div><div class="line">      &lt;/p&gt;</div><div class="line">   &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">"""</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">application</span><span class="params">(environ, start_response)</span>:</span></div><div class="line"></div><div class="line">   <span class="comment"># 环境变量CONTENT_LENGTH可能为空值或缺失，采用try/except来防错</span></div><div class="line">   <span class="keyword">try</span>:</div><div class="line">      request_body_size = int(environ.get(<span class="string">'CONTENT_LENGTH'</span>, <span class="number">0</span>))</div><div class="line">   <span class="keyword">except</span> (ValueError):</div><div class="line">      request_body_size = <span class="number">0</span></div><div class="line"></div><div class="line">   <span class="comment"># 当请求方法为POST时查询字符串被放在HTTP请求体中进行传递。它被WSGI服务器具体存放在名为wsgi.input的一个类文件环境变量中。</span></div><div class="line">   request_body = environ[<span class="string">'wsgi.input'</span>].read(request_body_size)</div><div class="line">   d = parse_qs(request_body)</div><div class="line"></div><div class="line">   age = d.get(<span class="string">'age'</span>, [<span class="string">''</span>])[<span class="number">0</span>] <span class="comment"># 返回第一个age值。</span></div><div class="line">   hobbies = d.get(<span class="string">'hobbies'</span>, []) <span class="comment"># 返回一个hobbies列表。</span></div><div class="line"></div><div class="line">   <span class="comment"># 总是对用户输入进行转义来避免脚本注入。</span></div><div class="line">   age = escape(age)</div><div class="line">   hobbies = [escape(hobby) <span class="keyword">for</span> hobby <span class="keyword">in</span> hobbies]</div><div class="line"></div><div class="line">   response_body = html % (age <span class="keyword">or</span> <span class="string">'Empty'</span>,</div><div class="line">               <span class="string">', '</span>.join(hobbies <span class="keyword">or</span> [<span class="string">'No Hobbies'</span>]))</div><div class="line"></div><div class="line">   status = <span class="string">'200 OK'</span></div><div class="line"></div><div class="line">   response_headers = [(<span class="string">'Content-Type'</span>, <span class="string">'text/html'</span>),</div><div class="line">                  (<span class="string">'Content-Length'</span>, str(len(response_body)))]</div><div class="line">   start_response(status, response_headers)</div><div class="line"></div><div class="line">   <span class="keyword">return</span> [response_body]</div><div class="line"></div><div class="line">httpd = make_server(<span class="string">'localhost'</span>, <span class="number">8051</span>, application)</div><div class="line">httpd.serve_forever()</div></pre></td></tr></table></figure>
 <hr>
 <p><strong>结束</strong><br>这篇教程涉及到WSGI规范的部分就这么多，翻译到此为止。该教程中还涵盖了一些关于通用CGI和Apache mod_python模块的内容，以后有机会待我学习到了再做翻译。</p>
   
@@ -131,7 +131,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/01/23/python-wsgi-6/" data-title="Python WSGI教程(六)——解析Post请求 | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://blog.yongli1992.com/2015/01/23/python-wsgi-6/" data-title="Python WSGI教程(六)——解析Post请求 | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -174,22 +174,22 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
+  <strong class="toc-title">Contents</strong>
  
  
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分類</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -221,7 +221,7 @@
 		  
 		
 		  
-			<li><a href="/categories/tool/" title="tool">tool<sup>3</sup></a></li>
+			<li><a href="/categories/tool/" title="tool">tool<sup>4</sup></a></li>
 		  
 		
 		</ul>
@@ -230,7 +230,7 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">標簽</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
@@ -246,11 +246,11 @@
 			
 		
 			
-				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
+				<li><a href="/tags/life/" title="life">life<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/life/" title="life">life<sup>3</sup></a></li>
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
 			
 		
 			
@@ -266,43 +266,19 @@
 			
 		
 			
-				<li><a href="/tags/算法/" title="算法">算法<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/development/" title="development">development<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/network/" title="network">network<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/http/" title="http">http<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/oxford/" title="oxford">oxford<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/programming/" title="programming">programming<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/UK/" title="UK">UK<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/leetCodeOJ/" title="leetCodeOJ">leetCodeOJ<sup>1</sup></a></li>
+				<li><a href="/tags/translated/" title="translated">translated<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/problem/" title="problem">problem<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/study/" title="study">study<sup>1</sup></a></li>
 			
 		
 			
@@ -313,12 +289,36 @@
 				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
 			
 		
+			
+				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/jira/" title="jira">jira<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/management/" title="management">management<sup>1</sup></a></li>
+			
+		
 		</ul>
 </div>
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -347,13 +347,13 @@
 
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
 </div>
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
@@ -404,7 +404,7 @@
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
 		
 		<a href="/about" target="_blank" title="yongli1992">yongli1992</a>
 		
@@ -611,7 +611,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
@@ -656,5 +656,35 @@ ga('send', 'pageview');
 
 <!-- Tiny_search End -->
 
-  </body>
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
 </html>

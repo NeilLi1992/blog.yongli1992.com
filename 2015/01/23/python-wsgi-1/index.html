@@ -11,14 +11,14 @@
     
 
     
-    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding">
+    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
     
     <meta name="description" content="前言在学习python wsgi规范的时候读到了一篇介绍的很好的入门教程。内容不长，尝试将其翻译，希望对需要的人有一些帮助。原文地址：Web Python翻译：YongLi1992
 
 WSGI教程WSGI[^1]不是服务器，不是python模块，不是框架或API或任何一种软件。WSGI是一套服务器和应用程序共同遵守以供通讯的接口规范。服务器端和应用程序端的接口都在WSGI被规范定义了。WSGI的唯">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python WSGI教程(一)——介绍">
-<meta property="og:url" content="http://yoursite.com/2015/01/23/python-wsgi-1/index.html">
+<meta property="og:url" content="http://blog.yongli1992.com/2015/01/23/python-wsgi-1/index.html">
 <meta property="og:site_name" content="YongLi's Blog">
 <meta property="og:description" content="前言在学习python wsgi规范的时候读到了一篇介绍的很好的入门教程。内容不长，尝试将其翻译，希望对需要的人有一些帮助。原文地址：Web Python翻译：YongLi1992
 
@@ -41,7 +41,7 @@ WSGI教程WSGI[^1]不是服务器，不是python模块，不是框架或API或�
     <link rel="apple-touch-icon" href="/img/logo.png">
     <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
   <body>
@@ -57,7 +57,7 @@ WSGI教程WSGI[^1]不是服务器，不是python模块，不是框架或API或�
 				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
 				<h2 class="blog-motto">制心一處，守一不移。</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -71,8 +71,8 @@ WSGI教程WSGI[^1]不是服务器，不是python模块，不是框架或API或�
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
-						<input type="hidden" name="q" value="site:yoursite.com">
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:blog.yongli1992.com">
 					</form>
 					
 					</li>
@@ -94,14 +94,14 @@ WSGI教程WSGI[^1]不是服务器，不是python模块，不是框架或API或�
 		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-01-23T16:54:37.000Z" itemprop="datePublished"> 發表於 2015-01-23</time>
+    <time datetime="2015-01-23T16:54:37.000Z" itemprop="datePublished"> Published 2015-01-23</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
+			<strong class="toc-title">Contents</strong>
 		
 			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#WSGI教程"><span class="toc-number">1.</span> <span class="toc-text">WSGI教程</span></a></li></ol>
 		
@@ -109,7 +109,7 @@ WSGI教程WSGI[^1]不是服务器，不是python模块，不是框架或API或�
 		
 		<p><strong>前言</strong><br>在学习python wsgi规范的时候读到了一篇介绍的很好的入门教程。内容不长，尝试将其翻译，希望对需要的人有一些帮助。<br>原文地址：<a href="http://webpython.codepoint.net/wsgi_tutorial" target="_blank" rel="external">Web Python</a><br>翻译：YongLi1992</p>
 <hr>
-<h3 id="WSGI教程">WSGI教程</h3><p>WSGI[^1]不是服务器，不是python模块，不是框架或API或任何一种软件。WSGI是一套服务器和应用程序共同遵守以供通讯的接口规范。服务器端和应用程序端的接口都在WSGI被规范定义了。WSGI的唯一官方描述仅以<a href="http://www.python.org/dev/peps/pep-3333/" target="_blank" rel="external">PEP 3333提案</a>为准。如果一个应用程序（或框架，工具包）是遵从WSGI规范编写的，则它可以运行于同样遵从WSGI规范的任何服务器之上。<br><a id="more"></a><br>WSGI应用（遵守它的程序）是可以堆叠的（stacked）。在堆叠时处于中间位置的成为中间件，必须同时遵循WSIG规范的应用端和服务端的两个接口。在其上层的应用看来，中间件等同于服务器。在其下层的服务器（或其它低层应用）看来，中间件等同于应用。</p>
+<h3 id="WSGI教程"><a href="#WSGI教程" class="headerlink" title="WSGI教程"></a>WSGI教程</h3><p>WSGI[^1]不是服务器，不是python模块，不是框架或API或任何一种软件。WSGI是一套服务器和应用程序共同遵守以供通讯的接口规范。服务器端和应用程序端的接口都在WSGI被规范定义了。WSGI的唯一官方描述仅以<a href="http://www.python.org/dev/peps/pep-3333/" target="_blank" rel="external">PEP 3333提案</a>为准。如果一个应用程序（或框架，工具包）是遵从WSGI规范编写的，则它可以运行于同样遵从WSGI规范的任何服务器之上。<br><a id="more"></a><br>WSGI应用（遵守它的程序）是可以堆叠的（stacked）。在堆叠时处于中间位置的成为中间件，必须同时遵循WSIG规范的应用端和服务端的两个接口。在其上层的应用看来，中间件等同于服务器。在其下层的服务器（或其它低层应用）看来，中间件等同于应用。</p>
 <p>一个遵循WSGI规范的服务器做的全部工作可以理解为从客户端接收一个请求，传递给应用程序，然后将应用返回的响应发送回客户端。其抽象的工作逻辑就是这么简单，而所有复杂的细节工作应交由接口另一侧的应用程序或是中间件去完成。</p>
 <p>对于仅仅是使用框架或者工具包而言，学习WSGI规范不是必须的。但是，除非应用程序已经完全集成在框架内，为了使用中间件还是应有一些关于如何堆叠不同层次的基本知识。</p>
 <p>Python 2.5及之后的版本都内置了一个WSGI服务器，在这个教程中我们将使用它。2.4及之前的版本也可以手动安装它。而除了学习以外的任何实用场景，我都推荐使用Apache服务器配合以mod_wsgi模块。</p>
@@ -137,7 +137,7 @@ WSGI教程WSGI[^1]不是服务器，不是python模块，不是框架或API或�
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/01/23/python-wsgi-1/" data-title="Python WSGI教程(一)——介绍 | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://blog.yongli1992.com/2015/01/23/python-wsgi-1/" data-title="Python WSGI教程(一)——介绍 | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -180,22 +180,22 @@ WSGI教程WSGI[^1]不是服务器，不是python模块，不是框架或API或�
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
+  <strong class="toc-title">Contents</strong>
  
  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#WSGI教程"><span class="toc-number">1.</span> <span class="toc-text">WSGI教程</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分類</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -227,7 +227,7 @@ WSGI教程WSGI[^1]不是服务器，不是python模块，不是框架或API或�
 		  
 		
 		  
-			<li><a href="/categories/tool/" title="tool">tool<sup>3</sup></a></li>
+			<li><a href="/categories/tool/" title="tool">tool<sup>4</sup></a></li>
 		  
 		
 		</ul>
@@ -236,7 +236,7 @@ WSGI教程WSGI[^1]不是服务器，不是python模块，不是框架或API或�
 
   
 <div class="tagslist">
-	<p class="asidetitle">標簽</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
@@ -252,11 +252,11 @@ WSGI教程WSGI[^1]不是服务器，不是python模块，不是框架或API或�
 			
 		
 			
-				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
+				<li><a href="/tags/life/" title="life">life<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/life/" title="life">life<sup>3</sup></a></li>
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
 			
 		
 			
@@ -272,43 +272,19 @@ WSGI教程WSGI[^1]不是服务器，不是python模块，不是框架或API或�
 			
 		
 			
-				<li><a href="/tags/算法/" title="算法">算法<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/development/" title="development">development<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/network/" title="network">network<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/http/" title="http">http<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/oxford/" title="oxford">oxford<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/programming/" title="programming">programming<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/UK/" title="UK">UK<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/leetCodeOJ/" title="leetCodeOJ">leetCodeOJ<sup>1</sup></a></li>
+				<li><a href="/tags/translated/" title="translated">translated<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/problem/" title="problem">problem<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/study/" title="study">study<sup>1</sup></a></li>
 			
 		
 			
@@ -319,12 +295,36 @@ WSGI教程WSGI[^1]不是服务器，不是python模块，不是框架或API或�
 				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
 			
 		
+			
+				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/jira/" title="jira">jira<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/management/" title="management">management<sup>1</sup></a></li>
+			
+		
 		</ul>
 </div>
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -353,13 +353,13 @@ WSGI教程WSGI[^1]不是服务器，不是python模块，不是框架或API或�
 
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
 </div>
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
@@ -410,7 +410,7 @@ WSGI教程WSGI[^1]不是服务器，不是python模块，不是框架或API或�
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
 		
 		<a href="/about" target="_blank" title="yongli1992">yongli1992</a>
 		
@@ -617,7 +617,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
@@ -662,5 +662,35 @@ ga('send', 'pageview');
 
 <!-- Tiny_search End -->
 
-  </body>
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
 </html>

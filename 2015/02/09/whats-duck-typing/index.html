@@ -11,7 +11,7 @@
     
 
     
-    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding">
+    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
     
     <meta name="description" content="鸭子类型是动态语言的一种设计风格。提到鸭子类型就不得不提它的名称由来：如果像鸭子一样走路，像鸭子一样呱呱叫，那它就是一只鸭子。
 鸭子类型本质体现的是面向接口的编程。相比之下，传统的静态OO语言如java等的多态思想，体现的是面向继承的编程。
@@ -20,7 +20,7 @@
 123456789101112131">
 <meta property="og:type" content="article">
 <meta property="og:title" content="什么是鸭子类型（duck typing）">
-<meta property="og:url" content="http://yoursite.com/2015/02/09/whats-duck-typing/index.html">
+<meta property="og:url" content="http://blog.yongli1992.com/2015/02/09/whats-duck-typing/index.html">
 <meta property="og:site_name" content="YongLi's Blog">
 <meta property="og:description" content="鸭子类型是动态语言的一种设计风格。提到鸭子类型就不得不提它的名称由来：如果像鸭子一样走路，像鸭子一样呱呱叫，那它就是一只鸭子。
 鸭子类型本质体现的是面向接口的编程。相比之下，传统的静态OO语言如java等的多态思想，体现的是面向继承的编程。
@@ -47,7 +47,7 @@
     <link rel="apple-touch-icon" href="/img/logo.png">
     <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
   <body>
@@ -63,7 +63,7 @@
 				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
 				<h2 class="blog-motto">制心一處，守一不移。</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -77,8 +77,8 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
-						<input type="hidden" name="q" value="site:yoursite.com">
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:blog.yongli1992.com">
 					</form>
 					
 					</li>
@@ -100,14 +100,14 @@
 		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-02-09T22:59:50.000Z" itemprop="datePublished"> 發表於 2015-02-09</time>
+    <time datetime="2015-02-09T22:59:50.000Z" itemprop="datePublished"> Published 2015-02-09</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
+			<strong class="toc-title">Contents</strong>
 		
 			
 		
@@ -117,7 +117,7 @@
 <p>鸭子类型本质体现的是面向接口的编程。相比之下，传统的静态OO语言如java等的多态思想，体现的是面向继承的编程。</p>
 <p>简单来说，动态语言因为运行前不需要确定变量类型，故对对象的方法调用，只要对象拥有这一名称的方法，就一定能调用成功。</p>
 <p>如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">print</span> <span class="string">"Called as A's instance"</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">print</span> <span class="string">"Called as B's instance"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">process</span><span class="params">(obj)</span>:</span></span><br><span class="line">	obj.say()</span><br><span class="line"></span><br><span class="line">a = A()</span><br><span class="line">b = B()</span><br><span class="line">process(a)</span><br><span class="line">process(b)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(self)</span>:</span></div><div class="line">		<span class="keyword">print</span> <span class="string">"Called as A's instance"</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>:</span></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">say</span><span class="params">(self)</span>:</span></div><div class="line">		<span class="keyword">print</span> <span class="string">"Called as B's instance"</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">process</span><span class="params">(obj)</span>:</span></div><div class="line">	obj.say()</div><div class="line"></div><div class="line">a = A()</div><div class="line">b = B()</div><div class="line">process(a)</div><div class="line">process(b)</div></pre></td></tr></table></figure>
 <p>这个例子里我们看到，process处理函数要求接受到的参数对象具有一个say方法，则 a 和 b 都具有这个方法，它们都被视作合法的输入，而不关心它们具体是什么类型。</p>
 <p>而在静态语言里，必须指明参数obj的类型。即使使用多态的思想，合法的输入参数也至少要是指明的obj类型的子类型，其他的类型就算实现了 say 方法，也是无法调用的。使用反射可以做到类似的实现，但是相对欠灵活。</p>
   
@@ -133,7 +133,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/programming/">programming</a><a href="/tags/python/">python</a><a href="/tags/原创/">原创</a>
+  <span></span> <a href="/tags/python/">python</a><a href="/tags/原创/">原创</a><a href="/tags/programming/">programming</a>
   </div>
 
 </div>
@@ -142,7 +142,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/02/09/whats-duck-typing/" data-title="什么是鸭子类型（duck typing） | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://blog.yongli1992.com/2015/02/09/whats-duck-typing/" data-title="什么是鸭子类型（duck typing） | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -185,22 +185,22 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
+  <strong class="toc-title">Contents</strong>
  
  
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分類</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -232,7 +232,7 @@
 		  
 		
 		  
-			<li><a href="/categories/tool/" title="tool">tool<sup>3</sup></a></li>
+			<li><a href="/categories/tool/" title="tool">tool<sup>4</sup></a></li>
 		  
 		
 		</ul>
@@ -241,7 +241,7 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">標簽</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
@@ -257,11 +257,11 @@
 			
 		
 			
-				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
+				<li><a href="/tags/life/" title="life">life<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/life/" title="life">life<sup>3</sup></a></li>
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
 			
 		
 			
@@ -277,43 +277,19 @@
 			
 		
 			
-				<li><a href="/tags/算法/" title="算法">算法<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/development/" title="development">development<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/network/" title="network">network<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/http/" title="http">http<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/oxford/" title="oxford">oxford<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/programming/" title="programming">programming<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/UK/" title="UK">UK<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/leetCodeOJ/" title="leetCodeOJ">leetCodeOJ<sup>1</sup></a></li>
+				<li><a href="/tags/translated/" title="translated">translated<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/problem/" title="problem">problem<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/study/" title="study">study<sup>1</sup></a></li>
 			
 		
 			
@@ -324,12 +300,36 @@
 				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
 			
 		
+			
+				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/jira/" title="jira">jira<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/management/" title="management">management<sup>1</sup></a></li>
+			
+		
 		</ul>
 </div>
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -358,13 +358,13 @@
 
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
 </div>
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
@@ -415,7 +415,7 @@
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
 		
 		<a href="/about" target="_blank" title="yongli1992">yongli1992</a>
 		
@@ -622,7 +622,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
@@ -667,5 +667,35 @@ ga('send', 'pageview');
 
 <!-- Tiny_search End -->
 
-  </body>
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
 </html>

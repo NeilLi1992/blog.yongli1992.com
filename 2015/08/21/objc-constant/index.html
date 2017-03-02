@@ -11,7 +11,7 @@
     
 
     
-    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding">
+    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
     
     <meta name="description" content="原文地址：What’s the best way to create constants in Objective-C
 常量定义首先需要明确的是我们希望常量的作用范围，这就要考虑两个问题：
@@ -22,7 +22,7 @@
 如果常量仅针对特定的类，并且只在该类内">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Objective-C 创建常量的最佳实践">
-<meta property="og:url" content="http://yoursite.com/2015/08/21/objc-constant/index.html">
+<meta property="og:url" content="http://blog.yongli1992.com/2015/08/21/objc-constant/index.html">
 <meta property="og:site_name" content="YongLi's Blog">
 <meta property="og:description" content="原文地址：What’s the best way to create constants in Objective-C
 常量定义首先需要明确的是我们希望常量的作用范围，这就要考虑两个问题：
@@ -53,7 +53,7 @@
     <link rel="apple-touch-icon" href="/img/logo.png">
     <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
   <body>
@@ -69,7 +69,7 @@
 				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
 				<h2 class="blog-motto">制心一處，守一不移。</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -83,8 +83,8 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
-						<input type="hidden" name="q" value="site:yoursite.com">
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:blog.yongli1992.com">
 					</form>
 					
 					</li>
@@ -106,31 +106,31 @@
 		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-08-21T05:32:54.000Z" itemprop="datePublished"> 發表於 2015-08-21</time>
+    <time datetime="2015-08-21T05:32:54.000Z" itemprop="datePublished"> Published 2015-08-21</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
+			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#常量定义"><span class="toc-number">1.</span> <span class="toc-text">常量定义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为何不使用_#define"><span class="toc-number">2.</span> <span class="toc-text">为何不使用 #define</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于_enum_的使用"><span class="toc-number">3.</span> <span class="toc-text">关于 enum 的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于常量（博主加）"><span class="toc-number">4.</span> <span class="toc-text">关于常量（博主加）</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#常量定义"><span class="toc-number">1.</span> <span class="toc-text">常量定义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为何不使用-define"><span class="toc-number">2.</span> <span class="toc-text">为何不使用 #define</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于-enum-的使用"><span class="toc-number">3.</span> <span class="toc-text">关于 enum 的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于常量（博主加）"><span class="toc-number">4.</span> <span class="toc-text">关于常量（博主加）</span></a></li></ol>
 		
 		</div>
 		
 		<p>原文地址：<a href="http://stackoverflow.com/questions/17228334/what-is-the-best-way-to-create-constants-in-objective-c?lq=1" target="_blank" rel="external">What’s the best way to create constants in Objective-C</a></p>
-<h1 id="常量定义">常量定义</h1><p>首先需要明确的是我们希望常量的作用范围，这就要考虑两个问题：</p>
+<h1 id="常量定义"><a href="#常量定义" class="headerlink" title="常量定义"></a>常量定义</h1><p>首先需要明确的是我们希望常量的作用范围，这就要考虑两个问题：</p>
 <ol>
 <li>常量是作用于一个特定的类，还是作用于整个应用？</li>
 <li>如果是作用于一个特定的类，我们是希望这些类的其它使用者（clients）也能使用这些常量，还是仅仅在该类的内部来使用？</li>
 </ol>
-<p>如果常量仅针对特定的类，并且只在该类内部使用，则应在该类的 .m 文件的开头使用 static const 来声明，如：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="built_in">NSString</span> * <span class="keyword">const</span> MyThingNotificationKey = <span class="string">@"MyThingNotificationKey"</span>;</span><br></pre></td></tr></table></figure></p>
-<p>如果常量针对一个特定的类，但是是公开的，会被该类的其他使用者使用，则应在 header 文件中用 extern 来声明，而在 .m 文件中来定义，如：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .h</span></span><br><span class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> * <span class="keyword">const</span> MyThingNotificationKey;</span><br><span class="line"></span><br><span class="line"><span class="comment">// .m</span></span><br><span class="line"><span class="built_in">NSString</span> *<span class="keyword">const</span> MyThingNotificationKey = <span class="string">@"MyThingNotificationKey"</span>;</span><br></pre></td></tr></table></figure></p>
+<p>如果常量仅针对特定的类，并且只在该类内部使用，则应在该类的 .m 文件的开头使用 static const 来声明，如：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="built_in">NSString</span> * <span class="keyword">const</span> MyThingNotificationKey = <span class="string">@"MyThingNotificationKey"</span>;</div></pre></td></tr></table></figure></p>
+<p>如果常量针对一个特定的类，但是是公开的，会被该类的其他使用者使用，则应在 header 文件中用 extern 来声明，而在 .m 文件中来定义，如：<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// .h</span></div><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> * <span class="keyword">const</span> MyThingNotificationKey;</div><div class="line"></div><div class="line"><span class="comment">// .m</span></div><div class="line"><span class="built_in">NSString</span> *<span class="keyword">const</span> MyThingNotificationKey = <span class="string">@"MyThingNotificationKey"</span>;</div></pre></td></tr></table></figure></p>
 <p>如果常量是整个应用都可见的，则应创建一个专门存储这些常量的类，然后在 header 中声明，在 .m 中定义。 你也可以根据常量的不同功能与种类，分开定义在不同的类中。</p>
-<h1 id="为何不使用_#define">为何不使用 #define</h1><p>过去的回答是：“宏不包含类型信息“，但是如今的编译器已经足够智能，可以像针对变量一样来对字面量（即宏的展开）来进行类型检查。<br>现在的回答应该是：因为 debugger 不会知道你使用了宏。如果 MyThingNotificationKey 是一条宏的话，你就不能在 debugger 命令中使用 [myThing addObserver:self forKey:MyThingNotificationKey]。</p>
-<h1 id="关于_enum_的使用">关于 enum 的使用</h1><p>enum 只能用来定义整数常量（integer constants）。如果就是为了定义整数常量，enum 是很棒的选择，你应当使用它。（更好的选择是使用 <a href="http://nshipster.com/ns_enum-ns_options" target="_blank" rel="external">NS_ENUM 和 NS_OPTIONS 宏</a> )。而对于整数常量之外的其他情况，你就无法使用 enum 了。</p>
-<h1 id="关于常量（博主加）">关于常量（博主加）</h1><p>我在使用的时候发现，在上述方法在定义 NSString* 类型的时候是可以的，但是如果尝试定义一些 NSArray 等其它引用类型的变量，编译器就会保存，提示 “initializer element is not a compile-time constant”。参考该 <a href="http://stackoverflow.com/questions/2436463/how-do-i-declare-an-array-as-a-constant-in-objective-c" target="_blank" rel="external">SO提问</a> 后得知，除了 NSString* 是唯一的特例之外，在 Objective-C 中，所有的对象都必须在运行时创建，而不能在编译时创建。</p>
+<h1 id="为何不使用-define"><a href="#为何不使用-define" class="headerlink" title="为何不使用 #define"></a>为何不使用 #define</h1><p>过去的回答是：“宏不包含类型信息“，但是如今的编译器已经足够智能，可以像针对变量一样来对字面量（即宏的展开）来进行类型检查。<br>现在的回答应该是：因为 debugger 不会知道你使用了宏。如果 MyThingNotificationKey 是一条宏的话，你就不能在 debugger 命令中使用 [myThing addObserver:self forKey:MyThingNotificationKey]。</p>
+<h1 id="关于-enum-的使用"><a href="#关于-enum-的使用" class="headerlink" title="关于 enum 的使用"></a>关于 enum 的使用</h1><p>enum 只能用来定义整数常量（integer constants）。如果就是为了定义整数常量，enum 是很棒的选择，你应当使用它。（更好的选择是使用 <a href="http://nshipster.com/ns_enum-ns_options" target="_blank" rel="external">NS_ENUM 和 NS_OPTIONS 宏</a> )。而对于整数常量之外的其他情况，你就无法使用 enum 了。</p>
+<h1 id="关于常量（博主加）"><a href="#关于常量（博主加）" class="headerlink" title="关于常量（博主加）"></a>关于常量（博主加）</h1><p>我在使用的时候发现，在上述方法在定义 NSString* 类型的时候是可以的，但是如果尝试定义一些 NSArray 等其它引用类型的变量，编译器就会保存，提示 “initializer element is not a compile-time constant”。参考该 <a href="http://stackoverflow.com/questions/2436463/how-do-i-declare-an-array-as-a-constant-in-objective-c" target="_blank" rel="external">SO提问</a> 后得知，除了 NSString* 是唯一的特例之外，在 Objective-C 中，所有的对象都必须在运行时创建，而不能在编译时创建。</p>
 <p>对于该问题，我认为可以参考上面对于全应用可见的常量的做法，如创建一个辅助类（我的习惯是叫做 Util 类），将其实现为单例类，在 .m 的开头用 static 关键字来声明这些常量，然后在单例类的类初始化方法中进行定义，最后添加实例方法，来分别返回这些常量。</p>
   
 	</div>
@@ -145,7 +145,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/ios/">ios</a><a href="/tags/objective-c/">objective-c</a><a href="/tags/translated/">translated</a>
+  <span></span> <a href="/tags/objective-c/">objective-c</a><a href="/tags/translated/">translated</a><a href="/tags/ios/">ios</a>
   </div>
 
 </div>
@@ -154,7 +154,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/08/21/objc-constant/" data-title="Objective-C 创建常量的最佳实践 | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://blog.yongli1992.com/2015/08/21/objc-constant/" data-title="Objective-C 创建常量的最佳实践 | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -197,22 +197,22 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
+  <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#常量定义"><span class="toc-number">1.</span> <span class="toc-text">常量定义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为何不使用_#define"><span class="toc-number">2.</span> <span class="toc-text">为何不使用 #define</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于_enum_的使用"><span class="toc-number">3.</span> <span class="toc-text">关于 enum 的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于常量（博主加）"><span class="toc-number">4.</span> <span class="toc-text">关于常量（博主加）</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#常量定义"><span class="toc-number">1.</span> <span class="toc-text">常量定义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为何不使用-define"><span class="toc-number">2.</span> <span class="toc-text">为何不使用 #define</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于-enum-的使用"><span class="toc-number">3.</span> <span class="toc-text">关于 enum 的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关于常量（博主加）"><span class="toc-number">4.</span> <span class="toc-text">关于常量（博主加）</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分類</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -244,7 +244,7 @@
 		  
 		
 		  
-			<li><a href="/categories/tool/" title="tool">tool<sup>3</sup></a></li>
+			<li><a href="/categories/tool/" title="tool">tool<sup>4</sup></a></li>
 		  
 		
 		</ul>
@@ -253,7 +253,7 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">標簽</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
@@ -269,11 +269,11 @@
 			
 		
 			
-				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
+				<li><a href="/tags/life/" title="life">life<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/life/" title="life">life<sup>3</sup></a></li>
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
 			
 		
 			
@@ -289,43 +289,19 @@
 			
 		
 			
-				<li><a href="/tags/算法/" title="算法">算法<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/development/" title="development">development<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/network/" title="network">network<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/http/" title="http">http<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/oxford/" title="oxford">oxford<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/programming/" title="programming">programming<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/UK/" title="UK">UK<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/leetCodeOJ/" title="leetCodeOJ">leetCodeOJ<sup>1</sup></a></li>
+				<li><a href="/tags/translated/" title="translated">translated<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/problem/" title="problem">problem<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/study/" title="study">study<sup>1</sup></a></li>
 			
 		
 			
@@ -336,12 +312,36 @@
 				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
 			
 		
+			
+				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/jira/" title="jira">jira<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/management/" title="management">management<sup>1</sup></a></li>
+			
+		
 		</ul>
 </div>
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -370,13 +370,13 @@
 
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
 </div>
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
@@ -427,7 +427,7 @@
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
 		
 		<a href="/about" target="_blank" title="yongli1992">yongli1992</a>
 		
@@ -634,7 +634,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
@@ -679,5 +679,35 @@ ga('send', 'pageview');
 
 <!-- Tiny_search End -->
 
-  </body>
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
 </html>

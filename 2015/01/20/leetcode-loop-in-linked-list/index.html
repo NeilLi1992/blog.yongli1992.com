@@ -11,14 +11,14 @@
     
 
     
-    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding">
+    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
     
     <meta name="description" content="判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。
 ####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇
 找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下来fast和slow">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode：判断单链列表是否存在环">
-<meta property="og:url" content="http://yoursite.com/2015/01/20/leetcode-loop-in-linked-list/index.html">
+<meta property="og:url" content="http://blog.yongli1992.com/2015/01/20/leetcode-loop-in-linked-list/index.html">
 <meta property="og:site_name" content="YongLi's Blog">
 <meta property="og:description" content="判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。
 ####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇
@@ -41,7 +41,7 @@
     <link rel="apple-touch-icon" href="/img/logo.png">
     <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
   <body>
@@ -57,7 +57,7 @@
 				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
 				<h2 class="blog-motto">制心一處，守一不移。</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -71,8 +71,8 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
-						<input type="hidden" name="q" value="site:yoursite.com">
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:blog.yongli1992.com">
 					</form>
 					
 					</li>
@@ -94,14 +94,14 @@
 		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-01-20T16:12:03.000Z" itemprop="datePublished"> 發表於 2015-01-20</time>
+    <time datetime="2015-01-20T16:12:03.000Z" itemprop="datePublished"> Published 2015-01-20</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
+			<strong class="toc-title">Contents</strong>
 		
 			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#找到环的入口"><span class="toc-number">1.</span> <span class="toc-text">找到环的入口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#证明"><span class="toc-number">2.</span> <span class="toc-text">证明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python实现"><span class="toc-number">3.</span> <span class="toc-text">Python实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用"><span class="toc-number">4.</span> <span class="toc-text">应用</span></a></li></ol>
 		
@@ -109,10 +109,10 @@
 		
 		<p>判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。</p>
 <p>####判断是否存在环<br>用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.<br>若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇</p>
-<h4 id="找到环的入口">找到环的入口</h4><p>当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。<br>接下来fast和slow都每次移动1。两指针在此相遇的位置即为环的入口。</p>
-<h4 id="证明">证明</h4><p>设初次相遇时循环运行n次。设初次相遇为M点，head到环入口距离为a，环入口到M点距离为b。环路周长为L。第一次相遇时fast已经走了k圈（不能保证相遇时fast只多走1圈）。<br>slow走的距离为d1 = a + b = n<br>fast走的距离为d2 = a + b+ k<em>L = 2n<br>d2 - d1 = n = k</em>L，可知长度n恰好为环周长的整数倍。<br>此时slow从相遇点M再走n步，可以回到相遇点M。<br>此时fast从head出发走n步，也可到达M。<br>实际上两者在走完a步后就相遇了，此处即为环的入口。</p>
-<h4 id="Python实现">Python实现</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">slow = fast = head</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">     <span class="keyword">if</span> <span class="keyword">not</span> fast.next <span class="keyword">or</span> <span class="keyword">not</span> fast.next.next:</span><br><span class="line">          <span class="comment"># No loop</span></span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">     <span class="keyword">else</span>:</span><br><span class="line">          slow = slow.next</span><br><span class="line">          fast = fast.next.next</span><br><span class="line">          <span class="keyword">if</span> slow == fast:</span><br><span class="line">               <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Encountered for 1st time. Now set out again</span></span><br><span class="line"><span class="keyword">while</span> fast != slow:</span><br><span class="line">     fast = fast.next</span><br><span class="line">     slow = slow.next</span><br><span class="line"></span><br><span class="line"><span class="comment"># Now both fast and slow point to the loop entrance</span></span><br><span class="line"><span class="keyword">return</span> fast</span><br></pre></td></tr></table></figure>
-<h4 id="应用">应用</h4><p>可以用来解决两个单链表是否存在交点的问题，如下：</p>
+<h4 id="找到环的入口"><a href="#找到环的入口" class="headerlink" title="找到环的入口"></a>找到环的入口</h4><p>当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。<br>接下来fast和slow都每次移动1。两指针在此相遇的位置即为环的入口。</p>
+<h4 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h4><p>设初次相遇时循环运行n次。设初次相遇为M点，head到环入口距离为a，环入口到M点距离为b。环路周长为L。第一次相遇时fast已经走了k圈（不能保证相遇时fast只多走1圈）。<br>slow走的距离为d1 = a + b = n<br>fast走的距离为d2 = a + b+ k<em>L = 2n<br>d2 - d1 = n = k</em>L，可知长度n恰好为环周长的整数倍。<br>此时slow从相遇点M再走n步，可以回到相遇点M。<br>此时fast从head出发走n步，也可到达M。<br>实际上两者在走完a步后就相遇了，此处即为环的入口。</p>
+<h4 id="Python实现"><a href="#Python实现" class="headerlink" title="Python实现"></a>Python实现</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">slow = fast = head</div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">     <span class="keyword">if</span> <span class="keyword">not</span> fast.next <span class="keyword">or</span> <span class="keyword">not</span> fast.next.next:</div><div class="line">          <span class="comment"># No loop</span></div><div class="line">          <span class="keyword">return</span> <span class="keyword">None</span></div><div class="line">     <span class="keyword">else</span>:</div><div class="line">          slow = slow.next</div><div class="line">          fast = fast.next.next</div><div class="line">          <span class="keyword">if</span> slow == fast:</div><div class="line">               <span class="keyword">break</span></div><div class="line"></div><div class="line"><span class="comment"># Encountered for 1st time. Now set out again</span></div><div class="line"><span class="keyword">while</span> fast != slow:</div><div class="line">     fast = fast.next</div><div class="line">     slow = slow.next</div><div class="line"></div><div class="line"><span class="comment"># Now both fast and slow point to the loop entrance</span></div><div class="line"><span class="keyword">return</span> fast</div></pre></td></tr></table></figure>
+<h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h4><p>可以用来解决两个单链表是否存在交点的问题，如下：</p>
 <p>$A:       a1 → a2$<br>$                ↘$<br>$                 c1 → c2 → c3$<br>$                ↗$<br>$B:   b1 → b2 → b3$<br>给定两个单链表A，B，问A，B是否存在某个相交节点，若存在则返回该节点。应用我们的方法，可以在O(n)时间，O(1)空间内求解。<br>方法是先遍历A找到尾节点tailA，设置tailA.next = headB。若A与B有交点，则从headA再出发使用我们的算法找到环，环路入口即为链表交点。</p>
   
 	</div>
@@ -127,7 +127,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/leetcode/">leetcode</a><a href="/tags/python/">python</a>
+  <span></span> <a href="/tags/python/">python</a><a href="/tags/leetcode/">leetcode</a>
   </div>
 
 </div>
@@ -136,7 +136,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/01/20/leetcode-loop-in-linked-list/" data-title="LeetCode：判断单链列表是否存在环 | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://blog.yongli1992.com/2015/01/20/leetcode-loop-in-linked-list/" data-title="LeetCode：判断单链列表是否存在环 | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -179,22 +179,22 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
+  <strong class="toc-title">Contents</strong>
  
  <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#找到环的入口"><span class="toc-number">1.</span> <span class="toc-text">找到环的入口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#证明"><span class="toc-number">2.</span> <span class="toc-text">证明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python实现"><span class="toc-number">3.</span> <span class="toc-text">Python实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用"><span class="toc-number">4.</span> <span class="toc-text">应用</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分類</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -226,7 +226,7 @@
 		  
 		
 		  
-			<li><a href="/categories/tool/" title="tool">tool<sup>3</sup></a></li>
+			<li><a href="/categories/tool/" title="tool">tool<sup>4</sup></a></li>
 		  
 		
 		</ul>
@@ -235,7 +235,7 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">標簽</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
@@ -251,11 +251,11 @@
 			
 		
 			
-				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
+				<li><a href="/tags/life/" title="life">life<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/life/" title="life">life<sup>3</sup></a></li>
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
 			
 		
 			
@@ -271,43 +271,19 @@
 			
 		
 			
-				<li><a href="/tags/算法/" title="算法">算法<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/development/" title="development">development<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/network/" title="network">network<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/http/" title="http">http<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/oxford/" title="oxford">oxford<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/programming/" title="programming">programming<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/UK/" title="UK">UK<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/leetCodeOJ/" title="leetCodeOJ">leetCodeOJ<sup>1</sup></a></li>
+				<li><a href="/tags/translated/" title="translated">translated<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/problem/" title="problem">problem<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/study/" title="study">study<sup>1</sup></a></li>
 			
 		
 			
@@ -318,12 +294,36 @@
 				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
 			
 		
+			
+				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/jira/" title="jira">jira<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/management/" title="management">management<sup>1</sup></a></li>
+			
+		
 		</ul>
 </div>
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -352,13 +352,13 @@
 
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
 </div>
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
@@ -409,7 +409,7 @@
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
 		
 		<a href="/about" target="_blank" title="yongli1992">yongli1992</a>
 		
@@ -616,7 +616,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
@@ -661,5 +661,35 @@ ga('send', 'pageview');
 
 <!-- Tiny_search End -->
 
-  </body>
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
 </html>

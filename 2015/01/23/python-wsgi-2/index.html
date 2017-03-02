@@ -11,7 +11,7 @@
     
 
     
-    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding">
+    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
     
     <meta name="description" content="应用程序接口：Application InterfaceWSGI应用接口实现为一个可调用对象：函数，方法，类或者任何一个实现了__call__方法的对象。该可调用对象应满足下述条件：
 
@@ -23,7 +23,7 @@
 必须向服务器Return包装在可迭代对象中的字符串（一个或多个）。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python WSGI教程(二)——应用程序接口">
-<meta property="og:url" content="http://yoursite.com/2015/01/23/python-wsgi-2/index.html">
+<meta property="og:url" content="http://blog.yongli1992.com/2015/01/23/python-wsgi-2/index.html">
 <meta property="og:site_name" content="YongLi's Blog">
 <meta property="og:description" content="应用程序接口：Application InterfaceWSGI应用接口实现为一个可调用对象：函数，方法，类或者任何一个实现了__call__方法的对象。该可调用对象应满足下述条件：
 
@@ -56,7 +56,7 @@
     <link rel="apple-touch-icon" href="/img/logo.png">
     <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
   <body>
@@ -72,7 +72,7 @@
 				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
 				<h2 class="blog-motto">制心一處，守一不移。</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -86,8 +86,8 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
-						<input type="hidden" name="q" value="site:yoursite.com">
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:blog.yongli1992.com">
 					</form>
 					
 					</li>
@@ -109,14 +109,14 @@
 		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-01-23T16:57:42.000Z" itemprop="datePublished"> 發表於 2015-01-23</time>
+    <time datetime="2015-01-23T16:57:42.000Z" itemprop="datePublished"> Published 2015-01-23</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
+			<strong class="toc-title">Contents</strong>
 		
 			
 		
@@ -132,7 +132,7 @@
 <li>必须向服务器Return包装在可迭代对象中的字符串（一个或多个）。<a id="more"></a>
 应用程序的基本骨架大致如下：</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这是我们的应用对象。 它可以采用任何名字来命名,</span></span><br><span class="line"><span class="comment"># 但当在Apache中使用mod_wsgi来运行时则必须命名为application</span></span><br><span class="line"><span class="comment"># 必须接收两个参数：</span></span><br><span class="line"><span class="comment"># 	一为包含了CGI环境变量的环境字典，由服务器对来自客户端的每一次请求而生成。</span></span><br><span class="line"><span class="comment">#	二为由服务器提供的一个回调函数，可以调用以向服务器返回HTTP状态码和HTTP响应头。</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">application</span><span class="params">(environ, start_response)</span>:</span></span><br><span class="line"></span><br><span class="line">   <span class="comment"># 在这里我们利用环境字典中的信息生成一个简单的响应体。</span></span><br><span class="line">   response_body = <span class="string">'The request method was %s'</span> % environ[<span class="string">'REQUEST_METHOD'</span>]</span><br><span class="line"></span><br><span class="line">   <span class="comment"># HTTP 响应吗</span></span><br><span class="line">   status = <span class="string">'200 OK'</span></span><br><span class="line"></span><br><span class="line">   <span class="comment"># 这里是客户端需要的HTTP响应头，必须按一个个元组对的形式存放在一个列表中。</span></span><br><span class="line">   <span class="comment"># 如：[(响应头名称, 响应头值)].</span></span><br><span class="line">   response_headers = [(<span class="string">'Content-Type'</span>, <span class="string">'text/plain'</span>),</span><br><span class="line">                       (<span class="string">'Content-Length'</span>, str(len(response_body)))]</span><br><span class="line"></span><br><span class="line">   <span class="comment"># 使用由服务器提供的这个start_resposne回调函数来提交状态码和响应头</span></span><br><span class="line">   start_response(status, response_headers)</span><br><span class="line"></span><br><span class="line">   <span class="comment"># 在这里利用return来返回真正的响应体</span></span><br><span class="line">   <span class="comment"># 请注意响应体在这里被包装在一个列表中。实际上WSGI要求它存放在一个可迭代对象中即可，不一定要是列表。</span></span><br><span class="line">   <span class="keyword">return</span> [response_body]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 这是我们的应用对象。 它可以采用任何名字来命名,</span></div><div class="line"><span class="comment"># 但当在Apache中使用mod_wsgi来运行时则必须命名为application</span></div><div class="line"><span class="comment"># 必须接收两个参数：</span></div><div class="line"><span class="comment"># 	一为包含了CGI环境变量的环境字典，由服务器对来自客户端的每一次请求而生成。</span></div><div class="line"><span class="comment">#	二为由服务器提供的一个回调函数，可以调用以向服务器返回HTTP状态码和HTTP响应头。</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">application</span><span class="params">(environ, start_response)</span>:</span></div><div class="line"></div><div class="line">   <span class="comment"># 在这里我们利用环境字典中的信息生成一个简单的响应体。</span></div><div class="line">   response_body = <span class="string">'The request method was %s'</span> % environ[<span class="string">'REQUEST_METHOD'</span>]</div><div class="line"></div><div class="line">   <span class="comment"># HTTP 响应吗</span></div><div class="line">   status = <span class="string">'200 OK'</span></div><div class="line"></div><div class="line">   <span class="comment"># 这里是客户端需要的HTTP响应头，必须按一个个元组对的形式存放在一个列表中。</span></div><div class="line">   <span class="comment"># 如：[(响应头名称, 响应头值)].</span></div><div class="line">   response_headers = [(<span class="string">'Content-Type'</span>, <span class="string">'text/plain'</span>),</div><div class="line">                       (<span class="string">'Content-Length'</span>, str(len(response_body)))]</div><div class="line"></div><div class="line">   <span class="comment"># 使用由服务器提供的这个start_resposne回调函数来提交状态码和响应头</span></div><div class="line">   start_response(status, response_headers)</div><div class="line"></div><div class="line">   <span class="comment"># 在这里利用return来返回真正的响应体</span></div><div class="line">   <span class="comment"># 请注意响应体在这里被包装在一个列表中。实际上WSGI要求它存放在一个可迭代对象中即可，不一定要是列表。</span></div><div class="line">   <span class="keyword">return</span> [response_body]</div></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -155,7 +155,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/01/23/python-wsgi-2/" data-title="Python WSGI教程(二)——应用程序接口 | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://blog.yongli1992.com/2015/01/23/python-wsgi-2/" data-title="Python WSGI教程(二)——应用程序接口 | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -198,22 +198,22 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
+  <strong class="toc-title">Contents</strong>
  
  
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分類</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -245,7 +245,7 @@
 		  
 		
 		  
-			<li><a href="/categories/tool/" title="tool">tool<sup>3</sup></a></li>
+			<li><a href="/categories/tool/" title="tool">tool<sup>4</sup></a></li>
 		  
 		
 		</ul>
@@ -254,7 +254,7 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">標簽</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
@@ -270,11 +270,11 @@
 			
 		
 			
-				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
+				<li><a href="/tags/life/" title="life">life<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/life/" title="life">life<sup>3</sup></a></li>
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
 			
 		
 			
@@ -290,43 +290,19 @@
 			
 		
 			
-				<li><a href="/tags/算法/" title="算法">算法<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/development/" title="development">development<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/network/" title="network">network<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/http/" title="http">http<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/oxford/" title="oxford">oxford<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/programming/" title="programming">programming<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/UK/" title="UK">UK<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/leetCodeOJ/" title="leetCodeOJ">leetCodeOJ<sup>1</sup></a></li>
+				<li><a href="/tags/translated/" title="translated">translated<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/problem/" title="problem">problem<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/study/" title="study">study<sup>1</sup></a></li>
 			
 		
 			
@@ -337,12 +313,36 @@
 				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
 			
 		
+			
+				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/jira/" title="jira">jira<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/management/" title="management">management<sup>1</sup></a></li>
+			
+		
 		</ul>
 </div>
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -371,13 +371,13 @@
 
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
 </div>
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
@@ -428,7 +428,7 @@
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
 		
 		<a href="/about" target="_blank" title="yongli1992">yongli1992</a>
 		
@@ -635,7 +635,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
@@ -680,5 +680,35 @@ ga('send', 'pageview');
 
 <!-- Tiny_search End -->
 
-  </body>
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
 </html>

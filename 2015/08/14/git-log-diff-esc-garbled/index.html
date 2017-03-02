@@ -11,23 +11,24 @@
     
 
     
-    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding">
+    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
     
     <meta name="description" content="问题最近一段时间在使用 git log 和 git diff 命令的时候一直有乱码出现，具体表现为在行首出现 ESC[33，而在行尾出现 ESC[m，如下图所示：虽然 git log 和 git diff 的内容还能分辨，但是可读性一下子变的很差。
 解决经过搜索之后了解到，出现该问题的原因是 git 使用的默认分页程序是 less，而默认的直接运行 less 的话，会无法正确解析转义字符。但是如果">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用 git log、git diff 命令时出现 ESC[33 和 ESC[m 乱码的解决办法">
-<meta property="og:url" content="http://yoursite.com/2015/08/14/git-log-diff-esc-garbled/index.html">
+<meta property="og:url" content="http://blog.yongli1992.com/2015/08/14/git-log-diff-esc-garbled/index.html">
 <meta property="og:site_name" content="YongLi's Blog">
 <meta property="og:description" content="问题最近一段时间在使用 git log 和 git diff 命令的时候一直有乱码出现，具体表现为在行首出现 ESC[33，而在行尾出现 ESC[m，如下图所示：虽然 git log 和 git diff 的内容还能分辨，但是可读性一下子变的很差。
 解决经过搜索之后了解到，出现该问题的原因是 git 使用的默认分页程序是 less，而默认的直接运行 less 的话，会无法正确解析转义字符。但是如果">
-<meta property="og:image" content="http://yoursite.com/2015/08/14/git-log-diff-esc-garbled/git_log_diff_garbled.png">
-<meta property="og:image" content="http://yoursite.com/2015/08/14/git-log-diff-esc-garbled/git_log_diff_solved.png">
+<meta property="og:image" content="http://blog.yongli1992.com/2015/08/14/git-log-diff-esc-garbled/git_log_diff_garbled.png">
+<meta property="og:image" content="http://blog.yongli1992.com/2015/08/14/git-log-diff-esc-garbled/git_log_diff_solved.png">
 <meta property="og:updated_time" content="2015-08-14T03:38:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用 git log、git diff 命令时出现 ESC[33 和 ESC[m 乱码的解决办法">
 <meta name="twitter:description" content="问题最近一段时间在使用 git log 和 git diff 命令的时候一直有乱码出现，具体表现为在行首出现 ESC[33，而在行尾出现 ESC[m，如下图所示：虽然 git log 和 git diff 的内容还能分辨，但是可读性一下子变的很差。
 解决经过搜索之后了解到，出现该问题的原因是 git 使用的默认分页程序是 less，而默认的直接运行 less 的话，会无法正确解析转义字符。但是如果">
+<meta name="twitter:image" content="http://blog.yongli1992.com/2015/08/14/git-log-diff-esc-garbled/git_log_diff_garbled.png">
 <link rel="publisher" href="111758198691283601884">
 
     
@@ -40,7 +41,7 @@
     <link rel="apple-touch-icon" href="/img/logo.png">
     <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
   <body>
@@ -56,7 +57,7 @@
 				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
 				<h2 class="blog-motto">制心一處，守一不移。</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -70,8 +71,8 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
-						<input type="hidden" name="q" value="site:yoursite.com">
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:blog.yongli1992.com">
 					</form>
 					
 					</li>
@@ -93,22 +94,22 @@
 		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-08-14T10:38:54.000Z" itemprop="datePublished"> 發表於 2015-08-14</time>
+    <time datetime="2015-08-14T10:38:54.000Z" itemprop="datePublished"> Published 2015-08-14</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
+			<strong class="toc-title">Contents</strong>
 		
 			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#问题"><span class="toc-number">1.</span> <span class="toc-text">问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解决"><span class="toc-number">2.</span> <span class="toc-text">解决</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="问题">问题</h1><p>最近一段时间在使用 git log 和 git diff 命令的时候一直有乱码出现，具体表现为在行首出现 ESC[33，而在行尾出现 ESC[m，如下图所示：<br><img src="/2015/08/14/git-log-diff-esc-garbled/git_log_diff_garbled.png" alt="git_log_diff_garbled.png" title=""><br>虽然 git log 和 git diff 的内容还能分辨，但是可读性一下子变的很差。</p>
-<h1 id="解决">解决</h1><p>经过搜索之后了解到，出现该问题的原因是 git 使用的默认分页程序是 less，而默认的直接运行 less 的话，会无法正确解析转义字符。但是如果以 -r 命令来运行 less 的话，就可以解决了。故解决办法就是将 git 的默认分页程序改为 “less -r” 来运行，如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.pager <span class="string">"less -r"</span></span><br></pre></td></tr></table></figure>
+		<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>最近一段时间在使用 git log 和 git diff 命令的时候一直有乱码出现，具体表现为在行首出现 ESC[33，而在行尾出现 ESC[m，如下图所示：<br><img src="/2015/08/14/git-log-diff-esc-garbled/git_log_diff_garbled.png" alt="git_log_diff_garbled.png" title=""><br>虽然 git log 和 git diff 的内容还能分辨，但是可读性一下子变的很差。</p>
+<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>经过搜索之后了解到，出现该问题的原因是 git 使用的默认分页程序是 less，而默认的直接运行 less 的话，会无法正确解析转义字符。但是如果以 -r 命令来运行 less 的话，就可以解决了。故解决办法就是将 git 的默认分页程序改为 “less -r” 来运行，如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global core.pager <span class="string">"less -r"</span></div></pre></td></tr></table></figure>
 <p>问题解决：<br><img src="/2015/08/14/git-log-diff-esc-garbled/git_log_diff_solved.png" alt="git_log_diff_solved.png" title=""></p>
   
 	</div>
@@ -123,7 +124,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/git/">git</a><a href="/tags/problem/">problem</a><a href="/tags/terminal/">terminal</a>
+  <span></span> <a href="/tags/git/">git</a><a href="/tags/terminal/">terminal</a><a href="/tags/problem/">problem</a>
   </div>
 
 </div>
@@ -132,7 +133,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/08/14/git-log-diff-esc-garbled/" data-title="使用 git log、git diff 命令时出现 ESC[33 和 ESC[m 乱码的解决办法 | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://blog.yongli1992.com/2015/08/14/git-log-diff-esc-garbled/" data-title="使用 git log、git diff 命令时出现 ESC[33 和 ESC[m 乱码的解决办法 | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -175,22 +176,22 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
+  <strong class="toc-title">Contents</strong>
  
  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#问题"><span class="toc-number">1.</span> <span class="toc-text">问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解决"><span class="toc-number">2.</span> <span class="toc-text">解决</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分類</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -222,7 +223,7 @@
 		  
 		
 		  
-			<li><a href="/categories/tool/" title="tool">tool<sup>3</sup></a></li>
+			<li><a href="/categories/tool/" title="tool">tool<sup>4</sup></a></li>
 		  
 		
 		</ul>
@@ -231,7 +232,7 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">標簽</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
@@ -247,11 +248,11 @@
 			
 		
 			
-				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
+				<li><a href="/tags/life/" title="life">life<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/life/" title="life">life<sup>3</sup></a></li>
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
 			
 		
 			
@@ -267,43 +268,19 @@
 			
 		
 			
-				<li><a href="/tags/算法/" title="算法">算法<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/development/" title="development">development<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/network/" title="network">network<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/http/" title="http">http<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/oxford/" title="oxford">oxford<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/programming/" title="programming">programming<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/UK/" title="UK">UK<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/leetCodeOJ/" title="leetCodeOJ">leetCodeOJ<sup>1</sup></a></li>
+				<li><a href="/tags/translated/" title="translated">translated<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/problem/" title="problem">problem<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/study/" title="study">study<sup>1</sup></a></li>
 			
 		
 			
@@ -314,12 +291,36 @@
 				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
 			
 		
+			
+				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/jira/" title="jira">jira<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/management/" title="management">management<sup>1</sup></a></li>
+			
+		
 		</ul>
 </div>
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -348,13 +349,13 @@
 
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
 </div>
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
@@ -405,7 +406,7 @@
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
 		
 		<a href="/about" target="_blank" title="yongli1992">yongli1992</a>
 		
@@ -612,7 +613,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
@@ -657,5 +658,35 @@ ga('send', 'pageview');
 
 <!-- Tiny_search End -->
 
-  </body>
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
 </html>

@@ -11,7 +11,7 @@
     
 
     
-    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding">
+    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
     
     <meta name="description" content="翻译一篇介绍 __init__.py 的好文。原文地址：Be Pythnoic: __init__.py翻译：YongLi1992
 
@@ -23,7 +23,7 @@ file2.py
 fi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python：__init__.py 详解">
-<meta property="og:url" content="http://yoursite.com/2015/02/14/python-init-py/index.html">
+<meta property="og:url" content="http://blog.yongli1992.com/2015/02/14/python-init-py/index.html">
 <meta property="og:site_name" content="YongLi's Blog">
 <meta property="og:description" content="翻译一篇介绍 __init__.py 的好文。原文地址：Be Pythnoic: __init__.py翻译：YongLi1992
 
@@ -56,7 +56,7 @@ fi">
     <link rel="apple-touch-icon" href="/img/logo.png">
     <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
   <body>
@@ -72,7 +72,7 @@ fi">
 				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
 				<h2 class="blog-motto">制心一處，守一不移。</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -86,8 +86,8 @@ fi">
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
-						<input type="hidden" name="q" value="site:yoursite.com">
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:blog.yongli1992.com">
 					</form>
 					
 					</li>
@@ -109,40 +109,40 @@ fi">
 		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-02-14T09:28:08.000Z" itemprop="datePublished"> 發表於 2015-02-14</time>
+    <time datetime="2015-02-14T09:28:08.000Z" itemprop="datePublished"> Published 2015-02-14</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
+			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#__init__-py_是什么？"><span class="toc-number">1.</span> <span class="toc-text">__init__.py 是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#__init__-py_中有什么"><span class="toc-number">2.</span> <span class="toc-text">__init__.py 中有什么</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#init-py-是什么？"><span class="toc-number">1.</span> <span class="toc-text">__init__.py 是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#init-py-中有什么"><span class="toc-number">2.</span> <span class="toc-text">__init__.py 中有什么</span></a></li></ol>
 		
 		</div>
 		
 		<p>翻译一篇介绍 __init__.py 的好文。<br>原文地址：<a href="http://mikegrouchy.com/blog/2012/05/be-pythonic-\__init\__py.html" target="_blank" rel="external">Be Pythnoic: __init__.py</a><br>翻译：YongLi1992</p>
 <hr>
-<h3 id="__init__-py_是什么？">__init__.py 是什么？</h3><p>__init__.py 文件的主要用处是用来初始化 Python 包（packages）的。我们以下面的一个标准 Python 模块结构来展示这一用处。</p>
+<h3 id="init-py-是什么？"><a href="#init-py-是什么？" class="headerlink" title="__init__.py 是什么？"></a>__init__.py 是什么？</h3><p>__init__.py 文件的主要用处是用来初始化 Python 包（packages）的。我们以下面的一个标准 Python 模块结构来展示这一用处。</p>
 <pre><code>package/
-__init__<span class="class">.py</span>
-file<span class="class">.py</span>
-file2<span class="class">.py</span>
-file3<span class="class">.py</span>
+__init__.py
+file.py
+file2.py
+file3.py
 subpackage/
-    __init__<span class="class">.py</span>
-    submodule1<span class="class">.py</span>
+    __init__.py
+    submodule1.py
     submodule2.py
 </code></pre><p>如你所见，在上述目录结构中包含 __init__.py 文件可以告知 Python 解释器，该目录应被作为一个 Python 包来处理。</p>
 <a id="more"></a>
-<h3 id="__init__-py_中有什么">__init__.py 中有什么</h3><p>__init__.py 可以是一个空文件。但它也可以为包做一些设置工作，如 import 其它文件，加载路径等等。</p>
+<h3 id="init-py-中有什么"><a href="#init-py-中有什么" class="headerlink" title="__init__.py 中有什么"></a>__init__.py 中有什么</h3><p>__init__.py 可以是一个空文件。但它也可以为包做一些设置工作，如 import 其它文件，加载路径等等。</p>
 <p>一种常见的做法是在 __init__.py 中把同级 python 文件中的类，函数等 import 到包的顶级，以方从包的外部使用。</p>
-<p>在上述的例子中假定我们的 file.py 文件中有一个 File 类。如果 __init__.py 为空的话，从包的外部导入 File 类你需要这样做：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> package.file <span class="keyword">import</span> File</span><br></pre></td></tr></table></figure></p>
-<p>然而，你可以在 __init__.py 文件中先 import 这个类，从而把它提升到包的顶级：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在 __init__.py 文件中这样写</span></span><br><span class="line"><span class="keyword">from</span> file <span class="keyword">import</span> File</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从包的外面可以更方便地导入 File 类了</span></span><br><span class="line"><span class="keyword">from</span> package <span class="keyword">import</span> File</span><br></pre></td></tr></table></figure></p>
-<p>另外一件在 __init__.py 中可以做的事情是用 __all__ 变量来控制使用 import * 语句时要导入的文件。当 __init__.py 中定义了 __all__  变量时，使用下面的语句将只导入指定的文件。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> package <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure></p>
-<p>__all__ 是一个列表变量，放的是你希望导入的文件的名字。以我们之前的目录为例，如果我们希望导入 subpackage 中所有的 submodules，在 __init__.py 文件中可以这样写：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__all__ = [<span class="string">'submodule1'</span>, <span class="string">'submodule2'</span>]</span><br></pre></td></tr></table></figure></p>
-<p>有了这一变量之后，当你使用：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> subpackage <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure></p>
+<p>在上述的例子中假定我们的 file.py 文件中有一个 File 类。如果 __init__.py 为空的话，从包的外部导入 File 类你需要这样做：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> package.file <span class="keyword">import</span> File</div></pre></td></tr></table></figure></p>
+<p>然而，你可以在 __init__.py 文件中先 import 这个类，从而把它提升到包的顶级：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 在 __init__.py 文件中这样写</span></div><div class="line"><span class="keyword">from</span> file <span class="keyword">import</span> File</div><div class="line"></div><div class="line"><span class="comment"># 从包的外面可以更方便地导入 File 类了</span></div><div class="line"><span class="keyword">from</span> package <span class="keyword">import</span> File</div></pre></td></tr></table></figure></p>
+<p>另外一件在 __init__.py 中可以做的事情是用 __all__ 变量来控制使用 import * 语句时要导入的文件。当 __init__.py 中定义了 __all__  变量时，使用下面的语句将只导入指定的文件。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> package <span class="keyword">import</span> *</div></pre></td></tr></table></figure></p>
+<p>__all__ 是一个列表变量，放的是你希望导入的文件的名字。以我们之前的目录为例，如果我们希望导入 subpackage 中所有的 submodules，在 __init__.py 文件中可以这样写：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">__all__ = [<span class="string">'submodule1'</span>, <span class="string">'submodule2'</span>]</div></pre></td></tr></table></figure></p>
+<p>有了这一变量之后，当你使用：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> subpackage <span class="keyword">import</span> *</div></pre></td></tr></table></figure></p>
 <p>subpackage 下的 submodule1，submodule2 都会被导入了。</p>
   
 	</div>
@@ -166,7 +166,7 @@ subpackage/
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/02/14/python-init-py/" data-title="Python：__init__.py 详解 | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://blog.yongli1992.com/2015/02/14/python-init-py/" data-title="Python：__init__.py 详解 | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -209,22 +209,22 @@ subpackage/
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
+  <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#__init__-py_是什么？"><span class="toc-number">1.</span> <span class="toc-text">__init__.py 是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#__init__-py_中有什么"><span class="toc-number">2.</span> <span class="toc-text">__init__.py 中有什么</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#init-py-是什么？"><span class="toc-number">1.</span> <span class="toc-text">__init__.py 是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#init-py-中有什么"><span class="toc-number">2.</span> <span class="toc-text">__init__.py 中有什么</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分類</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -256,7 +256,7 @@ subpackage/
 		  
 		
 		  
-			<li><a href="/categories/tool/" title="tool">tool<sup>3</sup></a></li>
+			<li><a href="/categories/tool/" title="tool">tool<sup>4</sup></a></li>
 		  
 		
 		</ul>
@@ -265,7 +265,7 @@ subpackage/
 
   
 <div class="tagslist">
-	<p class="asidetitle">標簽</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
@@ -281,11 +281,11 @@ subpackage/
 			
 		
 			
-				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
+				<li><a href="/tags/life/" title="life">life<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/life/" title="life">life<sup>3</sup></a></li>
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
 			
 		
 			
@@ -301,43 +301,19 @@ subpackage/
 			
 		
 			
-				<li><a href="/tags/算法/" title="算法">算法<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/development/" title="development">development<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/network/" title="network">network<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/http/" title="http">http<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/oxford/" title="oxford">oxford<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/programming/" title="programming">programming<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/UK/" title="UK">UK<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/leetCodeOJ/" title="leetCodeOJ">leetCodeOJ<sup>1</sup></a></li>
+				<li><a href="/tags/translated/" title="translated">translated<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/problem/" title="problem">problem<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/study/" title="study">study<sup>1</sup></a></li>
 			
 		
 			
@@ -348,12 +324,36 @@ subpackage/
 				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
 			
 		
+			
+				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/jira/" title="jira">jira<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/management/" title="management">management<sup>1</sup></a></li>
+			
+		
 		</ul>
 </div>
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -382,13 +382,13 @@ subpackage/
 
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
 </div>
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
@@ -439,7 +439,7 @@ subpackage/
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
 		
 		<a href="/about" target="_blank" title="yongli1992">yongli1992</a>
 		
@@ -646,7 +646,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
@@ -691,5 +691,35 @@ ga('send', 'pageview');
 
 <!-- Tiny_search End -->
 
-  </body>
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
 </html>

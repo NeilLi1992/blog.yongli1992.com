@@ -1,0 +1,724 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh_CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Investigate JIRA for personal management usage | YongLi&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="yongli1992">
+    
+
+    
+    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
+    
+    <meta name="description" content="Previously I was using OmniFocuse for my daily tasks management. But over the time I just realized it’s gradually losing its power, and just became yet another to-do tool packed with endless tasks whi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Investigate JIRA for personal management usage">
+<meta property="og:url" content="http://blog.yongli1992.com/2017/03/02/usage/index.html">
+<meta property="og:site_name" content="YongLi's Blog">
+<meta property="og:description" content="Previously I was using OmniFocuse for my daily tasks management. But over the time I just realized it’s gradually losing its power, and just became yet another to-do tool packed with endless tasks whi">
+<meta property="og:updated_time" content="2017-03-02T22:06:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Investigate JIRA for personal management usage">
+<meta name="twitter:description" content="Previously I was using OmniFocuse for my daily tasks management. But over the time I just realized it’s gradually losing its power, and just became yet another to-do tool packed with endless tasks whi">
+<link rel="publisher" href="111758198691283601884">
+
+    
+    <link rel="alternative" href="/atom.xml" title="YongLi&#39;s Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/logo.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="YongLi&#39;s Blog" title="YongLi&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
+				<h2 class="blog-motto">制心一處，守一不移。</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">存档</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:blog.yongli1992.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/03/02/usage/" title="Investigate JIRA for personal management usage" itemprop="url">Investigate JIRA for personal management usage</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
+		
+  <p class="article-time">
+    <time datetime="2017-03-02T21:58:07.000Z" itemprop="datePublished"> Published 2017-03-02</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Two-types-of-works"><span class="toc-number">1.</span> <span class="toc-text">Two types of works</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Checklist"><span class="toc-number">1.1.</span> <span class="toc-text">1. Checklist</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Projects"><span class="toc-number">1.2.</span> <span class="toc-text">2. Projects</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JIRA-benefits"><span class="toc-number">2.</span> <span class="toc-text">JIRA benefits</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hosting-plans"><span class="toc-number">3.</span> <span class="toc-text">Hosting plans</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Issues"><span class="toc-number">4.</span> <span class="toc-text">Issues</span></a></li></ol>
+		
+		</div>
+		
+		<p>Previously I was using OmniFocuse for my daily tasks management. But over the time I just realized it’s gradually losing its power, and just became yet another to-do tool packed with endless tasks which are hard to tackle down.</p>
+<p>Since I formally started my first software developer work, and I’ve saw how the agile style workflow can actually work smoothly and deliver products, I kind of get the feel that this should be a better way of organizing my personal issues as well.</p>
+<p>I’d like to investigate a little bit to see if it’s possible to apply JIRA for my day-to-day personal management tasks.</p>
+<hr>
+<h3 id="Two-types-of-works"><a href="#Two-types-of-works" class="headerlink" title="Two types of works"></a>Two types of works</h3><p>Over the time of using different tasks \ projects management tools, I kind of having identified there should be at least two types of different works, <strong>checklist</strong> and <strong>projects</strong>. One common weakness of these tools is that they can’t handle both very well.<br><br></p>
+<h4 id="1-Checklist"><a href="#1-Checklist" class="headerlink" title="1. Checklist"></a>1. Checklist</h4><p>Checklist is simply a list of items, which tend to be quite easy and simple. There’s less uncertainty involved in a checklist. Once you put an item down into a checklist, it’s pretty much an actionable item by itself already, which usually can be done either in a short time period or in a straightforward means.</p>
+<p>Checklist examples: <em>grocery list</em>, <em>book list</em>, <em>wish list</em>, <em>travel list</em>. Once you put items e.g., milk, beef or toothpaste into the <em>grocery list</em>, they immediately become self-explanatory and has straightforward implication of how to get them done: simply go to supermarket and grab them.</p>
+<p>The state of an item (or <em>issue</em> in JIRA world) tends to transit mainly from <strong>to-do</strong> to <strong>done</strong>.</p>
+<p>Of course, there tends to be a slightly subtler classification of two differetn flavors of checlist, which I would name as: <strong>routine list</strong> and <strong>memo list</strong>.</p>
+<p><strong>memo list</strong> is exaclty what discussed already, with an additoinal feature that issues are only done once. Once they are crossed-off, that’s it, they never appear again by itself. The purpose of <strong>memo list</strong> is to remind you of a bunch of things that you dont’ want to forget. To be honest, I feel this type of list can be most easily replaced by a note-taking took, e.g., Evernote, or simply write them down.</p>
+<p><strong>routine list</strong> would instead have repeating issues. This list intends to keep tract of a life routine that you want to practice. Such as have an issue <em>gym workout</em>, which recur every Monday, Wednesday. Or another issue may be <em>revise french words</em> which recur every two days. <strong>routine list</strong> issue also has <strong>to-do</strong> and <strong>done</strong> states, but they can go back from <strong>done</strong> to <strong>to-do</strong> again. The most usually use case for <strong>routine list</strong> is to help you repetitively practice some<br>skills, which may take a long-time to gradually see the benefits. This kind of list also should have a review process, to re-evalute their meaning &amp; effectiveness every a while, just ensuring they still make sense to be there after maybe 3 years.<br><br></p>
+<h4 id="2-Projects"><a href="#2-Projects" class="headerlink" title="2. Projects"></a>2. Projects</h4><p>A very different type of work is <strong>projects</strong>. These are the kind of works that has a much clearer goal, and requires some explicit <strong>deliverables</strong> in a <strong>short term period</strong>. The time period can range from severald days to a few months, they are just short-term compared to <strong>routine list</strong>.</p>
+<p>Examples can be: ‘get driving licence before end of this year’ or ‘launch my personal website’.</p>
+<p>Compared with <strong>checklists</strong>, <strong>projects</strong> tend to be much more complicated, involving a lot of steps and brainstorming, along with much more uncertainty. This is the part where most pure to-do list tools fail to work.</p>
+<p>Simply listing some vague steps as ‘items’ in the list doesn’t help much. Because these items can vary hugely in their job sizes and difficulties, and it’s easy to get stuck by one item.</p>
+<p>Checklist fails also because they lack a good ability to organize time, which should be the most valuable resource for most people who need to work in the daytime while only having a few after-work hours to do their own stuffs. For them, items are better organized from a weekly perspective, which makes Agile’s sprint concept very useful.</p>
+<hr>
+<h3 id="JIRA-benefits"><a href="#JIRA-benefits" class="headerlink" title="JIRA benefits"></a>JIRA benefits</h3><p>I’ve already tried a few agile tools, e.g., JIRA, Trello and Asana, while I still feel JIRA could be a better choice.</p>
+<p>This is because it’s the most generic tool which can suit quite a lot of different needs. Also because my company is already using it, I can gain more experience in it if I also use it in my personal time.</p>
+<hr>
+<h3 id="Hosting-plans"><a href="#Hosting-plans" class="headerlink" title="Hosting plans"></a>Hosting plans</h3><p>Two hosting plans in consideration:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Plan</th>
+<th style="text-align:center">Price</th>
+<th style="text-align:center">Free Trial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Server</td>
+<td style="text-align:center">$10 one time payment</td>
+<td style="text-align:center">30 days</td>
+</tr>
+<tr>
+<td style="text-align:left">Cloud</td>
+<td style="text-align:center">$10/month for 10 users</td>
+<td style="text-align:center">7 days</td>
+</tr>
+</tbody>
+</table>
+<p>Feel like server is the better way to go. Besides, Atlassian is selling ad-ons for its products separately, while I probably need to buy the ‘repeating issue’ add-on if I want to set-up <strong>routine lists</strong>, and this add-on is only possiblefor server-hosting.</p>
+<p>I might start with trying the cloud-hosting for a few days, just to get familiar with the JIRA process, while at the same time installing the server hosting.</p>
+<hr>
+<h3 id="Issues"><a href="#Issues" class="headerlink" title="Issues"></a>Issues</h3><p>I probably still want these functionalities, but I’m not yet sure if JIRA provides, so more investigation needed…</p>
+<ol>
+<li><strong>Cross-project sprint</strong><br>Through a very rough play-around, it seems you can only start sprint by selecting issues from one project. I feel like more useful if I can organize issues in separate projects, but every week I can have a global view of all the issues, and select issues I’d like to do within this week, and start a weekly sprint containing issues across different-projects. There’s an add-on <a href="https://www.atlassian.com/purchase/addon/com.almworks.jira.structure" target="_blank" rel="external">Structure</a> that seems to do something<br>similar. <strong>More investigation needed</strong>.</li>
+</ol>
+<p>This is possible and explained by this post: <a href="https://confluence.atlassian.com/jirasoftwarecloud/what-is-a-board-764477964.html#Whatisaboard?-Accessingacross-projectboard" target="_blank" rel="external">Accessing a cross-project board</a></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/tool/">tool</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/life/">life</a><a href="/tags/jira/">jira</a><a href="/tags/management/">management</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://blog.yongli1992.com/2017/03/02/usage/" data-title="Investigate JIRA for personal management usage | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/06/08/hexo-github-blog/"  title="使用 hexo 框架在 github 上部署个人博客">
+ <strong>下一篇：</strong><br/> 
+ <span>使用 hexo 框架在 github 上部署个人博客
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Two-types-of-works"><span class="toc-number">1.</span> <span class="toc-text">Two types of works</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Checklist"><span class="toc-number">1.1.</span> <span class="toc-text">1. Checklist</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Projects"><span class="toc-number">1.2.</span> <span class="toc-text">2. Projects</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JIRA-benefits"><span class="toc-number">2.</span> <span class="toc-text">JIRA benefits</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hosting-plans"><span class="toc-number">3.</span> <span class="toc-text">Hosting plans</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Issues"><span class="toc-number">4.</span> <span class="toc-text">Issues</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/UK/" title="UK">UK<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/algorithm/" title="algorithm">algorithm<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/life/" title="life">life<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/network/" title="network">network<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/problem/" title="problem">problem<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/programming/" title="programming">programming<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/python/" title="python">python<sup>12</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/tool/" title="tool">tool<sup>4</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/python/" title="python">python<sup>16</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/翻译/" title="翻译">翻译<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/leetcode/" title="leetcode">leetcode<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/life/" title="life">life<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/tool/" title="tool">tool<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ios/" title="ios">ios<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/UK/" title="UK">UK<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/translated/" title="translated">translated<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/problem/" title="problem">problem<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/study/" title="study">study<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ime/" title="ime">ime<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/jira/" title="jira">jira<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/management/" title="management">management<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://blog.imink.net 墨同学的博客" target="_blank" title="ink&#39;s blog">ink&#39;s blog</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://eventfulkay.com 小虾米的博客" target="_blank" title="kai&#39;s blog">kai&#39;s blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+<div class="doubanshow">
+<p class="asidetitle">豆瓣秀</p>
+<div>
+<script type="text/javascript" src="http://www.douban.com/service/badge/44886038/?show=collection&amp;n=12&amp;columns=3&amp;hidelogo=yes&amp;hideself=yes&amp;cat=book|movie" ></script>
+</div>
+</div>
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
+</div>
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello, I&#39;m Yong Li, a MSc student in Oxford Uni. <br/>
+			Welcome to my blog, hope it does help to you!.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2327892814" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/NeilLi1992" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		<a href="https://www.facebook.com/100006707769873" target="_blank" class="icon-facebook" title="facebook"></a>
+		
+		
+		<a href="https://www.linkedin.com/in/yongli1992" target="_blank" class="icon-linkedin" title="linkedin"></a>
+		
+		
+		<a href="https://www.douban.com/people/44886038" target="_blank" class="icon-douban" title="豆瓣"></a>
+		
+		
+		<a href="http://www.zhihu.com/people/li-yong-88-55" target="_blank" class="icon-zhihu" title="知乎"></a>
+		
+		
+		<a href="https://plus.google.com/111758198691283601884?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+		
+		
+		<a href="mailto:yong.li1992@foxmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
+		
+		<a href="/about" target="_blank" title="yongli1992">yongli1992</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'yongli1992';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-77559411-1', 'auto');  
+ga('send', 'pageview');
+</script>
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>

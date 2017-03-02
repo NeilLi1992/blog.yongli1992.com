@@ -11,12 +11,12 @@
     
 
     
-    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding">
+    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
     
     <meta name="description" content="简介在开发一款跑步类 APP 的过程中需要实现语音播报功能。最初的设想是找人录制需要的播报音频，后来考虑到录制太麻烦，自己录效果也未必理想，遂考虑采用 TTS(text-to-speech) 语音合成功能来做。起初想到使用第三方 SDK，科大讯飞，百度，高德都有相关的 SDK。科大讯飞要付费，而且价格奇高无比，直接放弃。后来发现 Apple 本身也提供了 TTS 的原生支持，试了以后效果还不错，记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS开发中的TTS语音合成功能的实现：AVSynthesizer类的使用">
-<meta property="og:url" content="http://yoursite.com/2015/08/09/ios-synthesizer/index.html">
+<meta property="og:url" content="http://blog.yongli1992.com/2015/08/09/ios-synthesizer/index.html">
 <meta property="og:site_name" content="YongLi's Blog">
 <meta property="og:description" content="简介在开发一款跑步类 APP 的过程中需要实现语音播报功能。最初的设想是找人录制需要的播报音频，后来考虑到录制太麻烦，自己录效果也未必理想，遂考虑采用 TTS(text-to-speech) 语音合成功能来做。起初想到使用第三方 SDK，科大讯飞，百度，高德都有相关的 SDK。科大讯飞要付费，而且价格奇高无比，直接放弃。后来发现 Apple 本身也提供了 TTS 的原生支持，试了以后效果还不错，记">
 <meta property="og:updated_time" content="2015-08-08T22:23:54.000Z">
@@ -35,7 +35,7 @@
     <link rel="apple-touch-icon" href="/img/logo.png">
     <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
     
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
   <body>
@@ -51,7 +51,7 @@
 				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
 				<h2 class="blog-motto">制心一處，守一不移。</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -65,8 +65,8 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
-						<input type="hidden" name="q" value="site:yoursite.com">
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:blog.yongli1992.com">
 					</form>
 					
 					</li>
@@ -88,25 +88,25 @@
 		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-08-09T05:23:54.000Z" itemprop="datePublished"> 發表於 2015-08-09</time>
+    <time datetime="2015-08-09T05:23:54.000Z" itemprop="datePublished"> Published 2015-08-09</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
+			<strong class="toc-title">Contents</strong>
 		
 			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用"><span class="toc-number">2.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
 		
 		</div>
 		
-		<h3 id="简介">简介</h3><p>在开发一款跑步类 APP 的过程中需要实现语音播报功能。最初的设想是找人录制需要的播报音频，后来考虑到录制太麻烦，自己录效果也未必理想，遂考虑采用 TTS(text-to-speech) 语音合成功能来做。起初想到使用第三方 SDK，科大讯飞，百度，高德都有相关的 SDK。科大讯飞要付费，而且价格奇高无比，直接放弃。后来发现 Apple 本身也提供了 TTS 的原生支持，试了以后效果还不错，记录如下。</p>
+		<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>在开发一款跑步类 APP 的过程中需要实现语音播报功能。最初的设想是找人录制需要的播报音频，后来考虑到录制太麻烦，自己录效果也未必理想，遂考虑采用 TTS(text-to-speech) 语音合成功能来做。起初想到使用第三方 SDK，科大讯飞，百度，高德都有相关的 SDK。科大讯飞要付费，而且价格奇高无比，直接放弃。后来发现 Apple 本身也提供了 TTS 的原生支持，试了以后效果还不错，记录如下。</p>
 <p>从 iOS 7.0 以后， AVFoundation 框架提供了 <a href="https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVSpeechSynthesizer_Ref/index.html" target="_blank" rel="external">AVSpeechSynthesizer</a> 类，可以原生支持语音合成，支持包括中文在内的多种语言，发音效果也不错，而且是离线不需要网络连接的。</p>
-<h3 id="使用">使用</h3><p><strong>Step1</strong>: 创建一个 AVSpeechUtterance 对象，构造的时候传入要读的 NSString 字符串对象。AVSpeechUtterance 对象构建之后不能更改读的文字，每读一次都要构建一个该对象。</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p><strong>Step1</strong>: 创建一个 AVSpeechUtterance 对象，构造的时候传入要读的 NSString 字符串对象。AVSpeechUtterance 对象构建之后不能更改读的文字，每读一次都要构建一个该对象。</p>
 <p><strong>Step2</strong>: 设置 AVSpeechUtterance 的属性，调整发音的细节。主要设置的属性有：<br>(AVSpeechSynthesisVoice *)voice属性，中文发音可以设置为 utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@”zh_CN”];<br>(float)rate属性，调整发音速度，数值越大读的越快。经测试 0.1~0.2 之间比较合适。<br>还有一些别的属性可以调，比如音调什么的。</p>
 <p><strong>Step3</strong>: 创建一个 AVSpeechSynthesizer 对象，调用实例方法 speakUtterance:(AVSpeechUtterance *)方法，就可以出声音了。synthesizer对象还可以用来控制播放的其它细节，比如暂停什么的。</p>
-<h3 id="代码">代码</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#import <span class="title">&lt;AVFoundation/AVFoundation.h&gt;</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)speak:(<span class="built_in">NSString</span> *)text &#123;</span><br><span class="line">    <span class="keyword">float</span> rate = <span class="number">0.18</span>;</span><br><span class="line">    <span class="built_in">NSString</span> *lang = <span class="string">@"zh_CN"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// get an AVSpeechSynthesizer object</span></span><br><span class="line">    <span class="built_in">AVSpeechSynthesizer</span> *synthesizer = [[<span class="built_in">AVSpeechSynthesizer</span> alloc] init];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// get an AVSpeechUtterance object, and configure it</span></span><br><span class="line">    <span class="built_in">AVSpeechUtterance</span> *utterance = [<span class="built_in">AVSpeechUtterance</span> speechUtteranceWithString:text];</span><br><span class="line">    utterance<span class="variable">.voice</span> = [<span class="built_in">AVSpeechSynthesisVoice</span> voiceWithLanguage:language];</span><br><span class="line">    utterance<span class="variable">.rate</span> = rate;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// now speak</span></span><br><span class="line">    [synthesizer speakUtterance:utterance];</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">&lt;AVFoundation/AVFoundation.h&gt;</span></span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)speak:(<span class="built_in">NSString</span> *)text &#123;</div><div class="line">    <span class="keyword">float</span> rate = <span class="number">0.18</span>;</div><div class="line">    <span class="built_in">NSString</span> *lang = <span class="string">@"zh_CN"</span>;</div><div class="line"></div><div class="line">    <span class="comment">// get an AVSpeechSynthesizer object</span></div><div class="line">    <span class="built_in">AVSpeechSynthesizer</span> *synthesizer = [[<span class="built_in">AVSpeechSynthesizer</span> alloc] init];</div><div class="line"></div><div class="line">    <span class="comment">// get an AVSpeechUtterance object, and configure it</span></div><div class="line">    <span class="built_in">AVSpeechUtterance</span> *utterance = [<span class="built_in">AVSpeechUtterance</span> speechUtteranceWithString:text];</div><div class="line">    utterance.voice = [<span class="built_in">AVSpeechSynthesisVoice</span> voiceWithLanguage:language];</div><div class="line">    utterance.rate = rate;</div><div class="line"></div><div class="line">    <span class="comment">// now speak</span></div><div class="line">    [synthesizer speakUtterance:utterance];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -115,7 +115,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/development/">development</a><a href="/tags/ios/">ios</a>
+  <span></span> <a href="/tags/ios/">ios</a><a href="/tags/development/">development</a>
   </div>
 
 </div>
@@ -124,7 +124,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2015/08/09/ios-synthesizer/" data-title="iOS开发中的TTS语音合成功能的实现：AVSynthesizer类的使用 | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://blog.yongli1992.com/2015/08/09/ios-synthesizer/" data-title="iOS开发中的TTS语音合成功能的实现：AVSynthesizer类的使用 | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -167,22 +167,22 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
+  <strong class="toc-title">Contents</strong>
  
  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用"><span class="toc-number">2.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分類</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -214,7 +214,7 @@
 		  
 		
 		  
-			<li><a href="/categories/tool/" title="tool">tool<sup>3</sup></a></li>
+			<li><a href="/categories/tool/" title="tool">tool<sup>4</sup></a></li>
 		  
 		
 		</ul>
@@ -223,7 +223,7 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">標簽</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
@@ -239,11 +239,11 @@
 			
 		
 			
-				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
+				<li><a href="/tags/life/" title="life">life<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/life/" title="life">life<sup>3</sup></a></li>
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
 			
 		
 			
@@ -259,43 +259,19 @@
 			
 		
 			
-				<li><a href="/tags/算法/" title="算法">算法<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/development/" title="development">development<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/network/" title="network">network<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/http/" title="http">http<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/oxford/" title="oxford">oxford<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/programming/" title="programming">programming<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/UK/" title="UK">UK<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/leetCodeOJ/" title="leetCodeOJ">leetCodeOJ<sup>1</sup></a></li>
+				<li><a href="/tags/translated/" title="translated">translated<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/problem/" title="problem">problem<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/study/" title="study">study<sup>1</sup></a></li>
 			
 		
 			
@@ -306,12 +282,36 @@
 				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
 			
 		
+			
+				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/jira/" title="jira">jira<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/management/" title="management">management<sup>1</sup></a></li>
+			
+		
 		</ul>
 </div>
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -340,13 +340,13 @@
 
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
 </div>
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
@@ -397,7 +397,7 @@
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
 		
 		<a href="/about" target="_blank" title="yongli1992">yongli1992</a>
 		
@@ -604,7 +604,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
@@ -649,5 +649,35 @@ ga('send', 'pageview');
 
 <!-- Tiny_search End -->
 
-  </body>
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
 </html>
