@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Python WSGI教程(三)——环境字典 | YongLi&#39;s Blog</title>
+    <title>Set up Jira on a linode server and problems I&#39;ve encountered | YongLi&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="yongli1992">
@@ -13,16 +13,16 @@
     
     <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
     
-    <meta name="description" content="环境字典：Environment dictionary环境字典会包含一些CGI环境变量，由服务器在接收到每一次来自客户端的请求时产生。下面的脚本代码会输出整个字典的内容。">
+    <meta name="description" content="Set up JIRA on a linode server and problems I’ve encountered.Was installing jira on my linode server, and encountered a few problems, which solved with some invetigations. This blog post will take a n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python WSGI教程(三)——环境字典">
-<meta property="og:url" content="http://blog.yongli1992.com/2015/01/23/python-wsgi-3/index.html">
+<meta property="og:title" content="Set up Jira on a linode server and problems I've encountered">
+<meta property="og:url" content="http://blog.yongli1992.com/2017/03/11/Set-up-Jira-on-a-linode-server-and-problems-I-ve-encountered/index.html">
 <meta property="og:site_name" content="YongLi's Blog">
-<meta property="og:description" content="环境字典：Environment dictionary环境字典会包含一些CGI环境变量，由服务器在接收到每一次来自客户端的请求时产生。下面的脚本代码会输出整个字典的内容。">
-<meta property="og:updated_time" content="2015-08-08T00:51:06.000Z">
+<meta property="og:description" content="Set up JIRA on a linode server and problems I’ve encountered.Was installing jira on my linode server, and encountered a few problems, which solved with some invetigations. This blog post will take a n">
+<meta property="og:updated_time" content="2017-03-11T10:03:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python WSGI教程(三)——环境字典">
-<meta name="twitter:description" content="环境字典：Environment dictionary环境字典会包含一些CGI环境变量，由服务器在接收到每一次来自客户端的请求时产生。下面的脚本代码会输出整个字典的内容。">
+<meta name="twitter:title" content="Set up Jira on a linode server and problems I've encountered">
+<meta name="twitter:description" content="Set up JIRA on a linode server and problems I’ve encountered.Was installing jira on my linode server, and encountered a few problems, which solved with some invetigations. This blog post will take a n">
 <link rel="publisher" href="111758198691283601884">
 
     
@@ -81,14 +81,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/01/23/python-wsgi-3/" title="Python WSGI教程(三)——环境字典" itemprop="url">Python WSGI教程(三)——环境字典</a>
+      <a href="/2017/03/11/Set-up-Jira-on-a-linode-server-and-problems-I-ve-encountered/" title="Set up Jira on a linode server and problems I&#39;ve encountered" itemprop="url">Set up Jira on a linode server and problems I&#39;ve encountered</a>
   </h1>
   <p class="article-author">By
        
 		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-01-23T16:58:52.000Z" itemprop="datePublished"> 发表于 2015-01-23</time>
+    <time datetime="2017-03-11T10:01:12.000Z" itemprop="datePublished"> 发表于 2017-03-11</time>
     
   </p>
 </header>
@@ -97,28 +97,52 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Set-up-JIRA-on-a-linode-server-and-problems-I’ve-encountered"><span class="toc-number">1.</span> <span class="toc-text">Set up JIRA on a linode server and problems I’ve encountered.</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Environment"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">Environment</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Database-Setup"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">Database Setup</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Database-Driver"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">Database Driver</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JIRA-still-crashes-and-final-solution"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">JIRA still crashes and final solution</span></a></li></ol></li></ol></li></ol></li></ol>
 		
 		</div>
 		
-		<p><strong>环境字典：Environment dictionary</strong><br>环境字典会包含一些CGI环境变量，由服务器在接收到每一次来自客户端的请求时产生。下面的脚本代码会输出整个字典的内容。<br><a id="more"></a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#! /usr/bin/env python</span></div><div class="line"></div><div class="line"><span class="comment"># 使用python内置的WSGI服务器</span></div><div class="line"><span class="keyword">from</span> wsgiref.simple_server <span class="keyword">import</span> make_server</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">application</span><span class="params">(environ, start_response)</span>:</span></div><div class="line">   <span class="comment"># 排序并将环境字典的键值对转换为字符串</span></div><div class="line">   response_body = [<span class="string">'%s: %s'</span> % (key, value)</div><div class="line">                    <span class="keyword">for</span> key, value <span class="keyword">in</span> sorted(environ.items())]</div><div class="line">   response_body = <span class="string">'\n'</span>.join(response_body)</div><div class="line"></div><div class="line">   status = <span class="string">'200 OK'</span></div><div class="line">   response_headers = [(<span class="string">'Content-Type'</span>, <span class="string">'text/plain'</span>),</div><div class="line">                  (<span class="string">'Content-Length'</span>, str(len(response_body)))]</div><div class="line">   start_response(status, response_headers)</div><div class="line"></div><div class="line">   <span class="keyword">return</span> [response_body]</div><div class="line"></div><div class="line"><span class="comment"># 实例化一个WSGI服务器对象。</span></div><div class="line"><span class="comment"># 该服务器对象可以接收来自客户端（我们的浏览器）的请求，将它传给应用程序，</span></div><div class="line"><span class="comment"># 并且将应用程序返回过来的响应再发送给客户端。</span></div><div class="line">httpd = make_server(</div><div class="line">   <span class="string">'localhost'</span>, <span class="comment"># 主机名。</span></div><div class="line">   <span class="number">8051</span>, <span class="comment"># 监听请求的端口号。</span></div><div class="line">   application <span class="comment"># 我们的可调用应用对象，在这里是一个函数。</span></div><div class="line">   )</div><div class="line"></div><div class="line"><span class="comment"># 在这里简单地一次性监听，得到响应后处理完则直接退出。</span></div><div class="line">httpd.handle_request()</div></pre></td></tr></table></figure></p>
-<p>要运行这段脚本代码的话，将其保存为environment.py，然后打开终端，进入脚本所在的目录下，输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;python environment.py</div></pre></td></tr></table></figure></p>
-<p>如果是在Windows系统的话，需要将python.exe的路径添加到系统环境变量路径中。最后我们打开浏览器，在地址栏输入我们的服务器运行的地址和端口号即可看到结果：</p>
-<pre><code>http://localhost:8051/
-</code></pre>  
+		<h1 id="Set-up-JIRA-on-a-linode-server-and-problems-I’ve-encountered"><a href="#Set-up-JIRA-on-a-linode-server-and-problems-I’ve-encountered" class="headerlink" title="Set up JIRA on a linode server and problems I’ve encountered."></a>Set up JIRA on a linode server and problems I’ve encountered.</h1><p>Was installing jira on my linode server, and encountered a few problems, which solved with some invetigations. This blog post will take a note of some problems and how I solved them.</p>
+<h4 id="Environment"><a href="#Environment" class="headerlink" title="Environment"></a>Environment</h4><p>Currently using a linode server, running ‘Ubuntu 16.04 LTS x86_64’ on it. I haven’t used this server a lot. Only installed a gitlab instance on it for my personal usage.</p>
+<h4 id="Database-Setup"><a href="#Database-Setup" class="headerlink" title="Database Setup"></a>Database Setup</h4><p>At first, I was deciding to install postgreSQL as the database for JIRA to connect to. But I quickly discovered, because I’ve installed gitlab already on my server, which has installed postgreSQL itself during its installation process, and has created a dedicated unix user for using postgreSQL. Because I wanted to keep gitlab running and don’t want to mess up with it, I decided to give up postgreSQL.</p>
+<p>Then after installing jira and run it up for the first time in browerser, there’s a set-up wizard, which gives the option as using a <strong>built-in</strong> database named <strong>HSQLDB</strong>. But after the set-up wizard finished, jira keeps crashing continuously. After I <code>service jira start</code>, it holds on running for several minutes, then crashed. This happened a lot of times, and in <code>/var/log/syslog</code>, I saw something related to <em>JVM out of memory</em>. I was initially suspecting it’s due to some limitations of<br>this <strong>built-in</strong> database that’s casuing JIRA to crash. (Although finally I realized that’s not the case). But anyway, since jira doc also suggests that <strong>HSQLDB</strong> should only be used to evaluation purpose and for production purpose it’s better to use an external db, I decided to change to <strong>mysql</strong> at this point.</p>
+<p>After <code>apt-get install mysql</code>, I tried to run <code>mysql</code>, which shows error msg:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ERROR 2002 (HY000): Can<span class="string">'t connect to local MySQL server through socket '</span>/var/run/mysqld/mysqld.sock<span class="string">' (2)</span></div></pre></td></tr></table></figure></p>
+<p>After checking <code>service mysql status</code>, I get this:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">● mysql.service - MySQL Community Server</div><div class="line">   Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)</div><div class="line">      Active: inactive (dead) (Result: <span class="built_in">exit</span>-code) since Sat 2017-03-04 13:03:20 UTC; 3h 23min ago</div><div class="line"></div><div class="line">      Mar 04 13:03:20 ubuntu systemd[1]: mysql.service: Control process exited, code=exited status=1</div><div class="line">      Mar 04 13:03:20 ubuntu systemd[1]: Failed to start MySQL Community Server.</div><div class="line">      Mar 04 13:03:20 ubuntu systemd[1]: mysql.service: Unit entered failed state.</div><div class="line">      Mar 04 13:03:20 ubuntu systemd[1]: mysql.service: Failed with result <span class="string">'exit-code'</span>.</div><div class="line">      Mar 04 13:03:20 ubuntu systemd[1]: mysql.service: Service hold-off time over, scheduling restart.</div><div class="line">      Mar 04 13:03:20 ubuntu systemd[1]: Stopped MySQL Community Server.</div><div class="line">      Mar 04 13:03:20 ubuntu systemd[1]: mysql.service: Start request repeated too quickly.</div><div class="line">      Mar 04 13:03:20 ubuntu systemd[1]: Failed to start MySQL Community Server.</div></pre></td></tr></table></figure></p>
+<pre><code>Then I realized this is a stupid mistake, as I haven&apos;t started mysql-server service. Then running `service mysql start` gives:
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Job <span class="keyword">for</span> mysql.service failed because the control process exited with error code. See <span class="string">"systemctl status mysql.service"</span> and <span class="string">"journalctl -xe"</span> <span class="keyword">for</span> details.</div></pre></td></tr></table></figure>
+
+In `/var/log/syslog`, there&apos;s an important error message:
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Mar 4 16:55:12 ubuntu mysql-systemd-start[5060]: MySQL system database not found. Please run mysql_install_db tool.</div></pre></td></tr></table></figure>
+
+This clearly shows that I haven&apos;t initialized mysql database after installtion. Run `mysql_install_db` shows yet more warning and error:
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">2017-03-04 16:56:59 [WARNING] mysql_install_db is deprecated. Please consider switching to mysqld --initialize</div><div class="line">2017-03-04 16:56:59 [ERROR]   The data directory needs to be specified.</div></pre></td></tr></table></figure>
+
+Fine, seems the command `mysql_install_db` is deprecated, and I probbaly need to run the new command `mysqld --initialize`, which gives yet more errors...
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">2017-03-04T16:57:51.080833Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation <span class="keyword">for</span> more details).</div><div class="line">2017-03-04T16:57:51.082478Z 0 [ERROR] --initialize specified but the data directory has files <span class="keyword">in</span> it. Aborting.</div><div class="line">2017-03-04T16:57:51.082585Z 0 [ERROR] Aborting</div></pre></td></tr></table></figure>
+
+After some search on google, trying to find where is the data directory for mysql, I finally find hints in this [StackOverflow answer](http://stackoverflow.com/a/10209282/3548195). It shows that the data directory should be `/var/lib/mysql`. This must be correct, as there are currently some files there, which seem to cause the previous error. Now I deleted these files: `rm /var/lib/mysql/*`.
+
+Finally all the commands begin to work as magic without any errors:
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">root~$:mysqld --initialize</div><div class="line">root~$:service mysql start</div><div class="line">root~$:service mysql status</div><div class="line">● mysql.service - MySQL Community Server</div><div class="line">   Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)</div><div class="line">      Active: active (running) since Sat 2017-03-04 17:10:03 UTC; 2min 17s ago</div><div class="line">        Process: 6363 ExecStartPost=/usr/share/mysql/mysql-systemd-start post (code=exited, status=0/SUCCESS)</div><div class="line">          Process: 6359 ExecStartPre=/usr/share/mysql/mysql-systemd-start pre (code=exited, status=0/SUCCESS)</div><div class="line">           Main PID: 6362 (mysqld)</div><div class="line">              CGroup: /system.slice/mysql.service</div><div class="line">                         └─6362 /usr/sbin/mysqld</div><div class="line"></div><div class="line">                         Mar 04 17:10:02 ubuntu systemd[1]: Starting MySQL Community Server...</div><div class="line">                         Mar 04 17:10:03 ubuntu systemd[1]: Started MySQL Community Server.</div></pre></td></tr></table></figure>
+</code></pre><h4 id="Database-Driver"><a href="#Database-Driver" class="headerlink" title="Database Driver"></a>Database Driver</h4><pre><code>Was running into after problem related to **mysql**. JIRA requires you to manually download the **connectorJ** driver. However, the file downloaded from the link given by JIRA doc, is actually named `mysql-connector-java-5.1.41.tar.gz`. After I unzipped it, I thought the **tar** should be the driver file, and copied into JIRA&apos;s lib directory, but it turned out to fail, as when setting up JIRA it prompts can&apos;t find driver class.
+
+I finally solved this problem by untar the **tar**, which gives a folder, where inside the folder there&apos;s actually another **tar** named `mysql-connector-java-5.1.41-bin.jar`. Note the difference as this one has the **bin** part. This is the actual **jar** file you need to put in JIRA lib directory. Now JIRA can connect to database without any more complaints.
+</code></pre><h4 id="JIRA-still-crashes-and-final-solution"><a href="#JIRA-still-crashes-and-final-solution" class="headerlink" title="JIRA still crashes and final solution"></a>JIRA still crashes and final solution</h4><p>After JRIA connects to mysql successfully, it still continues to crash every a while. Then I searched this problem especially with the keyword <code>linode</code> and I came to this official Atlassian Documentation: <a href="https://confluence.atlassian.com/jirakb/connection-of-jira-on-linode-break-after-few-minutes-815585943.html" target="_blank" rel="external">Connection of Jira on Linode break after few minutes</a>, which looks extremely like my case, and I immediately realized my initial setting for linode also has a very small<br>SWAP size (which was around 248MB, not even 1GB mentioned in this doc).</p>
+<p>Finally I followed the ‘woraround’ advice given in this doc, and resize the linode swap size to 2048MB. Voila, finally I have a JIRA instance running smoothly on my linode!.</p>
+<p>I did some small tweaks later regarding reverse proxy, so I can have a nice subdomain pointing to jira instance at: <a href="http://jira.yongli1992.com" target="_blank" rel="external">http://jira.yongli1992.com</a>. I might summarize this in another post!</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/python/">python</a>
+  <a class="article-category-link" href="/categories/tool/">tool</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/python/">python</a><a href="/tags/翻译/">翻译</a>
+  <span></span> <a href="/tags/life/">life</a><a href="/tags/jira/">jira</a><a href="/tags/linode/">linode</a><a href="/tags/development/">development</a><a href="/tags/management/">management</a>
   </div>
 
 </div>
@@ -127,7 +151,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://blog.yongli1992.com/2015/01/23/python-wsgi-3/" data-title="Python WSGI教程(三)——环境字典 | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://blog.yongli1992.com/2017/03/11/Set-up-Jira-on-a-linode-server-and-problems-I-ve-encountered/" data-title="Set up Jira on a linode server and problems I&#39;ve encountered | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -140,19 +164,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/01/23/python-wsgi-4/" title="Python WSGI教程(四)——可迭代响应对象">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Python WSGI教程(四)——可迭代响应对象</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/01/23/python-wsgi-2/"  title="Python WSGI教程(二)——应用程序接口">
+<a href="/2017/03/02/usage/"  title="Investigate JIRA for personal management usage">
  <strong>下一篇：</strong><br/> 
- <span>Python WSGI教程(二)——应用程序接口
+ <span>Investigate JIRA for personal management usage
 </span>
 </a>
 </div>
@@ -175,7 +191,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Set-up-JIRA-on-a-linode-server-and-problems-I’ve-encountered"><span class="toc-number">1.</span> <span class="toc-text">Set up JIRA on a linode server and problems I’ve encountered.</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Environment"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">Environment</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Database-Setup"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">Database Setup</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Database-Driver"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">Database Driver</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JIRA-still-crashes-and-final-solution"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">JIRA still crashes and final solution</span></a></li></ol></li></ol></li></ol></li></ol>
  
   </div>
 
