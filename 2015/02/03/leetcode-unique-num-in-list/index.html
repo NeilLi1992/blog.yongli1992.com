@@ -13,34 +13,18 @@
     
     <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
     
-    <meta name="description" content="原题地址：single-number
-题目翻译如下：
-
-给定一个整数数组，其中有一个整数仅出现一次，其余每一个整数都恰好出现了两次。找出这一整数。注：算法要求线性时间复杂度，不使用额外的存储空间。
-
-一个最初的想法是，利用列表的sort方法来将列表进行排序，之后遍历列表，判断已排序的列表中每一个元素的前后是否存在相同元素，若都不存在，则为我们要找的数。
-实际提交时，运行时间超出限制。后来想起来列表">
+    <meta name="description" content="原题地址：single-number 题目翻译如下：  给定一个整数数组，其中有一个整数仅出现一次，其余每一个整数都恰好出现了两次。找出这一整数。注：算法要求线性时间复杂度，不使用额外的存储空间。  一个最初的想法是，利用列表的sort方法来将列表进行排序，之后遍历列表，判断已排序的列表中每一个元素的前后是否存在相同元素，若都不存在，则为我们要找的数。 实际提交时，运行时间超出限制。后来想起来列表">
+<meta name="keywords" content="algorithm,leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode：寻找列表中的唯一数字">
 <meta property="og:url" content="http://blog.yongli1992.com/2015/02/03/leetcode-unique-num-in-list/index.html">
-<meta property="og:site_name" content="YongLi's Blog">
-<meta property="og:description" content="原题地址：single-number
-题目翻译如下：
-
-给定一个整数数组，其中有一个整数仅出现一次，其余每一个整数都恰好出现了两次。找出这一整数。注：算法要求线性时间复杂度，不使用额外的存储空间。
-
-一个最初的想法是，利用列表的sort方法来将列表进行排序，之后遍历列表，判断已排序的列表中每一个元素的前后是否存在相同元素，若都不存在，则为我们要找的数。
-实际提交时，运行时间超出限制。后来想起来列表">
+<meta property="og:site_name" content="YongLi&#39;s Blog">
+<meta property="og:description" content="原题地址：single-number 题目翻译如下：  给定一个整数数组，其中有一个整数仅出现一次，其余每一个整数都恰好出现了两次。找出这一整数。注：算法要求线性时间复杂度，不使用额外的存储空间。  一个最初的想法是，利用列表的sort方法来将列表进行排序，之后遍历列表，判断已排序的列表中每一个元素的前后是否存在相同元素，若都不存在，则为我们要找的数。 实际提交时，运行时间超出限制。后来想起来列表">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:updated_time" content="2015-08-08T00:31:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode：寻找列表中的唯一数字">
-<meta name="twitter:description" content="原题地址：single-number
-题目翻译如下：
-
-给定一个整数数组，其中有一个整数仅出现一次，其余每一个整数都恰好出现了两次。找出这一整数。注：算法要求线性时间复杂度，不使用额外的存储空间。
-
-一个最初的想法是，利用列表的sort方法来将列表进行排序，之后遍历列表，判断已排序的列表中每一个元素的前后是否存在相同元素，若都不存在，则为我们要找的数。
-实际提交时，运行时间超出限制。后来想起来列表">
+<meta name="twitter:description" content="原题地址：single-number 题目翻译如下：  给定一个整数数组，其中有一个整数仅出现一次，其余每一个整数都恰好出现了两次。找出这一整数。注：算法要求线性时间复杂度，不使用额外的存储空间。  一个最初的想法是，利用列表的sort方法来将列表进行排序，之后遍历列表，判断已排序的列表中每一个元素的前后是否存在相同元素，若都不存在，则为我们要找的数。 实际提交时，运行时间超出限制。后来想起来列表">
 <link rel="publisher" href="111758198691283601884">
 
     
@@ -69,7 +53,7 @@
 				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
 				<h2 class="blog-motto">制心一處，守一不移。</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -83,7 +67,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:blog.yongli1992.com">
 					</form>
 					
@@ -106,27 +90,27 @@
 		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-02-03T20:09:08.000Z" itemprop="datePublished"> 发表于 2015-02-03</time>
+    <time datetime="2015-02-03T20:09:08.000Z" itemprop="datePublished"> Published 2015-02-03</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目录</strong>
+			<strong class="toc-title">Contents</strong>
 		
 			
 		
 		</div>
 		
-		<p>原题地址：<a href="https://oj.leetcode.com/problems/single-number/" target="_blank" rel="external">single-number</a></p>
+		<p>原题地址：<a href="https://oj.leetcode.com/problems/single-number/" target="_blank" rel="noopener">single-number</a></p>
 <p>题目翻译如下：</p>
 <blockquote>
 <p>给定一个整数数组，其中有一个整数仅出现一次，其余每一个整数都恰好出现了两次。找出这一整数。<br>注：算法要求线性时间复杂度，不使用额外的存储空间。</p>
 </blockquote>
 <p>一个最初的想法是，利用列表的sort方法来将列表进行排序，之后遍历列表，判断已排序的列表中每一个元素的前后是否存在相同元素，若都不存在，则为我们要找的数。</p>
 <p>实际提交时，运行时间超出限制。后来想起来列表的sort方法是O(nlogn)复杂度的，故不行。</p>
-<p>在此找到一篇wiki：<a href="https://wiki.python.org/moin/TimeComplexity" target="_blank" rel="external">Time Complexity</a>，列出了CPython（即常见官方实现）中各种内置数据结构的方法的复杂度。</p>
+<p>在此找到一篇wiki：<a href="https://wiki.python.org/moin/TimeComplexity" target="_blank" rel="noopener">Time Complexity</a>，列出了CPython（即常见官方实现）中各种内置数据结构的方法的复杂度。</p>
 <p>后来从讨论区看了别人的实现，才学到可以用按位操作符XOR来实现。这里采用的主要想法是：我们可以用一个初始值为0的变量r来作记录，与列表中的每一个数都做异或运算。对于存在两次的数，做了两次异或后相互作用抵消，仍能将变量r恢复为原来的值。这样当所有数都与r做过异或运算后，r最后的值就记录了那个仅仅出现一次的数。</p>
 <p>用规范化的说法，算法可行的原因是基于异或位运算的两条基本原理：</p>
 <blockquote>
@@ -199,22 +183,22 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目录</strong>
+  <strong class="toc-title">Contents</strong>
  
  
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分类</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -223,6 +207,10 @@
 		
 		  
 			<li><a href="/categories/algorithm/" title="algorithm">algorithm<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/finance/" title="finance">finance<sup>9</sup></a></li>
 		  
 		
 		  
@@ -255,11 +243,19 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">标签</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
 				<li><a href="/tags/python/" title="python">python<sup>16</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/cfa/" title="cfa">cfa<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/finance/" title="finance">finance<sup>9</sup></a></li>
 			
 		
 			
@@ -283,10 +279,6 @@
 			
 		
 			
-				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
 			
 		
@@ -299,19 +291,15 @@
 			
 		
 			
+				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/ios/" title="ios">ios<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ime/" title="ime">ime<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
 			
 		
 			
@@ -323,11 +311,11 @@
 			
 		
 			
-				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
 			
 		
 			
@@ -343,7 +331,7 @@
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情链接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -372,13 +360,13 @@
 
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
 </div>
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
@@ -636,7 +624,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 

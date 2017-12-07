@@ -1,0 +1,841 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh_CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>CFA Notes - Quantitive Methods | YongLi&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="yongli1992">
+    
+
+    
+    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
+    
+    <meta name="description" content="Decompose required rate of returninterest rate = nominal risk-free rate + risk premiumnominal risk-free rate = real risk-free rate + expected inflation rate 收益率计算HPRTotal return between purchase date">
+<meta name="keywords" content="cfa,finance">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CFA Notes - Quantitive Methods">
+<meta property="og:url" content="http://blog.yongli1992.com/2017/12/07/CFA-notes-quantitive-methods/index.html">
+<meta property="og:site_name" content="YongLi&#39;s Blog">
+<meta property="og:description" content="Decompose required rate of returninterest rate = nominal risk-free rate + risk premiumnominal risk-free rate = real risk-free rate + expected inflation rate 收益率计算HPRTotal return between purchase date">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.imgur.com/uDburms.png">
+<meta property="og:updated_time" content="2017-12-07T20:58:35.573Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CFA Notes - Quantitive Methods">
+<meta name="twitter:description" content="Decompose required rate of returninterest rate = nominal risk-free rate + risk premiumnominal risk-free rate = real risk-free rate + expected inflation rate 收益率计算HPRTotal return between purchase date">
+<meta name="twitter:image" content="https://i.imgur.com/uDburms.png">
+<link rel="publisher" href="111758198691283601884">
+
+    
+    <link rel="alternative" href="/atom.xml" title="YongLi&#39;s Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/logo.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="YongLi&#39;s Blog" title="YongLi&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
+				<h2 class="blog-motto">制心一處，守一不移。</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">存档</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:blog.yongli1992.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/12/07/CFA-notes-quantitive-methods/" title="CFA Notes - Quantitive Methods" itemprop="url">CFA Notes - Quantitive Methods</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
+		
+  <p class="article-time">
+    <time datetime="2017-12-07T20:52:11.000Z" itemprop="datePublished"> Published 2017-12-07</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#收益率计算"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x6536;&#x76CA;&#x7387;&#x8BA1;&#x7B97;" class="headerlink" title="&#x6536;&#x76CA;&#x7387;&#x8BA1;&#x7B97;"></a>&#x6536;&#x76CA;&#x7387;&#x8BA1;&#x7B97;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Measures-of-Mean"><span class="toc-number">2.</span> <span class="toc-text"><a href="#Measures-of-Mean" class="headerlink" title="Measures of Mean"></a>Measures of Mean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Quantiles"><span class="toc-number">3.</span> <span class="toc-text"><a href="#Quantiles" class="headerlink" title="Quantiles"></a>Quantiles</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dispersion"><span class="toc-number">4.</span> <span class="toc-text"><a href="#Dispersion" class="headerlink" title="Dispersion"></a>Dispersion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chebyshev’s-Inequality"><span class="toc-number">5.</span> <span class="toc-text"><a href="#Chebyshev&#x2019;s-Inequality" class="headerlink" title="Chebyshev&#x2019;s Inequality"></a>Chebyshev&#x2019;s Inequality</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Coefficent-of-variance-and-sharp-ratio"><span class="toc-number">6.</span> <span class="toc-text"><a href="#Coefficent-of-variance-and-sharp-ratio" class="headerlink" title="Coefficent of variance and sharp ratio"></a>Coefficent of variance and sharp ratio</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Skewness-and-Kurtosis"><span class="toc-number">7.</span> <span class="toc-text"><a href="#Skewness-and-Kurtosis" class="headerlink" title="Skewness and Kurtosis"></a>Skewness and Kurtosis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Probability"><span class="toc-number">8.</span> <span class="toc-text"><a href="#Probability" class="headerlink" title="Probability"></a>Probability</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Counting"><span class="toc-number">9.</span> <span class="toc-text"><a href="#Counting" class="headerlink" title="Counting"></a>Counting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Discrete-random-distribution"><span class="toc-number">10.</span> <span class="toc-text"><a href="#Discrete-random-distribution" class="headerlink" title="Discrete random distribution"></a>Discrete random distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Continuous-random-distribution"><span class="toc-number">11.</span> <span class="toc-text"><a href="#Continuous-random-distribution" class="headerlink" title="Continuous random distribution"></a>Continuous random distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Normal-distribution"><span class="toc-number">12.</span> <span class="toc-text"><a href="#Normal-distribution" class="headerlink" title="Normal distribution"></a>Normal distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Safety-First-Ratio"><span class="toc-number">13.</span> <span class="toc-text"><a href="#Safety-First-Ratio" class="headerlink" title="Safety First Ratio"></a>Safety First Ratio</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Central-limit-theorem"><span class="toc-number">14.</span> <span class="toc-text"><a href="#Central-limit-theorem" class="headerlink" title="Central limit theorem"></a>Central limit theorem</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Student’s-t-distribution"><span class="toc-number">15.</span> <span class="toc-text"><a href="#Student&#x2019;s-t-distribution" class="headerlink" title="Student&#x2019;s t-distribution"></a>Student&#x2019;s t-distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Estimation"><span class="toc-number">16.</span> <span class="toc-text"><a href="#Estimation" class="headerlink" title="Estimation"></a>Estimation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hypothesis-Testing"><span class="toc-number">17.</span> <span class="toc-text"><a href="#Hypothesis-Testing" class="headerlink" title="Hypothesis Testing"></a>Hypothesis Testing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#p-value-method"><span class="toc-number">17.1.</span> <span class="toc-text"><a href="#p-value-method" class="headerlink" title="p-value method"></a>p-value method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Type-I-error-and-Type-II-error"><span class="toc-number">17.2.</span> <span class="toc-text"><a href="#Type-I-error-and-Type-II-error" class="headerlink" title="Type I error and Type II error."></a>Type I error and Type II error.</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Technical-Analysis"><span class="toc-number">18.</span> <span class="toc-text"><a href="#Technical-Analysis" class="headerlink" title="Technical Analysis"></a>Technical Analysis</span></a></li></ol>
+		
+		</div>
+		
+		<p><strong>Decompose required rate of return</strong><br>interest rate = nominal risk-free rate + risk premium<br>nominal risk-free rate = real risk-free rate + expected inflation rate</p>
+<h2 id="收益率计算"><a href="#收益率计算" class="headerlink" title="收益率计算"></a>收益率计算</h2><p><strong>HPR</strong><br>Total return between purchase date and sale/maturity date.<br>$\text{HPR}=\frac{P_1-P_0+D_1}{P_0}$，有时也叫 HPY，也会按 $\text{HPY}=\frac{FV-PV}{PV}$ 来计算。</p>
+<p>money market yield: $r_{MM}=\text{HPY}\times{}\frac{360}{t}$</p>
+<p>bank discount rate: $r_{BD}=\text{HPY}\times{}\frac{360}{t}$</p>
+<p>$(1+\frac{BEY}{2})^2=1+EAY=(1+HPY)^{\frac{365}{t}}$</p>
+<p>单利年化用 360，复利年化用 365.</p>
+<p><strong>TWRR &amp; MWRR</strong><br>如果 HPR 是年度的或者大于一年的：<br>$TWRR=\sqrt{\sum^n_{i=1}(1+HPR_i)}-1$</p>
+<p>如果 HPR 是季度/月度或小于一年的：<br>$TWRR=\sum^n_{i=1}(1+HPR_i)-1$</p>
+<p>MWRR 就是用计算器按年金计算 I/Y。</p>
+<h2 id="Measures-of-Mean"><a href="#Measures-of-Mean" class="headerlink" title="Measures of Mean"></a>Measures of Mean</h2><p>Arithmetic<br>$\overline{X<em>A}=\frac{\sum^n</em>{i=1}X_i}{n}$</p>
+<p>Weighted<br>$\overline{X<em>W}=\sum^n</em>{i=1}w_iX_i$</p>
+<p>Geometric<br>$\overline{X<em>G}=(\Pi^n</em>{i=1}X_i)^{1/n}$</p>
+<p>Harmonic<br>$\overline{X<em>H}=\frac{n}{\sum^n</em>{i=1}(1/X_i)}$</p>
+<p>Geometric mean of past annual return is the appropriate measure of past performance.</p>
+<p>Arithmetic mean is statistically the best estimator of the next year’s returns.</p>
+<h2 id="Quantiles"><a href="#Quantiles" class="headerlink" title="Quantiles"></a>Quantiles</h2><p>Mean: 50%<br>Quartile: 25%<br>Quintile: 20%<br>Decile: 10%<br>Percentile: 1%</p>
+<p>$L_y=\frac{(n+1)y}{100}$</p>
+<h2 id="Dispersion"><a href="#Dispersion" class="headerlink" title="Dispersion"></a>Dispersion</h2><p>Range: highest level - lowest level</p>
+<p>$\text{MAD}=\frac{\sum^N_{i=1}|X_i-\mu|}{N}$</p>
+<p>For population variance:<br>$\sigma^2=\frac{\sum^N_{i=1}(X_i-\mu)}{N}$</p>
+<p>For sapmle variance:<br>$S^2=\frac{\sum^n_{i=1}(X_i-\overline{X})}{n}$</p>
+<p>结论：</p>
+<ol>
+<li>variance 比 MAD 好，因为 variance 是连续，处处可导的。</li>
+<li>$\text{MAD}\leq{}\sigma$</li>
+</ol>
+<h2 id="Chebyshev’s-Inequality"><a href="#Chebyshev’s-Inequality" class="headerlink" title="Chebyshev’s Inequality"></a>Chebyshev’s Inequality</h2><p>For either sample or population, the proportion of the values that lie within k standard deviations of teh mean is:</p>
+<p>$P(|X-\mu|\leq{}k\sigma)\geq1-\frac{1}{k^2}$</p>
+<p>Apply regardless of the shape/distribution.</p>
+<h2 id="Coefficent-of-variance-and-sharp-ratio"><a href="#Coefficent-of-variance-and-sharp-ratio" class="headerlink" title="Coefficent of variance and sharp ratio"></a>Coefficent of variance and sharp ratio</h2><p>$\text{CV}=\frac{S_X}{\overline{X}}\times{}100\%$</p>
+<p>Sharp ratio measures excess return per unit of risk.<br>$\text{Sharp ratio}=\frac{R_P-R_f}{\sigma_P}$</p>
+<p>只能用于 rank，没有实在含义，当小于零时可能会得到错误的结论。</p>
+<h2 id="Skewness-and-Kurtosis"><a href="#Skewness-and-Kurtosis" class="headerlink" title="Skewness and Kurtosis"></a>Skewness and Kurtosis</h2><p><img src="https://i.imgur.com/uDburms.png" alt=""><br>Positivly skewed: 长尾在右，mean &gt; median &gt; mode<br>Negatively skewed: 长尾在左，mean &lt; median &lt; mode</p>
+<p>计算 skewness 时是三阶的。<br>Investors should be attracted to a postive skewness.</p>
+<p><strong>Kurtosis</strong><br>Leptokurtic: k &gt; 3<br>Normal: k = 3<br>Platykurtic: k &lt; 3</p>
+<p>计算 kurtosis 时是四阶的。</p>
+<p>normal distribution 是 skewness=0，kurtosis=3.</p>
+<h2 id="Probability"><a href="#Probability" class="headerlink" title="Probability"></a>Probability</h2><p>x rule<br>$P(AB)=P(B)\times{}P(A|B)$</p>
+<p>+ rule<br>$P(\text{A or B})=P(A)+P(B)-P(AB)$</p>
+<p>Mutually exclusive events<br>$P(AB)=0$<br>$P(\text{A or B})=P(A)+P(B)$</p>
+<p>Independent events:<br>$P(A|B)=P(A)$<br>$P(B|A)=P(B)$<br>$P(AB)=P(A)\times{}P(B)$</p>
+<p>不独立未必互斥，互斥一定不独立。</p>
+<p><strong>Odds</strong><br>Odds for an event E:<br>$\frac{P(E)}{1-P(E)}$</p>
+<p>Odds agains an event E:<br>$\frac{1-P(E)}{P(E)}$</p>
+<p><strong>Expected value E(X)</strong><br>$\sum{}^n_{i=1}P(X_i)X_i$</p>
+<p><strong>Variance</strong><br>$\sigma^2(x)=\sum^n_{i=1}[X_i-E(x_i)]^2$</p>
+<p><strong>Covariance</strong><br>$Cov(X,Y)=E[(X-E(X))(Y-E(Y))]$<br>range from negative inf to positive inf.</p>
+<p>Covariance of random variable X with itself is its variance.</p>
+<p><strong>Correlation</strong><br>$\rho=\frac{Cov(A,B)}{\sigma<em>{A}\sigma</em>{B}}$<br>range from -1 to 1.</p>
+<p>If 1, two variables are perfectly positive linear correlated.<br>If -1, two variables are perfectly negative lienar correlated.<br>If 0, no linear correlation.</p>
+<p><strong>Baye’s formula</strong><br>$P(A|B)=\frac{P(B|A)}{P(B)}\times{}P(A)$<br>we can update a given set of prior probabilities for a given event in response to the arrival of new information.</p>
+<h2 id="Counting"><a href="#Counting" class="headerlink" title="Counting"></a>Counting</h2><p><strong>Labeling (or multinomial)</strong><br>$\frac{n!}{n_1!\times{}n_2!\times{}…\times{}n_k!}$</p>
+<p><strong>Combination</strong><br>$C_n^r=\frac{n!}{(n-r)!\times{}r!}$</p>
+<p><strong>Permutation</strong><br>$P_n^r=\frac{n!}{(n-r)!}$</p>
+<h2 id="Discrete-random-distribution"><a href="#Discrete-random-distribution" class="headerlink" title="Discrete random distribution"></a>Discrete random distribution</h2><p><strong>Discrete uniform random variable</strong><br>The probablities for all possible outcomes for a discrete random variable are equal.</p>
+<p><strong>Bernoulli random variable</strong><br>只做一次实验，只有两种结果（1=成功，0=失败）<br>$p(1)=P(X=1)=p$<br>$p(0)=P(X=0)=1-p$</p>
+<p><strong>Binomial random variable</strong><br>做 n 次实验，随机变量为成功 X 次<br>$P(X)=C_n^xp^x(1-p)^{n-x}$</p>
+<h2 id="Continuous-random-distribution"><a href="#Continuous-random-distribution" class="headerlink" title="Continuous random distribution"></a>Continuous random distribution</h2><p>Defined over a range that spans between some lower limit a and a upper limit b, which serve as the parameters of the distribution.</p>
+<p>$P(\text{X &lt; a or X &gt; b})=0$</p>
+<p>For all $a\leq{}x_1\lt{}x_2\leq{}b$,<br>$P(x_1\leq{}X\leq{}x_2)=\frac{x_2-x_1}{b-a}$</p>
+<h2 id="Normal-distribution"><a href="#Normal-distribution" class="headerlink" title="Normal distribution"></a>Normal distribution</h2><ol>
+<li>$X\sim{}N(\mu, \sigma^2)$</li>
+<li>skewness = 0, kurtosis = 3</li>
+<li>linear combination fo normally distributed random variables is also normall distributed</li>
+</ol>
+<p><strong>Confidence intervals</strong><br>68%: $[\mu-\sigma,\mu+\sigma]$<br>90%: $[\mu-1.65\sigma,\mu+1.65\sigma]$<br>95%: $[\mu-1.96\sigma,\mu+1.96\sigma]$<br>99%: $[\mu-2.58\sigma,\mu+2.58\sigma]$</p>
+<p><strong>Standardization</strong><br>If $X\sim{}N(\mu, \sigma^2)$<br>Then $Z=\frac{X-\mu}{\sigma}\sim{}N(0, 1)$</p>
+<p><strong>lognormal distribution</strong><br>If $ln(x)\sim{}N$, the nX is lognormal.<br>Useful to describe price of asset, because bounded below by zero.<br>Right skewed (positvely).</p>
+<h2 id="Safety-First-Ratio"><a href="#Safety-First-Ratio" class="headerlink" title="Safety First Ratio"></a>Safety First Ratio</h2><p>$SFR=\frac{E(R_p)-R_L}{\sigma_p}$, the bigger the better.</p>
+<p>Optimal portfolio minimizes the probablity taht return of portfolio falls below some minimum acceptable level (R_L).</p>
+<p>与 sharpe ratio 的区别:<br>$\text{Share ratio}=\frac{E(R_p)-R_f}{\sigma_p}$<br>Sharpe ratio is a special case when $r_L=r_f$.</p>
+<hr>
+<p><strong>Time-series data</strong><br>Observations taken over a period of time at specific and equally spaced time intervals.</p>
+<p><strong>Cross-sectional data</strong><br>A sample of observations taken at a single point in time.</p>
+<h2 id="Central-limit-theorem"><a href="#Central-limit-theorem" class="headerlink" title="Central limit theorem"></a>Central limit theorem</h2><p>Sampling distribution of the sample mean $\overline{X}$ approaches a normal distribution as sample size becomes large (&gt;30).</p>
+<p>结论：</p>
+<ol>
+<li>Mean of sample mean equals population mean: $\overline{X}=\mu$</li>
+<li>Variance of sample mean equals population variance divided by sample size: $\frac{\sigma^2}{n}$</li>
+</ol>
+<p><strong>Standard error of sample mean 标准误计算</strong><br>If known population variance, $stderr=\frac{\sigma}{\sqrt{n}}$<br>If unknown population variance, $stderr=\frac{s}{\sqrt{n}}$</p>
+<h2 id="Student’s-t-distribution"><a href="#Student’s-t-distribution" class="headerlink" title="Student’s t-distribution"></a>Student’s t-distribution</h2><p>Symetrical<br>Degree of freedom: n-1<br>Less peaked than normal distribution (fatter tails).<br>DoF 增大，逐渐逼近 normal distribution.</p>
+<h2 id="Estimation"><a href="#Estimation" class="headerlink" title="Estimation"></a>Estimation</h2><p>Estimation 研究如何用样本均值 $\overline{X}$ 来估计总体均值 $\mu$.</p>
+<p><strong>Desirable properties of estimators</strong></p>
+<ol>
+<li>unbiasedness</li>
+<li>efficiency</li>
+<li>consistency</li>
+</ol>
+<p><strong>Point Estimation</strong><br>样本结果是多少就认为总体结果是多少，属于<em>不科学的估计方法</em>。</p>
+<p><strong>Confidence Interval Estimation 置信区间估计</strong><br>给出估计总体的 $\mu$ 值有多少概率可以落在一个区间内，更科学。</p>
+<p><strong>Concepts</strong></p>
+<ol>
+<li>level of significance: $\alpha$ 显著性水平，小概率事件的可能性</li>
+<li>degree of confidence: $1-\alpha$ 置信度，大概率事件的可能性（正太分布中间大的面积）</li>
+<li>confidence interval: [point estimate +- (reliability factor) x standard error]<ol>
+<li>point estimate 就是样本均值 $\overline{X}$.</li>
+<li>k 就是根据需要多大的置信区间，来决定的系数</li>
+<li>standard error 如果知道总体方差就是 $\frac{\sigma}{\sqrt{n}}$，如果不知道就是 $\frac{s}{\sqrt{n}}$</li>
+</ol>
+</li>
+</ol>
+<p>confidence level 简写为 $[\overline{X}\pm{}k\frac{\sigma}{\sqrt{n}}]$</p>
+<h2 id="Hypothesis-Testing"><a href="#Hypothesis-Testing" class="headerlink" title="Hypothesis Testing"></a>Hypothesis Testing</h2><ol>
+<li><p>Define Hypothesis for population parameter<br> 假设都是针对总体的，针对样本没有假设可言。</p>
+<ol>
+<li><p>Null hyposis 零假设<br> $H_0: \mu=\mu_0$<br> Null hypois is what we suspect about population, and want to reject.</p>
+</li>
+<li><p>Alternative hyposis 备择假设<br> $H_\alpha:\mu\neq\mu_0$<br> We want this to be true.</p>
+<p> 怀疑什么就设为零假设。</p>
+</li>
+</ol>
+</li>
+<li><p>单双尾</p>
+<ol>
+<li><p>Two-tailed<br> $H_0: \mu=\mu<em>0$<br> $H</em>\alpha: \mu\neq\mu_0$</p>
+</li>
+<li><p>One-taileed<br> $H_0: \mu\leq\mu_0$ or $H_0: \mu\geq\mu<em>0$<br> $H</em>\alpha: \mu\gt\mu<em>0$ or $H</em>\alpha: \mu\lt\mu_0$<br> 等号总是放在零假设（原假设）中。</p>
+</li>
+</ol>
+</li>
+<li><p>Decide critical value k<br>Critical value k is solely determined by the significance level (显著性水平，小概率事件发生概率)，k 的作用是划定了拒绝域。</p>
+</li>
+</ol>
+<p>10% 双尾和 5% 单尾是一样的。</p>
+<ol>
+<li><p>Test statistic 检验统计量<br> $\text{test statistic}=\frac{\text{sample statistic}-\text{hypothesized value}}{\text{standard error of the sample statistic}}$</p>
+<p> 如果假设是关于 mean 的，则为 $\frac{\overline{X}-\mu_0}{\mu/\sqrt{n}}$ 或 $\frac{\overline{X}-\mu_0}{s/\sqrt{n}}$，取决于总体方差是否已知。</p>
+</li>
+</ol>
+<hr>
+<h3 id="p-value-method"><a href="#p-value-method" class="headerlink" title="p-value method"></a>p-value method</h3><p>上面的方法叫做 <strong>critival value method</strong>。<br>还有另一种检验方法叫做 <strong>p-value method</strong>。</p>
+<p>p-value is the smallest level of significance at which the null hypothesis can be rejected.</p>
+<ol>
+<li>If $\alpha&gt;p$,reject H_0.</li>
+<li>If $\alpha&lt;p$, fail to reject H_0.</li>
+</ol>
+<h3 id="Type-I-error-and-Type-II-error"><a href="#Type-I-error-and-Type-II-error" class="headerlink" title="Type I error and Type II error."></a>Type I error and Type II error.</h3><ol>
+<li>Type I error: reject a correct hypothesis</li>
+<li>Type II error: fail to reject a wrong hypothesis（取伪）</li>
+</ol>
+<p>Type II 更危险。</p>
+<ul>
+<li>significance level = P(Type I error)</li>
+<li>power of test = 1 - P(Type II error)</li>
+</ul>
+<p>只要增加样本容量可以减少 both errors。</p>
+<h2 id="Technical-Analysis"><a href="#Technical-Analysis" class="headerlink" title="Technical Analysis"></a>Technical Analysis</h2><ol>
+<li>Illiquid market can not use technical analysis 非流动性市场不能使用技术分析。</li>
+<li>EMH 有效市场假说不成立，否则在 weak-form 情形下，TA 也应无效。</li>
+</ol>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/finance/">finance</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/cfa/">cfa</a><a href="/tags/finance/">finance</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://blog.yongli1992.com/2017/12/07/CFA-notes-quantitive-methods/" data-title="CFA Notes - Quantitive Methods | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2017/12/07/CFA-notes-economics/" title="CFA Notes - Economics">
+  <strong>上一篇：</strong><br/>
+  <span>
+  CFA Notes - Economics</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2017/03/11/Set-up-Jira-on-a-linode-server-and-problems-I-ve-encountered/"  title="Set up Jira on a linode server and problems I&#39;ve encountered">
+ <strong>下一篇：</strong><br/> 
+ <span>Set up Jira on a linode server and problems I&#39;ve encountered
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#收益率计算"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x6536;&#x76CA;&#x7387;&#x8BA1;&#x7B97;" class="headerlink" title="&#x6536;&#x76CA;&#x7387;&#x8BA1;&#x7B97;"></a>&#x6536;&#x76CA;&#x7387;&#x8BA1;&#x7B97;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Measures-of-Mean"><span class="toc-number">2.</span> <span class="toc-text"><a href="#Measures-of-Mean" class="headerlink" title="Measures of Mean"></a>Measures of Mean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Quantiles"><span class="toc-number">3.</span> <span class="toc-text"><a href="#Quantiles" class="headerlink" title="Quantiles"></a>Quantiles</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dispersion"><span class="toc-number">4.</span> <span class="toc-text"><a href="#Dispersion" class="headerlink" title="Dispersion"></a>Dispersion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chebyshev’s-Inequality"><span class="toc-number">5.</span> <span class="toc-text"><a href="#Chebyshev&#x2019;s-Inequality" class="headerlink" title="Chebyshev&#x2019;s Inequality"></a>Chebyshev&#x2019;s Inequality</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Coefficent-of-variance-and-sharp-ratio"><span class="toc-number">6.</span> <span class="toc-text"><a href="#Coefficent-of-variance-and-sharp-ratio" class="headerlink" title="Coefficent of variance and sharp ratio"></a>Coefficent of variance and sharp ratio</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Skewness-and-Kurtosis"><span class="toc-number">7.</span> <span class="toc-text"><a href="#Skewness-and-Kurtosis" class="headerlink" title="Skewness and Kurtosis"></a>Skewness and Kurtosis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Probability"><span class="toc-number">8.</span> <span class="toc-text"><a href="#Probability" class="headerlink" title="Probability"></a>Probability</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Counting"><span class="toc-number">9.</span> <span class="toc-text"><a href="#Counting" class="headerlink" title="Counting"></a>Counting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Discrete-random-distribution"><span class="toc-number">10.</span> <span class="toc-text"><a href="#Discrete-random-distribution" class="headerlink" title="Discrete random distribution"></a>Discrete random distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Continuous-random-distribution"><span class="toc-number">11.</span> <span class="toc-text"><a href="#Continuous-random-distribution" class="headerlink" title="Continuous random distribution"></a>Continuous random distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Normal-distribution"><span class="toc-number">12.</span> <span class="toc-text"><a href="#Normal-distribution" class="headerlink" title="Normal distribution"></a>Normal distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Safety-First-Ratio"><span class="toc-number">13.</span> <span class="toc-text"><a href="#Safety-First-Ratio" class="headerlink" title="Safety First Ratio"></a>Safety First Ratio</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Central-limit-theorem"><span class="toc-number">14.</span> <span class="toc-text"><a href="#Central-limit-theorem" class="headerlink" title="Central limit theorem"></a>Central limit theorem</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Student’s-t-distribution"><span class="toc-number">15.</span> <span class="toc-text"><a href="#Student&#x2019;s-t-distribution" class="headerlink" title="Student&#x2019;s t-distribution"></a>Student&#x2019;s t-distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Estimation"><span class="toc-number">16.</span> <span class="toc-text"><a href="#Estimation" class="headerlink" title="Estimation"></a>Estimation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hypothesis-Testing"><span class="toc-number">17.</span> <span class="toc-text"><a href="#Hypothesis-Testing" class="headerlink" title="Hypothesis Testing"></a>Hypothesis Testing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#p-value-method"><span class="toc-number">17.1.</span> <span class="toc-text"><a href="#p-value-method" class="headerlink" title="p-value method"></a>p-value method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Type-I-error-and-Type-II-error"><span class="toc-number">17.2.</span> <span class="toc-text"><a href="#Type-I-error-and-Type-II-error" class="headerlink" title="Type I error and Type II error."></a>Type I error and Type II error.</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Technical-Analysis"><span class="toc-number">18.</span> <span class="toc-text"><a href="#Technical-Analysis" class="headerlink" title="Technical Analysis"></a>Technical Analysis</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/UK/" title="UK">UK<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/algorithm/" title="algorithm">algorithm<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/finance/" title="finance">finance<sup>9</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/life/" title="life">life<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/network/" title="network">network<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/problem/" title="problem">problem<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/programming/" title="programming">programming<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/python/" title="python">python<sup>12</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/tool/" title="tool">tool<sup>5</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/python/" title="python">python<sup>16</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/cfa/" title="cfa">cfa<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/finance/" title="finance">finance<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/翻译/" title="翻译">翻译<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/life/" title="life">life<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/leetcode/" title="leetcode">leetcode<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/tool/" title="tool">tool<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/jira/" title="jira">jira<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/development/" title="development">development<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ios/" title="ios">ios<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/UK/" title="UK">UK<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/oxford/" title="oxford">oxford<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/linode/" title="linode">linode<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://blog.imink.net 墨同学的博客" target="_blank" title="ink&#39;s blog">ink&#39;s blog</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://eventfulkay.com 小虾米的博客" target="_blank" title="kai&#39;s blog">kai&#39;s blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+<div class="doubanshow">
+<p class="asidetitle">豆瓣秀</p>
+<div>
+<script type="text/javascript" src="http://www.douban.com/service/badge/44886038/?show=collection&amp;n=12&amp;columns=3&amp;hidelogo=yes&amp;hideself=yes&amp;cat=book|movie" ></script>
+</div>
+</div>
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
+</div>
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello, I&#39;m Yong Li, a MSc student in Oxford Uni. <br/>
+			Welcome to my blog, hope it does help to you!.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2327892814" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/NeilLi1992" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		<a href="https://www.facebook.com/100006707769873" target="_blank" class="icon-facebook" title="facebook"></a>
+		
+		
+		<a href="https://www.linkedin.com/in/yongli1992" target="_blank" class="icon-linkedin" title="linkedin"></a>
+		
+		
+		<a href="https://www.douban.com/people/44886038" target="_blank" class="icon-douban" title="豆瓣"></a>
+		
+		
+		<a href="http://www.zhihu.com/people/li-yong-88-55" target="_blank" class="icon-zhihu" title="知乎"></a>
+		
+		
+		<a href="https://plus.google.com/111758198691283601884?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+		
+		
+		<a href="mailto:yong.li1992@foxmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
+		
+		<a href="/about" target="_blank" title="yongli1992">yongli1992</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'yongli1992';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-77559411-1', 'auto');  
+ga('send', 'pageview');
+</script>
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>

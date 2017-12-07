@@ -14,11 +14,13 @@
     <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
     
     <meta name="description" content="简介在开发一款跑步类 APP 的过程中需要实现语音播报功能。最初的设想是找人录制需要的播报音频，后来考虑到录制太麻烦，自己录效果也未必理想，遂考虑采用 TTS(text-to-speech) 语音合成功能来做。起初想到使用第三方 SDK，科大讯飞，百度，高德都有相关的 SDK。科大讯飞要付费，而且价格奇高无比，直接放弃。后来发现 Apple 本身也提供了 TTS 的原生支持，试了以后效果还不错，记">
+<meta name="keywords" content="ios,development">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS开发中的TTS语音合成功能的实现：AVSynthesizer类的使用">
 <meta property="og:url" content="http://blog.yongli1992.com/2015/08/09/ios-synthesizer/index.html">
-<meta property="og:site_name" content="YongLi's Blog">
+<meta property="og:site_name" content="YongLi&#39;s Blog">
 <meta property="og:description" content="简介在开发一款跑步类 APP 的过程中需要实现语音播报功能。最初的设想是找人录制需要的播报音频，后来考虑到录制太麻烦，自己录效果也未必理想，遂考虑采用 TTS(text-to-speech) 语音合成功能来做。起初想到使用第三方 SDK，科大讯飞，百度，高德都有相关的 SDK。科大讯飞要付费，而且价格奇高无比，直接放弃。后来发现 Apple 本身也提供了 TTS 的原生支持，试了以后效果还不错，记">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:updated_time" content="2015-08-08T22:23:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS开发中的TTS语音合成功能的实现：AVSynthesizer类的使用">
@@ -51,7 +53,7 @@
 				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
 				<h2 class="blog-motto">制心一處，守一不移。</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -65,7 +67,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:blog.yongli1992.com">
 					</form>
 					
@@ -88,21 +90,21 @@
 		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-08-09T05:23:54.000Z" itemprop="datePublished"> 发表于 2015-08-09</time>
+    <time datetime="2015-08-09T05:23:54.000Z" itemprop="datePublished"> Published 2015-08-09</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目录</strong>
+			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用"><span class="toc-number">2.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x7B80;&#x4ECB;" class="headerlink" title="&#x7B80;&#x4ECB;"></a>&#x7B80;&#x4ECB;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x4F7F;&#x7528;" class="headerlink" title="&#x4F7F;&#x7528;"></a>&#x4F7F;&#x7528;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text"><a href="#&#x4EE3;&#x7801;" class="headerlink" title="&#x4EE3;&#x7801;"></a>&#x4EE3;&#x7801;</span></a></li></ol>
 		
 		</div>
 		
 		<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>在开发一款跑步类 APP 的过程中需要实现语音播报功能。最初的设想是找人录制需要的播报音频，后来考虑到录制太麻烦，自己录效果也未必理想，遂考虑采用 TTS(text-to-speech) 语音合成功能来做。起初想到使用第三方 SDK，科大讯飞，百度，高德都有相关的 SDK。科大讯飞要付费，而且价格奇高无比，直接放弃。后来发现 Apple 本身也提供了 TTS 的原生支持，试了以后效果还不错，记录如下。</p>
-<p>从 iOS 7.0 以后， AVFoundation 框架提供了 <a href="https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVSpeechSynthesizer_Ref/index.html" target="_blank" rel="external">AVSpeechSynthesizer</a> 类，可以原生支持语音合成，支持包括中文在内的多种语言，发音效果也不错，而且是离线不需要网络连接的。</p>
+<p>从 iOS 7.0 以后， AVFoundation 框架提供了 <a href="https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVSpeechSynthesizer_Ref/index.html" target="_blank" rel="noopener">AVSpeechSynthesizer</a> 类，可以原生支持语音合成，支持包括中文在内的多种语言，发音效果也不错，而且是离线不需要网络连接的。</p>
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p><strong>Step1</strong>: 创建一个 AVSpeechUtterance 对象，构造的时候传入要读的 NSString 字符串对象。AVSpeechUtterance 对象构建之后不能更改读的文字，每读一次都要构建一个该对象。</p>
 <p><strong>Step2</strong>: 设置 AVSpeechUtterance 的属性，调整发音的细节。主要设置的属性有：<br>(AVSpeechSynthesisVoice *)voice属性，中文发音可以设置为 utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@”zh_CN”];<br>(float)rate属性，调整发音速度，数值越大读的越快。经测试 0.1~0.2 之间比较合适。<br>还有一些别的属性可以调，比如音调什么的。</p>
 <p><strong>Step3</strong>: 创建一个 AVSpeechSynthesizer 对象，调用实例方法 speakUtterance:(AVSpeechUtterance *)方法，就可以出声音了。synthesizer对象还可以用来控制播放的其它细节，比如暂停什么的。</p>
@@ -167,22 +169,22 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目录</strong>
+  <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用"><span class="toc-number">2.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x7B80;&#x4ECB;" class="headerlink" title="&#x7B80;&#x4ECB;"></a>&#x7B80;&#x4ECB;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x4F7F;&#x7528;" class="headerlink" title="&#x4F7F;&#x7528;"></a>&#x4F7F;&#x7528;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text"><a href="#&#x4EE3;&#x7801;" class="headerlink" title="&#x4EE3;&#x7801;"></a>&#x4EE3;&#x7801;</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分类</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -191,6 +193,10 @@
 		
 		  
 			<li><a href="/categories/algorithm/" title="algorithm">algorithm<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/finance/" title="finance">finance<sup>9</sup></a></li>
 		  
 		
 		  
@@ -223,11 +229,19 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">标签</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
 				<li><a href="/tags/python/" title="python">python<sup>16</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/cfa/" title="cfa">cfa<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/finance/" title="finance">finance<sup>9</sup></a></li>
 			
 		
 			
@@ -251,10 +265,6 @@
 			
 		
 			
-				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
 			
 		
@@ -267,19 +277,15 @@
 			
 		
 			
+				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/ios/" title="ios">ios<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ime/" title="ime">ime<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
 			
 		
 			
@@ -291,11 +297,11 @@
 			
 		
 			
-				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
 			
 		
 			
@@ -311,7 +317,7 @@
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情链接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -340,13 +346,13 @@
 
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
 </div>
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
@@ -604,7 +610,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 

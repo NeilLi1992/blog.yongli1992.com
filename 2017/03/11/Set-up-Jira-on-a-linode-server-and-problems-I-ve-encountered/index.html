@@ -14,14 +14,16 @@
     <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
     
     <meta name="description" content="Set up JIRA on a linode server and problems I’ve encountered.Was installing jira on my linode server, and encountered a few problems, which solved with some invetigations. This blog post will take a n">
+<meta name="keywords" content="life,jira,linode,development,management">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Set up Jira on a linode server and problems I've encountered">
+<meta property="og:title" content="Set up Jira on a linode server and problems I&#39;ve encountered">
 <meta property="og:url" content="http://blog.yongli1992.com/2017/03/11/Set-up-Jira-on-a-linode-server-and-problems-I-ve-encountered/index.html">
-<meta property="og:site_name" content="YongLi's Blog">
+<meta property="og:site_name" content="YongLi&#39;s Blog">
 <meta property="og:description" content="Set up JIRA on a linode server and problems I’ve encountered.Was installing jira on my linode server, and encountered a few problems, which solved with some invetigations. This blog post will take a n">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:updated_time" content="2017-03-11T10:03:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Set up Jira on a linode server and problems I've encountered">
+<meta name="twitter:title" content="Set up Jira on a linode server and problems I&#39;ve encountered">
 <meta name="twitter:description" content="Set up JIRA on a linode server and problems I’ve encountered.Was installing jira on my linode server, and encountered a few problems, which solved with some invetigations. This blog post will take a n">
 <link rel="publisher" href="111758198691283601884">
 
@@ -51,7 +53,7 @@
 				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
 				<h2 class="blog-motto">制心一處，守一不移。</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -65,7 +67,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:blog.yongli1992.com">
 					</form>
 					
@@ -88,16 +90,16 @@
 		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2017-03-11T10:01:12.000Z" itemprop="datePublished"> 发表于 2017-03-11</time>
+    <time datetime="2017-03-11T10:01:12.000Z" itemprop="datePublished"> Published 2017-03-11</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目录</strong>
+			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Set-up-JIRA-on-a-linode-server-and-problems-I’ve-encountered"><span class="toc-number">1.</span> <span class="toc-text">Set up JIRA on a linode server and problems I’ve encountered.</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Environment"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">Environment</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Database-Setup"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">Database Setup</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Database-Driver"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">Database Driver</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JIRA-still-crashes-and-final-solution"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">JIRA still crashes and final solution</span></a></li></ol></li></ol></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Set-up-JIRA-on-a-linode-server-and-problems-I’ve-encountered"><span class="toc-number">1.</span> <span class="toc-text"><a href="#Set-up-JIRA-on-a-linode-server-and-problems-I&#x2019;ve-encountered" class="headerlink" title="Set up JIRA on a linode server and problems I&#x2019;ve encountered."></a>Set up JIRA on a linode server and problems I&#x2019;ve encountered.</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Environment"><span class="toc-number">1.0.0.1.</span> <span class="toc-text"><a href="#Environment" class="headerlink" title="Environment"></a>Environment</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Database-Setup"><span class="toc-number">1.0.0.2.</span> <span class="toc-text"><a href="#Database-Setup" class="headerlink" title="Database Setup"></a>Database Setup</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Database-Driver"><span class="toc-number">1.0.0.3.</span> <span class="toc-text"><a href="#Database-Driver" class="headerlink" title="Database Driver"></a>Database Driver</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JIRA-still-crashes-and-final-solution"><span class="toc-number">1.0.0.4.</span> <span class="toc-text"><a href="#JIRA-still-crashes-and-final-solution" class="headerlink" title="JIRA still crashes and final solution"></a>JIRA still crashes and final solution</span></a></li></ol></li></ol></li></ol></li></ol>
 		
 		</div>
 		
@@ -126,9 +128,9 @@ Finally all the commands begin to work as magic without any errors:
 </code></pre><h4 id="Database-Driver"><a href="#Database-Driver" class="headerlink" title="Database Driver"></a>Database Driver</h4><pre><code>Was running into after problem related to **mysql**. JIRA requires you to manually download the **connectorJ** driver. However, the file downloaded from the link given by JIRA doc, is actually named `mysql-connector-java-5.1.41.tar.gz`. After I unzipped it, I thought the **tar** should be the driver file, and copied into JIRA&apos;s lib directory, but it turned out to fail, as when setting up JIRA it prompts can&apos;t find driver class.
 
 I finally solved this problem by untar the **tar**, which gives a folder, where inside the folder there&apos;s actually another **tar** named `mysql-connector-java-5.1.41-bin.jar`. Note the difference as this one has the **bin** part. This is the actual **jar** file you need to put in JIRA lib directory. Now JIRA can connect to database without any more complaints.
-</code></pre><h4 id="JIRA-still-crashes-and-final-solution"><a href="#JIRA-still-crashes-and-final-solution" class="headerlink" title="JIRA still crashes and final solution"></a>JIRA still crashes and final solution</h4><p>After JRIA connects to mysql successfully, it still continues to crash every a while. Then I searched this problem especially with the keyword <code>linode</code> and I came to this official Atlassian Documentation: <a href="https://confluence.atlassian.com/jirakb/connection-of-jira-on-linode-break-after-few-minutes-815585943.html" target="_blank" rel="external">Connection of Jira on Linode break after few minutes</a>, which looks extremely like my case, and I immediately realized my initial setting for linode also has a very small<br>SWAP size (which was around 248MB, not even 1GB mentioned in this doc).</p>
+</code></pre><h4 id="JIRA-still-crashes-and-final-solution"><a href="#JIRA-still-crashes-and-final-solution" class="headerlink" title="JIRA still crashes and final solution"></a>JIRA still crashes and final solution</h4><p>After JRIA connects to mysql successfully, it still continues to crash every a while. Then I searched this problem especially with the keyword <code>linode</code> and I came to this official Atlassian Documentation: <a href="https://confluence.atlassian.com/jirakb/connection-of-jira-on-linode-break-after-few-minutes-815585943.html" target="_blank" rel="noopener">Connection of Jira on Linode break after few minutes</a>, which looks extremely like my case, and I immediately realized my initial setting for linode also has a very small<br>SWAP size (which was around 248MB, not even 1GB mentioned in this doc).</p>
 <p>Finally I followed the ‘woraround’ advice given in this doc, and resize the linode swap size to 2048MB. Voila, finally I have a JIRA instance running smoothly on my linode!.</p>
-<p>I did some small tweaks later regarding reverse proxy, so I can have a nice subdomain pointing to jira instance at: <a href="http://jira.yongli1992.com" target="_blank" rel="external">http://jira.yongli1992.com</a>. I might summarize this in another post!</p>
+<p>I did some small tweaks later regarding reverse proxy, so I can have a nice subdomain pointing to jira instance at: <a href="http://jira.yongli1992.com" target="_blank" rel="noopener">http://jira.yongli1992.com</a>. I might summarize this in another post!</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -164,6 +166,14 @@ I finally solved this problem by untar the **tar**, which gives a folder, where 
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2017/12/07/CFA-notes-quantitive-methods/" title="CFA Notes - Quantitive Methods">
+  <strong>上一篇：</strong><br/>
+  <span>
+  CFA Notes - Quantitive Methods</span>
+</a>
+</div>
+
 
 <div class="next">
 <a href="/2017/03/02/usage/"  title="Investigate JIRA for personal management usage">
@@ -186,22 +196,22 @@ I finally solved this problem by untar the **tar**, which gives a folder, where 
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目录</strong>
+  <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Set-up-JIRA-on-a-linode-server-and-problems-I’ve-encountered"><span class="toc-number">1.</span> <span class="toc-text">Set up JIRA on a linode server and problems I’ve encountered.</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Environment"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">Environment</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Database-Setup"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">Database Setup</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Database-Driver"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">Database Driver</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JIRA-still-crashes-and-final-solution"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">JIRA still crashes and final solution</span></a></li></ol></li></ol></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Set-up-JIRA-on-a-linode-server-and-problems-I’ve-encountered"><span class="toc-number">1.</span> <span class="toc-text"><a href="#Set-up-JIRA-on-a-linode-server-and-problems-I&#x2019;ve-encountered" class="headerlink" title="Set up JIRA on a linode server and problems I&#x2019;ve encountered."></a>Set up JIRA on a linode server and problems I&#x2019;ve encountered.</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Environment"><span class="toc-number">1.0.0.1.</span> <span class="toc-text"><a href="#Environment" class="headerlink" title="Environment"></a>Environment</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Database-Setup"><span class="toc-number">1.0.0.2.</span> <span class="toc-text"><a href="#Database-Setup" class="headerlink" title="Database Setup"></a>Database Setup</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Database-Driver"><span class="toc-number">1.0.0.3.</span> <span class="toc-text"><a href="#Database-Driver" class="headerlink" title="Database Driver"></a>Database Driver</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JIRA-still-crashes-and-final-solution"><span class="toc-number">1.0.0.4.</span> <span class="toc-text"><a href="#JIRA-still-crashes-and-final-solution" class="headerlink" title="JIRA still crashes and final solution"></a>JIRA still crashes and final solution</span></a></li></ol></li></ol></li></ol></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分类</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -210,6 +220,10 @@ I finally solved this problem by untar the **tar**, which gives a folder, where 
 		
 		  
 			<li><a href="/categories/algorithm/" title="algorithm">algorithm<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/finance/" title="finance">finance<sup>9</sup></a></li>
 		  
 		
 		  
@@ -242,11 +256,19 @@ I finally solved this problem by untar the **tar**, which gives a folder, where 
 
   
 <div class="tagslist">
-	<p class="asidetitle">标签</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
 				<li><a href="/tags/python/" title="python">python<sup>16</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/cfa/" title="cfa">cfa<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/finance/" title="finance">finance<sup>9</sup></a></li>
 			
 		
 			
@@ -270,10 +292,6 @@ I finally solved this problem by untar the **tar**, which gives a folder, where 
 			
 		
 			
-				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
 			
 		
@@ -286,19 +304,15 @@ I finally solved this problem by untar the **tar**, which gives a folder, where 
 			
 		
 			
+				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/ios/" title="ios">ios<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ime/" title="ime">ime<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
 			
 		
 			
@@ -310,11 +324,11 @@ I finally solved this problem by untar the **tar**, which gives a folder, where 
 			
 		
 			
-				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
 			
 		
 			
@@ -330,7 +344,7 @@ I finally solved this problem by untar the **tar**, which gives a folder, where 
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情链接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -359,13 +373,13 @@ I finally solved this problem by untar the **tar**, which gives a folder, where 
 
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
 </div>
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
@@ -623,7 +637,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 

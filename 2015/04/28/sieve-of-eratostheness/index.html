@@ -13,28 +13,18 @@
     
     <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
     
-    <meta name="description" content="Sieve of Eratostheness，爱拉托撒尼筛法，是一种可以快速找出小于 n 的所有质数的算法。其基本思想是：
-
-给出要筛选数值的范围 n，找出$\sqrt{n}$以内的质数 p1, p2, p3 … pk。先用 2 去筛选，即把 2 留下，把 2 的倍数全部剔除；再用下一个质数 3 去筛选，再用 5， 7… 不断重复。
-
-实际实现的时候，在用 pk 去筛选的时候，实际上只要从 $pk">
+    <meta name="description" content="Sieve of Eratostheness，爱拉托撒尼筛法，是一种可以快速找出小于 n 的所有质数的算法。其基本思想是：  给出要筛选数值的范围 n，找出$\sqrt{n}$以内的质数 p1, p2, p3 … pk。先用 2 去筛选，即把 2 留下，把 2 的倍数全部剔除；再用下一个质数 3 去筛选，再用 5， 7… 不断重复。  实际实现的时候，在用 pk 去筛选的时候，实际上只要从 $pk">
+<meta name="keywords" content="leetCodeOJ,算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="爱拉托撒尼筛法：找出小于 n 的所有质数">
 <meta property="og:url" content="http://blog.yongli1992.com/2015/04/28/sieve-of-eratostheness/index.html">
-<meta property="og:site_name" content="YongLi's Blog">
-<meta property="og:description" content="Sieve of Eratostheness，爱拉托撒尼筛法，是一种可以快速找出小于 n 的所有质数的算法。其基本思想是：
-
-给出要筛选数值的范围 n，找出$\sqrt{n}$以内的质数 p1, p2, p3 … pk。先用 2 去筛选，即把 2 留下，把 2 的倍数全部剔除；再用下一个质数 3 去筛选，再用 5， 7… 不断重复。
-
-实际实现的时候，在用 pk 去筛选的时候，实际上只要从 $pk">
+<meta property="og:site_name" content="YongLi&#39;s Blog">
+<meta property="og:description" content="Sieve of Eratostheness，爱拉托撒尼筛法，是一种可以快速找出小于 n 的所有质数的算法。其基本思想是：  给出要筛选数值的范围 n，找出$\sqrt{n}$以内的质数 p1, p2, p3 … pk。先用 2 去筛选，即把 2 留下，把 2 的倍数全部剔除；再用下一个质数 3 去筛选，再用 5， 7… 不断重复。  实际实现的时候，在用 pk 去筛选的时候，实际上只要从 $pk">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:updated_time" content="2015-08-07T23:58:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爱拉托撒尼筛法：找出小于 n 的所有质数">
-<meta name="twitter:description" content="Sieve of Eratostheness，爱拉托撒尼筛法，是一种可以快速找出小于 n 的所有质数的算法。其基本思想是：
-
-给出要筛选数值的范围 n，找出$\sqrt{n}$以内的质数 p1, p2, p3 … pk。先用 2 去筛选，即把 2 留下，把 2 的倍数全部剔除；再用下一个质数 3 去筛选，再用 5， 7… 不断重复。
-
-实际实现的时候，在用 pk 去筛选的时候，实际上只要从 $pk">
+<meta name="twitter:description" content="Sieve of Eratostheness，爱拉托撒尼筛法，是一种可以快速找出小于 n 的所有质数的算法。其基本思想是：  给出要筛选数值的范围 n，找出$\sqrt{n}$以内的质数 p1, p2, p3 … pk。先用 2 去筛选，即把 2 留下，把 2 的倍数全部剔除；再用下一个质数 3 去筛选，再用 5， 7… 不断重复。  实际实现的时候，在用 pk 去筛选的时候，实际上只要从 $pk">
 <link rel="publisher" href="111758198691283601884">
 
     
@@ -63,7 +53,7 @@
 				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
 				<h2 class="blog-motto">制心一處，守一不移。</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -77,7 +67,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:blog.yongli1992.com">
 					</form>
 					
@@ -100,14 +90,14 @@
 		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-04-28T06:10:49.000Z" itemprop="datePublished"> 发表于 2015-04-28</time>
+    <time datetime="2015-04-28T06:10:49.000Z" itemprop="datePublished"> Published 2015-04-28</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目录</strong>
+			<strong class="toc-title">Contents</strong>
 		
 			
 		
@@ -118,7 +108,7 @@
 <p>给出要筛选数值的范围 n，找出<span>$\sqrt{n}$</span><!-- Has MathJax -->以内的质数 p1, p2, p3 … pk。先用 2 去筛选，即把 2 留下，把 2 的倍数全部剔除；再用下一个质数 3 去筛选，再用 5， 7… 不断重复。</p>
 </blockquote>
 <p>实际实现的时候，在用 pk 去筛选的时候，实际上只要从 $pk^2$ 开始筛选即可，因为小于 $ pk^2 $ 的已经被 pk 之前的其他质数给筛掉了。</p>
-<p>在 LeetCode 上有一题类似的，但是问的是小于 n 的所有质数的个数，也可以用这个办法来求。<br>原题链接：<a href="https://leetcode.com/problems/count-primes/" target="_blank" rel="external">Count Primes</a></p>
+<p>在 LeetCode 上有一题类似的，但是问的是小于 n 的所有质数的个数，也可以用这个办法来求。<br>原题链接：<a href="https://leetcode.com/problems/count-primes/" target="_blank" rel="noopener">Count Primes</a></p>
 <figure class="highlight python"><figcaption><span>Python代码</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></div><div class="line">    <span class="comment"># @param &#123;integer&#125;</span></div><div class="line">    <span class="comment"># @return &#123;integer&#125;</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">countPrimes</span><span class="params">(self, n)</span>:</span></div><div class="line">        <span class="keyword">if</span> n &lt; <span class="number">2</span>:</div><div class="line">            <span class="keyword">return</span> <span class="number">0</span></div><div class="line"></div><div class="line">        isPrime = [<span class="keyword">True</span> <span class="keyword">for</span> i <span class="keyword">in</span> xrange(n)]</div><div class="line">        isPrime[<span class="number">0</span>] = isPrime[<span class="number">1</span>] = <span class="keyword">False</span></div><div class="line"></div><div class="line">        <span class="comment"># Test all Primes less than sqrt(n)</span></div><div class="line">        i = <span class="number">2</span></div><div class="line">        <span class="keyword">while</span> i ** <span class="number">2</span> &lt; n:</div><div class="line">            <span class="keyword">if</span> isPrime[i]:</div><div class="line">                multiplier = <span class="number">0</span></div><div class="line">                <span class="keyword">while</span> i ** <span class="number">2</span> + i * multiplier &lt; n:</div><div class="line">                    isPrime[i ** <span class="number">2</span> + i * multiplier] = <span class="keyword">False</span></div><div class="line">                    multiplier += <span class="number">1</span></div><div class="line">            i += <span class="number">1</span></div><div class="line"></div><div class="line">        <span class="keyword">return</span> sum(isPrime)</div></pre></td></tr></table></figure>
   
 	</div>
@@ -185,22 +175,22 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目录</strong>
+  <strong class="toc-title">Contents</strong>
  
  
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分类</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -209,6 +199,10 @@
 		
 		  
 			<li><a href="/categories/algorithm/" title="algorithm">algorithm<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/finance/" title="finance">finance<sup>9</sup></a></li>
 		  
 		
 		  
@@ -241,11 +235,19 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">标签</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
 				<li><a href="/tags/python/" title="python">python<sup>16</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/cfa/" title="cfa">cfa<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/finance/" title="finance">finance<sup>9</sup></a></li>
 			
 		
 			
@@ -269,10 +271,6 @@
 			
 		
 			
-				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
 			
 		
@@ -285,19 +283,15 @@
 			
 		
 			
+				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/ios/" title="ios">ios<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ime/" title="ime">ime<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
 			
 		
 			
@@ -309,11 +303,11 @@
 			
 		
 			
-				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
 			
 		
 			
@@ -329,7 +323,7 @@
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情链接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -358,13 +352,13 @@
 
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
 </div>
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
@@ -622,7 +616,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 

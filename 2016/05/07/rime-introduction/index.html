@@ -13,16 +13,14 @@
     
     <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
     
-    <meta name="description" content="很长一段时间没有来写博文，最近准备重新继续。介绍一下最近入坑的 Rime 输入法，顺便也介绍一下自己基于 Rime 输入法而实现的快速输入 Unicode 字符集中的希腊字母，以及在纯文本环境下，以 latex 命令输入 Unicode 字符集中相近的数学符号的功能。
-实现效果最终实现的一些有用的效果大概如下。如果这里面有你想要的效果的话，那欢迎往下阅读，Rime 很可能就是你需要的输入法。
-古诗">
+    <meta name="description" content="很长一段时间没有来写博文，最近准备重新继续。介绍一下最近入坑的 Rime 输入法，顺便也介绍一下自己基于 Rime 输入法而实现的快速输入 Unicode 字符集中的希腊字母，以及在纯文本环境下，以 latex 命令输入 Unicode 字符集中相近的数学符号的功能。 实现效果最终实现的一些有用的效果大概如下。如果这里面有你想要的效果的话，那欢迎往下阅读，Rime 很可能就是你需要的输入法。 古诗">
+<meta name="keywords" content="tool,ime,rime">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Rime 输入法介绍，以及基于 Rime 输入法在纯文本环境下快速输入希腊字符，和以 latex 命令输入 Unicode 数学符号的方法">
 <meta property="og:url" content="http://blog.yongli1992.com/2016/05/07/rime-introduction/index.html">
-<meta property="og:site_name" content="YongLi's Blog">
-<meta property="og:description" content="很长一段时间没有来写博文，最近准备重新继续。介绍一下最近入坑的 Rime 输入法，顺便也介绍一下自己基于 Rime 输入法而实现的快速输入 Unicode 字符集中的希腊字母，以及在纯文本环境下，以 latex 命令输入 Unicode 字符集中相近的数学符号的功能。
-实现效果最终实现的一些有用的效果大概如下。如果这里面有你想要的效果的话，那欢迎往下阅读，Rime 很可能就是你需要的输入法。
-古诗">
+<meta property="og:site_name" content="YongLi&#39;s Blog">
+<meta property="og:description" content="很长一段时间没有来写博文，最近准备重新继续。介绍一下最近入坑的 Rime 输入法，顺便也介绍一下自己基于 Rime 输入法而实现的快速输入 Unicode 字符集中的希腊字母，以及在纯文本环境下，以 latex 命令输入 Unicode 字符集中相近的数学符号的功能。 实现效果最终实现的一些有用的效果大概如下。如果这里面有你想要的效果的话，那欢迎往下阅读，Rime 很可能就是你需要的输入法。 古诗">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://blog.yongli1992.com/2016/05/07/rime-introduction/gsc.jpg">
 <meta property="og:image" content="http://blog.yongli1992.com/2016/05/07/rime-introduction/emoji.jpg">
 <meta property="og:image" content="http://blog.yongli1992.com/2016/05/07/rime-introduction/abbr.jpg">
@@ -32,9 +30,7 @@
 <meta property="og:updated_time" content="2017-03-02T22:02:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Rime 输入法介绍，以及基于 Rime 输入法在纯文本环境下快速输入希腊字符，和以 latex 命令输入 Unicode 数学符号的方法">
-<meta name="twitter:description" content="很长一段时间没有来写博文，最近准备重新继续。介绍一下最近入坑的 Rime 输入法，顺便也介绍一下自己基于 Rime 输入法而实现的快速输入 Unicode 字符集中的希腊字母，以及在纯文本环境下，以 latex 命令输入 Unicode 字符集中相近的数学符号的功能。
-实现效果最终实现的一些有用的效果大概如下。如果这里面有你想要的效果的话，那欢迎往下阅读，Rime 很可能就是你需要的输入法。
-古诗">
+<meta name="twitter:description" content="很长一段时间没有来写博文，最近准备重新继续。介绍一下最近入坑的 Rime 输入法，顺便也介绍一下自己基于 Rime 输入法而实现的快速输入 Unicode 字符集中的希腊字母，以及在纯文本环境下，以 latex 命令输入 Unicode 字符集中相近的数学符号的功能。 实现效果最终实现的一些有用的效果大概如下。如果这里面有你想要的效果的话，那欢迎往下阅读，Rime 很可能就是你需要的输入法。 古诗">
 <meta name="twitter:image" content="http://blog.yongli1992.com/2016/05/07/rime-introduction/gsc.jpg">
 <link rel="publisher" href="111758198691283601884">
 
@@ -64,7 +60,7 @@
 				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
 				<h2 class="blog-motto">制心一處，守一不移。</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -78,7 +74,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:blog.yongli1992.com">
 					</form>
 					
@@ -101,33 +97,33 @@
 		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2016-05-06T23:06:34.000Z" itemprop="datePublished"> 发表于 2016-05-07</time>
+    <time datetime="2016-05-06T23:06:34.000Z" itemprop="datePublished"> Published 2016-05-07</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目录</strong>
+			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#实现效果"><span class="toc-number">1.</span> <span class="toc-text">实现效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#问题与适用情景"><span class="toc-number">2.</span> <span class="toc-text">问题与适用情景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rime-输入法介绍"><span class="toc-number">3.</span> <span class="toc-text">Rime 输入法介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rime-设置与定制"><span class="toc-number">4.</span> <span class="toc-text">Rime 设置与定制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#希腊字母与-latex-字符的输入"><span class="toc-number">5.</span> <span class="toc-text">希腊字母与 latex 字符的输入</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#实现效果"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x5B9E;&#x73B0;&#x6548;&#x679C;" class="headerlink" title="&#x5B9E;&#x73B0;&#x6548;&#x679C;"></a>&#x5B9E;&#x73B0;&#x6548;&#x679C;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#问题与适用情景"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x95EE;&#x9898;&#x4E0E;&#x9002;&#x7528;&#x60C5;&#x666F;" class="headerlink" title="&#x95EE;&#x9898;&#x4E0E;&#x9002;&#x7528;&#x60C5;&#x666F;"></a>&#x95EE;&#x9898;&#x4E0E;&#x9002;&#x7528;&#x60C5;&#x666F;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rime-输入法介绍"><span class="toc-number">3.</span> <span class="toc-text"><a href="#Rime-&#x8F93;&#x5165;&#x6CD5;&#x4ECB;&#x7ECD;" class="headerlink" title="Rime &#x8F93;&#x5165;&#x6CD5;&#x4ECB;&#x7ECD;"></a>Rime &#x8F93;&#x5165;&#x6CD5;&#x4ECB;&#x7ECD;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rime-设置与定制"><span class="toc-number">4.</span> <span class="toc-text"><a href="#Rime-&#x8BBE;&#x7F6E;&#x4E0E;&#x5B9A;&#x5236;" class="headerlink" title="Rime &#x8BBE;&#x7F6E;&#x4E0E;&#x5B9A;&#x5236;"></a>Rime &#x8BBE;&#x7F6E;&#x4E0E;&#x5B9A;&#x5236;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#希腊字母与-latex-字符的输入"><span class="toc-number">5.</span> <span class="toc-text"><a href="#&#x5E0C;&#x814A;&#x5B57;&#x6BCD;&#x4E0E;-latex-&#x5B57;&#x7B26;&#x7684;&#x8F93;&#x5165;" class="headerlink" title="&#x5E0C;&#x814A;&#x5B57;&#x6BCD;&#x4E0E; latex &#x5B57;&#x7B26;&#x7684;&#x8F93;&#x5165;"></a>&#x5E0C;&#x814A;&#x5B57;&#x6BCD;&#x4E0E; latex &#x5B57;&#x7B26;&#x7684;&#x8F93;&#x5165;</span></a></li></ol>
 		
 		</div>
 		
 		<p>很长一段时间没有来写博文，最近准备重新继续。介绍一下最近入坑的 Rime 输入法，顺便也介绍一下自己基于 Rime 输入法而实现的快速输入 Unicode 字符集中的希腊字母，以及在纯文本环境下，以 latex 命令输入 Unicode 字符集中相近的数学符号的功能。</p>
 <h1 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h1><p>最终实现的一些有用的效果大概如下。如果这里面有你想要的效果的话，那欢迎往下阅读，Rime 很可能就是你需要的输入法。</p>
-<p>古诗词输入：<br><img src="/2016/05/07/rime-introduction/gsc.jpg" alt="gsc.jpg" title=""></p>
-<p>emoji 直接输入，可以联想相关的表情：<br><img src="/2016/05/07/rime-introduction/emoji.jpg" alt="emoji.jpg" title=""></p>
-<p>自定义缩写词典之后，实现缩写输入：<br><img src="/2016/05/07/rime-introduction/abbr.jpg" alt="abbr.jpg" title=""></p>
-<p>多种输入方案切换，其中有粤拼的输入方案是个惊喜：<br><img src="/2016/05/07/rime-introduction/switch.jpg" alt="switch.jpg" title=""></p>
-<p>自定义词典后实现快速希腊字母与 latex 符号输入：<br><img src="/2016/05/07/rime-introduction/symbol.jpg" alt="symbol.jpg" title=""></p>
+<p>古诗词输入：<br><img src="/2016/05/07/rime-introduction/gsc.jpg"></p>
+<p>emoji 直接输入，可以联想相关的表情：<br><img src="/2016/05/07/rime-introduction/emoji.jpg"></p>
+<p>自定义缩写词典之后，实现缩写输入：<br><img src="/2016/05/07/rime-introduction/abbr.jpg"></p>
+<p>多种输入方案切换，其中有粤拼的输入方案是个惊喜：<br><img src="/2016/05/07/rime-introduction/switch.jpg"></p>
+<p>自定义词典后实现快速希腊字母与 latex 符号输入：<br><img src="/2016/05/07/rime-introduction/symbol.jpg"></p>
 <h1 id="问题与适用情景"><a href="#问题与适用情景" class="headerlink" title="问题与适用情景"></a>问题与适用情景</h1><p>我使用的是 Macbook，之前一直用的是搜狗输入法。后来想要换成 Rime 是基于两个原因。</p>
 <ul>
 <li>最近在学粤语，想找一款粤拼输入法。只找到 Google 的广东话输入法，可惜只能作为 Chrome 的一个扩展插件在 Chrome 内部使用，没有找到系统输入法。后来发现 Rime 中实现了粤拼输入方案。而且更惊喜的是具有输入普通话拼音，实现粤拼反查的功能。</li>
 <li>平时上课的 notes 上需要做注释的时候，只有纯文本的输入框可用，这个时候想要输入希腊字母就很不方便。同时在纯文本输入框中同样很怀念 latex 方便的输入命令。其实 latex 的许多数学符号，例如 ≤，¬，∧，∫ 等等其实在 Unicode 字符集中都有对应相似的符号存在，这些 Unicode 字符是可以直接在纯文本的地方输入的，如 Word，pdf 注释等等，只不过一直以来缺少可以快速输入它们的办法，所以通常想要输入它们的话，在 Mac<br>里要打开“表情与符号”对话框进行选择，非常不方便。后来发现通过 Rime 的用户词典，可以自己实现这一功能，非常方便。</li>
 </ul>
-<h1 id="Rime-输入法介绍"><a href="#Rime-输入法介绍" class="headerlink" title="Rime 输入法介绍"></a>Rime 输入法介绍</h1><p><a href="http://rime.im/" target="_blank" rel="external">Rime 输入法官网</a><br><img src="/2016/05/07/rime-introduction/rime.jpg" alt="rime.jpg" title=""></p>
-<p>Rime 输入法是一款出现多年的开源的全平台输入框架。在不同平台上有着不同的名称，分别是 Windows 下的“小狼毫”，Mac OSX 下的“鼠须管”，Linux 下的“中州韵”。之所以说它是一个输入框架，是因为它提供的是构建输入法的一套基础设施，以及一个统一的用户界面。而里面具体的输入方案，以及用户词典，则是可以自定义，甚至自己实现的。这更得益于它在 Github 上的开源（<a href="https://github.com/rime" target="_blank" rel="external">Repository</a>）。</p>
+<h1 id="Rime-输入法介绍"><a href="#Rime-输入法介绍" class="headerlink" title="Rime 输入法介绍"></a>Rime 输入法介绍</h1><p><a href="http://rime.im/" target="_blank" rel="noopener">Rime 输入法官网</a><br><img src="/2016/05/07/rime-introduction/rime.jpg"></p>
+<p>Rime 输入法是一款出现多年的开源的全平台输入框架。在不同平台上有着不同的名称，分别是 Windows 下的“小狼毫”，Mac OSX 下的“鼠须管”，Linux 下的“中州韵”。之所以说它是一个输入框架，是因为它提供的是构建输入法的一套基础设施，以及一个统一的用户界面。而里面具体的输入方案，以及用户词典，则是可以自定义，甚至自己实现的。这更得益于它在 Github 上的开源（<a href="https://github.com/rime" target="_blank" rel="noopener">Repository</a>）。</p>
 <p>Rime 输入法的优点在于以下几点。</p>
 <ul>
 <li><p><strong>安全性：</strong>输入法作为很私人的工具，安全性与私密性是至关重要的，谁都不希望自己无意间在输入法中敲出的密码或者是对话信息被上传到大公司的服务器上。作为一款开源输入法，Rime 保证了绝对的安全性。</p>
@@ -149,16 +145,16 @@
 </li>
 </ul>
 <h1 id="Rime-设置与定制"><a href="#Rime-设置与定制" class="headerlink" title="Rime 设置与定制"></a>Rime 设置与定制</h1><p>有很多文章已经提供了 Rime 的设置与定制的参考，在之类不做过多赘述，引用一些资料以供方便检阅。</p>
-<p>关于基本的操作请参考<a href="https://github.com/rime/home/wiki/UserGuide" target="_blank" rel="external">说明书</a>。</p>
-<p>关于定制 Rime 的一些基本知识，包括用户设置的文件组织结构，以及对于每个输入方案的自定义，参考<a href="https://github.com/rime/home/wiki/CustomizationGuide" target="_blank" rel="external">定制指南</a>。</p>
-<p>关于外观自定义，可以参考<a href="http://www.dreamxu.com/install-config-squirrel/" target="_blank" rel="external">这里</a>。</p>
-<p>关于添加明月拼音的扩展词库，可以参考<a href="https://medium.com/@scomper/%E9%BC%A0%E9%A0%88%E7%AE%A1-%E7%9A%84%E8%B0%83%E6%95%99%E7%AC%94%E8%AE%B0-3fdeb0e78814#.lc5kdev98" target="_blank" rel="external">「鼠須管」的调教笔记</a>。</p>
+<p>关于基本的操作请参考<a href="https://github.com/rime/home/wiki/UserGuide" target="_blank" rel="noopener">说明书</a>。</p>
+<p>关于定制 Rime 的一些基本知识，包括用户设置的文件组织结构，以及对于每个输入方案的自定义，参考<a href="https://github.com/rime/home/wiki/CustomizationGuide" target="_blank" rel="noopener">定制指南</a>。</p>
+<p>关于外观自定义，可以参考<a href="http://www.dreamxu.com/install-config-squirrel/" target="_blank" rel="noopener">这里</a>。</p>
+<p>关于添加明月拼音的扩展词库，可以参考<a href="https://medium.com/@scomper/%E9%BC%A0%E9%A0%88%E7%AE%A1-%E7%9A%84%E8%B0%83%E6%95%99%E7%AC%94%E8%AE%B0-3fdeb0e78814#.lc5kdev98" target="_blank" rel="noopener">「鼠須管」的调教笔记</a>。</p>
 <h1 id="希腊字母与-latex-字符的输入"><a href="#希腊字母与-latex-字符的输入" class="headerlink" title="希腊字母与 latex 字符的输入"></a>希腊字母与 latex 字符的输入</h1><p>最后介绍一下我自己基于用户词典实现的希腊字母和 latex 字符的输入。<br>方法也非常简单，就是在 ~/Library/Rime 下新建了两个用户词典文件，我称之为 greeks.yongli1992.dict.yaml 和 maths.yongli1992.dict.yaml，里面的内容部分截图如下：</p>
 <p>greeks.yongli1992.dict.yaml:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Rime dictionary</span></div><div class="line"><span class="comment"># encoding: utf-8</span></div><div class="line">---</div><div class="line">name: greeks.yongli1992</div><div class="line">version: <span class="string">"2016.4.30"</span></div><div class="line">sort: by_weight</div><div class="line">use_preset_vocabulary: <span class="literal">true</span></div><div class="line">...</div><div class="line">α	alpha</div><div class="line">Α	alpha</div><div class="line">β	beta</div><div class="line">Β	beta</div><div class="line">γ	gamma</div><div class="line">Γ	gamma</div></pre></td></tr></table></figure></p>
 <p>maths.yongli1992.dict.yaml:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Rime dictionary</span></div><div class="line"><span class="comment"># encoding: utf-8</span></div><div class="line"><span class="comment"># 参考使用 latex 的命令</span></div><div class="line"><span class="comment"># reference: http://web.ift.uib.no/Teori/KURS/WRK/TeX/symALL.html</span></div><div class="line"><span class="comment"># greek letters are included in a separate dictionary file</span></div><div class="line">---</div><div class="line">name: maths.yongli1992</div><div class="line">version: <span class="string">"2016.4.30"</span></div><div class="line">sort: by_weight</div><div class="line">use_preset_vocabulary: <span class="literal">true</span></div><div class="line">...</div><div class="line"><span class="comment"># binary operation symbols</span></div><div class="line">±	pm</div><div class="line">∓	mp</div><div class="line">×	<span class="built_in">times</span></div><div class="line">÷	div</div><div class="line">∗	ast</div><div class="line">⋆	star</div><div class="line">∘	circ</div><div class="line">∙	bullet</div><div class="line">⋅	cdot</div><div class="line">∩	<span class="built_in">cap</span></div><div class="line">∪	cup</div><div class="line">⊎	uplus</div><div class="line">⊓	sqcap</div><div class="line">⊔	sqcup</div><div class="line">∨	vee</div></pre></td></tr></table></figure></p>
 <p>在第一个希腊字母的词典中，为同一个希腊字母的大小写对应到相同的编码上。然后在 math 词典中，每一个编码都使用的是 latex 命令，然后输出的字符就是 Unicode 字符集中尽量寻找到相似的字符即可。</p>
-<p>完整的这两个文件可以在这里找到：<br><a href="https://github.com/NeilLi1992/RimeSettings/blob/master/greeks.yongli1992.dict.yaml" target="_blank" rel="external">https://github.com/NeilLi1992/RimeSettings/blob/master/greeks.yongli1992.dict.yaml</a><br><a href="https://github.com/NeilLi1992/RimeSettings/blob/master/maths.yongli1992.dict.yaml" target="_blank" rel="external">https://github.com/NeilLi1992/RimeSettings/blob/master/maths.yongli1992.dict.yaml</a></p>
-<p>下载之后只要复制到你自己的用户资料文件夹下（Mac 系统下的 ~/Library/Rime），然后记得在你要使用这个词典的输入方案设置文件中添加。具体操作请参照上面给的<a href="https://medium.com/@scomper/%E9%BC%A0%E9%A0%88%E7%AE%A1-%E7%9A%84%E8%B0%83%E6%95%99%E7%AC%94%E8%AE%B0-3fdeb0e78814#.lc5kdev98" target="_blank" rel="external">「鼠須管」的调教笔记</a>。</p>
+<p>完整的这两个文件可以在这里找到：<br><a href="https://github.com/NeilLi1992/RimeSettings/blob/master/greeks.yongli1992.dict.yaml" target="_blank" rel="noopener">https://github.com/NeilLi1992/RimeSettings/blob/master/greeks.yongli1992.dict.yaml</a><br><a href="https://github.com/NeilLi1992/RimeSettings/blob/master/maths.yongli1992.dict.yaml" target="_blank" rel="noopener">https://github.com/NeilLi1992/RimeSettings/blob/master/maths.yongli1992.dict.yaml</a></p>
+<p>下载之后只要复制到你自己的用户资料文件夹下（Mac 系统下的 ~/Library/Rime），然后记得在你要使用这个词典的输入方案设置文件中添加。具体操作请参照上面给的<a href="https://medium.com/@scomper/%E9%BC%A0%E9%A0%88%E7%AE%A1-%E7%9A%84%E8%B0%83%E6%95%99%E7%AC%94%E8%AE%B0-3fdeb0e78814#.lc5kdev98" target="_blank" rel="noopener">「鼠須管」的调教笔记</a>。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -224,22 +220,22 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目录</strong>
+  <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#实现效果"><span class="toc-number">1.</span> <span class="toc-text">实现效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#问题与适用情景"><span class="toc-number">2.</span> <span class="toc-text">问题与适用情景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rime-输入法介绍"><span class="toc-number">3.</span> <span class="toc-text">Rime 输入法介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rime-设置与定制"><span class="toc-number">4.</span> <span class="toc-text">Rime 设置与定制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#希腊字母与-latex-字符的输入"><span class="toc-number">5.</span> <span class="toc-text">希腊字母与 latex 字符的输入</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#实现效果"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x5B9E;&#x73B0;&#x6548;&#x679C;" class="headerlink" title="&#x5B9E;&#x73B0;&#x6548;&#x679C;"></a>&#x5B9E;&#x73B0;&#x6548;&#x679C;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#问题与适用情景"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x95EE;&#x9898;&#x4E0E;&#x9002;&#x7528;&#x60C5;&#x666F;" class="headerlink" title="&#x95EE;&#x9898;&#x4E0E;&#x9002;&#x7528;&#x60C5;&#x666F;"></a>&#x95EE;&#x9898;&#x4E0E;&#x9002;&#x7528;&#x60C5;&#x666F;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rime-输入法介绍"><span class="toc-number">3.</span> <span class="toc-text"><a href="#Rime-&#x8F93;&#x5165;&#x6CD5;&#x4ECB;&#x7ECD;" class="headerlink" title="Rime &#x8F93;&#x5165;&#x6CD5;&#x4ECB;&#x7ECD;"></a>Rime &#x8F93;&#x5165;&#x6CD5;&#x4ECB;&#x7ECD;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rime-设置与定制"><span class="toc-number">4.</span> <span class="toc-text"><a href="#Rime-&#x8BBE;&#x7F6E;&#x4E0E;&#x5B9A;&#x5236;" class="headerlink" title="Rime &#x8BBE;&#x7F6E;&#x4E0E;&#x5B9A;&#x5236;"></a>Rime &#x8BBE;&#x7F6E;&#x4E0E;&#x5B9A;&#x5236;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#希腊字母与-latex-字符的输入"><span class="toc-number">5.</span> <span class="toc-text"><a href="#&#x5E0C;&#x814A;&#x5B57;&#x6BCD;&#x4E0E;-latex-&#x5B57;&#x7B26;&#x7684;&#x8F93;&#x5165;" class="headerlink" title="&#x5E0C;&#x814A;&#x5B57;&#x6BCD;&#x4E0E; latex &#x5B57;&#x7B26;&#x7684;&#x8F93;&#x5165;"></a>&#x5E0C;&#x814A;&#x5B57;&#x6BCD;&#x4E0E; latex &#x5B57;&#x7B26;&#x7684;&#x8F93;&#x5165;</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分类</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -248,6 +244,10 @@
 		
 		  
 			<li><a href="/categories/algorithm/" title="algorithm">algorithm<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/finance/" title="finance">finance<sup>9</sup></a></li>
 		  
 		
 		  
@@ -280,11 +280,19 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">标签</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
 				<li><a href="/tags/python/" title="python">python<sup>16</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/cfa/" title="cfa">cfa<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/finance/" title="finance">finance<sup>9</sup></a></li>
 			
 		
 			
@@ -308,10 +316,6 @@
 			
 		
 			
-				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
 			
 		
@@ -324,19 +328,15 @@
 			
 		
 			
+				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/ios/" title="ios">ios<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ime/" title="ime">ime<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
 			
 		
 			
@@ -348,11 +348,11 @@
 			
 		
 			
-				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
 			
 		
 			
@@ -368,7 +368,7 @@
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情链接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -397,13 +397,13 @@
 
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
 </div>
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
@@ -661,7 +661,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 

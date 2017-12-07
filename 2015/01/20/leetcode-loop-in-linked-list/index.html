@@ -13,22 +13,18 @@
     
     <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
     
-    <meta name="description" content="判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。
-####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇
-找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下来fast和slow">
+    <meta name="description" content="判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。 ####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇 找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下来fast和slow">
+<meta name="keywords" content="python,leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode：判断单链列表是否存在环">
 <meta property="og:url" content="http://blog.yongli1992.com/2015/01/20/leetcode-loop-in-linked-list/index.html">
-<meta property="og:site_name" content="YongLi's Blog">
-<meta property="og:description" content="判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。
-####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇
-找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下来fast和slow">
+<meta property="og:site_name" content="YongLi&#39;s Blog">
+<meta property="og:description" content="判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。 ####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇 找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下来fast和slow">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:updated_time" content="2015-08-08T02:19:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode：判断单链列表是否存在环">
-<meta name="twitter:description" content="判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。
-####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇
-找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下来fast和slow">
+<meta name="twitter:description" content="判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。 ####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇 找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下来fast和slow">
 <link rel="publisher" href="111758198691283601884">
 
     
@@ -57,7 +53,7 @@
 				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
 				<h2 class="blog-motto">制心一處，守一不移。</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -71,7 +67,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:blog.yongli1992.com">
 					</form>
 					
@@ -94,16 +90,16 @@
 		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-01-20T16:12:03.000Z" itemprop="datePublished"> 发表于 2015-01-20</time>
+    <time datetime="2015-01-20T16:12:03.000Z" itemprop="datePublished"> Published 2015-01-20</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目录</strong>
+			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#找到环的入口"><span class="toc-number">1.</span> <span class="toc-text">找到环的入口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#证明"><span class="toc-number">2.</span> <span class="toc-text">证明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python实现"><span class="toc-number">3.</span> <span class="toc-text">Python实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用"><span class="toc-number">4.</span> <span class="toc-text">应用</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#找到环的入口"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x627E;&#x5230;&#x73AF;&#x7684;&#x5165;&#x53E3;" class="headerlink" title="&#x627E;&#x5230;&#x73AF;&#x7684;&#x5165;&#x53E3;"></a>&#x627E;&#x5230;&#x73AF;&#x7684;&#x5165;&#x53E3;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#证明"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x8BC1;&#x660E;" class="headerlink" title="&#x8BC1;&#x660E;"></a>&#x8BC1;&#x660E;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python实现"><span class="toc-number">3.</span> <span class="toc-text"><a href="#Python&#x5B9E;&#x73B0;" class="headerlink" title="Python&#x5B9E;&#x73B0;"></a>Python&#x5B9E;&#x73B0;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用"><span class="toc-number">4.</span> <span class="toc-text"><a href="#&#x5E94;&#x7528;" class="headerlink" title="&#x5E94;&#x7528;"></a>&#x5E94;&#x7528;</span></a></li></ol>
 		
 		</div>
 		
@@ -179,22 +175,22 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目录</strong>
+  <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#找到环的入口"><span class="toc-number">1.</span> <span class="toc-text">找到环的入口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#证明"><span class="toc-number">2.</span> <span class="toc-text">证明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python实现"><span class="toc-number">3.</span> <span class="toc-text">Python实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用"><span class="toc-number">4.</span> <span class="toc-text">应用</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#找到环的入口"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x627E;&#x5230;&#x73AF;&#x7684;&#x5165;&#x53E3;" class="headerlink" title="&#x627E;&#x5230;&#x73AF;&#x7684;&#x5165;&#x53E3;"></a>&#x627E;&#x5230;&#x73AF;&#x7684;&#x5165;&#x53E3;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#证明"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x8BC1;&#x660E;" class="headerlink" title="&#x8BC1;&#x660E;"></a>&#x8BC1;&#x660E;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python实现"><span class="toc-number">3.</span> <span class="toc-text"><a href="#Python&#x5B9E;&#x73B0;" class="headerlink" title="Python&#x5B9E;&#x73B0;"></a>Python&#x5B9E;&#x73B0;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用"><span class="toc-number">4.</span> <span class="toc-text"><a href="#&#x5E94;&#x7528;" class="headerlink" title="&#x5E94;&#x7528;"></a>&#x5E94;&#x7528;</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分类</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -203,6 +199,10 @@
 		
 		  
 			<li><a href="/categories/algorithm/" title="algorithm">algorithm<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/finance/" title="finance">finance<sup>9</sup></a></li>
 		  
 		
 		  
@@ -235,11 +235,19 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">标签</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
 				<li><a href="/tags/python/" title="python">python<sup>16</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/cfa/" title="cfa">cfa<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/finance/" title="finance">finance<sup>9</sup></a></li>
 			
 		
 			
@@ -263,10 +271,6 @@
 			
 		
 			
-				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
 			
 		
@@ -279,19 +283,15 @@
 			
 		
 			
+				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/ios/" title="ios">ios<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ime/" title="ime">ime<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
 			
 		
 			
@@ -303,11 +303,11 @@
 			
 		
 			
-				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
 			
 		
 			
@@ -323,7 +323,7 @@
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情链接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -352,13 +352,13 @@
 
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
 </div>
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
@@ -616,7 +616,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 

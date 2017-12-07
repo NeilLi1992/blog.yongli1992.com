@@ -14,13 +14,15 @@
     <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
     
     <meta name="description" content="This is the place where I write and reflect.">
+<meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
 <meta property="og:type" content="website">
-<meta property="og:title" content="YongLi's Blog">
+<meta property="og:title" content="YongLi&#39;s Blog">
 <meta property="og:url" content="http://blog.yongli1992.com/page/4/index.html">
-<meta property="og:site_name" content="YongLi's Blog">
+<meta property="og:site_name" content="YongLi&#39;s Blog">
 <meta property="og:description" content="This is the place where I write and reflect.">
+<meta property="og:locale" content="zh_CN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YongLi's Blog">
+<meta name="twitter:title" content="YongLi&#39;s Blog">
 <meta name="twitter:description" content="This is the place where I write and reflect.">
 <link rel="publisher" href="111758198691283601884">
 
@@ -50,7 +52,7 @@
 				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
 				<h2 class="blog-motto">制心一處，守一不移。</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -64,7 +66,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:blog.yongli1992.com">
 					</form>
 					
@@ -75,6 +77,201 @@
     </header>
     <div id="container">
       <div id="main">
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/01/23/python-wsgi-5/" title="Python WSGI教程(五)——解析Get请求" itemprop="url">
+  
+    <h1 itemprop="name">Python WSGI教程(五)——解析Get请求</h1>
+    
+     
+       <p itemprop="description" >解析Get请求：Parsing the Request - Get再次运行environment.py，这一次在浏览器中输入下面的地址：
+http://localhost:8051/?age=10&amp;amp;hobbies=software&amp;amp;hobbies=tunning
+</p>
+      
+    
+    <time datetime="2015-01-23T23:32:58.000Z" itemprop="datePublished">2015-01-23</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/01/23/python-wsgi-4/" title="Python WSGI教程(四)——可迭代响应对象" itemprop="url">
+  
+    <h1 itemprop="name">Python WSGI教程(四)——可迭代响应对象</h1>
+    
+     
+       <p itemprop="description" >可迭代响应对象：Response Iterable在之前正常工作的脚本中如果把最后一句的返回语句从原来的形式：1return [response_body]
+改为不放在列表中的形式：1return response_body
+如果我们再次运行，就会发现运行的速度变慢了。原因是服务</p>
+      
+    
+    <time datetime="2015-01-23T19:14:11.000Z" itemprop="datePublished">2015-01-23</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/01/23/python-wsgi-3/" title="Python WSGI教程(三)——环境字典" itemprop="url">
+  
+    <h1 itemprop="name">Python WSGI教程(三)——环境字典</h1>
+    
+     
+       <p itemprop="description" >环境字典：Environment dictionary环境字典会包含一些CGI环境变量，由服务器在接收到每一次来自客户端的请求时产生。下面的脚本代码会输出整个字典的内容。</p>
+      
+    
+    <time datetime="2015-01-23T16:58:52.000Z" itemprop="datePublished">2015-01-23</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/01/23/python-wsgi-2/" title="Python WSGI教程(二)——应用程序接口" itemprop="url">
+  
+    <h1 itemprop="name">Python WSGI教程(二)——应用程序接口</h1>
+    
+     
+       <p itemprop="description" >应用程序接口：Application InterfaceWSGI应用接口实现为一个可调用对象：函数，方法，类或者任何一个实现了__call__方法的对象。该可调用对象应满足下述条件：
+
+必须接收两个位置参数：
+一个包含了CGI环境变量的字典
+一个可调用函数对象，让应用程序调用来向</p>
+      
+    
+    <time datetime="2015-01-23T16:57:42.000Z" itemprop="datePublished">2015-01-23</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/01/23/python-wsgi-1/" title="Python WSGI教程(一)——介绍" itemprop="url">
+  
+    <h1 itemprop="name">Python WSGI教程(一)——介绍</h1>
+    
+     
+       <p itemprop="description" >前言在学习python wsgi规范的时候读到了一篇介绍的很好的入门教程。内容不长，尝试将其翻译，希望对需要的人有一些帮助。原文地址：Web Python翻译：YongLi1992
+
+WSGI教程WSGI[^1]不是服务器，不是python模块，不是框架或API或任何一种软件。W</p>
+      
+    
+    <time datetime="2015-01-23T16:54:37.000Z" itemprop="datePublished">2015-01-23</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/01/23/yield-file-io/" title="记一个使用yield读写文件的方法" itemprop="url">
+  
+    <h1 itemprop="name">记一个使用yield读写文件的方法</h1>
+    
+     
+           <p itemprop="description" >在学习yield的使用方法的时候遇到了一个非常实用的应用，记录如下。
+在我们直接使用read()方法来读取一个文件的全部内容的时候，会导致不可预测的内存占用，即当文件很大时有可能直接内存不够用了。好的方法是利用一个指定长度的缓冲区配合yield来逐次返回文件内容，代码示例如下：1</p>
+        
+    
+    <time datetime="2015-01-23T03:30:08.000Z" itemprop="datePublished">2015-01-23</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/01/20/15-fall-application/" title="15FALL英国硕士申请总结：剑桥，牛津，帝国理工及其他" itemprop="url">
+  
+    <h1 itemprop="name">15FALL英国硕士申请总结：剑桥，牛津，帝国理工及其他</h1>
+    
+     
+       <p itemprop="description" >15FALL的申请基本接近尾声，一共申请了英国6所学校7个专业，基本都有结果了。写下这篇申研总结一来是记录一下这段特殊的历程，二来是为还在申请的同学以及为将来要申请的同学提供些许帮助与参考。
+我是西交利物浦大学2+2到英国利物浦大学的，申研背景相当于英本，申请的是计算机方向。对也</p>
+      
+    
+    <time datetime="2015-01-20T22:41:46.000Z" itemprop="datePublished">2015-01-20</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/01/20/leetcode-loop-in-linked-list/" title="LeetCode：判断单链列表是否存在环" itemprop="url">
+  
+    <h1 itemprop="name">LeetCode：判断单链列表是否存在环</h1>
+    
+     
+           <p itemprop="description" >判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。
+####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇
+找到</p>
+        
+    
+    <time datetime="2015-01-20T16:12:03.000Z" itemprop="datePublished">2015-01-20</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2015/01/20/python-argparse-module/" title="Python 命令行解析模块argparse使用学习" itemprop="url">
+  
+    <h1 itemprop="name">Python 命令行解析模块argparse使用学习</h1>
+    
+     
+       <p itemprop="description" >argparse在Python2.7中引入，是用于替代原来的optparse模块的。
+基本知识导入模块后，获得一个parser对象。通过调用其add_argument()方法来设置程序可接受的命令行参数。调用其parse_args方法来获取一个收集了所有参数的args对象。此时从</p>
+      
+    
+    <time datetime="2015-01-20T16:08:42.000Z" itemprop="datePublished">2015-01-20</time>
+  </a>
+</section>
+
+
+
+
+
 
   
 <section class="post" itemscope itemprop="blogitem">
@@ -103,15 +300,15 @@
   </nav>
 
 </div>
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分类</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -120,6 +317,10 @@
 		
 		  
 			<li><a href="/categories/algorithm/" title="algorithm">algorithm<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/finance/" title="finance">finance<sup>9</sup></a></li>
 		  
 		
 		  
@@ -152,11 +353,19 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">标签</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
 				<li><a href="/tags/python/" title="python">python<sup>16</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/cfa/" title="cfa">cfa<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/finance/" title="finance">finance<sup>9</sup></a></li>
 			
 		
 			
@@ -180,10 +389,6 @@
 			
 		
 			
-				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
 			
 		
@@ -196,19 +401,15 @@
 			
 		
 			
+				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/ios/" title="ios">ios<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ime/" title="ime">ime<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
 			
 		
 			
@@ -220,11 +421,11 @@
 			
 		
 			
-				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
 			
 		
 			
@@ -240,7 +441,7 @@
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情链接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -269,13 +470,13 @@
 
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
 </div>
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
@@ -456,7 +657,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 

@@ -1,0 +1,841 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh_CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>CFA Notes - Derivatives | YongLi&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="yongli1992">
+    
+
+    
+    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
+    
+    <meta name="description" content="占比 5%，12 题，一个 study session。 Categorizations必考必背：  根据合约特点分类 forward commitment futures forward swap contracts   contingent claim option CDS     根据交易场所 exchange-traded futures options   OTC traded forw">
+<meta name="keywords" content="cfa,finance">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CFA Notes - Derivatives">
+<meta property="og:url" content="http://blog.yongli1992.com/2017/12/07/CFA-notes-derivaties/index.html">
+<meta property="og:site_name" content="YongLi&#39;s Blog">
+<meta property="og:description" content="占比 5%，12 题，一个 study session。 Categorizations必考必背：  根据合约特点分类 forward commitment futures forward swap contracts   contingent claim option CDS     根据交易场所 exchange-traded futures options   OTC traded forw">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.imgur.com/l3owMX8.png">
+<meta property="og:image" content="https://i.imgur.com/T1iZenT.png">
+<meta property="og:image" content="https://i.imgur.com/LZez9rY.png">
+<meta property="og:image" content="https://i.imgur.com/yoYZjbF.png">
+<meta property="og:updated_time" content="2017-12-07T21:09:01.523Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CFA Notes - Derivatives">
+<meta name="twitter:description" content="占比 5%，12 题，一个 study session。 Categorizations必考必背：  根据合约特点分类 forward commitment futures forward swap contracts   contingent claim option CDS     根据交易场所 exchange-traded futures options   OTC traded forw">
+<meta name="twitter:image" content="https://i.imgur.com/l3owMX8.png">
+<link rel="publisher" href="111758198691283601884">
+
+    
+    <link rel="alternative" href="/atom.xml" title="YongLi&#39;s Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/logo.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="YongLi&#39;s Blog" title="YongLi&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
+				<h2 class="blog-motto">制心一處，守一不移。</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">存档</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:blog.yongli1992.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/12/07/CFA-notes-derivaties/" title="CFA Notes - Derivatives" itemprop="url">CFA Notes - Derivatives</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
+		
+  <p class="article-time">
+    <time datetime="2017-12-07T21:08:18.000Z" itemprop="datePublished"> Published 2017-12-07</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Categorizations"><span class="toc-number">1.</span> <span class="toc-text"><a href="#Categorizations" class="headerlink" title="Categorizations"></a>Categorizations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Risk-free-arbitrage-and-no-arbitrage-rule-无套利定价法则"><span class="toc-number">2.</span> <span class="toc-text"><a href="#Risk-free-arbitrage-and-no-arbitrage-rule-&#x65E0;&#x5957;&#x5229;&#x5B9A;&#x4EF7;&#x6CD5;&#x5219;" class="headerlink" title="Risk-free arbitrage and no-arbitrage rule &#x65E0;&#x5957;&#x5229;&#x5B9A;&#x4EF7;&#x6CD5;&#x5219;"></a>Risk-free arbitrage and no-arbitrage rule &#x65E0;&#x5957;&#x5229;&#x5B9A;&#x4EF7;&#x6CD5;&#x5219;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Forward"><span class="toc-number">3.</span> <span class="toc-text"><a href="#Forward" class="headerlink" title="Forward"></a>Forward</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Forward-rate-agreement-FRA-远期利率协议"><span class="toc-number">4.</span> <span class="toc-text"><a href="#Forward-rate-agreement-FRA-&#x8FDC;&#x671F;&#x5229;&#x7387;&#x534F;&#x8BAE;" class="headerlink" title="Forward rate agreement (FRA) &#x8FDC;&#x671F;&#x5229;&#x7387;&#x534F;&#x8BAE;"></a>Forward rate agreement (FRA) &#x8FDC;&#x671F;&#x5229;&#x7387;&#x534F;&#x8BAE;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Futures"><span class="toc-number">5.</span> <span class="toc-text"><a href="#Futures" class="headerlink" title="Futures"></a>Futures</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Swap"><span class="toc-number">6.</span> <span class="toc-text"><a href="#Swap" class="headerlink" title="Swap"></a>Swap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Options"><span class="toc-number">7.</span> <span class="toc-text"><a href="#Options" class="headerlink" title="Options"></a>Options</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Moneyness-价值状态"><span class="toc-number">7.1.</span> <span class="toc-text"><a href="#Moneyness-&#x4EF7;&#x503C;&#x72B6;&#x6001;" class="headerlink" title="Moneyness &#x4EF7;&#x503C;&#x72B6;&#x6001;"></a>Moneyness &#x4EF7;&#x503C;&#x72B6;&#x6001;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Intrinsic-value-amp-Time-value"><span class="toc-number">7.2.</span> <span class="toc-text"><a href="#Intrinsic-value-amp-Time-value" class="headerlink" title="Intrinsic value &amp; Time value"></a>Intrinsic value &amp; Time value</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Put-call-parity-买卖权平价公式"><span class="toc-number">8.</span> <span class="toc-text"><a href="#Put-call-parity-&#x4E70;&#x5356;&#x6743;&#x5E73;&#x4EF7;&#x516C;&#x5F0F;" class="headerlink" title="Put call parity &#x4E70;&#x5356;&#x6743;&#x5E73;&#x4EF7;&#x516C;&#x5F0F;"></a>Put call parity &#x4E70;&#x5356;&#x6743;&#x5E73;&#x4EF7;&#x516C;&#x5F0F;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Forward-Pricing-and-valuation"><span class="toc-number">9.</span> <span class="toc-text"><a href="#Forward-Pricing-and-valuation" class="headerlink" title="Forward Pricing and valuation"></a>Forward Pricing and valuation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Pricing"><span class="toc-number">9.1.</span> <span class="toc-text"><a href="#Pricing" class="headerlink" title="Pricing"></a>Pricing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Valuation"><span class="toc-number">9.2.</span> <span class="toc-text"><a href="#Valuation" class="headerlink" title="Valuation"></a>Valuation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Futures-pricing-and-valuation"><span class="toc-number">10.</span> <span class="toc-text"><a href="#Futures-pricing-and-valuation" class="headerlink" title="Futures pricing and valuation"></a>Futures pricing and valuation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Swap-pricing-and-valuation"><span class="toc-number">11.</span> <span class="toc-text"><a href="#Swap-pricing-and-valuation" class="headerlink" title="Swap pricing and valuation"></a>Swap pricing and valuation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Option-pricing-and-valuation"><span class="toc-number">12.</span> <span class="toc-text"><a href="#Option-pricing-and-valuation" class="headerlink" title="Option pricing and valuation"></a>Option pricing and valuation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Option-Strategies"><span class="toc-number">13.</span> <span class="toc-text"><a href="#Option-Strategies" class="headerlink" title="Option Strategies"></a>Option Strategies</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Covered-call"><span class="toc-number">13.1.</span> <span class="toc-text"><a href="#Covered-call" class="headerlink" title="Covered call"></a>Covered call</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Protective-put"><span class="toc-number">13.2.</span> <span class="toc-text"><a href="#Protective-put" class="headerlink" title="Protective put"></a>Protective put</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<p>占比 5%，12 题，一个 study session。</p>
+<h2 id="Categorizations"><a href="#Categorizations" class="headerlink" title="Categorizations"></a>Categorizations</h2><p>必考必背：</p>
+<ol>
+<li>根据合约特点分类<ol>
+<li>forward commitment<ol>
+<li>futures</li>
+<li>forward</li>
+<li>swap contracts</li>
+</ol>
+</li>
+<li>contingent claim<ol>
+<li>option</li>
+<li>CDS</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>根据交易场所<ol>
+<li>exchange-traded<ol>
+<li>futures</li>
+<li>options</li>
+</ol>
+</li>
+<li>OTC traded<ol>
+<li>forward</li>
+<li>swap</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<p>**Advantages of derivatives</p>
+<ol>
+<li>price discovery</li>
+<li>risk management: hedge and speculation</li>
+<li>lowering transaction costs</li>
+<li>low capital requirement</li>
+<li>greater liquidity</li>
+<li>ease of going short</li>
+<li>enhance market efficiency</li>
+</ol>
+<p>**Disadvantages of derivatives</p>
+<ol>
+<li>too risky -&gt; high leverage</li>
+<li>complex instruments</li>
+</ol>
+<h2 id="Risk-free-arbitrage-and-no-arbitrage-rule-无套利定价法则"><a href="#Risk-free-arbitrage-and-no-arbitrage-rule-无套利定价法则" class="headerlink" title="Risk-free arbitrage and no-arbitrage rule 无套利定价法则"></a>Risk-free arbitrage and no-arbitrage rule 无套利定价法则</h2><p><strong>Law of one price 一价原理</strong>： 让市场上产品的价格不存在被套利空间，two securities with identical cash flow should have the same price.</p>
+<p>$FP=S_0\times{}(1+r_f)^T$</p>
+<p>Restrict selling or arbitrating will both restrict the price discovery function of the market.</p>
+<h2 id="Forward"><a href="#Forward" class="headerlink" title="Forward"></a>Forward</h2><p>Long: buy underlying<br>Short: sell underlying</p>
+<p>注意：No payments will be made at the inception of a forward contract, so both parties of a forward contract is exposed to potential default risk.</p>
+<p>Forward is a zero-sum game, long + short = 0.</p>
+<p>Settling a forward contract at expiration:</p>
+<pre><code>1. physical settlemnt 实物交割，一手交钱一手交货。
+2. cash settlement 现金交割（补差价），无实物易手。
+</code></pre><p>Settling prior to expiration:<br>    Entering into an opposite forward contract:</p>
+<pre><code>1. offsetting with a different party 有风险
+2. offsetting with the original party 无风险
+</code></pre><h2 id="Forward-rate-agreement-FRA-远期利率协议"><a href="#Forward-rate-agreement-FRA-远期利率协议" class="headerlink" title="Forward rate agreement (FRA) 远期利率协议"></a>Forward rate agreement (FRA) 远期利率协议</h2><p>A forward contract for the long to get a loan from the short at a specific future date at a rate fixed in the contract.</p>
+<p>Long FRA: borrower，长期 LIBOR 看涨<br>Short FRA: lender, 长期 LIBOR 看跌</p>
+<p>报价形式：<br>1x4FRA 基于一个月后的 3-month LIBOR。<br>2x5FRA 基于两个月后的 3-motnh LIBOR.</p>
+<p>2 表示：contract expiration date from today.<br>5 表示：loan end date from today.</p>
+<p>实际交割的时候按现金交割，没有贷款真的发生。如果 LIBOR 上涨，long 方赚钱，如果 LIBOR 下跌，short 方赚钱。</p>
+<h2 id="Futures"><a href="#Futures" class="headerlink" title="Futures"></a>Futures</h2><p>本质上也是一个 forward，只不过是在 exchange 交易的标准化的 forward。</p>
+<p>Futures are priced to have zero value at the time an investor enters into the contract.</p>
+<p>在开始合同的时候，是要交 margin 的，由 clearinghouse 担保，没有违约风险。</p>
+<p><strong>futures contract 风险控制三法</strong></p>
+<ol>
+<li>Margin<ol>
+<li>initial margin 初始保证金</li>
+<li>maintenance margin 维持保证金，跌破的话就会收到 margin call</li>
+<li>variation margin 变动保证金，used to bring the margin balance back up to the initial margin level（权益投资的杠杆交易中只要回到 maintenance margin 即可）。</li>
+</ol>
+</li>
+<li>Daily price limit 涨跌停机制</li>
+<li>Marking to market 逐日盯市制度，每日交割（forward 只在到期日交割）</li>
+</ol>
+<h2 id="Swap"><a href="#Swap" class="headerlink" title="Swap"></a>Swap</h2><p>Swap 本质上是一系列的 forward contract，所以它和 forward contract 的属性是很像的。Obligate two parties to change a series of cash flows on periodic settlement dates over a certain time period.</p>
+<p>CFA 一级唯一的考点：<strong>Interest Rate Swaps 利率互换</strong><br>Trading fixed interest rate payments for floating-rate payment.</p>
+<p>Pay-fixed side: The counterparty that wants variable-rate interest, adn agree to apy fixed-rate interest.<br>Pay-floating side: The counterparty that receives the fixed payment and agrees to pay variable-rate interest.</p>
+<h2 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h2><p>买卖 option 权利本身用 long and short。<br>对 underlying asset 的看涨看跌用 call and put。</p>
+<p>Short position in an option is referred to as the writer of the option.</p>
+<p>Option premium: paid by the long position.</p>
+<h3 id="Moneyness-价值状态"><a href="#Moneyness-价值状态" class="headerlink" title="Moneyness 价值状态"></a>Moneyness 价值状态</h3><ol>
+<li>In the money: long 方立即行权可以赚钱。</li>
+<li>At the money: long 方立即行权不能赚钱，almost generate payoff.</li>
+<li>Out of the money: long 方立即行权还不能赚钱。</li>
+</ol>
+<h3 id="Intrinsic-value-amp-Time-value"><a href="#Intrinsic-value-amp-Time-value" class="headerlink" title="Intrinsic value &amp; Time value"></a>Intrinsic value &amp; Time value</h3><p>The amount that’s in the money, otherwise zero.<br>也就是立即行权能够赚到的钱，不能赚钱就是 0.</p>
+<p>牢记四张头寸图：<br> <img src="https://i.imgur.com/l3owMX8.png" alt=""></p>
+<ol>
+<li>long call: 收益无限，损失有限</li>
+<li>long put：收益有限，损失有限</li>
+<li>short call：收益有限，损失无限</li>
+<li>short put：收益有限，损失有限</li>
+</ol>
+<p>对于 long call, intrinsic value = max(0, S-X)<br>对于 lnog put, intrinsic value = max(0, X-S)</p>
+<p>如果题目问的是 gain/loss，除了考虑 intrinsic value，还要考虑 option premium 期权费。<br>如果问的是 payoff 的话不用考虑期权费。<br>如果问的是 profit 的话，要扣减期权费。</p>
+<p><strong>Time Value</strong><br>必背：<br>Option value = intrinsic value + time value</p>
+<p>Volatility 越大, time value 越大，期权越值钱。<br>时间越长，time value 越大，期权越值钱。</p>
+<p>If the option is deeply out of money or deeply in the money, time value is negligible.<br>Time value is maximized when option is at the money.</p>
+<p>到期日值钱，option value &gt; intrinsic value.<br>到期日，option value = intrinsic value.</p>
+<p><strong>Option 分类</strong></p>
+<ol>
+<li><p>American Option 美式期权：<br> 期间任意时间可以行权，更加 flexible，赚钱机会更大，美式期权价值 &gt; 欧式期权价值</p>
+</li>
+<li><p>European Option 欧式期权：<br> 只能在到期期限的时刻行权</p>
+</li>
+</ol>
+<p><strong>Minimum and maximum option values</strong><br>必背表格：<br> <img src="https://i.imgur.com/T1iZenT.png" alt=""></p>
+<h2 id="Put-call-parity-买卖权平价公式"><a href="#Put-call-parity-买卖权平价公式" class="headerlink" title="Put call parity 买卖权平价公式"></a>Put call parity 买卖权平价公式</h2><p>$p+S=c+\frac{X}{(1+R_f)^T}$</p>
+<p>左边叫 protective put.<br>右边叫 fiduciary call.</p>
+<p>可以用来为 option 定价，或者合成 option。<br>在无风险套利中，如果两侧出现价差，long 小边，short 大边。</p>
+<h2 id="Forward-Pricing-and-valuation"><a href="#Forward-Pricing-and-valuation" class="headerlink" title="Forward Pricing and valuation"></a>Forward Pricing and valuation</h2><h3 id="Pricing"><a href="#Pricing" class="headerlink" title="Pricing"></a>Pricing</h3><p>Pricing is the process of determining the no-arbitrage price that will make the value of the contract be zero to both sides at the initiation of the contract.</p>
+<p>$\text{FP}=S_0+PV(\text{opportunity cost}+\text{carrying cost}-\text{carrying benefit})$.</p>
+<p>where: $S_0$ is current stock price.</p>
+<p>简化公式：<br>$FP=S_0\times{}(1+r_f)^T$<br>因为有的产品没有 carrying cost，有的没有 carrying benefit，但是 opportunity cost 是一定有的。</p>
+<h3 id="Valuation"><a href="#Valuation" class="headerlink" title="Valuation"></a>Valuation</h3><p>Valuation means determining the value of the contract at some time during the life of the contract.</p>
+<p>$V=S_t-\frac{FP}{(1+r_f)^{T-t}}$</p>
+<p><strong>T-bill forwards 零息债券的远期合同</strong><br>$FP=S_0\times{}(1+R_f)^T$</p>
+<p><strong>Forwards on a dividend-paying stock 付息债券的远期</strong></p>
+<ol>
+<li><p>Pricing:<br> $FP=(S-0-PVD_0)\times{}(1+r_f)^T$</p>
+</li>
+<li><p>Valuation:<br> $V_{long}=S_t-PVD_t-\frac{FP}{(1+r_f)^{T-t}}$</p>
+</li>
+</ol>
+<p><strong>Carrying costs</strong><br>    持有成本，金融产品一般没有 carrying cost，commodity 可能有。</p>
+<p><strong>Carrying benefits</strong></p>
+<ol>
+<li>dividends, coupons, interest 货币形式的收益</li>
+<li>convenience yield 持有便利</li>
+</ol>
+<h2 id="Futures-pricing-and-valuation"><a href="#Futures-pricing-and-valuation" class="headerlink" title="Futures pricing and valuation"></a>Futures pricing and valuation</h2><p>Futures 不需要 valuation，因为有逐日盯市制度。</p>
+<p>必背结论：</p>
+<ol>
+<li>如果 market rate 和 underlying asset 是 positive correlaiton, prefer to go long in a future contract.</li>
+<li>如果 market rate 和 underlying asset 是 negative correlation, prefer to go long in a forward contract.</li>
+<li>如果是 zero correlation，no preference。</li>
+</ol>
+<h2 id="Swap-pricing-and-valuation"><a href="#Swap-pricing-and-valuation" class="headerlink" title="Swap pricing and valuation"></a>Swap pricing and valuation</h2><p>考试掌握：</p>
+<p>$V<em>{\text{swap}}=PV</em>{\text{receipt}}-PV_{\text{paid}}$</p>
+<p>interest rate swap 等价于发行了一个 floating bond，购买了一个 fixed bond（pay-floating side）.</p>
+<h2 id="Option-pricing-and-valuation"><a href="#Option-pricing-and-valuation" class="headerlink" title="Option pricing and valuation"></a>Option pricing and valuation</h2><p>考试会给定一个 factor，问对 value 的影响是正相关还是负相关。</p>
+<h2 id="Option-Strategies"><a href="#Option-Strategies" class="headerlink" title="Option Strategies"></a>Option Strategies</h2><h3 id="Covered-call"><a href="#Covered-call" class="headerlink" title="Covered call"></a>Covered call</h3><p>Covered call is: -C+S, long a stock, short a call.<br><img src="https://i.imgur.com/LZez9rY.png" alt=""><br>Maximum loss: $-S_0+C_0$<br>Maximum gain: $C_0+S_t-S_0-(S_t-X)=C_0+X-S_0$<br>Break-even point: $S_0-C_0$</p>
+<h3 id="Protective-put"><a href="#Protective-put" class="headerlink" title="Protective put"></a>Protective put</h3><p>Protective put is: P+S, long a stock, long a put.<br><img src="https://i.imgur.com/yoYZjbF.png" alt=""></p>
+<p>Maximum loss: $X-(P_0+S_0)$<br>Maximum gain: $\infty$<br>Breka-even point: $S_0+P_0$</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/finance/">finance</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/cfa/">cfa</a><a href="/tags/finance/">finance</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://blog.yongli1992.com/2017/12/07/CFA-notes-derivaties/" data-title="CFA Notes - Derivatives | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2017/12/07/CFA-notes-alternative-investments/" title="CFA Notes - Alternative Investments">
+  <strong>上一篇：</strong><br/>
+  <span>
+  CFA Notes - Alternative Investments</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2017/12/07/CFA-notes-fixed-income/"  title="CFA Notes - Fixed Income">
+ <strong>下一篇：</strong><br/> 
+ <span>CFA Notes - Fixed Income
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Categorizations"><span class="toc-number">1.</span> <span class="toc-text"><a href="#Categorizations" class="headerlink" title="Categorizations"></a>Categorizations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Risk-free-arbitrage-and-no-arbitrage-rule-无套利定价法则"><span class="toc-number">2.</span> <span class="toc-text"><a href="#Risk-free-arbitrage-and-no-arbitrage-rule-&#x65E0;&#x5957;&#x5229;&#x5B9A;&#x4EF7;&#x6CD5;&#x5219;" class="headerlink" title="Risk-free arbitrage and no-arbitrage rule &#x65E0;&#x5957;&#x5229;&#x5B9A;&#x4EF7;&#x6CD5;&#x5219;"></a>Risk-free arbitrage and no-arbitrage rule &#x65E0;&#x5957;&#x5229;&#x5B9A;&#x4EF7;&#x6CD5;&#x5219;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Forward"><span class="toc-number">3.</span> <span class="toc-text"><a href="#Forward" class="headerlink" title="Forward"></a>Forward</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Forward-rate-agreement-FRA-远期利率协议"><span class="toc-number">4.</span> <span class="toc-text"><a href="#Forward-rate-agreement-FRA-&#x8FDC;&#x671F;&#x5229;&#x7387;&#x534F;&#x8BAE;" class="headerlink" title="Forward rate agreement (FRA) &#x8FDC;&#x671F;&#x5229;&#x7387;&#x534F;&#x8BAE;"></a>Forward rate agreement (FRA) &#x8FDC;&#x671F;&#x5229;&#x7387;&#x534F;&#x8BAE;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Futures"><span class="toc-number">5.</span> <span class="toc-text"><a href="#Futures" class="headerlink" title="Futures"></a>Futures</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Swap"><span class="toc-number">6.</span> <span class="toc-text"><a href="#Swap" class="headerlink" title="Swap"></a>Swap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Options"><span class="toc-number">7.</span> <span class="toc-text"><a href="#Options" class="headerlink" title="Options"></a>Options</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Moneyness-价值状态"><span class="toc-number">7.1.</span> <span class="toc-text"><a href="#Moneyness-&#x4EF7;&#x503C;&#x72B6;&#x6001;" class="headerlink" title="Moneyness &#x4EF7;&#x503C;&#x72B6;&#x6001;"></a>Moneyness &#x4EF7;&#x503C;&#x72B6;&#x6001;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Intrinsic-value-amp-Time-value"><span class="toc-number">7.2.</span> <span class="toc-text"><a href="#Intrinsic-value-amp-Time-value" class="headerlink" title="Intrinsic value &amp; Time value"></a>Intrinsic value &amp; Time value</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Put-call-parity-买卖权平价公式"><span class="toc-number">8.</span> <span class="toc-text"><a href="#Put-call-parity-&#x4E70;&#x5356;&#x6743;&#x5E73;&#x4EF7;&#x516C;&#x5F0F;" class="headerlink" title="Put call parity &#x4E70;&#x5356;&#x6743;&#x5E73;&#x4EF7;&#x516C;&#x5F0F;"></a>Put call parity &#x4E70;&#x5356;&#x6743;&#x5E73;&#x4EF7;&#x516C;&#x5F0F;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Forward-Pricing-and-valuation"><span class="toc-number">9.</span> <span class="toc-text"><a href="#Forward-Pricing-and-valuation" class="headerlink" title="Forward Pricing and valuation"></a>Forward Pricing and valuation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Pricing"><span class="toc-number">9.1.</span> <span class="toc-text"><a href="#Pricing" class="headerlink" title="Pricing"></a>Pricing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Valuation"><span class="toc-number">9.2.</span> <span class="toc-text"><a href="#Valuation" class="headerlink" title="Valuation"></a>Valuation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Futures-pricing-and-valuation"><span class="toc-number">10.</span> <span class="toc-text"><a href="#Futures-pricing-and-valuation" class="headerlink" title="Futures pricing and valuation"></a>Futures pricing and valuation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Swap-pricing-and-valuation"><span class="toc-number">11.</span> <span class="toc-text"><a href="#Swap-pricing-and-valuation" class="headerlink" title="Swap pricing and valuation"></a>Swap pricing and valuation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Option-pricing-and-valuation"><span class="toc-number">12.</span> <span class="toc-text"><a href="#Option-pricing-and-valuation" class="headerlink" title="Option pricing and valuation"></a>Option pricing and valuation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Option-Strategies"><span class="toc-number">13.</span> <span class="toc-text"><a href="#Option-Strategies" class="headerlink" title="Option Strategies"></a>Option Strategies</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Covered-call"><span class="toc-number">13.1.</span> <span class="toc-text"><a href="#Covered-call" class="headerlink" title="Covered call"></a>Covered call</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Protective-put"><span class="toc-number">13.2.</span> <span class="toc-text"><a href="#Protective-put" class="headerlink" title="Protective put"></a>Protective put</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/UK/" title="UK">UK<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/algorithm/" title="algorithm">algorithm<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/finance/" title="finance">finance<sup>9</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/life/" title="life">life<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/network/" title="network">network<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/problem/" title="problem">problem<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/programming/" title="programming">programming<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/python/" title="python">python<sup>12</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/tool/" title="tool">tool<sup>5</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/python/" title="python">python<sup>16</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/cfa/" title="cfa">cfa<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/finance/" title="finance">finance<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/翻译/" title="翻译">翻译<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/life/" title="life">life<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/leetcode/" title="leetcode">leetcode<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/tool/" title="tool">tool<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/jira/" title="jira">jira<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/development/" title="development">development<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ios/" title="ios">ios<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/UK/" title="UK">UK<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/oxford/" title="oxford">oxford<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/linode/" title="linode">linode<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://blog.imink.net 墨同学的博客" target="_blank" title="ink&#39;s blog">ink&#39;s blog</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://eventfulkay.com 小虾米的博客" target="_blank" title="kai&#39;s blog">kai&#39;s blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+<div class="doubanshow">
+<p class="asidetitle">豆瓣秀</p>
+<div>
+<script type="text/javascript" src="http://www.douban.com/service/badge/44886038/?show=collection&amp;n=12&amp;columns=3&amp;hidelogo=yes&amp;hideself=yes&amp;cat=book|movie" ></script>
+</div>
+</div>
+
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
+</div>
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello, I&#39;m Yong Li, a MSc student in Oxford Uni. <br/>
+			Welcome to my blog, hope it does help to you!.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2327892814" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/NeilLi1992" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		<a href="https://www.facebook.com/100006707769873" target="_blank" class="icon-facebook" title="facebook"></a>
+		
+		
+		<a href="https://www.linkedin.com/in/yongli1992" target="_blank" class="icon-linkedin" title="linkedin"></a>
+		
+		
+		<a href="https://www.douban.com/people/44886038" target="_blank" class="icon-douban" title="豆瓣"></a>
+		
+		
+		<a href="http://www.zhihu.com/people/li-yong-88-55" target="_blank" class="icon-zhihu" title="知乎"></a>
+		
+		
+		<a href="https://plus.google.com/111758198691283601884?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+		
+		
+		<a href="mailto:yong.li1992@foxmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
+		
+		<a href="/about" target="_blank" title="yongli1992">yongli1992</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'yongli1992';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-77559411-1', 'auto');  
+ga('send', 'pageview');
+</script>
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>

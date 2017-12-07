@@ -14,11 +14,13 @@
     <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
     
     <meta name="description" content="简介可能许多人都知道利用 ctags 工具和 tagbar 插件可以在 vim 中显示侧边栏，列出代码文件的结构、类和函数等。实际上在写 markdown 文本时，如果也能在 tagbar 中显示文本大纲，那么显然可以帮助我们理清写作思路，也能快速定位到相关的段落进行修改。实际上，因为 markdown 文件是高度结构化的，所以很容易就能让 ctags 识别 markdown 的文本结构，从而为我">
+<meta name="keywords" content="vim,tool,markdown">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在 vim 中显示 markdown 结构大纲">
 <meta property="og:url" content="http://blog.yongli1992.com/2015/08/14/vim-markdown-outline/index.html">
-<meta property="og:site_name" content="YongLi's Blog">
+<meta property="og:site_name" content="YongLi&#39;s Blog">
 <meta property="og:description" content="简介可能许多人都知道利用 ctags 工具和 tagbar 插件可以在 vim 中显示侧边栏，列出代码文件的结构、类和函数等。实际上在写 markdown 文本时，如果也能在 tagbar 中显示文本大纲，那么显然可以帮助我们理清写作思路，也能快速定位到相关的段落进行修改。实际上，因为 markdown 文件是高度结构化的，所以很容易就能让 ctags 识别 markdown 的文本结构，从而为我">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://blog.yongli1992.com/2015/08/14/vim-markdown-outline/markdown2ctags.png">
 <meta property="og:updated_time" content="2015-08-13T22:19:48.000Z">
 <meta name="twitter:card" content="summary">
@@ -53,7 +55,7 @@
 				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
 				<h2 class="blog-motto">制心一處，守一不移。</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -67,7 +69,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:blog.yongli1992.com">
 					</form>
 					
@@ -90,27 +92,27 @@
 		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-08-14T05:16:53.000Z" itemprop="datePublished"> 发表于 2015-08-14</time>
+    <time datetime="2015-08-14T05:16:53.000Z" itemprop="datePublished"> Published 2015-08-14</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目录</strong>
+			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#需要的工具"><span class="toc-number">2.</span> <span class="toc-text">需要的工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#效果"><span class="toc-number">3.</span> <span class="toc-text">效果</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x7B80;&#x4ECB;" class="headerlink" title="&#x7B80;&#x4ECB;"></a>&#x7B80;&#x4ECB;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#需要的工具"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x9700;&#x8981;&#x7684;&#x5DE5;&#x5177;" class="headerlink" title="&#x9700;&#x8981;&#x7684;&#x5DE5;&#x5177;"></a>&#x9700;&#x8981;&#x7684;&#x5DE5;&#x5177;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#效果"><span class="toc-number">3.</span> <span class="toc-text"><a href="#&#x6548;&#x679C;" class="headerlink" title="&#x6548;&#x679C;"></a>&#x6548;&#x679C;</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>可能许多人都知道利用 ctags 工具和 tagbar 插件可以在 vim 中显示侧边栏，列出代码文件的结构、类和函数等。实际上在写 markdown 文本时，如果也能在 tagbar 中显示文本大纲，那么显然可以帮助我们理清写作思路，也能快速定位到相关的段落进行修改。<br>实际上，因为 markdown 文件是高度结构化的，所以很容易就能让 ctags 识别 markdown 的文本结构，从而为我们提取出大纲。在 github 上已经有人分享了这一工具：<a href="https://github.com/jszakmeister/markdown2ctags" target="_blank" rel="external">markdown2ctags</a></p>
+		<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>可能许多人都知道利用 ctags 工具和 tagbar 插件可以在 vim 中显示侧边栏，列出代码文件的结构、类和函数等。实际上在写 markdown 文本时，如果也能在 tagbar 中显示文本大纲，那么显然可以帮助我们理清写作思路，也能快速定位到相关的段落进行修改。<br>实际上，因为 markdown 文件是高度结构化的，所以很容易就能让 ctags 识别 markdown 的文本结构，从而为我们提取出大纲。在 github 上已经有人分享了这一工具：<a href="https://github.com/jszakmeister/markdown2ctags" target="_blank" rel="noopener">markdown2ctags</a></p>
 <h1 id="需要的工具"><a href="#需要的工具" class="headerlink" title="需要的工具"></a>需要的工具</h1><ol>
-<li><a href="http://ctags.sourceforge.net/" target="_blank" rel="external">Excuberant Ctags</a> 该工具通过提取关键字等方式，为不同语言生成 index 目录文件。这些 index 文件可以被用来索引大纲并实现快速跳转。</li>
-<li><a href="https://github.com/xolox/vim-easytags" target="_blank" rel="external">easytags</a> Ctags 虽然本身能够生成索引文件，但是每次都要手动去生成、更新，比较麻烦。安装 easytags 插件之后可以实习自动在保存时更新 ctags 索引文件，非常方便。</li>
-<li><a href="https://github.com/majutsushi/tagbar" target="_blank" rel="external">tagbar</a> tagbar 也是一款 vim 插件，安装之后能够利用 ctags 索引文件，在窗口的右侧生成一个侧边窗口，显示文本的结构，默认使用 <f8> 来打开/关闭该窗口。</f8></li>
-<li><a href="https://github.com/jszakmeister/markdown2ctags" target="_blank" rel="external">markdown2ctags</a> 该工具可以用来为 markdown 生成 ctags 可以识别的索引文件。在使用这一工具的时候，需要在 .vimrc 中加入其 github 页面上所展示的一段代码。需要特别注意的是，g:tagbar_type_markdown 和 ‘ctagstype’: ‘markdown’ 这两个地方需要和你的 vim 所识别的 markdown 格式匹配。检测自己的 vim 所识别的 markdown 文本的格式的方式是在 vim 中输入 :set filetype? ，所显示的 filetype= 后面的内容如果不是<br>markdown，则需要用来替换上面两个地方。</li>
+<li><a href="http://ctags.sourceforge.net/" target="_blank" rel="noopener">Excuberant Ctags</a> 该工具通过提取关键字等方式，为不同语言生成 index 目录文件。这些 index 文件可以被用来索引大纲并实现快速跳转。</li>
+<li><a href="https://github.com/xolox/vim-easytags" target="_blank" rel="noopener">easytags</a> Ctags 虽然本身能够生成索引文件，但是每次都要手动去生成、更新，比较麻烦。安装 easytags 插件之后可以实习自动在保存时更新 ctags 索引文件，非常方便。</li>
+<li><a href="https://github.com/majutsushi/tagbar" target="_blank" rel="noopener">tagbar</a> tagbar 也是一款 vim 插件，安装之后能够利用 ctags 索引文件，在窗口的右侧生成一个侧边窗口，显示文本的结构，默认使用 <f8> 来打开/关闭该窗口。</f8></li>
+<li><a href="https://github.com/jszakmeister/markdown2ctags" target="_blank" rel="noopener">markdown2ctags</a> 该工具可以用来为 markdown 生成 ctags 可以识别的索引文件。在使用这一工具的时候，需要在 .vimrc 中加入其 github 页面上所展示的一段代码。需要特别注意的是，g:tagbar_type_markdown 和 ‘ctagstype’: ‘markdown’ 这两个地方需要和你的 vim 所识别的 markdown 格式匹配。检测自己的 vim 所识别的 markdown 文本的格式的方式是在 vim 中输入 :set filetype? ，所显示的 filetype= 后面的内容如果不是<br>markdown，则需要用来替换上面两个地方。</li>
 </ol>
-<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p>显示效果如下：<br><img src="/2015/08/14/vim-markdown-outline/markdown2ctags.png" alt="markdown2ctags.png" title=""></p>
+<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p>显示效果如下：<br><img src="/2015/08/14/vim-markdown-outline/markdown2ctags.png"></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -176,22 +178,22 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目录</strong>
+  <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#需要的工具"><span class="toc-number">2.</span> <span class="toc-text">需要的工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#效果"><span class="toc-number">3.</span> <span class="toc-text">效果</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x7B80;&#x4ECB;" class="headerlink" title="&#x7B80;&#x4ECB;"></a>&#x7B80;&#x4ECB;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#需要的工具"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x9700;&#x8981;&#x7684;&#x5DE5;&#x5177;" class="headerlink" title="&#x9700;&#x8981;&#x7684;&#x5DE5;&#x5177;"></a>&#x9700;&#x8981;&#x7684;&#x5DE5;&#x5177;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#效果"><span class="toc-number">3.</span> <span class="toc-text"><a href="#&#x6548;&#x679C;" class="headerlink" title="&#x6548;&#x679C;"></a>&#x6548;&#x679C;</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分类</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -200,6 +202,10 @@
 		
 		  
 			<li><a href="/categories/algorithm/" title="algorithm">algorithm<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/finance/" title="finance">finance<sup>9</sup></a></li>
 		  
 		
 		  
@@ -232,11 +238,19 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">标签</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
 				<li><a href="/tags/python/" title="python">python<sup>16</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/cfa/" title="cfa">cfa<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/finance/" title="finance">finance<sup>9</sup></a></li>
 			
 		
 			
@@ -260,10 +274,6 @@
 			
 		
 			
-				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
 			
 		
@@ -276,19 +286,15 @@
 			
 		
 			
+				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/ios/" title="ios">ios<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ime/" title="ime">ime<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
 			
 		
 			
@@ -300,11 +306,11 @@
 			
 		
 			
-				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
 			
 		
 			
@@ -320,7 +326,7 @@
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情链接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -349,13 +355,13 @@
 
 
   <div class="weiboshow">
-  <p class="asidetitle">新浪微博</p>
+  <p class="asidetitle">Weibo</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
 </div>
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
@@ -613,7 +619,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
