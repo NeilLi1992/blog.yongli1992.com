@@ -4,21 +4,21 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>使用 hexo 框架在 github 上部署个人博客 | YongLi&#39;s Blog</title>
+    <title>使用 hexo 框架在 github 上部署个人博客 | Yong&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="yongli1992">
     
 
     
-    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
+    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool, C++">
     
     <meta name="description" content="简单介绍一下如何使用 hexo 框架并且配合 github 来部署个人博客。 HexoHexo 是一个基于 Node.js 的博客框架，使用 Markdown 格式来写博客，之后生成静态文件，然后可以直接部署到 Github Pages, Heroku 等网站上。能够部署到 Github Pages 是其一大优点，这是因为它生成的文件全部都是静态文件，而 Github Pages 的部署只支持静态">
 <meta name="keywords" content="life,blog,博客">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用 hexo 框架在 github 上部署个人博客">
 <meta property="og:url" content="http://blog.yongli1992.com/2016/06/08/hexo-github-blog/index.html">
-<meta property="og:site_name" content="YongLi&#39;s Blog">
+<meta property="og:site_name" content="Yong&#39;s Blog">
 <meta property="og:description" content="简单介绍一下如何使用 hexo 框架并且配合 github 来部署个人博客。 HexoHexo 是一个基于 Node.js 的博客框架，使用 Markdown 格式来写博客，之后生成静态文件，然后可以直接部署到 Github Pages, Heroku 等网站上。能够部署到 Github Pages 是其一大优点，这是因为它生成的文件全部都是静态文件，而 Github Pages 的部署只支持静态">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:updated_time" content="2016-06-08T21:53:50.000Z">
@@ -28,7 +28,7 @@
 <link rel="publisher" href="111758198691283601884">
 
     
-    <link rel="alternative" href="/atom.xml" title="YongLi&#39;s Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Yong&#39;s Blog" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -46,12 +46,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/logo.png" alt="YongLi&#39;s Blog" title="YongLi&#39;s Blog"/></a>
+				<a href="/"><img src="/img/logo.png" alt="Yong&#39;s Blog" title="Yong&#39;s Blog"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
-				<h2 class="blog-motto">制心一處，守一不移。</h2>
+				<h1 class="site-name"><a href="/" title="Yong&#39;s Blog">Yong&#39;s Blog</a></h1>
+				<h2 class="blog-motto">飞光劝尔一杯酒，月寒日暖煎人寿。</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
@@ -99,7 +99,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo"><span class="toc-number">1.</span> <span class="toc-text"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x5B89;&#x88C5;" class="headerlink" title="&#x5B89;&#x88C5;"></a>&#x5B89;&#x88C5;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建本地存储的目录"><span class="toc-number">3.</span> <span class="toc-text"><a href="#&#x521B;&#x5EFA;&#x672C;&#x5730;&#x5B58;&#x50A8;&#x7684;&#x76EE;&#x5F55;" class="headerlink" title="&#x521B;&#x5EFA;&#x672C;&#x5730;&#x5B58;&#x50A8;&#x7684;&#x76EE;&#x5F55;"></a>&#x521B;&#x5EFA;&#x672C;&#x5730;&#x5B58;&#x50A8;&#x7684;&#x76EE;&#x5F55;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本的写作命令"><span class="toc-number">4.</span> <span class="toc-text"><a href="#&#x57FA;&#x672C;&#x7684;&#x5199;&#x4F5C;&#x547D;&#x4EE4;" class="headerlink" title="&#x57FA;&#x672C;&#x7684;&#x5199;&#x4F5C;&#x547D;&#x4EE4;"></a>&#x57FA;&#x672C;&#x7684;&#x5199;&#x4F5C;&#x547D;&#x4EE4;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#生成与发布"><span class="toc-number">5.</span> <span class="toc-text"><a href="#&#x751F;&#x6210;&#x4E0E;&#x53D1;&#x5E03;" class="headerlink" title="&#x751F;&#x6210;&#x4E0E;&#x53D1;&#x5E03;"></a>&#x751F;&#x6210;&#x4E0E;&#x53D1;&#x5E03;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#站点"><span class="toc-number">6.</span> <span class="toc-text"><a href="#&#x7AD9;&#x70B9;" class="headerlink" title="&#x7AD9;&#x70B9;"></a>&#x7AD9;&#x70B9;</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo"><span class="toc-number">1.</span> <span class="toc-text">Hexo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建本地存储的目录"><span class="toc-number">3.</span> <span class="toc-text">创建本地存储的目录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本的写作命令"><span class="toc-number">4.</span> <span class="toc-text">基本的写作命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#生成与发布"><span class="toc-number">5.</span> <span class="toc-text">生成与发布</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#站点"><span class="toc-number">6.</span> <span class="toc-text">站点</span></a></li></ol>
 		
 		</div>
 		
@@ -144,7 +144,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://blog.yongli1992.com/2016/06/08/hexo-github-blog/" data-title="使用 hexo 框架在 github 上部署个人博客 | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://blog.yongli1992.com/2016/06/08/hexo-github-blog/" data-title="使用 hexo 框架在 github 上部署个人博客 | Yong&#39;s Blog" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -186,19 +186,29 @@
 
 
 
+
 </div>  
       <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo"><span class="toc-number">1.</span> <span class="toc-text"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x5B89;&#x88C5;" class="headerlink" title="&#x5B89;&#x88C5;"></a>&#x5B89;&#x88C5;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建本地存储的目录"><span class="toc-number">3.</span> <span class="toc-text"><a href="#&#x521B;&#x5EFA;&#x672C;&#x5730;&#x5B58;&#x50A8;&#x7684;&#x76EE;&#x5F55;" class="headerlink" title="&#x521B;&#x5EFA;&#x672C;&#x5730;&#x5B58;&#x50A8;&#x7684;&#x76EE;&#x5F55;"></a>&#x521B;&#x5EFA;&#x672C;&#x5730;&#x5B58;&#x50A8;&#x7684;&#x76EE;&#x5F55;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本的写作命令"><span class="toc-number">4.</span> <span class="toc-text"><a href="#&#x57FA;&#x672C;&#x7684;&#x5199;&#x4F5C;&#x547D;&#x4EE4;" class="headerlink" title="&#x57FA;&#x672C;&#x7684;&#x5199;&#x4F5C;&#x547D;&#x4EE4;"></a>&#x57FA;&#x672C;&#x7684;&#x5199;&#x4F5C;&#x547D;&#x4EE4;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#生成与发布"><span class="toc-number">5.</span> <span class="toc-text"><a href="#&#x751F;&#x6210;&#x4E0E;&#x53D1;&#x5E03;" class="headerlink" title="&#x751F;&#x6210;&#x4E0E;&#x53D1;&#x5E03;"></a>&#x751F;&#x6210;&#x4E0E;&#x53D1;&#x5E03;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#站点"><span class="toc-number">6.</span> <span class="toc-text"><a href="#&#x7AD9;&#x70B9;" class="headerlink" title="&#x7AD9;&#x70B9;"></a>&#x7AD9;&#x70B9;</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo"><span class="toc-number">1.</span> <span class="toc-text">Hexo</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建本地存储的目录"><span class="toc-number">3.</span> <span class="toc-text">创建本地存储的目录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本的写作命令"><span class="toc-number">4.</span> <span class="toc-text">基本的写作命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#生成与发布"><span class="toc-number">5.</span> <span class="toc-text">生成与发布</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#站点"><span class="toc-number">6.</span> <span class="toc-text">站点</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
+
+  
+<div class="github-card">
+<p class="asidetitle">Github Card</p>
+<div class="github-card" data-github="NeilLi1992" data-theme="medium"></div>
+<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
+</div>
+
+
 
   
 <div class="categorieslist">
@@ -283,10 +293,6 @@
 			
 		
 			
-				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/jira/" title="jira">jira<sup>2</sup></a></li>
 			
 		
@@ -295,15 +301,35 @@
 			
 		
 			
-				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/ios/" title="ios">ios<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/linode/" title="linode">linode<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/problem/" title="problem">problem<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/translated/" title="translated">translated<sup>1</sup></a></li>
 			
 		
 			
@@ -312,22 +338,6 @@
 		
 			
 				<li><a href="/tags/UK/" title="UK">UK<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/oxford/" title="oxford">oxford<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/linode/" title="linode">linode<sup>1</sup></a></li>
 			
 		
 		</ul>
@@ -340,28 +350,12 @@
         
           <li>
             
-            	<a href="http://blog.imink.net 墨同学的博客" target="_blank" title="ink&#39;s blog">ink&#39;s blog</a>
-            
-          </li>
-        
-          <li>
-            
-            	<a href="http://eventfulkay.com 小虾米的博客" target="_blank" title="kai&#39;s blog">kai&#39;s blog</a>
+            	<a href="http://xuk.ai/ 小虾米的博客" target="_blank" title="kai&#39;s blog">kai&#39;s blog</a>
             
           </li>
         
     </ul>
 </div>
-
-  
-
-<div class="doubanshow">
-<p class="asidetitle">豆瓣秀</p>
-<div>
-<script type="text/javascript" src="http://www.douban.com/service/badge/44886038/?show=collection&amp;n=12&amp;columns=3&amp;hidelogo=yes&amp;hideself=yes&amp;cat=book|movie" ></script>
-</div>
-</div>
-
 
   <div class="weiboshow">
   <p class="asidetitle">Weibo</p>
@@ -385,8 +379,8 @@
 	
 	
 	<section class="info">
-		<p> Hello, I&#39;m Yong Li, a MSc student in Oxford Uni. <br/>
-			Welcome to my blog, hope it does help to you!.</p>
+		<p> Hello, I&#39;m Yong Li, originally from China, now living in London and working for Bloomberg L.P. <br/>
+			I currently work as a professional financial software developer.</p>
 	</section>
 	 
 	<div class="social-font" class="clearfix">
@@ -397,6 +391,8 @@
 		<a href="https://github.com/NeilLi1992" target="_blank" class="icon-github" title="github"></a>
 		
 		
+		<a href="http://stackoverflow.com/users/5184632" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+		
 		
 		
 		<a href="https://www.facebook.com/100006707769873" target="_blank" class="icon-facebook" title="facebook"></a>
@@ -404,8 +400,6 @@
 		
 		<a href="https://www.linkedin.com/in/yongli1992" target="_blank" class="icon-linkedin" title="linkedin"></a>
 		
-		
-		<a href="https://www.douban.com/people/44886038" target="_blank" class="icon-douban" title="豆瓣"></a>
 		
 		
 		<a href="http://www.zhihu.com/people/li-yong-88-55" target="_blank" class="icon-zhihu" title="知乎"></a>
@@ -464,6 +458,11 @@ $(document).ready(function(){
   $(window).scroll(function(){
     o.css("top",Math.max(80,260-$(this).scrollTop()));
   });
+  
+        getSize();
+        if (myWidth >= 1024) {
+          c.click();
+        }
   
   $(window).resize(function(){
     getSize(); 
@@ -585,6 +584,8 @@ var disqus_shortname = 'yongli1992';
 
 
 
+
+
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
 <script src="/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
@@ -620,6 +621,16 @@ ga('send', 'pageview');
 </script>
 
 
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
 
 

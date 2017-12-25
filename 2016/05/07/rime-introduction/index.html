@@ -4,21 +4,21 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Rime 输入法介绍，以及基于 Rime 输入法在纯文本环境下快速输入希腊字符，和以 latex 命令输入 Unicode 数学符号的方法 | YongLi&#39;s Blog</title>
+    <title>Rime 输入法介绍，以及基于 Rime 输入法在纯文本环境下快速输入希腊字符，和以 latex 命令输入 Unicode 数学符号的方法 | Yong&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="yongli1992">
     
 
     
-    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
+    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool, C++">
     
     <meta name="description" content="很长一段时间没有来写博文，最近准备重新继续。介绍一下最近入坑的 Rime 输入法，顺便也介绍一下自己基于 Rime 输入法而实现的快速输入 Unicode 字符集中的希腊字母，以及在纯文本环境下，以 latex 命令输入 Unicode 字符集中相近的数学符号的功能。 实现效果最终实现的一些有用的效果大概如下。如果这里面有你想要的效果的话，那欢迎往下阅读，Rime 很可能就是你需要的输入法。 古诗">
 <meta name="keywords" content="tool,ime,rime">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Rime 输入法介绍，以及基于 Rime 输入法在纯文本环境下快速输入希腊字符，和以 latex 命令输入 Unicode 数学符号的方法">
 <meta property="og:url" content="http://blog.yongli1992.com/2016/05/07/rime-introduction/index.html">
-<meta property="og:site_name" content="YongLi&#39;s Blog">
+<meta property="og:site_name" content="Yong&#39;s Blog">
 <meta property="og:description" content="很长一段时间没有来写博文，最近准备重新继续。介绍一下最近入坑的 Rime 输入法，顺便也介绍一下自己基于 Rime 输入法而实现的快速输入 Unicode 字符集中的希腊字母，以及在纯文本环境下，以 latex 命令输入 Unicode 字符集中相近的数学符号的功能。 实现效果最终实现的一些有用的效果大概如下。如果这里面有你想要的效果的话，那欢迎往下阅读，Rime 很可能就是你需要的输入法。 古诗">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://blog.yongli1992.com/2016/05/07/rime-introduction/gsc.jpg">
@@ -35,7 +35,7 @@
 <link rel="publisher" href="111758198691283601884">
 
     
-    <link rel="alternative" href="/atom.xml" title="YongLi&#39;s Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Yong&#39;s Blog" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -53,12 +53,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/logo.png" alt="YongLi&#39;s Blog" title="YongLi&#39;s Blog"/></a>
+				<a href="/"><img src="/img/logo.png" alt="Yong&#39;s Blog" title="Yong&#39;s Blog"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
-				<h2 class="blog-motto">制心一處，守一不移。</h2>
+				<h1 class="site-name"><a href="/" title="Yong&#39;s Blog">Yong&#39;s Blog</a></h1>
+				<h2 class="blog-motto">飞光劝尔一杯酒，月寒日暖煎人寿。</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
@@ -106,7 +106,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#实现效果"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x5B9E;&#x73B0;&#x6548;&#x679C;" class="headerlink" title="&#x5B9E;&#x73B0;&#x6548;&#x679C;"></a>&#x5B9E;&#x73B0;&#x6548;&#x679C;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#问题与适用情景"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x95EE;&#x9898;&#x4E0E;&#x9002;&#x7528;&#x60C5;&#x666F;" class="headerlink" title="&#x95EE;&#x9898;&#x4E0E;&#x9002;&#x7528;&#x60C5;&#x666F;"></a>&#x95EE;&#x9898;&#x4E0E;&#x9002;&#x7528;&#x60C5;&#x666F;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rime-输入法介绍"><span class="toc-number">3.</span> <span class="toc-text"><a href="#Rime-&#x8F93;&#x5165;&#x6CD5;&#x4ECB;&#x7ECD;" class="headerlink" title="Rime &#x8F93;&#x5165;&#x6CD5;&#x4ECB;&#x7ECD;"></a>Rime &#x8F93;&#x5165;&#x6CD5;&#x4ECB;&#x7ECD;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rime-设置与定制"><span class="toc-number">4.</span> <span class="toc-text"><a href="#Rime-&#x8BBE;&#x7F6E;&#x4E0E;&#x5B9A;&#x5236;" class="headerlink" title="Rime &#x8BBE;&#x7F6E;&#x4E0E;&#x5B9A;&#x5236;"></a>Rime &#x8BBE;&#x7F6E;&#x4E0E;&#x5B9A;&#x5236;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#希腊字母与-latex-字符的输入"><span class="toc-number">5.</span> <span class="toc-text"><a href="#&#x5E0C;&#x814A;&#x5B57;&#x6BCD;&#x4E0E;-latex-&#x5B57;&#x7B26;&#x7684;&#x8F93;&#x5165;" class="headerlink" title="&#x5E0C;&#x814A;&#x5B57;&#x6BCD;&#x4E0E; latex &#x5B57;&#x7B26;&#x7684;&#x8F93;&#x5165;"></a>&#x5E0C;&#x814A;&#x5B57;&#x6BCD;&#x4E0E; latex &#x5B57;&#x7B26;&#x7684;&#x8F93;&#x5165;</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#实现效果"><span class="toc-number">1.</span> <span class="toc-text">实现效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#问题与适用情景"><span class="toc-number">2.</span> <span class="toc-text">问题与适用情景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rime-输入法介绍"><span class="toc-number">3.</span> <span class="toc-text">Rime 输入法介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rime-设置与定制"><span class="toc-number">4.</span> <span class="toc-text">Rime 设置与定制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#希腊字母与-latex-字符的输入"><span class="toc-number">5.</span> <span class="toc-text">希腊字母与 latex 字符的输入</span></a></li></ol>
 		
 		</div>
 		
@@ -177,7 +177,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://blog.yongli1992.com/2016/05/07/rime-introduction/" data-title="Rime 输入法介绍，以及基于 Rime 输入法在纯文本环境下快速输入希腊字符，和以 latex 命令输入 Unicode 数学符号的方法 | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://blog.yongli1992.com/2016/05/07/rime-introduction/" data-title="Rime 输入法介绍，以及基于 Rime 输入法在纯文本环境下快速输入希腊字符，和以 latex 命令输入 Unicode 数学符号的方法 | Yong&#39;s Blog" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -219,19 +219,29 @@
 
 
 
+
 </div>  
       <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#实现效果"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x5B9E;&#x73B0;&#x6548;&#x679C;" class="headerlink" title="&#x5B9E;&#x73B0;&#x6548;&#x679C;"></a>&#x5B9E;&#x73B0;&#x6548;&#x679C;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#问题与适用情景"><span class="toc-number">2.</span> <span class="toc-text"><a href="#&#x95EE;&#x9898;&#x4E0E;&#x9002;&#x7528;&#x60C5;&#x666F;" class="headerlink" title="&#x95EE;&#x9898;&#x4E0E;&#x9002;&#x7528;&#x60C5;&#x666F;"></a>&#x95EE;&#x9898;&#x4E0E;&#x9002;&#x7528;&#x60C5;&#x666F;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rime-输入法介绍"><span class="toc-number">3.</span> <span class="toc-text"><a href="#Rime-&#x8F93;&#x5165;&#x6CD5;&#x4ECB;&#x7ECD;" class="headerlink" title="Rime &#x8F93;&#x5165;&#x6CD5;&#x4ECB;&#x7ECD;"></a>Rime &#x8F93;&#x5165;&#x6CD5;&#x4ECB;&#x7ECD;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rime-设置与定制"><span class="toc-number">4.</span> <span class="toc-text"><a href="#Rime-&#x8BBE;&#x7F6E;&#x4E0E;&#x5B9A;&#x5236;" class="headerlink" title="Rime &#x8BBE;&#x7F6E;&#x4E0E;&#x5B9A;&#x5236;"></a>Rime &#x8BBE;&#x7F6E;&#x4E0E;&#x5B9A;&#x5236;</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#希腊字母与-latex-字符的输入"><span class="toc-number">5.</span> <span class="toc-text"><a href="#&#x5E0C;&#x814A;&#x5B57;&#x6BCD;&#x4E0E;-latex-&#x5B57;&#x7B26;&#x7684;&#x8F93;&#x5165;" class="headerlink" title="&#x5E0C;&#x814A;&#x5B57;&#x6BCD;&#x4E0E; latex &#x5B57;&#x7B26;&#x7684;&#x8F93;&#x5165;"></a>&#x5E0C;&#x814A;&#x5B57;&#x6BCD;&#x4E0E; latex &#x5B57;&#x7B26;&#x7684;&#x8F93;&#x5165;</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#实现效果"><span class="toc-number">1.</span> <span class="toc-text">实现效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#问题与适用情景"><span class="toc-number">2.</span> <span class="toc-text">问题与适用情景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rime-输入法介绍"><span class="toc-number">3.</span> <span class="toc-text">Rime 输入法介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Rime-设置与定制"><span class="toc-number">4.</span> <span class="toc-text">Rime 设置与定制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#希腊字母与-latex-字符的输入"><span class="toc-number">5.</span> <span class="toc-text">希腊字母与 latex 字符的输入</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
+
+  
+<div class="github-card">
+<p class="asidetitle">Github Card</p>
+<div class="github-card" data-github="NeilLi1992" data-theme="medium"></div>
+<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
+</div>
+
+
 
   
 <div class="categorieslist">
@@ -316,10 +326,6 @@
 			
 		
 			
-				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/jira/" title="jira">jira<sup>2</sup></a></li>
 			
 		
@@ -328,15 +334,35 @@
 			
 		
 			
-				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/ios/" title="ios">ios<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/linode/" title="linode">linode<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/problem/" title="problem">problem<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/translated/" title="translated">translated<sup>1</sup></a></li>
 			
 		
 			
@@ -345,22 +371,6 @@
 		
 			
 				<li><a href="/tags/UK/" title="UK">UK<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/oxford/" title="oxford">oxford<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/linode/" title="linode">linode<sup>1</sup></a></li>
 			
 		
 		</ul>
@@ -373,28 +383,12 @@
         
           <li>
             
-            	<a href="http://blog.imink.net 墨同学的博客" target="_blank" title="ink&#39;s blog">ink&#39;s blog</a>
-            
-          </li>
-        
-          <li>
-            
-            	<a href="http://eventfulkay.com 小虾米的博客" target="_blank" title="kai&#39;s blog">kai&#39;s blog</a>
+            	<a href="http://xuk.ai/ 小虾米的博客" target="_blank" title="kai&#39;s blog">kai&#39;s blog</a>
             
           </li>
         
     </ul>
 </div>
-
-  
-
-<div class="doubanshow">
-<p class="asidetitle">豆瓣秀</p>
-<div>
-<script type="text/javascript" src="http://www.douban.com/service/badge/44886038/?show=collection&amp;n=12&amp;columns=3&amp;hidelogo=yes&amp;hideself=yes&amp;cat=book|movie" ></script>
-</div>
-</div>
-
 
   <div class="weiboshow">
   <p class="asidetitle">Weibo</p>
@@ -418,8 +412,8 @@
 	
 	
 	<section class="info">
-		<p> Hello, I&#39;m Yong Li, a MSc student in Oxford Uni. <br/>
-			Welcome to my blog, hope it does help to you!.</p>
+		<p> Hello, I&#39;m Yong Li, originally from China, now living in London and working for Bloomberg L.P. <br/>
+			I currently work as a professional financial software developer.</p>
 	</section>
 	 
 	<div class="social-font" class="clearfix">
@@ -430,6 +424,8 @@
 		<a href="https://github.com/NeilLi1992" target="_blank" class="icon-github" title="github"></a>
 		
 		
+		<a href="http://stackoverflow.com/users/5184632" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+		
 		
 		
 		<a href="https://www.facebook.com/100006707769873" target="_blank" class="icon-facebook" title="facebook"></a>
@@ -437,8 +433,6 @@
 		
 		<a href="https://www.linkedin.com/in/yongli1992" target="_blank" class="icon-linkedin" title="linkedin"></a>
 		
-		
-		<a href="https://www.douban.com/people/44886038" target="_blank" class="icon-douban" title="豆瓣"></a>
 		
 		
 		<a href="http://www.zhihu.com/people/li-yong-88-55" target="_blank" class="icon-zhihu" title="知乎"></a>
@@ -497,6 +491,11 @@ $(document).ready(function(){
   $(window).scroll(function(){
     o.css("top",Math.max(80,260-$(this).scrollTop()));
   });
+  
+        getSize();
+        if (myWidth >= 1024) {
+          c.click();
+        }
   
   $(window).resize(function(){
     getSize(); 
@@ -618,6 +617,8 @@ var disqus_shortname = 'yongli1992';
 
 
 
+
+
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
 <script src="/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
@@ -653,6 +654,16 @@ ga('send', 'pageview');
 </script>
 
 
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
 
 

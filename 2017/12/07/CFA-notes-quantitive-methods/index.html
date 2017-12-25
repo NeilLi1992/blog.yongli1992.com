@@ -4,25 +4,25 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>CFA Notes - Quantitive Methods | YongLi&#39;s Blog</title>
+    <title>CFA Notes - Quantitive Methods | Yong&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="yongli1992">
     
 
     
-    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
+    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool, C++">
     
     <meta name="description" content="Decompose required rate of returninterest rate = nominal risk-free rate + risk premiumnominal risk-free rate = real risk-free rate + expected inflation rate 收益率计算HPRTotal return between purchase date">
 <meta name="keywords" content="cfa,finance">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CFA Notes - Quantitive Methods">
 <meta property="og:url" content="http://blog.yongli1992.com/2017/12/07/CFA-notes-quantitive-methods/index.html">
-<meta property="og:site_name" content="YongLi&#39;s Blog">
+<meta property="og:site_name" content="Yong&#39;s Blog">
 <meta property="og:description" content="Decompose required rate of returninterest rate = nominal risk-free rate + risk premiumnominal risk-free rate = real risk-free rate + expected inflation rate 收益率计算HPRTotal return between purchase date">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.imgur.com/uDburms.png">
-<meta property="og:updated_time" content="2017-12-07T20:58:35.573Z">
+<meta property="og:updated_time" content="2017-12-07T20:58:35.574Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CFA Notes - Quantitive Methods">
 <meta name="twitter:description" content="Decompose required rate of returninterest rate = nominal risk-free rate + risk premiumnominal risk-free rate = real risk-free rate + expected inflation rate 收益率计算HPRTotal return between purchase date">
@@ -30,7 +30,7 @@
 <link rel="publisher" href="111758198691283601884">
 
     
-    <link rel="alternative" href="/atom.xml" title="YongLi&#39;s Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Yong&#39;s Blog" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -48,12 +48,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/logo.png" alt="YongLi&#39;s Blog" title="YongLi&#39;s Blog"/></a>
+				<a href="/"><img src="/img/logo.png" alt="Yong&#39;s Blog" title="Yong&#39;s Blog"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
-				<h2 class="blog-motto">制心一處，守一不移。</h2>
+				<h1 class="site-name"><a href="/" title="Yong&#39;s Blog">Yong&#39;s Blog</a></h1>
+				<h2 class="blog-motto">飞光劝尔一杯酒，月寒日暖煎人寿。</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
@@ -101,7 +101,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#收益率计算"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x6536;&#x76CA;&#x7387;&#x8BA1;&#x7B97;" class="headerlink" title="&#x6536;&#x76CA;&#x7387;&#x8BA1;&#x7B97;"></a>&#x6536;&#x76CA;&#x7387;&#x8BA1;&#x7B97;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Measures-of-Mean"><span class="toc-number">2.</span> <span class="toc-text"><a href="#Measures-of-Mean" class="headerlink" title="Measures of Mean"></a>Measures of Mean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Quantiles"><span class="toc-number">3.</span> <span class="toc-text"><a href="#Quantiles" class="headerlink" title="Quantiles"></a>Quantiles</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dispersion"><span class="toc-number">4.</span> <span class="toc-text"><a href="#Dispersion" class="headerlink" title="Dispersion"></a>Dispersion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chebyshev’s-Inequality"><span class="toc-number">5.</span> <span class="toc-text"><a href="#Chebyshev&#x2019;s-Inequality" class="headerlink" title="Chebyshev&#x2019;s Inequality"></a>Chebyshev&#x2019;s Inequality</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Coefficent-of-variance-and-sharp-ratio"><span class="toc-number">6.</span> <span class="toc-text"><a href="#Coefficent-of-variance-and-sharp-ratio" class="headerlink" title="Coefficent of variance and sharp ratio"></a>Coefficent of variance and sharp ratio</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Skewness-and-Kurtosis"><span class="toc-number">7.</span> <span class="toc-text"><a href="#Skewness-and-Kurtosis" class="headerlink" title="Skewness and Kurtosis"></a>Skewness and Kurtosis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Probability"><span class="toc-number">8.</span> <span class="toc-text"><a href="#Probability" class="headerlink" title="Probability"></a>Probability</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Counting"><span class="toc-number">9.</span> <span class="toc-text"><a href="#Counting" class="headerlink" title="Counting"></a>Counting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Discrete-random-distribution"><span class="toc-number">10.</span> <span class="toc-text"><a href="#Discrete-random-distribution" class="headerlink" title="Discrete random distribution"></a>Discrete random distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Continuous-random-distribution"><span class="toc-number">11.</span> <span class="toc-text"><a href="#Continuous-random-distribution" class="headerlink" title="Continuous random distribution"></a>Continuous random distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Normal-distribution"><span class="toc-number">12.</span> <span class="toc-text"><a href="#Normal-distribution" class="headerlink" title="Normal distribution"></a>Normal distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Safety-First-Ratio"><span class="toc-number">13.</span> <span class="toc-text"><a href="#Safety-First-Ratio" class="headerlink" title="Safety First Ratio"></a>Safety First Ratio</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Central-limit-theorem"><span class="toc-number">14.</span> <span class="toc-text"><a href="#Central-limit-theorem" class="headerlink" title="Central limit theorem"></a>Central limit theorem</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Student’s-t-distribution"><span class="toc-number">15.</span> <span class="toc-text"><a href="#Student&#x2019;s-t-distribution" class="headerlink" title="Student&#x2019;s t-distribution"></a>Student&#x2019;s t-distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Estimation"><span class="toc-number">16.</span> <span class="toc-text"><a href="#Estimation" class="headerlink" title="Estimation"></a>Estimation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hypothesis-Testing"><span class="toc-number">17.</span> <span class="toc-text"><a href="#Hypothesis-Testing" class="headerlink" title="Hypothesis Testing"></a>Hypothesis Testing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#p-value-method"><span class="toc-number">17.1.</span> <span class="toc-text"><a href="#p-value-method" class="headerlink" title="p-value method"></a>p-value method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Type-I-error-and-Type-II-error"><span class="toc-number">17.2.</span> <span class="toc-text"><a href="#Type-I-error-and-Type-II-error" class="headerlink" title="Type I error and Type II error."></a>Type I error and Type II error.</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Technical-Analysis"><span class="toc-number">18.</span> <span class="toc-text"><a href="#Technical-Analysis" class="headerlink" title="Technical Analysis"></a>Technical Analysis</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#收益率计算"><span class="toc-number">1.</span> <span class="toc-text">收益率计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Measures-of-Mean"><span class="toc-number">2.</span> <span class="toc-text">Measures of Mean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Quantiles"><span class="toc-number">3.</span> <span class="toc-text">Quantiles</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dispersion"><span class="toc-number">4.</span> <span class="toc-text">Dispersion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chebyshev’s-Inequality"><span class="toc-number">5.</span> <span class="toc-text">Chebyshev’s Inequality</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Coefficent-of-variance-and-sharp-ratio"><span class="toc-number">6.</span> <span class="toc-text">Coefficent of variance and sharp ratio</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Skewness-and-Kurtosis"><span class="toc-number">7.</span> <span class="toc-text">Skewness and Kurtosis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Probability"><span class="toc-number">8.</span> <span class="toc-text">Probability</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Counting"><span class="toc-number">9.</span> <span class="toc-text">Counting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Discrete-random-distribution"><span class="toc-number">10.</span> <span class="toc-text">Discrete random distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Continuous-random-distribution"><span class="toc-number">11.</span> <span class="toc-text">Continuous random distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Normal-distribution"><span class="toc-number">12.</span> <span class="toc-text">Normal distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Safety-First-Ratio"><span class="toc-number">13.</span> <span class="toc-text">Safety First Ratio</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Central-limit-theorem"><span class="toc-number">14.</span> <span class="toc-text">Central limit theorem</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Student’s-t-distribution"><span class="toc-number">15.</span> <span class="toc-text">Student’s t-distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Estimation"><span class="toc-number">16.</span> <span class="toc-text">Estimation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hypothesis-Testing"><span class="toc-number">17.</span> <span class="toc-text">Hypothesis Testing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#p-value-method"><span class="toc-number">17.1.</span> <span class="toc-text">p-value method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Type-I-error-and-Type-II-error"><span class="toc-number">17.2.</span> <span class="toc-text">Type I error and Type II error.</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Technical-Analysis"><span class="toc-number">18.</span> <span class="toc-text">Technical Analysis</span></a></li></ol>
 		
 		</div>
 		
@@ -278,7 +278,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://blog.yongli1992.com/2017/12/07/CFA-notes-quantitive-methods/" data-title="CFA Notes - Quantitive Methods | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://blog.yongli1992.com/2017/12/07/CFA-notes-quantitive-methods/" data-title="CFA Notes - Quantitive Methods | Yong&#39;s Blog" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -320,19 +320,29 @@
 
 
 
+
 </div>  
       <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#收益率计算"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x6536;&#x76CA;&#x7387;&#x8BA1;&#x7B97;" class="headerlink" title="&#x6536;&#x76CA;&#x7387;&#x8BA1;&#x7B97;"></a>&#x6536;&#x76CA;&#x7387;&#x8BA1;&#x7B97;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Measures-of-Mean"><span class="toc-number">2.</span> <span class="toc-text"><a href="#Measures-of-Mean" class="headerlink" title="Measures of Mean"></a>Measures of Mean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Quantiles"><span class="toc-number">3.</span> <span class="toc-text"><a href="#Quantiles" class="headerlink" title="Quantiles"></a>Quantiles</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dispersion"><span class="toc-number">4.</span> <span class="toc-text"><a href="#Dispersion" class="headerlink" title="Dispersion"></a>Dispersion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chebyshev’s-Inequality"><span class="toc-number">5.</span> <span class="toc-text"><a href="#Chebyshev&#x2019;s-Inequality" class="headerlink" title="Chebyshev&#x2019;s Inequality"></a>Chebyshev&#x2019;s Inequality</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Coefficent-of-variance-and-sharp-ratio"><span class="toc-number">6.</span> <span class="toc-text"><a href="#Coefficent-of-variance-and-sharp-ratio" class="headerlink" title="Coefficent of variance and sharp ratio"></a>Coefficent of variance and sharp ratio</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Skewness-and-Kurtosis"><span class="toc-number">7.</span> <span class="toc-text"><a href="#Skewness-and-Kurtosis" class="headerlink" title="Skewness and Kurtosis"></a>Skewness and Kurtosis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Probability"><span class="toc-number">8.</span> <span class="toc-text"><a href="#Probability" class="headerlink" title="Probability"></a>Probability</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Counting"><span class="toc-number">9.</span> <span class="toc-text"><a href="#Counting" class="headerlink" title="Counting"></a>Counting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Discrete-random-distribution"><span class="toc-number">10.</span> <span class="toc-text"><a href="#Discrete-random-distribution" class="headerlink" title="Discrete random distribution"></a>Discrete random distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Continuous-random-distribution"><span class="toc-number">11.</span> <span class="toc-text"><a href="#Continuous-random-distribution" class="headerlink" title="Continuous random distribution"></a>Continuous random distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Normal-distribution"><span class="toc-number">12.</span> <span class="toc-text"><a href="#Normal-distribution" class="headerlink" title="Normal distribution"></a>Normal distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Safety-First-Ratio"><span class="toc-number">13.</span> <span class="toc-text"><a href="#Safety-First-Ratio" class="headerlink" title="Safety First Ratio"></a>Safety First Ratio</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Central-limit-theorem"><span class="toc-number">14.</span> <span class="toc-text"><a href="#Central-limit-theorem" class="headerlink" title="Central limit theorem"></a>Central limit theorem</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Student’s-t-distribution"><span class="toc-number">15.</span> <span class="toc-text"><a href="#Student&#x2019;s-t-distribution" class="headerlink" title="Student&#x2019;s t-distribution"></a>Student&#x2019;s t-distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Estimation"><span class="toc-number">16.</span> <span class="toc-text"><a href="#Estimation" class="headerlink" title="Estimation"></a>Estimation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hypothesis-Testing"><span class="toc-number">17.</span> <span class="toc-text"><a href="#Hypothesis-Testing" class="headerlink" title="Hypothesis Testing"></a>Hypothesis Testing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#p-value-method"><span class="toc-number">17.1.</span> <span class="toc-text"><a href="#p-value-method" class="headerlink" title="p-value method"></a>p-value method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Type-I-error-and-Type-II-error"><span class="toc-number">17.2.</span> <span class="toc-text"><a href="#Type-I-error-and-Type-II-error" class="headerlink" title="Type I error and Type II error."></a>Type I error and Type II error.</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Technical-Analysis"><span class="toc-number">18.</span> <span class="toc-text"><a href="#Technical-Analysis" class="headerlink" title="Technical Analysis"></a>Technical Analysis</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#收益率计算"><span class="toc-number">1.</span> <span class="toc-text">收益率计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Measures-of-Mean"><span class="toc-number">2.</span> <span class="toc-text">Measures of Mean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Quantiles"><span class="toc-number">3.</span> <span class="toc-text">Quantiles</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dispersion"><span class="toc-number">4.</span> <span class="toc-text">Dispersion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chebyshev’s-Inequality"><span class="toc-number">5.</span> <span class="toc-text">Chebyshev’s Inequality</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Coefficent-of-variance-and-sharp-ratio"><span class="toc-number">6.</span> <span class="toc-text">Coefficent of variance and sharp ratio</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Skewness-and-Kurtosis"><span class="toc-number">7.</span> <span class="toc-text">Skewness and Kurtosis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Probability"><span class="toc-number">8.</span> <span class="toc-text">Probability</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Counting"><span class="toc-number">9.</span> <span class="toc-text">Counting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Discrete-random-distribution"><span class="toc-number">10.</span> <span class="toc-text">Discrete random distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Continuous-random-distribution"><span class="toc-number">11.</span> <span class="toc-text">Continuous random distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Normal-distribution"><span class="toc-number">12.</span> <span class="toc-text">Normal distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Safety-First-Ratio"><span class="toc-number">13.</span> <span class="toc-text">Safety First Ratio</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Central-limit-theorem"><span class="toc-number">14.</span> <span class="toc-text">Central limit theorem</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Student’s-t-distribution"><span class="toc-number">15.</span> <span class="toc-text">Student’s t-distribution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Estimation"><span class="toc-number">16.</span> <span class="toc-text">Estimation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hypothesis-Testing"><span class="toc-number">17.</span> <span class="toc-text">Hypothesis Testing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#p-value-method"><span class="toc-number">17.1.</span> <span class="toc-text">p-value method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Type-I-error-and-Type-II-error"><span class="toc-number">17.2.</span> <span class="toc-text">Type I error and Type II error.</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Technical-Analysis"><span class="toc-number">18.</span> <span class="toc-text">Technical Analysis</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
+
+  
+<div class="github-card">
+<p class="asidetitle">Github Card</p>
+<div class="github-card" data-github="NeilLi1992" data-theme="medium"></div>
+<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
+</div>
+
+
 
   
 <div class="categorieslist">
@@ -417,10 +427,6 @@
 			
 		
 			
-				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/jira/" title="jira">jira<sup>2</sup></a></li>
 			
 		
@@ -429,15 +435,35 @@
 			
 		
 			
-				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/ios/" title="ios">ios<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/linode/" title="linode">linode<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/problem/" title="problem">problem<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/translated/" title="translated">translated<sup>1</sup></a></li>
 			
 		
 			
@@ -446,22 +472,6 @@
 		
 			
 				<li><a href="/tags/UK/" title="UK">UK<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/oxford/" title="oxford">oxford<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/linode/" title="linode">linode<sup>1</sup></a></li>
 			
 		
 		</ul>
@@ -474,28 +484,12 @@
         
           <li>
             
-            	<a href="http://blog.imink.net 墨同学的博客" target="_blank" title="ink&#39;s blog">ink&#39;s blog</a>
-            
-          </li>
-        
-          <li>
-            
-            	<a href="http://eventfulkay.com 小虾米的博客" target="_blank" title="kai&#39;s blog">kai&#39;s blog</a>
+            	<a href="http://xuk.ai/ 小虾米的博客" target="_blank" title="kai&#39;s blog">kai&#39;s blog</a>
             
           </li>
         
     </ul>
 </div>
-
-  
-
-<div class="doubanshow">
-<p class="asidetitle">豆瓣秀</p>
-<div>
-<script type="text/javascript" src="http://www.douban.com/service/badge/44886038/?show=collection&amp;n=12&amp;columns=3&amp;hidelogo=yes&amp;hideself=yes&amp;cat=book|movie" ></script>
-</div>
-</div>
-
 
   <div class="weiboshow">
   <p class="asidetitle">Weibo</p>
@@ -519,8 +513,8 @@
 	
 	
 	<section class="info">
-		<p> Hello, I&#39;m Yong Li, a MSc student in Oxford Uni. <br/>
-			Welcome to my blog, hope it does help to you!.</p>
+		<p> Hello, I&#39;m Yong Li, originally from China, now living in London and working for Bloomberg L.P. <br/>
+			I currently work as a professional financial software developer.</p>
 	</section>
 	 
 	<div class="social-font" class="clearfix">
@@ -531,6 +525,8 @@
 		<a href="https://github.com/NeilLi1992" target="_blank" class="icon-github" title="github"></a>
 		
 		
+		<a href="http://stackoverflow.com/users/5184632" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+		
 		
 		
 		<a href="https://www.facebook.com/100006707769873" target="_blank" class="icon-facebook" title="facebook"></a>
@@ -538,8 +534,6 @@
 		
 		<a href="https://www.linkedin.com/in/yongli1992" target="_blank" class="icon-linkedin" title="linkedin"></a>
 		
-		
-		<a href="https://www.douban.com/people/44886038" target="_blank" class="icon-douban" title="豆瓣"></a>
 		
 		
 		<a href="http://www.zhihu.com/people/li-yong-88-55" target="_blank" class="icon-zhihu" title="知乎"></a>
@@ -598,6 +592,11 @@ $(document).ready(function(){
   $(window).scroll(function(){
     o.css("top",Math.max(80,260-$(this).scrollTop()));
   });
+  
+        getSize();
+        if (myWidth >= 1024) {
+          c.click();
+        }
   
   $(window).resize(function(){
     getSize(); 
@@ -719,6 +718,8 @@ var disqus_shortname = 'yongli1992';
 
 
 
+
+
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
 <script src="/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
@@ -754,6 +755,16 @@ ga('send', 'pageview');
 </script>
 
 
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
 
 

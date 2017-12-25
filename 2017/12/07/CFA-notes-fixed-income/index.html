@@ -4,21 +4,21 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>CFA Notes - Fixed Income | YongLi&#39;s Blog</title>
+    <title>CFA Notes - Fixed Income | Yong&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="yongli1992">
     
 
     
-    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool">
+    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool, C++">
     
     <meta name="description" content="占比 10%，24 题。三大类计算：  求债券价格 反求收益率 衡量利率风险 (duration)  Basic FeatureIssuer Supranational organizations:  IMF World Bank Repayment source:  previous loans paid-in cash from members     Sovereign government">
 <meta name="keywords" content="cfa,finance">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CFA Notes - Fixed Income">
 <meta property="og:url" content="http://blog.yongli1992.com/2017/12/07/CFA-notes-fixed-income/index.html">
-<meta property="og:site_name" content="YongLi&#39;s Blog">
+<meta property="og:site_name" content="Yong&#39;s Blog">
 <meta property="og:description" content="占比 10%，24 题。三大类计算：  求债券价格 反求收益率 衡量利率风险 (duration)  Basic FeatureIssuer Supranational organizations:  IMF World Bank Repayment source:  previous loans paid-in cash from members     Sovereign government">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.imgur.com/jrILvWc.png">
@@ -32,7 +32,7 @@
 <link rel="publisher" href="111758198691283601884">
 
     
-    <link rel="alternative" href="/atom.xml" title="YongLi&#39;s Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Yong&#39;s Blog" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -50,12 +50,12 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/logo.png" alt="YongLi&#39;s Blog" title="YongLi&#39;s Blog"/></a>
+				<a href="/"><img src="/img/logo.png" alt="Yong&#39;s Blog" title="Yong&#39;s Blog"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="YongLi&#39;s Blog">YongLi&#39;s Blog</a></h1>
-				<h2 class="blog-motto">制心一處，守一不移。</h2>
+				<h1 class="site-name"><a href="/" title="Yong&#39;s Blog">Yong&#39;s Blog</a></h1>
+				<h2 class="blog-motto">飞光劝尔一杯酒，月寒日暖煎人寿。</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
@@ -103,7 +103,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-Feature"><span class="toc-number">1.</span> <span class="toc-text"><a href="#Basic-Feature" class="headerlink" title="Basic Feature"></a>Basic Feature</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Issuer"><span class="toc-number">1.1.</span> <span class="toc-text"><a href="#Issuer" class="headerlink" title="Issuer"></a>Issuer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Temr-to-maturity"><span class="toc-number">1.2.</span> <span class="toc-text"><a href="#Temr-to-maturity" class="headerlink" title="Temr to maturity"></a>Temr to maturity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bond-Market"><span class="toc-number">1.3.</span> <span class="toc-text"><a href="#Bond-Market" class="headerlink" title="Bond Market"></a>Bond Market</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Collateral"><span class="toc-number">1.4.</span> <span class="toc-text"><a href="#Collateral" class="headerlink" title="Collateral"></a>Collateral</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Credit-Enhancements"><span class="toc-number">1.5.</span> <span class="toc-text"><a href="#Credit-Enhancements" class="headerlink" title="Credit Enhancements"></a>Credit Enhancements</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Internal-enhancements"><span class="toc-number">1.5.1.</span> <span class="toc-text"><a href="#Internal-enhancements" class="headerlink" title="Internal enhancements"></a>Internal enhancements</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#External-enhancements"><span class="toc-number">1.5.2.</span> <span class="toc-text"><a href="#External-enhancements" class="headerlink" title="External enhancements"></a>External enhancements</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cash-collateral-account"><span class="toc-number">1.5.3.</span> <span class="toc-text"><a href="#Cash-collateral-account" class="headerlink" title="Cash collateral account"></a>Cash collateral account</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Covenants"><span class="toc-number">1.6.</span> <span class="toc-text"><a href="#Covenants" class="headerlink" title="Covenants"></a>Covenants</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tax"><span class="toc-number">1.7.</span> <span class="toc-text"><a href="#Tax" class="headerlink" title="Tax"></a>Tax</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cash-flow-structure"><span class="toc-number">1.8.</span> <span class="toc-text"><a href="#Cash-flow-structure" class="headerlink" title="Cash flow structure"></a>Cash flow structure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bonds-with-embedded-options-含权债券"><span class="toc-number">1.9.</span> <span class="toc-text"><a href="#Bonds-with-embedded-options-&#x542B;&#x6743;&#x503A;&#x5238;" class="headerlink" title="Bonds with embedded options &#x542B;&#x6743;&#x503A;&#x5238;"></a>Bonds with embedded options &#x542B;&#x6743;&#x503A;&#x5238;</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Callable-bond"><span class="toc-number">1.9.1.</span> <span class="toc-text"><a href="#Callable-bond" class="headerlink" title="Callable bond"></a>Callable bond</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Putable-bond"><span class="toc-number">1.9.2.</span> <span class="toc-text"><a href="#Putable-bond" class="headerlink" title="Putable bond"></a>Putable bond</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Convertible-bond"><span class="toc-number">1.9.3.</span> <span class="toc-text"><a href="#Convertible-bond" class="headerlink" title="Convertible bond"></a>Convertible bond</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Warrants"><span class="toc-number">1.9.4.</span> <span class="toc-text"><a href="#Warrants" class="headerlink" title="Warrants"></a>Warrants</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#contingent-convertible-bond"><span class="toc-number">1.9.5.</span> <span class="toc-text"><a href="#contingent-convertible-bond" class="headerlink" title="contingent convertible bond"></a>contingent convertible bond</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Classification-of-Fixed-income-markets"><span class="toc-number">2.</span> <span class="toc-text"><a href="#Classification-of-Fixed-income-markets" class="headerlink" title="Classification of Fixed-income markets"></a>Classification of Fixed-income markets</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Primary-Market-and-secondary-market"><span class="toc-number">3.</span> <span class="toc-text"><a href="#Primary-Market-and-secondary-market" class="headerlink" title="Primary Market and secondary market"></a>Primary Market and secondary market</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Classification-of-corporate-bond"><span class="toc-number">4.</span> <span class="toc-text"><a href="#Classification-of-corporate-bond" class="headerlink" title="Classification of corporate bond"></a>Classification of corporate bond</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Short-term-funding-available-to-banks-银行的融资方式"><span class="toc-number">5.</span> <span class="toc-text"><a href="#Short-term-funding-available-to-banks-&#x94F6;&#x884C;&#x7684;&#x878D;&#x8D44;&#x65B9;&#x5F0F;" class="headerlink" title="Short-term funding available to banks &#x94F6;&#x884C;&#x7684;&#x878D;&#x8D44;&#x65B9;&#x5F0F;"></a>Short-term funding available to banks &#x94F6;&#x884C;&#x7684;&#x878D;&#x8D44;&#x65B9;&#x5F0F;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bond-valuation"><span class="toc-number">6.</span> <span class="toc-text"><a href="#Bond-valuation" class="headerlink" title="Bond valuation"></a>Bond valuation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Relationship-between-price-and-time"><span class="toc-number">7.</span> <span class="toc-text"><a href="#Relationship-between-price-and-time" class="headerlink" title="Relationship between price and time"></a>Relationship between price and time</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#无套利定价"><span class="toc-number">8.</span> <span class="toc-text"><a href="#&#x65E0;&#x5957;&#x5229;&#x5B9A;&#x4EF7;" class="headerlink" title="&#x65E0;&#x5957;&#x5229;&#x5B9A;&#x4EF7;"></a>&#x65E0;&#x5957;&#x5229;&#x5B9A;&#x4EF7;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Accrued-interest"><span class="toc-number">9.</span> <span class="toc-text"><a href="#Accrued-interest" class="headerlink" title="Accrued interest"></a>Accrued interest</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Matrix-Pricing"><span class="toc-number">10.</span> <span class="toc-text"><a href="#Matrix-Pricing" class="headerlink" title="Matrix Pricing"></a>Matrix Pricing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Yield-measure"><span class="toc-number">11.</span> <span class="toc-text"><a href="#Yield-measure" class="headerlink" title="Yield measure"></a>Yield measure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Floating-rate-notes-valuation"><span class="toc-number">12.</span> <span class="toc-text"><a href="#Floating-rate-notes-valuation" class="headerlink" title="Floating-rate notes valuation"></a>Floating-rate notes valuation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Yield-curve"><span class="toc-number">13.</span> <span class="toc-text"><a href="#Yield-curve" class="headerlink" title="Yield curve"></a>Yield curve</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Yield-spread"><span class="toc-number">14.</span> <span class="toc-text"><a href="#Yield-spread" class="headerlink" title="Yield spread"></a>Yield spread</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Asset-baced-securities"><span class="toc-number">15.</span> <span class="toc-text"><a href="#Asset-baced-securities" class="headerlink" title="Asset-baced securities"></a>Asset-baced securities</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Collateralized-mortgage-obligations-CMO"><span class="toc-number">16.</span> <span class="toc-text"><a href="#Collateralized-mortgage-obligations-CMO" class="headerlink" title="Collateralized mortgage obligations (CMO)"></a>Collateralized mortgage obligations (CMO)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CMBS"><span class="toc-number">17.</span> <span class="toc-text"><a href="#CMBS" class="headerlink" title="CMBS"></a>CMBS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Non-mortgage-asset-backed-securities"><span class="toc-number">18.</span> <span class="toc-text"><a href="#Non-mortgage-asset-backed-securities" class="headerlink" title="Non-mortgage asset-backed securities"></a>Non-mortgage asset-backed securities</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Collateralized-debt-obligations"><span class="toc-number">19.</span> <span class="toc-text"><a href="#Collateralized-debt-obligations" class="headerlink" title="Collateralized debt obligations"></a>Collateralized debt obligations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Coupon-再投资下的债券的-Annualized-holding-period-return"><span class="toc-number">20.</span> <span class="toc-text"><a href="#Coupon-&#x518D;&#x6295;&#x8D44;&#x4E0B;&#x7684;&#x503A;&#x5238;&#x7684;-Annualized-holding-period-return" class="headerlink" title="Coupon &#x518D;&#x6295;&#x8D44;&#x4E0B;&#x7684;&#x503A;&#x5238;&#x7684; Annualized holding period return"></a>Coupon &#x518D;&#x6295;&#x8D44;&#x4E0B;&#x7684;&#x503A;&#x5238;&#x7684; Annualized holding period return</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Duration-久期"><span class="toc-number">21.</span> <span class="toc-text"><a href="#Duration-&#x4E45;&#x671F;" class="headerlink" title="Duration &#x4E45;&#x671F;"></a>Duration &#x4E45;&#x671F;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Macaulay-duration"><span class="toc-number">21.1.</span> <span class="toc-text"><a href="#Macaulay-duration" class="headerlink" title="Macaulay duration"></a>Macaulay duration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Modified-duration"><span class="toc-number">21.2.</span> <span class="toc-text"><a href="#Modified-duration" class="headerlink" title="Modified duration"></a>Modified duration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Effective-duration"><span class="toc-number">21.3.</span> <span class="toc-text"><a href="#Effective-duration" class="headerlink" title="Effective duration"></a>Effective duration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Money-duration"><span class="toc-number">21.4.</span> <span class="toc-text"><a href="#Money-duration" class="headerlink" title="Money duration"></a>Money duration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PVBP-price-value-of-a-basis-point"><span class="toc-number">21.5.</span> <span class="toc-text"><a href="#PVBP-price-value-of-a-basis-point" class="headerlink" title="PVBP (price value of a basis point)"></a>PVBP (price value of a basis point)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#影响-duration-的因素"><span class="toc-number">21.6.</span> <span class="toc-text"><a href="#&#x5F71;&#x54CD;-duration-&#x7684;&#x56E0;&#x7D20;" class="headerlink" title="&#x5F71;&#x54CD; duration &#x7684;&#x56E0;&#x7D20;"></a>&#x5F71;&#x54CD; duration &#x7684;&#x56E0;&#x7D20;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Convexity-凸性"><span class="toc-number">22.</span> <span class="toc-text"><a href="#Convexity-&#x51F8;&#x6027;" class="headerlink" title="Convexity &#x51F8;&#x6027;"></a>Convexity &#x51F8;&#x6027;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Credit-Analysis"><span class="toc-number">23.</span> <span class="toc-text"><a href="#Credit-Analysis" class="headerlink" title="Credit Analysis"></a>Credit Analysis</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-Feature"><span class="toc-number">1.</span> <span class="toc-text">Basic Feature</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Issuer"><span class="toc-number">1.1.</span> <span class="toc-text">Issuer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Temr-to-maturity"><span class="toc-number">1.2.</span> <span class="toc-text">Temr to maturity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bond-Market"><span class="toc-number">1.3.</span> <span class="toc-text">Bond Market</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Collateral"><span class="toc-number">1.4.</span> <span class="toc-text">Collateral</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Credit-Enhancements"><span class="toc-number">1.5.</span> <span class="toc-text">Credit Enhancements</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Internal-enhancements"><span class="toc-number">1.5.1.</span> <span class="toc-text">Internal enhancements</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#External-enhancements"><span class="toc-number">1.5.2.</span> <span class="toc-text">External enhancements</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cash-collateral-account"><span class="toc-number">1.5.3.</span> <span class="toc-text">Cash collateral account</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Covenants"><span class="toc-number">1.6.</span> <span class="toc-text">Covenants</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tax"><span class="toc-number">1.7.</span> <span class="toc-text">Tax</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cash-flow-structure"><span class="toc-number">1.8.</span> <span class="toc-text">Cash flow structure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bonds-with-embedded-options-含权债券"><span class="toc-number">1.9.</span> <span class="toc-text">Bonds with embedded options 含权债券</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Callable-bond"><span class="toc-number">1.9.1.</span> <span class="toc-text">Callable bond</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Putable-bond"><span class="toc-number">1.9.2.</span> <span class="toc-text">Putable bond</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Convertible-bond"><span class="toc-number">1.9.3.</span> <span class="toc-text">Convertible bond</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Warrants"><span class="toc-number">1.9.4.</span> <span class="toc-text">Warrants</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#contingent-convertible-bond"><span class="toc-number">1.9.5.</span> <span class="toc-text">contingent convertible bond</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Classification-of-Fixed-income-markets"><span class="toc-number">2.</span> <span class="toc-text">Classification of Fixed-income markets</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Primary-Market-and-secondary-market"><span class="toc-number">3.</span> <span class="toc-text">Primary Market and secondary market</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Classification-of-corporate-bond"><span class="toc-number">4.</span> <span class="toc-text">Classification of corporate bond</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Short-term-funding-available-to-banks-银行的融资方式"><span class="toc-number">5.</span> <span class="toc-text">Short-term funding available to banks 银行的融资方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bond-valuation"><span class="toc-number">6.</span> <span class="toc-text">Bond valuation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Relationship-between-price-and-time"><span class="toc-number">7.</span> <span class="toc-text">Relationship between price and time</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#无套利定价"><span class="toc-number">8.</span> <span class="toc-text">无套利定价</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Accrued-interest"><span class="toc-number">9.</span> <span class="toc-text">Accrued interest</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Matrix-Pricing"><span class="toc-number">10.</span> <span class="toc-text">Matrix Pricing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Yield-measure"><span class="toc-number">11.</span> <span class="toc-text">Yield measure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Floating-rate-notes-valuation"><span class="toc-number">12.</span> <span class="toc-text">Floating-rate notes valuation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Yield-curve"><span class="toc-number">13.</span> <span class="toc-text">Yield curve</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Yield-spread"><span class="toc-number">14.</span> <span class="toc-text">Yield spread</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Asset-baced-securities"><span class="toc-number">15.</span> <span class="toc-text">Asset-baced securities</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Collateralized-mortgage-obligations-CMO"><span class="toc-number">16.</span> <span class="toc-text">Collateralized mortgage obligations (CMO)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CMBS"><span class="toc-number">17.</span> <span class="toc-text">CMBS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Non-mortgage-asset-backed-securities"><span class="toc-number">18.</span> <span class="toc-text">Non-mortgage asset-backed securities</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Collateralized-debt-obligations"><span class="toc-number">19.</span> <span class="toc-text">Collateralized debt obligations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Coupon-再投资下的债券的-Annualized-holding-period-return"><span class="toc-number">20.</span> <span class="toc-text">Coupon 再投资下的债券的 Annualized holding period return</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Duration-久期"><span class="toc-number">21.</span> <span class="toc-text">Duration 久期</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Macaulay-duration"><span class="toc-number">21.1.</span> <span class="toc-text">Macaulay duration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Modified-duration"><span class="toc-number">21.2.</span> <span class="toc-text">Modified duration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Effective-duration"><span class="toc-number">21.3.</span> <span class="toc-text">Effective duration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Money-duration"><span class="toc-number">21.4.</span> <span class="toc-text">Money duration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PVBP-price-value-of-a-basis-point"><span class="toc-number">21.5.</span> <span class="toc-text">PVBP (price value of a basis point)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#影响-duration-的因素"><span class="toc-number">21.6.</span> <span class="toc-text">影响 duration 的因素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Convexity-凸性"><span class="toc-number">22.</span> <span class="toc-text">Convexity 凸性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Credit-Analysis"><span class="toc-number">23.</span> <span class="toc-text">Credit Analysis</span></a></li></ol>
 		
 		</div>
 		
@@ -528,7 +528,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://blog.yongli1992.com/2017/12/07/CFA-notes-fixed-income/" data-title="CFA Notes - Fixed Income | YongLi&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://blog.yongli1992.com/2017/12/07/CFA-notes-fixed-income/" data-title="CFA Notes - Fixed Income | Yong&#39;s Blog" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -570,19 +570,29 @@
 
 
 
+
 </div>  
       <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-Feature"><span class="toc-number">1.</span> <span class="toc-text"><a href="#Basic-Feature" class="headerlink" title="Basic Feature"></a>Basic Feature</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Issuer"><span class="toc-number">1.1.</span> <span class="toc-text"><a href="#Issuer" class="headerlink" title="Issuer"></a>Issuer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Temr-to-maturity"><span class="toc-number">1.2.</span> <span class="toc-text"><a href="#Temr-to-maturity" class="headerlink" title="Temr to maturity"></a>Temr to maturity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bond-Market"><span class="toc-number">1.3.</span> <span class="toc-text"><a href="#Bond-Market" class="headerlink" title="Bond Market"></a>Bond Market</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Collateral"><span class="toc-number">1.4.</span> <span class="toc-text"><a href="#Collateral" class="headerlink" title="Collateral"></a>Collateral</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Credit-Enhancements"><span class="toc-number">1.5.</span> <span class="toc-text"><a href="#Credit-Enhancements" class="headerlink" title="Credit Enhancements"></a>Credit Enhancements</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Internal-enhancements"><span class="toc-number">1.5.1.</span> <span class="toc-text"><a href="#Internal-enhancements" class="headerlink" title="Internal enhancements"></a>Internal enhancements</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#External-enhancements"><span class="toc-number">1.5.2.</span> <span class="toc-text"><a href="#External-enhancements" class="headerlink" title="External enhancements"></a>External enhancements</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cash-collateral-account"><span class="toc-number">1.5.3.</span> <span class="toc-text"><a href="#Cash-collateral-account" class="headerlink" title="Cash collateral account"></a>Cash collateral account</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Covenants"><span class="toc-number">1.6.</span> <span class="toc-text"><a href="#Covenants" class="headerlink" title="Covenants"></a>Covenants</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tax"><span class="toc-number">1.7.</span> <span class="toc-text"><a href="#Tax" class="headerlink" title="Tax"></a>Tax</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cash-flow-structure"><span class="toc-number">1.8.</span> <span class="toc-text"><a href="#Cash-flow-structure" class="headerlink" title="Cash flow structure"></a>Cash flow structure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bonds-with-embedded-options-含权债券"><span class="toc-number">1.9.</span> <span class="toc-text"><a href="#Bonds-with-embedded-options-&#x542B;&#x6743;&#x503A;&#x5238;" class="headerlink" title="Bonds with embedded options &#x542B;&#x6743;&#x503A;&#x5238;"></a>Bonds with embedded options &#x542B;&#x6743;&#x503A;&#x5238;</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Callable-bond"><span class="toc-number">1.9.1.</span> <span class="toc-text"><a href="#Callable-bond" class="headerlink" title="Callable bond"></a>Callable bond</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Putable-bond"><span class="toc-number">1.9.2.</span> <span class="toc-text"><a href="#Putable-bond" class="headerlink" title="Putable bond"></a>Putable bond</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Convertible-bond"><span class="toc-number">1.9.3.</span> <span class="toc-text"><a href="#Convertible-bond" class="headerlink" title="Convertible bond"></a>Convertible bond</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Warrants"><span class="toc-number">1.9.4.</span> <span class="toc-text"><a href="#Warrants" class="headerlink" title="Warrants"></a>Warrants</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#contingent-convertible-bond"><span class="toc-number">1.9.5.</span> <span class="toc-text"><a href="#contingent-convertible-bond" class="headerlink" title="contingent convertible bond"></a>contingent convertible bond</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Classification-of-Fixed-income-markets"><span class="toc-number">2.</span> <span class="toc-text"><a href="#Classification-of-Fixed-income-markets" class="headerlink" title="Classification of Fixed-income markets"></a>Classification of Fixed-income markets</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Primary-Market-and-secondary-market"><span class="toc-number">3.</span> <span class="toc-text"><a href="#Primary-Market-and-secondary-market" class="headerlink" title="Primary Market and secondary market"></a>Primary Market and secondary market</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Classification-of-corporate-bond"><span class="toc-number">4.</span> <span class="toc-text"><a href="#Classification-of-corporate-bond" class="headerlink" title="Classification of corporate bond"></a>Classification of corporate bond</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Short-term-funding-available-to-banks-银行的融资方式"><span class="toc-number">5.</span> <span class="toc-text"><a href="#Short-term-funding-available-to-banks-&#x94F6;&#x884C;&#x7684;&#x878D;&#x8D44;&#x65B9;&#x5F0F;" class="headerlink" title="Short-term funding available to banks &#x94F6;&#x884C;&#x7684;&#x878D;&#x8D44;&#x65B9;&#x5F0F;"></a>Short-term funding available to banks &#x94F6;&#x884C;&#x7684;&#x878D;&#x8D44;&#x65B9;&#x5F0F;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bond-valuation"><span class="toc-number">6.</span> <span class="toc-text"><a href="#Bond-valuation" class="headerlink" title="Bond valuation"></a>Bond valuation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Relationship-between-price-and-time"><span class="toc-number">7.</span> <span class="toc-text"><a href="#Relationship-between-price-and-time" class="headerlink" title="Relationship between price and time"></a>Relationship between price and time</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#无套利定价"><span class="toc-number">8.</span> <span class="toc-text"><a href="#&#x65E0;&#x5957;&#x5229;&#x5B9A;&#x4EF7;" class="headerlink" title="&#x65E0;&#x5957;&#x5229;&#x5B9A;&#x4EF7;"></a>&#x65E0;&#x5957;&#x5229;&#x5B9A;&#x4EF7;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Accrued-interest"><span class="toc-number">9.</span> <span class="toc-text"><a href="#Accrued-interest" class="headerlink" title="Accrued interest"></a>Accrued interest</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Matrix-Pricing"><span class="toc-number">10.</span> <span class="toc-text"><a href="#Matrix-Pricing" class="headerlink" title="Matrix Pricing"></a>Matrix Pricing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Yield-measure"><span class="toc-number">11.</span> <span class="toc-text"><a href="#Yield-measure" class="headerlink" title="Yield measure"></a>Yield measure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Floating-rate-notes-valuation"><span class="toc-number">12.</span> <span class="toc-text"><a href="#Floating-rate-notes-valuation" class="headerlink" title="Floating-rate notes valuation"></a>Floating-rate notes valuation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Yield-curve"><span class="toc-number">13.</span> <span class="toc-text"><a href="#Yield-curve" class="headerlink" title="Yield curve"></a>Yield curve</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Yield-spread"><span class="toc-number">14.</span> <span class="toc-text"><a href="#Yield-spread" class="headerlink" title="Yield spread"></a>Yield spread</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Asset-baced-securities"><span class="toc-number">15.</span> <span class="toc-text"><a href="#Asset-baced-securities" class="headerlink" title="Asset-baced securities"></a>Asset-baced securities</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Collateralized-mortgage-obligations-CMO"><span class="toc-number">16.</span> <span class="toc-text"><a href="#Collateralized-mortgage-obligations-CMO" class="headerlink" title="Collateralized mortgage obligations (CMO)"></a>Collateralized mortgage obligations (CMO)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CMBS"><span class="toc-number">17.</span> <span class="toc-text"><a href="#CMBS" class="headerlink" title="CMBS"></a>CMBS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Non-mortgage-asset-backed-securities"><span class="toc-number">18.</span> <span class="toc-text"><a href="#Non-mortgage-asset-backed-securities" class="headerlink" title="Non-mortgage asset-backed securities"></a>Non-mortgage asset-backed securities</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Collateralized-debt-obligations"><span class="toc-number">19.</span> <span class="toc-text"><a href="#Collateralized-debt-obligations" class="headerlink" title="Collateralized debt obligations"></a>Collateralized debt obligations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Coupon-再投资下的债券的-Annualized-holding-period-return"><span class="toc-number">20.</span> <span class="toc-text"><a href="#Coupon-&#x518D;&#x6295;&#x8D44;&#x4E0B;&#x7684;&#x503A;&#x5238;&#x7684;-Annualized-holding-period-return" class="headerlink" title="Coupon &#x518D;&#x6295;&#x8D44;&#x4E0B;&#x7684;&#x503A;&#x5238;&#x7684; Annualized holding period return"></a>Coupon &#x518D;&#x6295;&#x8D44;&#x4E0B;&#x7684;&#x503A;&#x5238;&#x7684; Annualized holding period return</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Duration-久期"><span class="toc-number">21.</span> <span class="toc-text"><a href="#Duration-&#x4E45;&#x671F;" class="headerlink" title="Duration &#x4E45;&#x671F;"></a>Duration &#x4E45;&#x671F;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Macaulay-duration"><span class="toc-number">21.1.</span> <span class="toc-text"><a href="#Macaulay-duration" class="headerlink" title="Macaulay duration"></a>Macaulay duration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Modified-duration"><span class="toc-number">21.2.</span> <span class="toc-text"><a href="#Modified-duration" class="headerlink" title="Modified duration"></a>Modified duration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Effective-duration"><span class="toc-number">21.3.</span> <span class="toc-text"><a href="#Effective-duration" class="headerlink" title="Effective duration"></a>Effective duration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Money-duration"><span class="toc-number">21.4.</span> <span class="toc-text"><a href="#Money-duration" class="headerlink" title="Money duration"></a>Money duration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PVBP-price-value-of-a-basis-point"><span class="toc-number">21.5.</span> <span class="toc-text"><a href="#PVBP-price-value-of-a-basis-point" class="headerlink" title="PVBP (price value of a basis point)"></a>PVBP (price value of a basis point)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#影响-duration-的因素"><span class="toc-number">21.6.</span> <span class="toc-text"><a href="#&#x5F71;&#x54CD;-duration-&#x7684;&#x56E0;&#x7D20;" class="headerlink" title="&#x5F71;&#x54CD; duration &#x7684;&#x56E0;&#x7D20;"></a>&#x5F71;&#x54CD; duration &#x7684;&#x56E0;&#x7D20;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Convexity-凸性"><span class="toc-number">22.</span> <span class="toc-text"><a href="#Convexity-&#x51F8;&#x6027;" class="headerlink" title="Convexity &#x51F8;&#x6027;"></a>Convexity &#x51F8;&#x6027;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Credit-Analysis"><span class="toc-number">23.</span> <span class="toc-text"><a href="#Credit-Analysis" class="headerlink" title="Credit Analysis"></a>Credit Analysis</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-Feature"><span class="toc-number">1.</span> <span class="toc-text">Basic Feature</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Issuer"><span class="toc-number">1.1.</span> <span class="toc-text">Issuer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Temr-to-maturity"><span class="toc-number">1.2.</span> <span class="toc-text">Temr to maturity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bond-Market"><span class="toc-number">1.3.</span> <span class="toc-text">Bond Market</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Collateral"><span class="toc-number">1.4.</span> <span class="toc-text">Collateral</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Credit-Enhancements"><span class="toc-number">1.5.</span> <span class="toc-text">Credit Enhancements</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Internal-enhancements"><span class="toc-number">1.5.1.</span> <span class="toc-text">Internal enhancements</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#External-enhancements"><span class="toc-number">1.5.2.</span> <span class="toc-text">External enhancements</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cash-collateral-account"><span class="toc-number">1.5.3.</span> <span class="toc-text">Cash collateral account</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Covenants"><span class="toc-number">1.6.</span> <span class="toc-text">Covenants</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tax"><span class="toc-number">1.7.</span> <span class="toc-text">Tax</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cash-flow-structure"><span class="toc-number">1.8.</span> <span class="toc-text">Cash flow structure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bonds-with-embedded-options-含权债券"><span class="toc-number">1.9.</span> <span class="toc-text">Bonds with embedded options 含权债券</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Callable-bond"><span class="toc-number">1.9.1.</span> <span class="toc-text">Callable bond</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Putable-bond"><span class="toc-number">1.9.2.</span> <span class="toc-text">Putable bond</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Convertible-bond"><span class="toc-number">1.9.3.</span> <span class="toc-text">Convertible bond</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Warrants"><span class="toc-number">1.9.4.</span> <span class="toc-text">Warrants</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#contingent-convertible-bond"><span class="toc-number">1.9.5.</span> <span class="toc-text">contingent convertible bond</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Classification-of-Fixed-income-markets"><span class="toc-number">2.</span> <span class="toc-text">Classification of Fixed-income markets</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Primary-Market-and-secondary-market"><span class="toc-number">3.</span> <span class="toc-text">Primary Market and secondary market</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Classification-of-corporate-bond"><span class="toc-number">4.</span> <span class="toc-text">Classification of corporate bond</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Short-term-funding-available-to-banks-银行的融资方式"><span class="toc-number">5.</span> <span class="toc-text">Short-term funding available to banks 银行的融资方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bond-valuation"><span class="toc-number">6.</span> <span class="toc-text">Bond valuation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Relationship-between-price-and-time"><span class="toc-number">7.</span> <span class="toc-text">Relationship between price and time</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#无套利定价"><span class="toc-number">8.</span> <span class="toc-text">无套利定价</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Accrued-interest"><span class="toc-number">9.</span> <span class="toc-text">Accrued interest</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Matrix-Pricing"><span class="toc-number">10.</span> <span class="toc-text">Matrix Pricing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Yield-measure"><span class="toc-number">11.</span> <span class="toc-text">Yield measure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Floating-rate-notes-valuation"><span class="toc-number">12.</span> <span class="toc-text">Floating-rate notes valuation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Yield-curve"><span class="toc-number">13.</span> <span class="toc-text">Yield curve</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Yield-spread"><span class="toc-number">14.</span> <span class="toc-text">Yield spread</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Asset-baced-securities"><span class="toc-number">15.</span> <span class="toc-text">Asset-baced securities</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Collateralized-mortgage-obligations-CMO"><span class="toc-number">16.</span> <span class="toc-text">Collateralized mortgage obligations (CMO)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CMBS"><span class="toc-number">17.</span> <span class="toc-text">CMBS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Non-mortgage-asset-backed-securities"><span class="toc-number">18.</span> <span class="toc-text">Non-mortgage asset-backed securities</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Collateralized-debt-obligations"><span class="toc-number">19.</span> <span class="toc-text">Collateralized debt obligations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Coupon-再投资下的债券的-Annualized-holding-period-return"><span class="toc-number">20.</span> <span class="toc-text">Coupon 再投资下的债券的 Annualized holding period return</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Duration-久期"><span class="toc-number">21.</span> <span class="toc-text">Duration 久期</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Macaulay-duration"><span class="toc-number">21.1.</span> <span class="toc-text">Macaulay duration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Modified-duration"><span class="toc-number">21.2.</span> <span class="toc-text">Modified duration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Effective-duration"><span class="toc-number">21.3.</span> <span class="toc-text">Effective duration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Money-duration"><span class="toc-number">21.4.</span> <span class="toc-text">Money duration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PVBP-price-value-of-a-basis-point"><span class="toc-number">21.5.</span> <span class="toc-text">PVBP (price value of a basis point)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#影响-duration-的因素"><span class="toc-number">21.6.</span> <span class="toc-text">影响 duration 的因素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Convexity-凸性"><span class="toc-number">22.</span> <span class="toc-text">Convexity 凸性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Credit-Analysis"><span class="toc-number">23.</span> <span class="toc-text">Credit Analysis</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
+
+  
+<div class="github-card">
+<p class="asidetitle">Github Card</p>
+<div class="github-card" data-github="NeilLi1992" data-theme="medium"></div>
+<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
+</div>
+
+
 
   
 <div class="categorieslist">
@@ -667,10 +677,6 @@
 			
 		
 			
-				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/jira/" title="jira">jira<sup>2</sup></a></li>
 			
 		
@@ -679,15 +685,35 @@
 			
 		
 			
-				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/ios/" title="ios">ios<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/linode/" title="linode">linode<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/problem/" title="problem">problem<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/translated/" title="translated">translated<sup>1</sup></a></li>
 			
 		
 			
@@ -696,22 +722,6 @@
 		
 			
 				<li><a href="/tags/UK/" title="UK">UK<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/terminal/" title="terminal">terminal<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/oxford/" title="oxford">oxford<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/linode/" title="linode">linode<sup>1</sup></a></li>
 			
 		
 		</ul>
@@ -724,28 +734,12 @@
         
           <li>
             
-            	<a href="http://blog.imink.net 墨同学的博客" target="_blank" title="ink&#39;s blog">ink&#39;s blog</a>
-            
-          </li>
-        
-          <li>
-            
-            	<a href="http://eventfulkay.com 小虾米的博客" target="_blank" title="kai&#39;s blog">kai&#39;s blog</a>
+            	<a href="http://xuk.ai/ 小虾米的博客" target="_blank" title="kai&#39;s blog">kai&#39;s blog</a>
             
           </li>
         
     </ul>
 </div>
-
-  
-
-<div class="doubanshow">
-<p class="asidetitle">豆瓣秀</p>
-<div>
-<script type="text/javascript" src="http://www.douban.com/service/badge/44886038/?show=collection&amp;n=12&amp;columns=3&amp;hidelogo=yes&amp;hideself=yes&amp;cat=book|movie" ></script>
-</div>
-</div>
-
 
   <div class="weiboshow">
   <p class="asidetitle">Weibo</p>
@@ -769,8 +763,8 @@
 	
 	
 	<section class="info">
-		<p> Hello, I&#39;m Yong Li, a MSc student in Oxford Uni. <br/>
-			Welcome to my blog, hope it does help to you!.</p>
+		<p> Hello, I&#39;m Yong Li, originally from China, now living in London and working for Bloomberg L.P. <br/>
+			I currently work as a professional financial software developer.</p>
 	</section>
 	 
 	<div class="social-font" class="clearfix">
@@ -781,6 +775,8 @@
 		<a href="https://github.com/NeilLi1992" target="_blank" class="icon-github" title="github"></a>
 		
 		
+		<a href="http://stackoverflow.com/users/5184632" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+		
 		
 		
 		<a href="https://www.facebook.com/100006707769873" target="_blank" class="icon-facebook" title="facebook"></a>
@@ -788,8 +784,6 @@
 		
 		<a href="https://www.linkedin.com/in/yongli1992" target="_blank" class="icon-linkedin" title="linkedin"></a>
 		
-		
-		<a href="https://www.douban.com/people/44886038" target="_blank" class="icon-douban" title="豆瓣"></a>
 		
 		
 		<a href="http://www.zhihu.com/people/li-yong-88-55" target="_blank" class="icon-zhihu" title="知乎"></a>
@@ -848,6 +842,11 @@ $(document).ready(function(){
   $(window).scroll(function(){
     o.css("top",Math.max(80,260-$(this).scrollTop()));
   });
+  
+        getSize();
+        if (myWidth >= 1024) {
+          c.click();
+        }
   
   $(window).resize(function(){
     getSize(); 
@@ -969,6 +968,8 @@ var disqus_shortname = 'yongli1992';
 
 
 
+
+
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
 <script src="/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
@@ -1004,6 +1005,16 @@ ga('send', 'pageview');
 </script>
 
 
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
 
 
