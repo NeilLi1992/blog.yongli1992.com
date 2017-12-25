@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: YongLi's Blog
-subtitle: 制心一處，守一不移。
+title: Yong's Blog
+subtitle: 飞光劝尔一杯酒，月寒日暖煎人寿。
 description: This is the place where I write and reflect.
 author: yongli1992
 language: zh_CN
 timezone:
-keywords: Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool
+keywords: Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool, C++
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
