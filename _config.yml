@@ -3,16 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: TechUp
-subtitle: Yong Li's small tech world.
-description: This is yongli1992's blog, for writing tech-things.
+title: YongLi's Blog
+subtitle: 制心一處，守一不移。
+description: This is the place where I write and reflect.
 author: yongli1992
 language: zh_CN
 timezone:
+keywords: Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://blog.yongli1992.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -62,8 +63,8 @@ pagination_dir: page
 
 # Extensions
 ## Plugins: http://hexo.io/plugins/
-plugins:
-- hexo-math
+# plugins:
+# - hexo-math
 
 ## Themes: http://hexo.io/themes/
 theme: jacman
@@ -74,4 +75,4 @@ stylus:
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/NeilLi1992/neilli1992.github.io.git
+  repo: https://github.com/NeilLi1992/blog.yongli1992.com
