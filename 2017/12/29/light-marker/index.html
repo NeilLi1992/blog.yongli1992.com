@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Python存储模块shelve学习笔记 | Yong&#39;s Blog</title>
+    <title>Light Marker - A Chrome bookmark extension to save your reading position. | Yong&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="yongli1992">
@@ -13,18 +13,18 @@
     
     <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool, C++">
     
-    <meta name="description" content="Shelve是python中一个用于持久化存储的模块，采用字典的存储形式。Shelve模块的好处是，基本上任何python对象都可以作为存储的键。 创建调用shelve.open()方法来创建存储对象。传入字符串作为文件名。这里传入的字符串无须加后缀，但是shelve模块底层在写入文件的时候可能会自动为其加上后缀名^1。调用方法时还可以为一个参数writeback指定一个布尔值，其默认值为Fals">
-<meta name="keywords" content="python">
+    <meta name="description" content="Light Marker ⚡A lightweight, non-intrusive bookmark Chrome Extension to save your scrollbar position, in order to remember your reading locations and restore it when you open next time. 😮 Github repo">
+<meta name="keywords" content="tool,development,github,chrome-extension">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python存储模块shelve学习笔记">
-<meta property="og:url" content="http://blog.yongli1992.com/2015/01/20/python-shelve-module/index.html">
+<meta property="og:title" content="Light Marker - A Chrome bookmark extension to save your reading position.">
+<meta property="og:url" content="http://blog.yongli1992.com/2017/12/29/light-marker/index.html">
 <meta property="og:site_name" content="Yong&#39;s Blog">
-<meta property="og:description" content="Shelve是python中一个用于持久化存储的模块，采用字典的存储形式。Shelve模块的好处是，基本上任何python对象都可以作为存储的键。 创建调用shelve.open()方法来创建存储对象。传入字符串作为文件名。这里传入的字符串无须加后缀，但是shelve模块底层在写入文件的时候可能会自动为其加上后缀名^1。调用方法时还可以为一个参数writeback指定一个布尔值，其默认值为Fals">
+<meta property="og:description" content="Light Marker ⚡A lightweight, non-intrusive bookmark Chrome Extension to save your scrollbar position, in order to remember your reading locations and restore it when you open next time. 😮 Github repo">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2015-08-08T00:34:12.000Z">
+<meta property="og:updated_time" content="2017-12-29T23:08:22.613Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python存储模块shelve学习笔记">
-<meta name="twitter:description" content="Shelve是python中一个用于持久化存储的模块，采用字典的存储形式。Shelve模块的好处是，基本上任何python对象都可以作为存储的键。 创建调用shelve.open()方法来创建存储对象。传入字符串作为文件名。这里传入的字符串无须加后缀，但是shelve模块底层在写入文件的时候可能会自动为其加上后缀名^1。调用方法时还可以为一个参数writeback指定一个布尔值，其默认值为Fals">
+<meta name="twitter:title" content="Light Marker - A Chrome bookmark extension to save your reading position.">
+<meta name="twitter:description" content="Light Marker ⚡A lightweight, non-intrusive bookmark Chrome Extension to save your scrollbar position, in order to remember your reading locations and restore it when you open next time. 😮 Github repo">
 <link rel="publisher" href="111758198691283601884">
 
     
@@ -83,14 +83,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/01/20/python-shelve-module/" title="Python存储模块shelve学习笔记" itemprop="url">Python存储模块shelve学习笔记</a>
+      <a href="/2017/12/29/light-marker/" title="Light Marker - A Chrome bookmark extension to save your reading position." itemprop="url">Light Marker - A Chrome bookmark extension to save your reading position.</a>
   </h1>
   <p class="article-author">By
        
 		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-01-20T15:06:18.000Z" itemprop="datePublished"> Published 2015-01-20</time>
+    <time datetime="2017-12-29T22:59:31.000Z" itemprop="datePublished"> Published 2017-12-29</time>
     
   </p>
 </header>
@@ -99,18 +99,18 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建"><span class="toc-number">1.</span> <span class="toc-text">创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可变对象的更新问题"><span class="toc-number">2.</span> <span class="toc-text">可变对象的更新问题</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Light-Marker-⚡"><span class="toc-number">1.</span> <span class="toc-text">Light Marker ⚡</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Github-repository"><span class="toc-number">1.1.</span> <span class="toc-text">Github repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Install-⚙️"><span class="toc-number">1.2.</span> <span class="toc-text">Install ⚙️</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-use-🤔"><span class="toc-number">1.3.</span> <span class="toc-text">How to use 🤔</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bugs-and-feature-requests-🤪"><span class="toc-number">1.4.</span> <span class="toc-text">Bugs and feature requests 🤪</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Credit"><span class="toc-number">1.5.</span> <span class="toc-text">Credit</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<p>Shelve是python中一个用于持久化存储的模块，采用字典的存储形式。Shelve模块的好处是，基本上任何python对象都可以作为存储的键。</p>
-<h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4><p>调用shelve.open()方法来创建存储对象。传入字符串作为文件名。这里传入的字符串无须加后缀，但是shelve模块底层在写入文件的时候可能会自动为其加上后缀名<a href="[官方文档](https://docs.python.org/2/library/shelve.html)是这么写的，但是实测的时候没有加后缀，暂不确定具体是何因素决定了后缀的添加与否。">^1</a>。<br>调用方法时还可以为一个参数writeback指定一个布尔值，其默认值为False。若指定writeback为True，则对存储对象的操作将缓存在内存中，只有当调用存储对象的sync方法和close方法时才会写回文件。当存储的操作很多时，会影响内存性能并导致close过程的速度很慢。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> shelve</div><div class="line">s = shelve.open(<span class="string">"filename"</span>)</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>####使用<br>打开存储对象s后，使用的过程非常简单，视为操作一个字典即可。下面为一些操作的例子<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">s[key] = data <span class="comment"># 若key已存在，则覆盖</span></div><div class="line">data = s[key] <span class="comment"># 取回数据</span></div><div class="line"><span class="keyword">del</span> s[key]    <span class="comment"># 删除</span></div><div class="line"></div><div class="line">flag = s.has_key(key) <span class="comment"># 检测是否含有键</span></div><div class="line">key_list = s.keys() <span class="comment"># 返回所有键的列表</span></div></pre></td></tr></table></figure></p>
-<h4 id="可变对象的更新问题"><a href="#可变对象的更新问题" class="headerlink" title="可变对象的更新问题"></a>可变对象的更新问题</h4><p>使用shelve过程中存在一个易错的陷进，即当我们已经从存储对象s中取出某个可变数据对象data之后，data在内存中发生更改时，s是无法知道这个更改的，也无法将这个更改自动写回存储文件。如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;s[<span class="string">'my_list'</span>] = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>] <span class="comment"># 放入一个可变对象，列表变量my_list</span></div><div class="line">&gt;&gt;&gt;s</div><div class="line">&gt;&#123;<span class="string">'my_list'</span>: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]&#125;</div><div class="line">&gt;&gt;&gt;data = s[<span class="string">'my_list'</span>] <span class="comment"># 取出可变对象</span></div><div class="line">&gt;&gt;&gt;data.append(<span class="number">4</span>) <span class="comment"># 做出更改</span></div><div class="line">&gt;&gt;&gt;s</div><div class="line">&gt;&#123;<span class="string">'my_list'</span>: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]&#125; <span class="comment"># 存储对象无法知道发生了更改，存储数据不变</span></div></pre></td></tr></table></figure></p>
-<p>为了避免该问题，我们应始终牢记：<br><em>仅当对存储对象进行了<strong>赋值</strong>操作时，才算真正存储了。</em></p>
-<p>故，对可变对象的正确更新应按如下方式进行：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">temp = s[<span class="string">'my_list'</span>] <span class="comment"># 取出可变对象</span></div><div class="line">temp.append(<span class="number">4</span>) <span class="comment"># 进行更改</span></div><div class="line">s[<span class="string">'my_list'</span>] = temp <span class="comment"># 赋值操作发生，进行存储</span></div><div class="line">&gt;&gt;&gt;s</div><div class="line">&gt;&#123;<span class="string">'my_list'</span>: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]&#125; <span class="comment"># 存储成功</span></div></pre></td></tr></table></figure></p>
-<p>最后，对本地文件的操作完成后不要忘记关闭它：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">s.close() <span class="comment"># 关闭存储对象</span></div></pre></td></tr></table></figure></p>
+		<h1 id="Light-Marker-⚡"><a href="#Light-Marker-⚡" class="headerlink" title="Light Marker ⚡"></a>Light Marker ⚡</h1><p>A lightweight, non-intrusive bookmark Chrome Extension to save your scrollbar position, in order to remember your reading locations and restore it when you open next time. 😮</p>
+<h2 id="Github-repository"><a href="#Github-repository" class="headerlink" title="Github repository"></a>Github repository</h2><p>This is just a replicate of the README page on the <a href="https://github.com/NeilLi1992/LightMarker2" target="_blank" rel="noopener">github repository</a>. Please visit the repository if you’re interested (maybe give me a star).</p>
+<h2 id="Install-⚙️"><a href="#Install-⚙️" class="headerlink" title="Install ⚙️"></a>Install ⚙️</h2><p><a href="https://chrome.google.com/webstore/detail/light-marker/lhkgiieenfadlgmaacnhnidkneedhpao?hl=en-GB" target="_blank" rel="noopener">Chrome Webstore Install Page</a>.</p>
+<p>Or just search <strong>Light Marker</strong> in webstore.</p>
+<h2 id="How-to-use-🤔"><a href="#How-to-use-🤔" class="headerlink" title="How to use 🤔"></a>How to use 🤔</h2><p>Simply install it and click it. Light Marker is meant to be a lightweight overlay on top of Chrome’s default bookmark. It saves bookmark exactly the same as Chrome’s own bookmark. Even you uninstall Light Marker, you easily fall back to the default one, without lossing any bookmakrs (but you lose scrollbar positions).</p>
+<p>Just remember to click the <code>save</code> button to save the scrollbar location. Next time when you open this page, it automatically jumps to this location, so you’re back to where you left!</p>
+<h2 id="Bugs-and-feature-requests-🤪"><a href="#Bugs-and-feature-requests-🤪" class="headerlink" title="Bugs and feature requests 🤪"></a>Bugs and feature requests 🤪</h2><p>Please submit issues for reporting bugs 🐞, feature requests 💡 or any thoughts 😘 !</p>
+<h2 id="Credit"><a href="#Credit" class="headerlink" title="Credit"></a>Credit</h2><p>Light Marker icons made by <a href="https://smashicons.com/" target="_blank" rel="noopener">Smashicons</a> from <a href="">www.flaticon.com</a>.</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -118,13 +118,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/python/">python</a>
+  <a class="article-category-link" href="/categories/programming/">programming</a>►<a class="article-category-link" href="/categories/programming/tool/">tool</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/python/">python</a>
+  <span></span> <a href="/tags/tool/">tool</a><a href="/tags/development/">development</a><a href="/tags/github/">github</a><a href="/tags/chrome-extension/">chrome-extension</a>
   </div>
 
 </div>
@@ -133,7 +133,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://blog.yongli1992.com/2015/01/20/python-shelve-module/" data-title="Python存储模块shelve学习笔记 | Yong&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://blog.yongli1992.com/2017/12/29/light-marker/" data-title="Light Marker - A Chrome bookmark extension to save your reading position. | Yong&#39;s Blog" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -146,14 +146,14 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/01/20/python-argparse-module/" title="Python 命令行解析模块argparse使用学习">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Python 命令行解析模块argparse使用学习</span>
+
+<div class="next">
+<a href="/2017/12/07/CFA-notes-portfolio-management/"  title="CFA Notes - Portfolio Managements">
+ <strong>下一篇：</strong><br/> 
+ <span>CFA Notes - Portfolio Managements
+</span>
 </a>
 </div>
-
 
 </nav>
 
@@ -174,7 +174,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建"><span class="toc-number">1.</span> <span class="toc-text">创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可变对象的更新问题"><span class="toc-number">2.</span> <span class="toc-text">可变对象的更新问题</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Light-Marker-⚡"><span class="toc-number">1.</span> <span class="toc-text">Light Marker ⚡</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Github-repository"><span class="toc-number">1.1.</span> <span class="toc-text">Github repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Install-⚙️"><span class="toc-number">1.2.</span> <span class="toc-text">Install ⚙️</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-use-🤔"><span class="toc-number">1.3.</span> <span class="toc-text">How to use 🤔</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bugs-and-feature-requests-🤪"><span class="toc-number">1.4.</span> <span class="toc-text">Bugs and feature requests 🤪</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Credit"><span class="toc-number">1.5.</span> <span class="toc-text">Credit</span></a></li></ol></li></ol>
  
   </div>
 
