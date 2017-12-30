@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>LeetCode：寻找列表中的唯一数字 | Yong&#39;s Blog</title>
+    <title>Light Marker - A Chrome bookmark extension to save your reading position. | Yong&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="yongli1992">
@@ -13,18 +13,18 @@
     
     <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool, C++">
     
-    <meta name="description" content="原题地址：single-number 题目翻译如下：  给定一个整数数组，其中有一个整数仅出现一次，其余每一个整数都恰好出现了两次。找出这一整数。注：算法要求线性时间复杂度，不使用额外的存储空间。  一个最初的想法是，利用列表的sort方法来将列表进行排序，之后遍历列表，判断已排序的列表中每一个元素的前后是否存在相同元素，若都不存在，则为我们要找的数。 实际提交时，运行时间超出限制。后来想起来列表">
-<meta name="keywords" content="algorithm,leetcode">
+    <meta name="description" content="Light Marker ⚡A lightweight, non-intrusive bookmark Chrome Extension to save your scrollbar position, in order to remember your reading locations and restore it when you open next time. 😮 Github repo">
+<meta name="keywords" content="tool,development,github,chrome-extension">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode：寻找列表中的唯一数字">
-<meta property="og:url" content="http://blog.yongli1992.com/2015/02/03/leetcode-unique-num-in-list/index.html">
+<meta property="og:title" content="Light Marker - A Chrome bookmark extension to save your reading position.">
+<meta property="og:url" content="http://blog.yongli1992.com/2017/12/29/light-marker/index.html">
 <meta property="og:site_name" content="Yong&#39;s Blog">
-<meta property="og:description" content="原题地址：single-number 题目翻译如下：  给定一个整数数组，其中有一个整数仅出现一次，其余每一个整数都恰好出现了两次。找出这一整数。注：算法要求线性时间复杂度，不使用额外的存储空间。  一个最初的想法是，利用列表的sort方法来将列表进行排序，之后遍历列表，判断已排序的列表中每一个元素的前后是否存在相同元素，若都不存在，则为我们要找的数。 实际提交时，运行时间超出限制。后来想起来列表">
+<meta property="og:description" content="Light Marker ⚡A lightweight, non-intrusive bookmark Chrome Extension to save your scrollbar position, in order to remember your reading locations and restore it when you open next time. 😮 Github repo">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2015-08-08T00:31:38.000Z">
+<meta property="og:updated_time" content="2017-12-30T17:30:58.237Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode：寻找列表中的唯一数字">
-<meta name="twitter:description" content="原题地址：single-number 题目翻译如下：  给定一个整数数组，其中有一个整数仅出现一次，其余每一个整数都恰好出现了两次。找出这一整数。注：算法要求线性时间复杂度，不使用额外的存储空间。  一个最初的想法是，利用列表的sort方法来将列表进行排序，之后遍历列表，判断已排序的列表中每一个元素的前后是否存在相同元素，若都不存在，则为我们要找的数。 实际提交时，运行时间超出限制。后来想起来列表">
+<meta name="twitter:title" content="Light Marker - A Chrome bookmark extension to save your reading position.">
+<meta name="twitter:description" content="Light Marker ⚡A lightweight, non-intrusive bookmark Chrome Extension to save your scrollbar position, in order to remember your reading locations and restore it when you open next time. 😮 Github repo">
 <link rel="publisher" href="111758198691283601884">
 
     
@@ -83,14 +83,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/02/03/leetcode-unique-num-in-list/" title="LeetCode：寻找列表中的唯一数字" itemprop="url">LeetCode：寻找列表中的唯一数字</a>
+      <a href="/2017/12/29/light-marker/" title="Light Marker - A Chrome bookmark extension to save your reading position." itemprop="url">Light Marker - A Chrome bookmark extension to save your reading position.</a>
   </h1>
   <p class="article-author">By
        
 		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-02-03T20:09:08.000Z" itemprop="datePublished"> Published 2015-02-03</time>
+    <time datetime="2017-12-29T22:59:31.000Z" itemprop="datePublished"> Published 2017-12-29</time>
     
   </p>
 </header>
@@ -99,25 +99,18 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Light-Marker-⚡"><span class="toc-number">1.</span> <span class="toc-text">Light Marker ⚡</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Github-repository"><span class="toc-number">1.1.</span> <span class="toc-text">Github repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Install-⚙️"><span class="toc-number">1.2.</span> <span class="toc-text">Install ⚙️</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-use-🤔"><span class="toc-number">1.3.</span> <span class="toc-text">How to use 🤔</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bugs-and-feature-requests-🤪"><span class="toc-number">1.4.</span> <span class="toc-text">Bugs and feature requests 🤪</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Credit"><span class="toc-number">1.5.</span> <span class="toc-text">Credit</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<p>原题地址：<a href="https://oj.leetcode.com/problems/single-number/" target="_blank" rel="noopener">single-number</a></p>
-<p>题目翻译如下：</p>
-<blockquote>
-<p>给定一个整数数组，其中有一个整数仅出现一次，其余每一个整数都恰好出现了两次。找出这一整数。<br>注：算法要求线性时间复杂度，不使用额外的存储空间。</p>
-</blockquote>
-<p>一个最初的想法是，利用列表的sort方法来将列表进行排序，之后遍历列表，判断已排序的列表中每一个元素的前后是否存在相同元素，若都不存在，则为我们要找的数。</p>
-<p>实际提交时，运行时间超出限制。后来想起来列表的sort方法是O(nlogn)复杂度的，故不行。</p>
-<p>在此找到一篇wiki：<a href="https://wiki.python.org/moin/TimeComplexity" target="_blank" rel="noopener">Time Complexity</a>，列出了CPython（即常见官方实现）中各种内置数据结构的方法的复杂度。</p>
-<p>后来从讨论区看了别人的实现，才学到可以用按位操作符XOR来实现。这里采用的主要想法是：我们可以用一个初始值为0的变量r来作记录，与列表中的每一个数都做异或运算。对于存在两次的数，做了两次异或后相互作用抵消，仍能将变量r恢复为原来的值。这样当所有数都与r做过异或运算后，r最后的值就记录了那个仅仅出现一次的数。</p>
-<p>用规范化的说法，算法可行的原因是基于异或位运算的两条基本原理：</p>
-<blockquote>
-<p>自反律：(a ⊕ b) ⊕ b = a<br>交换律：a ⊕ b ⊕ c = a ⊕ c ⊕ b</p>
-</blockquote>
-<p>第一条自反律保证了，只要两个相同的数都与r做异或，r不受影响。第二条交换律保证了这两个数不必先后紧跟着与r做运算，中间夹杂别的数先来运算也是可以的，只要在整个运算过程中这两个相同的数都算过，第一条的结果仍不受影响。</p>
-<p>代码实现如下，A是整数列表。代码非常简洁：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">singleNumber</span><span class="params">(A)</span>:</span></div><div class="line">        r = <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> A:</div><div class="line">            r ^= i</div><div class="line">        <span class="keyword">return</span> r</div></pre></td></tr></table></figure></p>
+		<h1 id="Light-Marker-⚡"><a href="#Light-Marker-⚡" class="headerlink" title="Light Marker ⚡"></a>Light Marker ⚡</h1><p>A lightweight, non-intrusive bookmark Chrome Extension to save your scrollbar position, in order to remember your reading locations and restore it when you open next time. 😮</p>
+<h2 id="Github-repository"><a href="#Github-repository" class="headerlink" title="Github repository"></a>Github repository</h2><p>This is just a replicate of the README page on the <a href="https://github.com/NeilLi1992/LightMarker2" target="_blank" rel="noopener">github repository</a>. Please visit the repository if you’re interested (maybe give me a star).</p>
+<h2 id="Install-⚙️"><a href="#Install-⚙️" class="headerlink" title="Install ⚙️"></a>Install ⚙️</h2><p><a href="https://chrome.google.com/webstore/detail/light-marker/lhkgiieenfadlgmaacnhnidkneedhpao?hl=en-GB" target="_blank" rel="noopener">Chrome Webstore Install Page</a>.</p>
+<p>Or just search <strong>Light Marker</strong> in webstore.</p>
+<h2 id="How-to-use-🤔"><a href="#How-to-use-🤔" class="headerlink" title="How to use 🤔"></a>How to use 🤔</h2><p>Simply install it and click it. Light Marker is meant to be a lightweight overlay on top of Chrome’s default bookmark. It saves bookmark exactly the same as Chrome’s own bookmark. Even you uninstall Light Marker, you easily fall back to the default one, without lossing any bookmakrs (but you lose scrollbar positions).</p>
+<p>Just remember to click the <code>save</code> button to save the scrollbar location. Next time when you open this page, it automatically jumps to this location, so you’re back to where you left!</p>
+<h2 id="Bugs-and-feature-requests-🤪"><a href="#Bugs-and-feature-requests-🤪" class="headerlink" title="Bugs and feature requests 🤪"></a>Bugs and feature requests 🤪</h2><p>Please submit issues for reporting bugs 🐞, feature requests 💡 or any thoughts 😘 !</p>
+<h2 id="Credit"><a href="#Credit" class="headerlink" title="Credit"></a>Credit</h2><p>Light Marker icons made by <a href="https://smashicons.com/" target="_blank" rel="noopener">Smashicons</a> from <a href="">www.flaticon.com</a>.</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -125,13 +118,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  <a class="article-category-link" href="/categories/programming/">programming</a>►<a class="article-category-link" href="/categories/programming/tool/">tool</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/algorithm/">algorithm</a><a href="/tags/leetcode/">leetcode</a>
+  <span></span> <a href="/tags/tool/">tool</a><a href="/tags/development/">development</a><a href="/tags/github/">github</a><a href="/tags/chrome-extension/">chrome-extension</a>
   </div>
 
 </div>
@@ -140,7 +133,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://blog.yongli1992.com/2015/02/03/leetcode-unique-num-in-list/" data-title="LeetCode：寻找列表中的唯一数字 | Yong&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://blog.yongli1992.com/2017/12/29/light-marker/" data-title="Light Marker - A Chrome bookmark extension to save your reading position. | Yong&#39;s Blog" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -154,18 +147,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/02/08/python-scrapy-module/" title="Python爬虫模块Scrapy学习笔记">
+ <a href="/2017/12/30/gold-miner-automate-cicd/" title="自动化持续集成/持续分发，以节省更多时间编写代码">
   <strong>上一篇：</strong><br/>
   <span>
-  Python爬虫模块Scrapy学习笔记</span>
+  自动化持续集成/持续分发，以节省更多时间编写代码</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/01/28/leetcode-palindrome-partitioning/"  title="LeetCode：字符串的回文划分">
+<a href="/2017/12/07/CFA-notes-portfolio-management/"  title="CFA Notes - Portfolio Managements">
  <strong>下一篇：</strong><br/> 
- <span>LeetCode：字符串的回文划分
+ <span>CFA Notes - Portfolio Managements
 </span>
 </a>
 </div>
@@ -189,7 +182,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Light-Marker-⚡"><span class="toc-number">1.</span> <span class="toc-text">Light Marker ⚡</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Github-repository"><span class="toc-number">1.1.</span> <span class="toc-text">Github repository</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Install-⚙️"><span class="toc-number">1.2.</span> <span class="toc-text">Install ⚙️</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-use-🤔"><span class="toc-number">1.3.</span> <span class="toc-text">How to use 🤔</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bugs-and-feature-requests-🤪"><span class="toc-number">1.4.</span> <span class="toc-text">Bugs and feature requests 🤪</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Credit"><span class="toc-number">1.5.</span> <span class="toc-text">Credit</span></a></li></ol></li></ol>
  
   </div>
 
