@@ -1,0 +1,737 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh_CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>gold-miner-automate-cicd | Yong&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="yongli1992">
+    
+
+    
+    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool, C++">
+    
+    <meta name="description" content="原文地址：Automate CI/CD and Spend More Time Writing Code 原文作者：Cormac Foster 译文出自：掘金翻译计划 本文永久链接：https://github.com/xitu/gold-miner/blob/master/TODO/automate-cicd-visual-app-center.md 译者：Yong Li 校对者：zhaoy">
+<meta name="keywords" content="programming,translation">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gold-miner-automate-cicd">
+<meta property="og:url" content="http://blog.yongli1992.com/2017/12/30/gold-miner-automate-cicd/index.html">
+<meta property="og:site_name" content="Yong&#39;s Blog">
+<meta property="og:description" content="原文地址：Automate CI/CD and Spend More Time Writing Code 原文作者：Cormac Foster 译文出自：掘金翻译计划 本文永久链接：https://github.com/xitu/gold-miner/blob/master/TODO/automate-cicd-visual-app-center.md 译者：Yong Li 校对者：zhaoy">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/11/1510795993Mobile-Center_Image1_Build-1024x524.png">
+<meta property="og:image" content="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/11/1510796048Mobile-Center_Image2_test-1024x582.png">
+<meta property="og:image" content="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/11/1510796093Mobile-Center_Image3_Distribute-1024x640.png">
+<meta property="og:updated_time" content="2017-12-30T17:29:01.165Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gold-miner-automate-cicd">
+<meta name="twitter:description" content="原文地址：Automate CI/CD and Spend More Time Writing Code 原文作者：Cormac Foster 译文出自：掘金翻译计划 本文永久链接：https://github.com/xitu/gold-miner/blob/master/TODO/automate-cicd-visual-app-center.md 译者：Yong Li 校对者：zhaoy">
+<meta name="twitter:image" content="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/11/1510795993Mobile-Center_Image1_Build-1024x524.png">
+<link rel="publisher" href="111758198691283601884">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Yong&#39;s Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/logo.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Yong&#39;s Blog" title="Yong&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Yong&#39;s Blog">Yong&#39;s Blog</a></h1>
+				<h2 class="blog-motto">飞光劝尔一杯酒，月寒日暖煎人寿。</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">存档</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:blog.yongli1992.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/12/30/gold-miner-automate-cicd/" title="gold-miner-automate-cicd" itemprop="url">gold-miner-automate-cicd</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
+		
+  <p class="article-time">
+    <time datetime="2017-12-30T17:27:16.000Z" itemprop="datePublished"> Published 2017-12-30</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#自动化持续集成-持续分发，以节省更多时间编写代码"><span class="toc-number">1.</span> <span class="toc-text">自动化持续集成/持续分发，以节省更多时间编写代码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-生成"><span class="toc-number">1.1.</span> <span class="toc-text">1. 生成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-测试"><span class="toc-number">1.2.</span> <span class="toc-text">2. 测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-分发"><span class="toc-number">1.3.</span> <span class="toc-text">3. 分发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-闭环"><span class="toc-number">1.4.</span> <span class="toc-text">4. 闭环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-使用手边的工具开始工作"><span class="toc-number">1.5.</span> <span class="toc-text">5. 使用手边的工具开始工作</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<blockquote>
+<ul>
+<li>原文地址：<a href="https://www.sitepoint.com/automate-cicd-visual-app-center/?utm_source=SitePoint&amp;utm_medium=email&amp;utm_campaign=Versioning" target="_blank" rel="noopener">Automate CI/CD and Spend More Time Writing Code</a></li>
+<li>原文作者：<a href="https://www.sitepoint.com/author/cfoster/" target="_blank" rel="noopener">Cormac Foster</a></li>
+<li>译文出自：<a href="https://github.com/xitu/gold-miner" target="_blank" rel="noopener">掘金翻译计划</a></li>
+<li>本文永久链接：<a href="https://github.com/xitu/gold-miner/blob/master/TODO/automate-cicd-visual-app-center.md" target="_blank" rel="noopener">https://github.com/xitu/gold-miner/blob/master/TODO/automate-cicd-visual-app-center.md</a></li>
+<li>译者：<a href="https://github.com/NeilLi1992" target="_blank" rel="noopener">Yong Li</a></li>
+<li>校对者：<a href="https://github.com/zhaoyi0113" target="_blank" rel="noopener">zhaoyi0113</a>，<a href="https://github.com/leviding" target="_blank" rel="noopener">LeviDing</a></li>
+</ul>
+</blockquote>
+<h1 id="自动化持续集成-持续分发，以节省更多时间编写代码"><a href="#自动化持续集成-持续分发，以节省更多时间编写代码" class="headerlink" title="自动化持续集成/持续分发，以节省更多时间编写代码"></a>自动化持续集成/持续分发，以节省更多时间编写代码</h1><p><strong>该文章由 <a href="https://appcenter.ms/signup?utm_source=Sitecore&amp;utm_medium=Blog&amp;utm_campaign=appcenter_connect" target="_blank" rel="noopener">微软 Visual Studio 应用中心</a> 赞助。请支持我们的合作方，是他们让 SitePoint 成为可能。</strong></p>
+<p>什么是软件开发中最棒的部分？编写漂亮的代码。</p>
+<p>什么是最糟的部分？其余的一切。</p>
+<p>开发软件是一份精彩的工作。你会用全新的方法解决问题，取悦用户，并且亲眼见证你的工作让生活更美好。然而在我们花费时间编写代码之外，我们常常还要花费同样多的时间来管理随之而来的各种琐碎开销 —— 这些都是在浪费时间。以下是一些最大的效率黑洞，以及在微软我们是如何处理这些问题，以帮助你节省一些开发时间。</p>
+<h2 id="1-生成"><a href="#1-生成" class="headerlink" title="1. 生成"></a>1. 生成</h2><p>让你超赞的应用到达用户手中的第一步是什么？让它出现。许多人可能觉得把源代码转换成二进制文件，在今天已经不是什么难事了，但实际上它依然是。取决于项目的不同，你可能一天需要编译好几次，或是在不同的平台上编译，而这些都占用了你本可以用来编写代码的宝贵时间。除此之外，如果你在生成 iOS 应用，你还需要 Mac 生成代理，尤其是当你使用跨平台框架来创建应用时。而这甚至都不一定是你最主要的开发工具。</p>
+<p>你想要夺回这些时间，最好的办法就是<strong>自动化</strong>（我还会多次重申这点）。你需要将配置和硬件管理都自动化，使得应用需要生成的时候，直接就可以开始生成。</p>
+<p><img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/11/1510795993Mobile-Center_Image1_Build-1024x524.png" alt="使用微软移动中心来生成"></p>
+<p>我们对于这一需求的回应就是：Visual Studio 应用中心生成服务。这一服务帮你自动化所有你不想手动重复的步骤，使得你每次提交代码的时候，或者无论何时你、你的测试团队、或者你的发布经理希望的时候，你都可以快速生成。只要将生成服务连接到 GitHub，BitBucket 或者 VSTS 仓库，选取一个分支，配置几个参数，你就可以在云中生成 Android、UWP 甚至 iOS 和 macOS 应用，而无需管理任何硬件。如果你有更特别的需求，你还可以添加 post-clone、pre-build 以及 post-build 脚本来进行自定义。</p>
+<h2 id="2-测试"><a href="#2-测试" class="headerlink" title="2. 测试"></a>2. 测试</h2><p>我花了许多年做软件测试。在我的职业生涯中，以下是我最讨厌听到的三个问题：</p>
+<p>“你完成了吗？”</p>
+<p>“你可以重现吗？”</p>
+<p>“真的有这么糟糕？”</p>
+<p>在过去，已经很难有足够的时间和资源来进行彻底的，像样的测试。但是移动开发的出现让这一问题更加恶化。如今我们需要将更多的代码更加频繁地分发到更多的设备上去，我们不能浪费几个小时来重现一个神出鬼没的重大故障，我们也没有时间来争论某一个 Bug 是否严重到推迟产品发布时间。然而同时，我们又是最终需要对无法忽视的故障和劣质产品负责的人。作为团队的成员，我们希望比问题更快一步，来<strong>提升</strong>质量，而不是让问题阻碍了发布。</p>
+<p>所以解决之道是什么？当然是”自动化“。但必须是<strong>有意义</strong>的自动化。如果你不能整合到一起的话，一张张的数据表和一个个存满截屏的文件夹就什么用处也没有。当你临近截止日期，而又必须说服产品负责人来打电话中止发布的时候，你不仅要给出易于他们理解的信息，同时又要给开发人员保留足够的细节来供其修复。</p>
+<p><img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/11/1510796048Mobile-Center_Image2_test-1024x582.png" alt="使用微软移动中心来测试"></p>
+<p>为了改善这一问题，我们创建了应用中心测试服务。该服务可以在数以千计的真实设备上使用数以百计的不同配置来进行自动化 UI 测试。因为测试全部是自动的，每一次都确保运行完全相同的测试，这样在每一次生成中你都能立刻发现性能问题和 UX 偏差。测试会生成截图和视频，也会生成性能数据，这样任何人都能发现问题，而开发人员也能点进详细的日志中，即刻开始修复问题。你还可以在每次代码提交时先在个别设备上做抽查，然后再在数以百计的不同设备上做回归测试，以确保对所有的用户都一切正常。</p>
+<h2 id="3-分发"><a href="#3-分发" class="headerlink" title="3. 分发"></a>3. 分发</h2><p>你终于完成了一个应用并且它能像预期一样正常工作，太棒了！但是真正的迭代现在才开始。你想在应用抵达终端用户之前就知道其他人怎么看你的应用，但是你要怎么做呢？创建一个 beta 版本已经足够难了，而要确保每一个人都有你应用的最新版本（如果是移动应用，甚至要先确保用户能够安装它）简直要花费你全部的时间，并且你的团队成员谁都不愿意做这样的工作。</p>
+<p>再一次，<strong>自动化</strong>。当你准备好推送一个版本的时候，你需要自动化的通知流程<strong>以及</strong>应用分发流程，并且你需要在每一次你生成的时候（或至少发布经理同意的时候），这两者都能够自动触发。</p>
+<p><img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/11/1510796093Mobile-Center_Image3_Distribute-1024x640.png" alt="使用微软移动中心来分发"></p>
+<p>我们的解决方案是应用中心分发服务。你需要的只是一组邮件地址，就可以把你的版本发布到内部用户或 beta 测试用户的手中。你只需创建一个分发组，上传你的版本（或者从源代码仓库生成），然后分发服务就会处理剩下的一切。如果你觉得这听起来就像 <a href="https://hockeyapp.net/" target="_blank" rel="noopener">HockeyApp</a>，你猜对了。应用中心分发服务就是下一代的 HockeyApp，将它的自动化分发功能整合进我们其它的持续集成/持续分发服务之中。一旦你完成了 beta 测试，分发服务就会将你的应用部署到 Google Play，苹果的 App Store，或者 —— 对于企业用户来说 —— 微软的 Intune，从而让你的应用抵达最终用户手中。</p>
+<h2 id="4-闭环"><a href="#4-闭环" class="headerlink" title="4. 闭环"></a>4. 闭环</h2><p>人们经常谈论部署流水线，但我们不满足于单向的部署过程。如果你能够知晓在应用发布完<strong>之后</strong>发生了什么，你就可以把反馈意见告知开发人员，由此形成一个闭环来使你的产品更好、更快。这一反馈信息以两种形式存在 —— 关于用户如何和你的应用进行交互的分析，以及必不可少的，关于应用在何时，发生怎样的故障的报告。</p>
+<p>先说第二点，因为故障很要命。当应用出现故障的时候，虽然你想快速地了解情况，但你更需要知道故障到底有多紧要。在一个不起眼的小功能中却影响到所有人的故障，通常比只有 iPhone 4 用户完全无法启动应用，要更严重。应用中心的故障服务可以将相似的故障进行分组，并且告知你最受影响的平台，以使你做出明智的分检决定。当你准备好开始修复问题的时候，故障已经完全符号化，所有你需要的信息已经准备就绪。你可以自动地在你的故障跟踪程序中创建记录，方便开放人员无需中断他们的工作流就可以开始修复故障。更多的自动化再一次带来更多的时间，以编写更好的代码。</p>
+<p>对于第一点的分析数据，你通常需要一些开箱即用的工具。应用中心分析服务提供了用户层面和设备层面的、侧重于参与度的度量应用，这些都是产品负责人最希望见到的。它们可以告诉你诸如：是谁在使用哪些设备、使用得多频繁、在哪里使用、使用多长时间等信息。当然，你的应用不会和别人的完全一样，因此你更可以创建和跟踪自定义的度量，比如“预定了乘车”或者“选择了配送上门”。如果你需要更深入的分析，我们还支持持续导出到 <a href="https://azure.microsoft.com/en-us/services/application-insights/" target="_blank" rel="noopener">Azure Application Insights</a>。</p>
+<h2 id="5-使用手边的工具开始工作"><a href="#5-使用手边的工具开始工作" class="headerlink" title="5. 使用手边的工具开始工作"></a>5. 使用手边的工具开始工作</h2><p>你可以花费整天的时间来纸上谈兵地构想你完美的持续集成/持续分发方案，但是除非你能付诸行动，它分文不值。不管是集成一个你十分偏爱的现有系统（或许你只是不得不用），还是先自动化一些小的手动流程再逐渐改善其它部分，重要的是你能利用手边可用的工具立即开始行动。</p>
+<p>当然，在这里我的立场是有倾向性的，并且我相信你应该尝试一下我们的整套系统。不过开发者有着各式各样的需求。如果你只是想要采用应用中心的部分服务，我们已经把它设计为完全模块化的了。我们为每一个应用中心的服务提供了 REST API，我们也和像 VSTS 之类的服务预先做好了集成。我们相信这才是它应有的样子，因为是你在创建<strong>你的</strong>应用，你应该用<strong>自己的</strong>方式来创建它。</p>
+<p>我们欢迎你 <a href="https://appcenter.ms/signup?utm_source=Sitecore&amp;utm_medium=Blog&amp;utm_campaign=appcenter_connect" target="_blank" rel="noopener">试一试 Visual Studio 应用中心</a>，此时它是全新的，并且可以免费开始试用。我们希望听到你的想法！</p>
+<hr>
+<blockquote>
+<p><a href="https://github.com/xitu/gold-miner" target="_blank" rel="noopener">掘金翻译计划</a> 是一个翻译优质互联网技术文章的社区，文章来源为 <a href="https://juejin.im" target="_blank" rel="noopener">掘金</a> 上的英文分享文章。内容覆盖 <a href="https://github.com/xitu/gold-miner#android" target="_blank" rel="noopener">Android</a>、<a href="https://github.com/xitu/gold-miner#ios" target="_blank" rel="noopener">iOS</a>、<a href="https://github.com/xitu/gold-miner#前端" target="_blank" rel="noopener">前端</a>、<a href="https://github.com/xitu/gold-miner#后端" target="_blank" rel="noopener">后端</a>、<a href="https://github.com/xitu/gold-miner#区块链" target="_blank" rel="noopener">区块链</a>、<a href="https://github.com/xitu/gold-miner#产品" target="_blank" rel="noopener">产品</a>、<a href="https://github.com/xitu/gold-miner#设计" target="_blank" rel="noopener">设计</a>、<a href="https://github.com/xitu/gold-miner#人工智能" target="_blank" rel="noopener">人工智能</a>等领域，想要查看更多优质译文请持续关注 <a href="https://github.com/xitu/gold-miner" target="_blank" rel="noopener">掘金翻译计划</a>、<a href="http://weibo.com/juejinfanyi" target="_blank" rel="noopener">官方微博</a>、<a href="https://zhuanlan.zhihu.com/juejinfanyi" target="_blank" rel="noopener">知乎专栏</a>。</p>
+</blockquote>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/programming/">programming</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/programming/">programming</a><a href="/tags/translation/">translation</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://blog.yongli1992.com/2017/12/30/gold-miner-automate-cicd/" data-title="gold-miner-automate-cicd | Yong&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2017/12/07/CFA-notes-portfolio-management/"  title="CFA Notes - Portfolio Managements">
+ <strong>下一篇：</strong><br/> 
+ <span>CFA Notes - Portfolio Managements
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#自动化持续集成-持续分发，以节省更多时间编写代码"><span class="toc-number">1.</span> <span class="toc-text">自动化持续集成/持续分发，以节省更多时间编写代码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-生成"><span class="toc-number">1.1.</span> <span class="toc-text">1. 生成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-测试"><span class="toc-number">1.2.</span> <span class="toc-text">2. 测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-分发"><span class="toc-number">1.3.</span> <span class="toc-text">3. 分发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-闭环"><span class="toc-number">1.4.</span> <span class="toc-text">4. 闭环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-使用手边的工具开始工作"><span class="toc-number">1.5.</span> <span class="toc-text">5. 使用手边的工具开始工作</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="github-card">
+<p class="asidetitle">Github Card</p>
+<div class="github-card" data-github="NeilLi1992" data-theme="medium"></div>
+<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
+</div>
+
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/UK/" title="UK">UK<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/algorithm/" title="algorithm">algorithm<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/finance/" title="finance">finance<sup>9</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/life/" title="life">life<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/network/" title="network">network<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/problem/" title="problem">problem<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/programming/" title="programming">programming<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/python/" title="python">python<sup>12</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/tool/" title="tool">tool<sup>5</sup></a></li>
+		  
+		
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/python/" title="python">python<sup>16</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/finance/" title="finance">finance<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/cfa/" title="cfa">cfa<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/翻译/" title="翻译">翻译<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/life/" title="life">life<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/leetcode/" title="leetcode">leetcode<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/tool/" title="tool">tool<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/development/" title="development">development<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/programming/" title="programming">programming<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ios/" title="ios">ios<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/jira/" title="jira">jira<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ime/" title="ime">ime<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/UK/" title="UK">UK<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/oxford/" title="oxford">oxford<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/problem/" title="problem">problem<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://xuk.ai/ 小虾米的博客" target="_blank" title="kai&#39;s blog">kai&#39;s blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
+</div>
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello, I&#39;m Yong Li, originally from China, now living in London and working for Bloomberg L.P. <br/>
+			I currently work as a professional financial software developer.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2327892814" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/NeilLi1992" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		<a href="http://stackoverflow.com/users/5184632" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+		
+		
+		
+		<a href="https://www.facebook.com/100006707769873" target="_blank" class="icon-facebook" title="facebook"></a>
+		
+		
+		<a href="https://www.linkedin.com/in/yongli1992" target="_blank" class="icon-linkedin" title="linkedin"></a>
+		
+		
+		
+		<a href="http://www.zhihu.com/people/li-yong-88-55" target="_blank" class="icon-zhihu" title="知乎"></a>
+		
+		
+		<a href="https://plus.google.com/111758198691283601884?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+		
+		
+		<a href="mailto:yong.li1992@foxmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
+		
+		<a href="/about" target="_blank" title="yongli1992">yongli1992</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+        getSize();
+        if (myWidth >= 1024) {
+          c.click();
+        }
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'yongli1992';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-77559411-1', 'auto');  
+ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
