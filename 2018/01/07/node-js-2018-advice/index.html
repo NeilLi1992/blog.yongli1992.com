@@ -1,0 +1,772 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh_CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Node.js 最佳实践 —— 如何在 2018 年成为更好的 Node.js 开发者 | Yong&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="yongli1992">
+    
+
+    
+    <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool, C++">
+    
+    <meta name="description" content="原文地址：Node.js Best Practices - How to become a better Node.js developer in 2018 原文作者：GERGELY NEMETH 译文出自：掘金翻译计划 本文永久链接：https://github.com/xitu/gold-miner/blob/master/TODO/nodejs-best-practices-how-to">
+<meta name="keywords" content="node.js,javascript,developer,programming,translate,gold-miner">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node.js 最佳实践 —— 如何在 2018 年成为更好的 Node.js 开发者">
+<meta property="og:url" content="http://blog.yongli1992.com/2018/01/07/node-js-2018-advice/index.html">
+<meta property="og:site_name" content="Yong&#39;s Blog">
+<meta property="og:description" content="原文地址：Node.js Best Practices - How to become a better Node.js developer in 2018 原文作者：GERGELY NEMETH 译文出自：掘金翻译计划 本文永久链接：https://github.com/xitu/gold-miner/blob/master/TODO/nodejs-best-practices-how-to">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2018-01-07T13:54:04.973Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Node.js 最佳实践 —— 如何在 2018 年成为更好的 Node.js 开发者">
+<meta name="twitter:description" content="原文地址：Node.js Best Practices - How to become a better Node.js developer in 2018 原文作者：GERGELY NEMETH 译文出自：掘金翻译计划 本文永久链接：https://github.com/xitu/gold-miner/blob/master/TODO/nodejs-best-practices-how-to">
+<link rel="publisher" href="111758198691283601884">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Yong&#39;s Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/logo.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Yong&#39;s Blog" title="Yong&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Yong&#39;s Blog">Yong&#39;s Blog</a></h1>
+				<h2 class="blog-motto">飞光劝尔一杯酒，月寒日暖煎人寿。</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">存档</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:blog.yongli1992.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2018/01/07/node-js-2018-advice/" title="Node.js 最佳实践 —— 如何在 2018 年成为更好的 Node.js 开发者" itemprop="url">Node.js 最佳实践 —— 如何在 2018 年成为更好的 Node.js 开发者</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
+		
+  <p class="article-time">
+    <time datetime="2018-01-07T13:51:43.000Z" itemprop="datePublished"> Published 2018-01-07</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#采用-async-await"><span class="toc-number">1.</span> <span class="toc-text">采用 async-await</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#让你的应用优雅地中止"><span class="toc-number">2.</span> <span class="toc-text">让你的应用优雅地中止</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在公司内采用相同的风格指南"><span class="toc-number">3.</span> <span class="toc-text">在公司内采用相同的风格指南</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#把安全当做必备条件"><span class="toc-number">4.</span> <span class="toc-text">把安全当做必备条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在见面会或会议上演讲"><span class="toc-number">5.</span> <span class="toc-text">在见面会或会议上演讲</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#直接使用新的浏览器-API-编写模块"><span class="toc-number">6.</span> <span class="toc-text">直接使用新的浏览器 API 编写模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#采纳应用开发的-12-Factors-法则"><span class="toc-number">7.</span> <span class="toc-text">采纳应用开发的 12-Factors 法则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#学习新的-ECMASCript-特性"><span class="toc-number">8.</span> <span class="toc-text">学习新的 ECMASCript 特性</span></a></li></ol>
+		
+		</div>
+		
+		<blockquote>
+<ul>
+<li>原文地址：<a href="https://nemethgergely.com/nodejs-best-practices-how-to-become-a-better-developer-in-2018/" target="_blank" rel="noopener">Node.js Best Practices - How to become a better Node.js developer in 2018</a></li>
+<li>原文作者：<a href="https://nemethgergely.com/" target="_blank" rel="noopener">GERGELY NEMETH</a></li>
+<li>译文出自：<a href="https://github.com/xitu/gold-miner" target="_blank" rel="noopener">掘金翻译计划</a></li>
+<li>本文永久链接：<a href="https://github.com/xitu/gold-miner/blob/master/TODO/nodejs-best-practices-how-to-become-a-better-developer-in-2018.md" target="_blank" rel="noopener">https://github.com/xitu/gold-miner/blob/master/TODO/nodejs-best-practices-how-to-become-a-better-developer-in-2018.md</a></li>
+<li>译者：<a href="https://github.com/NeilLi1992" target="_blank" rel="noopener">Yong Li</a></li>
+<li>校对者：<a href="https://github.com/gy134340" target="_blank" rel="noopener">guoyang</a> <a href="https://github.com/moods445" target="_blank" rel="noopener">moods445</a></li>
+</ul>
+</blockquote>
+<p>在过去两年中，每年写一篇关于来年如何成为更好的 Node.js 开发者的建议已经成了我自己的传统。今年也不例外！🤗</p>
+<p>如果你对我之前的新年建议感兴趣，你可以在 RisingStack 博客上阅读：</p>
+<ul>
+<li><a href="https://blog.risingstack.com/how-to-become-a-better-node-js-developer-in-2016/" target="_blank" rel="noopener">如何在 2016 年成为更好的 Node.js 开发者</a></li>
+<li><a href="https://blog.risingstack.com/node-js-best-practices-2017/" target="_blank" rel="noopener">如何在 2017 年成为更好的开发者</a></li>
+</ul>
+<p>话不多说，一起来看 2018 年的建议！</p>
+<h2 id="采用-async-await"><a href="#采用-async-await" class="headerlink" title="采用 async-await"></a>采用 <code>async-await</code></h2><p>随着 Node.js 8 的发布，<code>async</code> 函数已经普遍可用了。有了 <code>async</code> 函数的存在，你可以替换掉回调，写出读起来和同步代码一样的异步代码。</p>
+<p>但什么是 <code>async</code> 函数？让我们回顾一下 <a href="https://nemethgergely.com/async-function-best-practices/" target="_blank" rel="noopener">Node.js Async 函数最佳实践</a> 一文：</p>
+<p><code>async</code> 函数可以让你写出读起来像是同步代码的，但实际基于 <code>Promise</code> 的代码。一旦你使用了 <code>async</code> 关键字来定义函数，你就可以在函数体内使用 <code>await</code> 关键字。<code>async</code> 函数被调用时，它会返回一个 <code>Promise</code>。当 <code>async</code> 函数体中返回一个值时，该 <code>Promise</code> 完成（fulfilled）。当 <code>async</code> 函数抛出错误时，该 <code>Promise</code> 失败（rejected）。</p>
+<p><code>await</code> 关键字可以用来等待一个 <code>Promise</code> 完成并且返回结果值。如果传给 <code>await</code> 关键字的值不是一个 <code>Promise</code>，它会将其转换成一个已完成的 <code>Promise</code>。</p>
+<p>如果你想掌握 <code>async</code> 函数，我推荐你浏览这些资源：</p>
+<ul>
+<li><a href="https://hueniverse.com/learning-to-throw-again-79b498504d28" target="_blank" rel="noopener">Learning to throw again</a></li>
+<li><a href="https://hueniverse.com/catching-without-awaiting-b2cb7df45790" target="_blank" rel="noopener">Catching without awating</a></li>
+<li><a href="https://nemethgergely.com/async-function-best-practices/" target="_blank" rel="noopener">Node.js async function best practices</a></li>
+</ul>
+<h2 id="让你的应用优雅地中止"><a href="#让你的应用优雅地中止" class="headerlink" title="让你的应用优雅地中止"></a>让你的应用优雅地中止</h2><p>当你部署应用的新版本时，必须更换旧版本。你使用的，<strong>不管是 Heroku, Kubernetes, supervisor 还是任何其它的</strong>进程管理器，会首先给应用发送一个 <code>SIGTERM</code> 信号，来通知它即将被中止。一旦应用得到了该信号，它应该<strong>停止接受新的请求，完成所有正在处理中的请求，并且清理它使用的资源</strong>。资源通常包含了数据库连接和文件锁。</p>
+<p>为了让这一过程更简单，我们在 GoDaddy 上发布了名为 <a href="https://github.com/godaddy/terminus" target="_blank" rel="noopener">terminus</a> 的开源模块，来帮助你的应用实现优雅中止。<a href="https://github.com/godaddy/terminus" target="_blank" rel="noopener">现在就来看看 ☺️</a></p>
+<h2 id="在公司内采用相同的风格指南"><a href="#在公司内采用相同的风格指南" class="headerlink" title="在公司内采用相同的风格指南"></a>在公司内采用相同的风格指南</h2><p>在一个有上百人开发团队的公司中采用风格指南是很有挑战性的 —— 让每个人都认可同一套规则简直难如登天。</p>
+<p>恕我直言：你永远无法让上百个开发者认可同一组准则，即使这能带来显而易见的收益，譬如让团队更快地在项目间切换，而无需费时费力来习惯一套新的（即使只有一点儿不同）代码编写风格。</p>
+<p>如果你正是工作在这种团队氛围中，我发现最好的办法是信任某位经验丰富的程序员，和其他人共同努力来决定风格指南包含哪些准则，但他要有最终决定权。在所有人都能遵循同一套准则之前，该准则的具体内容并不重要（我不想引发关于分号的争吵）。重要的是必须在某一刻有所决定。</p>
+<h2 id="把安全当做必备条件"><a href="#把安全当做必备条件" class="headerlink" title="把安全当做必备条件"></a>把安全当做必备条件</h2><p>我们看到越来越多的公司被列在 <a href="https://haveibeenpwned.com/" target="_blank" rel="noopener">haveibeenpwned</a> 上 —— 我打赌你不想成为下一个。当你向你的用户发布一段新代码的时候，代码审核应该包含安全领域的专家。如果你公司内没有这样的人才，或者他们非常非常忙，一个很好的解决办法是和类似 <a href="https://liftsecurity.io/reviews/" target="_blank" rel="noopener">Lift Security</a> 这样的公司合作。</p>
+<p>而你作为一名开发者，同样应该努力更新你的安全知识。为此，我推荐你阅读这些材料：</p>
+<ul>
+<li><a href="https://blog.risingstack.com/node-js-security-checklist/" target="_blank" rel="noopener">Node.js 安全检查清单</a></li>
+<li><a href="https://www.owasp.org/index.php/Main_Page" target="_blank" rel="noopener">「开放网络应用安全项目」网站</a></li>
+<li><a href="https://snyk.io/blog/" target="_blank" rel="noopener">Snyk 博客</a></li>
+</ul>
+<h2 id="在见面会或会议上演讲"><a href="#在见面会或会议上演讲" class="headerlink" title="在见面会或会议上演讲"></a>在见面会或会议上演讲</h2><p>另一个成为更好的开发者，甚至更好地学会表达自己的方法，就是在见面会或者会议上演讲。如果你从未试过，我推荐先从一个本地的见面会开始，再去尝试申请全国的或者国际的会议。</p>
+<p>我明白当众演讲会很难。当我准备我的第一次演说时，<a href="http://speaking.io/" target="_blank" rel="noopener">Speaking.io</a> 帮了我不少忙，我也推荐你去看看。如果你正在准备你的第一次演说，并且想要一些反馈的话，你可以在 <a href="https://twitter.com/nthgergo" target="_blank" rel="noopener">Twitter</a> 上找我谈谈，我很乐意帮忙！</p>
+<p>一旦你有了一个想要在会议上分享的主题，你可以在 Github 上查看到 <a href="https://github.com/asciidisco/web-conferences-2018/blob/master/README.md" target="_blank" rel="noopener">2018 Web 会议</a> 征文集合，这太棒了！</p>
+<h2 id="直接使用新的浏览器-API-编写模块"><a href="#直接使用新的浏览器-API-编写模块" class="headerlink" title="直接使用新的浏览器 API 编写模块"></a>直接使用新的浏览器 API 编写模块</h2><p>九月时 <a href="https://medium.com/@mikeal" target="_blank" rel="noopener">Mikeal</a> 在 <a href="https://medium.com/@mikeal/modern-modules-d99b6867b8f1" target="_blank" rel="noopener">Modern Modules</a> 上发布了一篇很好的文章。其中我最喜欢的一件事，就是使用浏览器 API 来编写模块，当必要时填补（polyfill）Node.js。由此而来的显著优势就是你可以将更小的 JavaScript 代码发布进浏览器中（并且让页面加载得更快）。另一方面，没人会在意你的后端依赖是不是太过繁重。</p>
+<h2 id="采纳应用开发的-12-Factors-法则"><a href="#采纳应用开发的-12-Factors-法则" class="headerlink" title="采纳应用开发的 12-Factors 法则"></a>采纳应用开发的 12-Factors 法则</h2><p>应用开发的 12-Factors 原则，描述了网络应用应当如何编写的最佳实践，因此它也出现在今年我的建议列表中了。</p>
+<p>随着 Kubernetes 和其它编排引擎的使用率不断提升，遵循 12-Factors 法则变得越来越重要。它们涵盖了以下领域：</p>
+<ol>
+<li><a href="http://12factor.net/codebase" target="_blank" rel="noopener">一份基准代码，多份部署</a></li>
+<li><a href="http://12factor.net/dependencies" target="_blank" rel="noopener">显示声明和分离依赖关系</a></li>
+<li><a href="http://12factor.net/config" target="_blank" rel="noopener">在环境中存储配置</a></li>
+<li><a href="http://12factor.net/backing-services" target="_blank" rel="noopener">把后端服务当做附加资源</a></li>
+<li><a href="http://12factor.net/build-release-run" target="_blank" rel="noopener">严格分离构建和运行</a></li>
+<li><a href="http://12factor.net/processes" target="_blank" rel="noopener">以一个或多个无状态进程运行应用</a></li>
+<li><a href="http://12factor.net/port-binding" target="_blank" rel="noopener">通过端口绑定提供服务</a></li>
+<li><a href="http://12factor.net/concurrency" target="_blank" rel="noopener">通过进程模型进行扩展</a></li>
+<li><a href="http://12factor.net/disposability" target="_blank" rel="noopener">快速启动和优雅中止可最大化健壮性</a></li>
+<li><a href="http://12factor.net/dev-prod-parity" target="_blank" rel="noopener">尽可能地保持开发、预发布、线上环境相同</a></li>
+<li><a href="http://12factor.net/logs" target="_blank" rel="noopener">把日志当做事件流</a></li>
+<li><a href="http://12factor.net/admin-processes" target="_blank" rel="noopener">后台管理任务当做一次性进程运行</a></li>
+</ol>
+<h2 id="学习新的-ECMASCript-特性"><a href="#学习新的-ECMASCript-特性" class="headerlink" title="学习新的 ECMASCript 特性"></a>学习新的 ECMASCript 特性</h2><p>一些新的 ECMAScript 特性可以显著提升你的效率。它们可以帮你写出不言自明的清晰代码。其中我最爱的特性有（<strong>老实说它们不是非常新了</strong>）：</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator" target="_blank" rel="noopener">扩展语法</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters" target="_blank" rel="noopener">剩余参数</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank" rel="noopener">解构</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function" target="_blank" rel="noopener">Async 函数</a></li>
+</ul>
+<p>如果你想知道新的 ECMAScript 特性的完整内容，我推荐阅读这本书 <a href="https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20&amp;%20beyond/README.md#you-dont-know-js-es6--beyond" target="_blank" rel="noopener">ES6 &amp; Beyond</a>。</p>
+<hr>
+<p>你想在这份列表中加入别的建议吗？请在留言中告诉我。</p>
+<hr>
+<blockquote>
+<p><a href="https://github.com/xitu/gold-miner" target="_blank" rel="noopener">掘金翻译计划</a> 是一个翻译优质互联网技术文章的社区，文章来源为 <a href="https://juejin.im" target="_blank" rel="noopener">掘金</a> 上的英文分享文章。内容覆盖 <a href="https://github.com/xitu/gold-miner#android" target="_blank" rel="noopener">Android</a>、<a href="https://github.com/xitu/gold-miner#ios" target="_blank" rel="noopener">iOS</a>、<a href="https://github.com/xitu/gold-miner#前端" target="_blank" rel="noopener">前端</a>、<a href="https://github.com/xitu/gold-miner#后端" target="_blank" rel="noopener">后端</a>、<a href="https://github.com/xitu/gold-miner#区块链" target="_blank" rel="noopener">区块链</a>、<a href="https://github.com/xitu/gold-miner#产品" target="_blank" rel="noopener">产品</a>、<a href="https://github.com/xitu/gold-miner#设计" target="_blank" rel="noopener">设计</a>、<a href="https://github.com/xitu/gold-miner#人工智能" target="_blank" rel="noopener">人工智能</a>等领域，想要查看更多优质译文请持续关注 <a href="https://github.com/xitu/gold-miner" target="_blank" rel="noopener">掘金翻译计划</a>、<a href="http://weibo.com/juejinfanyi" target="_blank" rel="noopener">官方微博</a>、<a href="https://zhuanlan.zhihu.com/juejinfanyi" target="_blank" rel="noopener">知乎专栏</a>。</p>
+</blockquote>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/programming/">programming</a>►<a class="article-category-link" href="/categories/programming/translate/">translate</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/node-js/">node.js</a><a href="/tags/javascript/">javascript</a><a href="/tags/developer/">developer</a><a href="/tags/programming/">programming</a><a href="/tags/translate/">translate</a><a href="/tags/gold-miner/">gold-miner</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://blog.yongli1992.com/2018/01/07/node-js-2018-advice/" data-title="Node.js 最佳实践 —— 如何在 2018 年成为更好的 Node.js 开发者 | Yong&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2017/12/30/gold-miner-automate-cicd/"  title="自动化持续集成/持续分发，以节省更多时间编写代码">
+ <strong>下一篇：</strong><br/> 
+ <span>自动化持续集成/持续分发，以节省更多时间编写代码
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#采用-async-await"><span class="toc-number">1.</span> <span class="toc-text">采用 async-await</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#让你的应用优雅地中止"><span class="toc-number">2.</span> <span class="toc-text">让你的应用优雅地中止</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在公司内采用相同的风格指南"><span class="toc-number">3.</span> <span class="toc-text">在公司内采用相同的风格指南</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#把安全当做必备条件"><span class="toc-number">4.</span> <span class="toc-text">把安全当做必备条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在见面会或会议上演讲"><span class="toc-number">5.</span> <span class="toc-text">在见面会或会议上演讲</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#直接使用新的浏览器-API-编写模块"><span class="toc-number">6.</span> <span class="toc-text">直接使用新的浏览器 API 编写模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#采纳应用开发的-12-Factors-法则"><span class="toc-number">7.</span> <span class="toc-text">采纳应用开发的 12-Factors 法则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#学习新的-ECMASCript-特性"><span class="toc-number">8.</span> <span class="toc-text">学习新的 ECMASCript 特性</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="github-card">
+<p class="asidetitle">Github Card</p>
+<div class="github-card" data-github="NeilLi1992" data-theme="medium"></div>
+<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
+</div>
+
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/UK/" title="UK">UK<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/algorithm/" title="algorithm">algorithm<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/finance/" title="finance">finance<sup>9</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/life/" title="life">life<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/network/" title="network">network<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/problem/" title="problem">problem<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/programming/" title="programming">programming<sup>5</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/python/" title="python">python<sup>12</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/programming/tool/" title="tool">tool<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/tool/" title="tool">tool<sup>5</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/programming/translate/" title="translate">translate<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/python/" title="python">python<sup>16</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/finance/" title="finance">finance<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/cfa/" title="cfa">cfa<sup>9</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/翻译/" title="翻译">翻译<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/leetcode/" title="leetcode">leetcode<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/life/" title="life">life<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/algorithm/" title="algorithm">algorithm<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/tool/" title="tool">tool<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/development/" title="development">development<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/programming/" title="programming">programming<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ios/" title="ios">ios<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/原创/" title="原创">原创<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/management/" title="management">management<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/jira/" title="jira">jira<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/translate/" title="translate">translate<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/giffgaff/" title="giffgaff">giffgaff<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/rime/" title="rime">rime<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ime/" title="ime">ime<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://xuk.ai/ 小虾米的博客" target="_blank" title="kai&#39;s blog">kai&#39;s blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=2327892814&verifier=7efcfd6a&dpc=1"></iframe>
+</div>
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello, I&#39;m Yong Li, originally from China, now living in London and working for Bloomberg L.P. <br/>
+			I currently work as a professional financial software developer.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2327892814" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/NeilLi1992" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		<a href="http://stackoverflow.com/users/5184632" target="_blank" class="icon-stack-overflow" title="stackoverflow"></a>
+		
+		
+		
+		<a href="https://www.facebook.com/100006707769873" target="_blank" class="icon-facebook" title="facebook"></a>
+		
+		
+		<a href="https://www.linkedin.com/in/yongli1992" target="_blank" class="icon-linkedin" title="linkedin"></a>
+		
+		
+		
+		<a href="http://www.zhihu.com/people/li-yong-88-55" target="_blank" class="icon-zhihu" title="知乎"></a>
+		
+		
+		<a href="https://plus.google.com/111758198691283601884?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+		
+		
+		<a href="mailto:yong.li1992@foxmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		
+		<a href="/about" target="_blank" title="yongli1992">yongli1992</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+        getSize();
+        if (myWidth >= 1024) {
+          c.click();
+        }
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'yongli1992';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-77559411-1', 'auto');  
+ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
