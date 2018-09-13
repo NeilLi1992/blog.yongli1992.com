@@ -1,13 +1,16 @@
 title: Light Marker - A Chrome bookmark extension to save your reading position.
-date: 2017-12-29 22:59:31
 tags:
- - tool
- - github
- - chrome-extension
- - development
+  - tool
+  - development
+  - github
+  - chrome-extension
 category:
- - programming
- - tool
+  - programming
+  - tool
+categories:
+  - programming
+  - tool
+date: 2017-12-29 22:59:00
 ---
 # Light Marker ⚡
 
