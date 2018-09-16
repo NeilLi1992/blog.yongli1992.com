@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>LeetCode：判断单链列表是否存在环 | Yong&#39;s Blog</title>
+    <title>使用 hexo-admin UI 界面来管理 hexo | Yong&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="yongli1992">
@@ -13,18 +13,21 @@
     
     <meta name="keywords" content="Python, UK, 留学生, 英国, Bloomberg, hexo, 健身, bodybuilding, Oxford, XJTLU, Liverpool, C++">
     
-    <meta name="description" content="判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。 ####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇 找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下来fast和slow">
-<meta name="keywords" content="python,leetcode">
+    <meta name="description" content="准备重新开始写博客。 之前使用 terminal 命令来管理 hexo 的方式虽然很 hacky，但是使用久了依然感到繁琐不便，也间接降低了写博客的兴致。最近知道了 hexo 原来可以安装 admin UI 界面来进行管理，github 项目的名字就叫 hexo-admin.  安装的方式也非常简单，只要在自己的 hexo 博客项目的目录内使用 npm 进行安装即可，然后再次使用 hexo ser">
+<meta name="keywords" content="hexo,blog,technology">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode：判断单链列表是否存在环">
-<meta property="og:url" content="http://blog.yongli1992.com/2015/01/20/leetcode-loop-in-linked-list/index.html">
+<meta property="og:title" content="使用 hexo-admin UI 界面来管理 hexo">
+<meta property="og:url" content="http://blog.yongli1992.com/2018/09/13/hexo-admin-ui/index.html">
 <meta property="og:site_name" content="Yong&#39;s Blog">
-<meta property="og:description" content="判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。 ####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇 找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下来fast和slow">
+<meta property="og:description" content="准备重新开始写博客。 之前使用 terminal 命令来管理 hexo 的方式虽然很 hacky，但是使用久了依然感到繁琐不便，也间接降低了写博客的兴致。最近知道了 hexo 原来可以安装 admin UI 界面来进行管理，github 项目的名字就叫 hexo-admin.  安装的方式也非常简单，只要在自己的 hexo 博客项目的目录内使用 npm 进行安装即可，然后再次使用 hexo ser">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2015-08-08T02:19:56.000Z">
+<meta property="og:image" content="http://blog.yongli1992.com/images/pasted-1.png">
+<meta property="og:image" content="http://blog.yongli1992.com/images/pasted-2.png">
+<meta property="og:updated_time" content="2018-09-16T21:05:27.315Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode：判断单链列表是否存在环">
-<meta name="twitter:description" content="判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。 ####判断是否存在环用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇 找到环的入口当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。接下来fast和slow">
+<meta name="twitter:title" content="使用 hexo-admin UI 界面来管理 hexo">
+<meta name="twitter:description" content="准备重新开始写博客。 之前使用 terminal 命令来管理 hexo 的方式虽然很 hacky，但是使用久了依然感到繁琐不便，也间接降低了写博客的兴致。最近知道了 hexo 原来可以安装 admin UI 界面来进行管理，github 项目的名字就叫 hexo-admin.  安装的方式也非常简单，只要在自己的 hexo 博客项目的目录内使用 npm 进行安装即可，然后再次使用 hexo ser">
+<meta name="twitter:image" content="http://blog.yongli1992.com/images/pasted-1.png">
 <link rel="publisher" href="111758198691283601884">
 
     
@@ -83,14 +86,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/01/20/leetcode-loop-in-linked-list/" title="LeetCode：判断单链列表是否存在环" itemprop="url">LeetCode：判断单链列表是否存在环</a>
+      <a href="/2018/09/13/hexo-admin-ui/" title="使用 hexo-admin UI 界面来管理 hexo" itemprop="url">使用 hexo-admin UI 界面来管理 hexo</a>
   </h1>
   <p class="article-author">By
        
 		<a href="https://plus.google.com/111758198691283601884?rel=author" title="yongli1992" target="_blank" itemprop="author">yongli1992</a>
 		
   <p class="article-time">
-    <time datetime="2015-01-20T16:12:03.000Z" itemprop="datePublished"> Published 2015-01-20</time>
+    <time datetime="2018-09-13T21:47:00.000Z" itemprop="datePublished"> Published 2018-09-13</time>
     
   </p>
 </header>
@@ -99,17 +102,18 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#找到环的入口"><span class="toc-number">1.</span> <span class="toc-text">找到环的入口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#证明"><span class="toc-number">2.</span> <span class="toc-text">证明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python实现"><span class="toc-number">3.</span> <span class="toc-text">Python实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用"><span class="toc-number">4.</span> <span class="toc-text">应用</span></a></li></ol>
+			
 		
 		</div>
 		
-		<p>判断单链列表是否存在环，即某个节点的next指向链表中在它前面的节点，这样在链表尾部形成一环。</p>
-<p>####判断是否存在环<br>用一个fast指针，一个slow指针，slow每次移动1，fast每次移动2.<br>若链表存在环，移动快的fast指针一定在环内追赶上移动慢的slow指针，则相遇</p>
-<h4 id="找到环的入口"><a href="#找到环的入口" class="headerlink" title="找到环的入口"></a>找到环的入口</h4><p>当两指针第一次相遇后，证明存在环。现在将fast指针重新设为head，slow指针不变。<br>接下来fast和slow都每次移动1。两指针在此相遇的位置即为环的入口。</p>
-<h4 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h4><p>设初次相遇时循环运行n次。设初次相遇为M点，head到环入口距离为a，环入口到M点距离为b。环路周长为L。第一次相遇时fast已经走了k圈（不能保证相遇时fast只多走1圈）。<br>slow走的距离为d1 = a + b = n<br>fast走的距离为d2 = a + b+ k<em>L = 2n<br>d2 - d1 = n = k</em>L，可知长度n恰好为环周长的整数倍。<br>此时slow从相遇点M再走n步，可以回到相遇点M。<br>此时fast从head出发走n步，也可到达M。<br>实际上两者在走完a步后就相遇了，此处即为环的入口。</p>
-<h4 id="Python实现"><a href="#Python实现" class="headerlink" title="Python实现"></a>Python实现</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">slow = fast = head</div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">     <span class="keyword">if</span> <span class="keyword">not</span> fast.next <span class="keyword">or</span> <span class="keyword">not</span> fast.next.next:</div><div class="line">          <span class="comment"># No loop</span></div><div class="line">          <span class="keyword">return</span> <span class="keyword">None</span></div><div class="line">     <span class="keyword">else</span>:</div><div class="line">          slow = slow.next</div><div class="line">          fast = fast.next.next</div><div class="line">          <span class="keyword">if</span> slow == fast:</div><div class="line">               <span class="keyword">break</span></div><div class="line"></div><div class="line"><span class="comment"># Encountered for 1st time. Now set out again</span></div><div class="line"><span class="keyword">while</span> fast != slow:</div><div class="line">     fast = fast.next</div><div class="line">     slow = slow.next</div><div class="line"></div><div class="line"><span class="comment"># Now both fast and slow point to the loop entrance</span></div><div class="line"><span class="keyword">return</span> fast</div></pre></td></tr></table></figure>
-<h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h4><p>可以用来解决两个单链表是否存在交点的问题，如下：</p>
-<p>$A:       a1 → a2$<br>$                ↘$<br>$                 c1 → c2 → c3$<br>$                ↗$<br>$B:   b1 → b2 → b3$<br>给定两个单链表A，B，问A，B是否存在某个相交节点，若存在则返回该节点。应用我们的方法，可以在O(n)时间，O(1)空间内求解。<br>方法是先遍历A找到尾节点tailA，设置tailA.next = headB。若A与B有交点，则从headA再出发使用我们的算法找到环，环路入口即为链表交点。</p>
+		<p>准备重新开始写博客。</p>
+<p>之前使用 terminal 命令来管理 hexo 的方式虽然很 hacky，但是使用久了依然感到繁琐不便，也间接降低了写博客的兴致。最近知道了 hexo 原来可以安装 admin UI 界面来进行管理，github 项目的名字就叫 <a href="https://github.com/jaredly/hexo-admin" target="_blank" rel="noopener">hexo-admin</a>.</p>
+<p><img src="/images/pasted-1.png" alt="upload successful"></p>
+<p>安装的方式也非常简单，只要在自己的 hexo 博客项目的目录内使用 <code>npm</code> 进行安装即可，然后再次使用 <code>hexo server -d</code> 运行 hexo 自带的服务器使，就可以在 <code>http://localhost:4000/admin/</code> 的位置得到一个 admin UI 界面。</p>
+<p>在这个界面可以创建/发布 post，可以有左右两栏可以预览的 markdown 编辑器，可以方便地输入标签，进行分类等等。甚至在编辑器内支持直接复制进图片，不用再像之前需要自己手动保存图片，workflow 得到了极大的简化。</p>
+<p><img src="/images/pasted-2.png" alt="upload successful"></p>
+<p>如果你的 hexo 不是静态部署，而是利用 Heroku、DigitalOcean 等进行部署的话，甚至可以在线的访问这个 admin 界面，但是不要忘记在 settings 中设置密码，否则任何人都可以编辑修改内容了。</p>
+<p>仅此小记，以重整博客~</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -117,13 +121,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  <a class="article-category-link" href="/categories/tool/">tool</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/python/">python</a><a href="/tags/leetcode/">leetcode</a>
+  <span></span> <a href="/tags/hexo/">hexo</a><a href="/tags/blog/">blog</a><a href="/tags/technology/">technology</a>
   </div>
 
 </div>
@@ -132,7 +136,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://blog.yongli1992.com/2015/01/20/leetcode-loop-in-linked-list/" data-title="LeetCode：判断单链列表是否存在环 | Yong&#39;s Blog" data-tsina="2327892814" class="share clearfix">
+	  <div data-url="http://blog.yongli1992.com/2018/09/13/hexo-admin-ui/" data-title="使用 hexo-admin UI 界面来管理 hexo | Yong&#39;s Blog" data-tsina="2327892814" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -145,19 +149,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/01/20/15-fall-application/" title="15FALL英国硕士申请总结：剑桥，牛津，帝国理工及其他">
-  <strong>上一篇：</strong><br/>
-  <span>
-  15FALL英国硕士申请总结：剑桥，牛津，帝国理工及其他</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/01/20/python-argparse-module/"  title="Python 命令行解析模块argparse使用学习">
+<a href="/2018/01/07/node-js-2018-advice/"  title="Node.js 最佳实践 —— 如何在 2018 年成为更好的 Node.js 开发者">
  <strong>下一篇：</strong><br/> 
- <span>Python 命令行解析模块argparse使用学习
+ <span>Node.js 最佳实践 —— 如何在 2018 年成为更好的 Node.js 开发者
 </span>
 </a>
 </div>
@@ -181,7 +177,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#找到环的入口"><span class="toc-number">1.</span> <span class="toc-text">找到环的入口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#证明"><span class="toc-number">2.</span> <span class="toc-text">证明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python实现"><span class="toc-number">3.</span> <span class="toc-text">Python实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#应用"><span class="toc-number">4.</span> <span class="toc-text">应用</span></a></li></ol>
+ 
  
   </div>
 
