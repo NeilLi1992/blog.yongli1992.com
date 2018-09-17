@@ -4,8 +4,8 @@
 
 # Site
 title: Yong's Blog
-subtitle: 飞光劝尔一杯酒，月寒日暖煎人寿。
-description: This is the place where I write and reflect.
+subtitle: 譬如朝露，去日苦多。
+description: This is the place where I write, think and retrospect.
 author: yongli1992
 language: zh_CN
 timezone:
@@ -76,3 +76,4 @@ stylus:
 deploy:
   type: git
   repo: https://github.com/NeilLi1992/blog.yongli1992.com
+  branch: master
